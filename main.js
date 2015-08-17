@@ -4,9 +4,11 @@ full_report_list = [];
 
 $.getJSON("/gramps-example-reports/report_list.json", function(data) {
 	full_report_list = data;
-// })
-// .fail(function() {
-	// full_report_list = [];
+	build_report_list();
+})
+.fail(function() {
+	full_report_list = [];
+	$("#contents").html('<div class="alert alert-danger" role="alert">Internal error</div>');
 });
 
 
