@@ -39,10 +39,10 @@ function build_header_list()
 {
 	var html = '';
 	html += '<ul class="nav nav-pills">';
-	html += '	<li role="presentation"><a href="#gramps40" role="tab" data-toggle="tab">4.0</a></li>';
-	html += '	<li role="presentation"><a href="#gramps41" role="tab" data-toggle="tab">4.1</a></li>';
-	html += '	<li role="presentation"><a href="#gramps42" role="tab" data-toggle="tab">4.2</a></li>';
-	html += '	<li role="presentation" class="active"><a href="#gramps50" role="tab" data-toggle="tab">5.0</a></li>';
+	html += '	<li role="presentation"><a href="#gramps40" role="tab" data-toggle="tab">Version 4.0</a></li>';
+	html += '	<li role="presentation"><a href="#gramps41" role="tab" data-toggle="tab">Version 4.1</a></li>';
+	html += '	<li role="presentation"><a href="#gramps42" role="tab" data-toggle="tab">Version 4.2</a></li>';
+	html += '	<li role="presentation" class="active"><a href="#gramps50" role="tab" data-toggle="tab">Version 5.0</a></li>';
 	html += '</ul>';
 	html += '<div class="tab-content">';
 	$.each(full_report_list, function(version, report_list) {
@@ -79,7 +79,7 @@ function build_list(version, report_list)
 	for (var i = 0; i < report_list.length; i++)
 	{
 		html += '<tr>';
-		html += '<td><a href="/' + version + '/' + report_list[i].directory + '">' + report_list[i].name + '</a></td>';
+		html += '<td><a href="/gramps-example-reports/' + version + '/' + report_list[i].directory + '">' + report_list[i].name + '</a></td>';
 		html += '<td>' + report_list[i].type + '</td>';
 		html += '<td>' + report_list[i].version + '</td>';
 		html += '<td>' + report_list[i].status + '</td>';
