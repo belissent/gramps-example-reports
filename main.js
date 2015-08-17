@@ -18,7 +18,7 @@ function build_report_list()
 	// this removes the query after the file name, if there is one
 	url = url.substring(0, (url.indexOf('?') == -1) ? url.length : url.indexOf('?'));
 	
-	var terms = ss.match(/(gramps\d\d)$/);
+	var terms = url.match(/(gramps\d\d)$/);
 	if (terms == null)
 	{
 		// We are in the root directory
