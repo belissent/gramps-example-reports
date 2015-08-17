@@ -34,20 +34,35 @@ function build_report_list()
 
 function build_header_list()
 {
+	var html = '';
+	html += '<ul class="nav nav-pills">';
+	html += '	<li role="presentation"><a href="#gramps40" role="tab" data-toggle="tab">4.0</a></li>';
+	html += '	<li role="presentation"><a href="#gramps41" role="tab" data-toggle="tab">4.1</a></li>';
+	html += '	<li role="presentation"><a href="#gramps42" role="tab" data-toggle="tab">4.2</a></li>';
+	html += '	<li role="presentation" class="active"><a href="#gramps50" role="tab" data-toggle="tab">5.0</a></li>';
+	html += '</ul>';
+	html += '<div class="tab-content">';
 	$.each(full_report_list, function(version, report_list) {
-		build_list($("#" + version), version, report_list);
+		var txt = build_list(version, report_list);
+		html += '<div id="' + version + '" role="tabpanel" class="tab-pane' + ((version == 'gramps50') ? ' active' : '') + '">' + txt + '</div>';
 	});
+	html += '</div>';
+	$("#contents").html(html);
 }
 
 
 function build_version_list(version)
 // version: in the form 'gramps40',  'gramps41', 'gramps42', 'gramps50', etc.
 {
-	build_list($("#" + version), version, full_report_list[version]);
+	var txt = build_list(version, full_report_list[version]);
+	var html = '';
+	html += txt;
+	html += '<p><a href="/gramps-example-reports">Other GRAMPS versions</a>';
+	$("#contents").html(html);
 }
 
 
-function build_list(element, version, report_list)
+function build_list(version, report_list)
 {
 	var html = '';
 	html += '<table class="table table-striped">';
@@ -69,5 +84,5 @@ function build_list(element, version, report_list)
 	}
 	html += '</tbody>';
 	html += '</table>';
-	element.html(html);
+	return(html);
 }
