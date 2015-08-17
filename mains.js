@@ -1,7 +1,7 @@
 
 
 var full_report_list = []
-$.getJSON("/report_list.json", function(data) {
+$.getJSON("/gramps-example-reports/report_list.json", function(data) {
 	full_report_list = data;
 });
 
