@@ -3,9 +3,9 @@
 var full_report_list = []
 $.getJSON("/gramps-example-reports/report_list.json", function(data) {
 	full_report_list = data;
-})
-.fail(function() {
-	full_report_list = [];
+// })
+// .fail(function() {
+	// full_report_list = [];
 });
 
 
