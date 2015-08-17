@@ -1,20 +1,20 @@
 {
-gramps42:
+"gramps42":
 [
 	{
-		directory: 'gramps/toto',
-		name: 'Toto',
-		version: '1',
-		status: 'ok'
+		"directory": "gramps/toto",
+		"name": "Toto",
+		"version": "1",
+		"status": "ok"
 	}
-]
-gramps50:
+],
+"gramps50":
 [
 	{
-		directory: 'addons/DynamicWeb',
-		name: 'DynamicWeb report',
-		version: '1',
-		status: 'ok'
+		"directory": "addons/DynamicWeb",
+		"name": "DynamicWeb report",
+		"version": "1",
+		"status": "ok"
 	}
 ]
 }
