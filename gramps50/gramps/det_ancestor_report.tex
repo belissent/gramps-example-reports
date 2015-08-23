@@ -1,0 +1,725 @@
+\documentclass[12pt,letterpaper]{article}
+%
+%
+\usepackage[T1]{fontenc}%
+%
+% We use latin1 encoding at a minimum by default.
+% GRAMPS uses unicode UTF-8 encoding for its
+% international support. LaTeX can deal gracefully
+% with unicode encoding by using the ucs style invoked
+% when utf8 is specified as an option to the inputenc
+% package. This package is included by default in some
+% installations, but not in others, so we do not make it
+% the default.  Uncomment the first line if you wish to use it
+% (If you do not have ucs.sty, you may obtain it from
+%  http://www.tug.org/tex-archive/macros/latex/contrib/supported/unicode/)
+%
+%\usepackage[latin1]{inputenc}%
+\usepackage[latin1,utf8]{inputenc}%
+\usepackage{graphicx}% Extended graphics support
+\usepackage{longtable}% For multi-page tables
+\usepackage{calc}% For some calculations
+\usepackage{ifthen}% For table width calculations
+\usepackage{ragged2e}% For left aligning with hyphenation
+\usepackage{wrapfig}% wrap pictures in text
+%
+% Depending on your LaTeX installation, the margins may be too
+% narrow.  This can be corrected by uncommenting the following
+% two lines and adjusting the width appropriately. The example
+% removes 0.5in from each margin. (Adds 1 inch to the text)
+%\addtolength{\oddsidemargin}{-0.5in}%
+%\addtolength{\textwidth}{1.0in}%
+%
+% Vertical spacing between paragraphs:
+% take one of three possibilities or modify to your taste:
+%\setlength{\parskip}{1.0ex plus0.2ex minus0.2ex}%
+\setlength{\parskip}{1.5ex plus0.3ex minus0.3ex}%
+%\setlength{\parskip}{2.0ex plus0.4ex minus0.4ex}%
+%
+% Vertical spacing between lines:
+% take one of three possibilities or modify to your taste:
+\renewcommand{\baselinestretch}{1.0}%
+%\renewcommand{\baselinestretch}{1.1}%
+%\renewcommand{\baselinestretch}{1.2}%
+%
+% Indentation; substitute for '1cm' of gramps, 2.5em is right for 12pt
+% take one of three possibilities or modify to your taste:
+\newlength{\grbaseindent}%
+%\setlength{\grbaseindent}{3.0em}%
+\setlength{\grbaseindent}{2.5em}%
+%\setlength{\grbaseindent}{2.0em}%
+%
+%
+% -------------------------------------------------------------
+% New lengths, counters and commands for calculations in tables
+% -------------------------------------------------------------
+%
+\newlength{\grtabwidth}%
+\newlength{\grtabprepos}%
+\newlength{\grreqwidth}%
+\newlength{\grtempwd}%
+\newlength{\grmaxwidth}%
+\newlength{\grprorated}%
+\newlength{\grxwd}%
+\newlength{\grwidthused}%
+\newlength{\grreduce}%
+\newlength{\grcurcolend}%
+\newlength{\grspanwidth}%
+\newlength{\grleadlabelwidth}%
+\newlength{\grminpgindent}%
+\newlength{\grlistbacksp}%
+\newlength{\grpictsize}%
+\newlength{\grmaxpictsize}%
+\newlength{\grtextsize}%
+\newlength{\grmaxtextsize}%
+\newcounter{grtofixcnt}%
+\newcounter{grxwdcolcnt}%
+%
+%
+\newcommand{\grinitlength}[2]{%
+  \ifthenelse{\isundefined{#1}}%
+    {\newlength{#1}}{}%
+  \setlength{#1}{#2}%
+}%
+%
+\newcommand{\grinittab}[2]{%    #1: tabwidth, #2 = 1.0/anz-cols
+  \setlength{\grtabwidth}{#1}%
+  \setlength{\grprorated}{#2\grtabwidth}%
+  \setlength{\grwidthused}{0em}%
+  \setlength{\grreqwidth}{0em}%
+  \setlength{\grmaxwidth }{0em}%
+  \setlength{\grxwd}{0em}%
+  \setlength{\grtempwd}{0em}%
+  \setlength{\grpictsize}{0em}%
+  \setlength{\grmaxpictsize}{0em}%
+  \setlength{\grtextsize}{0em}%
+  \setlength{\grmaxtextsize}{0em}%
+  \setlength{\grcurcolend}{0em}%
+  \setcounter{grxwdcolcnt}{0}%
+  \setcounter{grtofixcnt}{0}%  number of wide cols%
+  \grinitlength{\grcolbega}{0em}% beg of first col
+}%
+%
+\newcommand{\grmaxvaltofirst}[2]{%
+  \ifthenelse{\lengthtest{#1 < #2}}%
+    {\setlength{#1}{#2}}{}%
+}%
+%
+\newcommand{\grsetreqfull}{%
+  \grmaxvaltofirst{\grmaxpictsize}{\grpictsize}%
+  \grmaxvaltofirst{\grmaxtextsize}{\grtextsize}%
+}%
+%
+\newcommand{\grsetreqpart}[1]{%
+  \addtolength{\grtextsize}{#1 - \grcurcolend}%
+  \addtolength{\grpictsize}{#1 - \grcurcolend}%
+  \grsetreqfull%
+}%
+%
+\newcommand{\grdividelength}{%
+ \setlength{\grtempwd}{\grtabwidth - \grwidthused}%
+%    rough division of lengths:
+%    if 0 < #1 <= 10: \grxwd = ~\grtempwd / grtofixcnt
+%    otherwise: \grxwd =  \grprorated
+ \ifthenelse{\value{grtofixcnt} > 0}%
+  {\ifthenelse{\value{grtofixcnt}=1}%
+                    {\setlength{\grxwd}{\grtempwd}}{%
+    \ifthenelse{\value{grtofixcnt}=2}
+                    {\setlength{\grxwd}{0.5\grtempwd}}{%
+     \ifthenelse{\value{grtofixcnt}=3}
+                    {\setlength{\grxwd}{0.333\grtempwd}}{%
+      \ifthenelse{\value{grtofixcnt}=4}
+                    {\setlength{\grxwd}{0.25\grtempwd}}{%
+       \ifthenelse{\value{grtofixcnt}=5}
+                    {\setlength{\grxwd}{0.2\grtempwd}}{%
+        \ifthenelse{\value{grtofixcnt}=6}
+                    {\setlength{\grxwd}{0.166\grtempwd}}{%
+         \ifthenelse{\value{grtofixcnt}=7}
+                    {\setlength{\grxwd}{0.143\grtempwd}}{%
+          \ifthenelse{\value{grtofixcnt}=8}
+                    {\setlength{\grxwd}{0.125\grtempwd}}{%
+           \ifthenelse{\value{grtofixcnt}=9}
+                    {\setlength{\grxwd}{0.111\grtempwd}}{%
+            \ifthenelse{\value{grtofixcnt}=10}
+                    {\setlength{\grxwd}{0.1\grtempwd}}{%
+             \setlength{\grxwd}{\grprorated}% give up, take \grprorated%
+    }}}}}}}}}}%
+  \setlength{\grreduce}{0em}%
+  }{\setlength{\grxwd}{0em}}%
+}%
+%
+\newcommand{\grtextneedwidth}[1]{%
+  \settowidth{\grtempwd}{#1}%
+  \grmaxvaltofirst{\grtextsize}{\grtempwd}%
+}%
+%
+\newcommand{\grcolsfirstfix}[5]{%
+  \grinitlength{#1}{\grcurcolend}%
+  \grinitlength{#3}{0em}%
+  \grinitlength{#4}{\grmaxpictsize}%
+  \grinitlength{#5}{\grmaxtextsize}%
+  \grinitlength{#2}{#5}%
+  \grmaxvaltofirst{#2}{#4}%
+  \addtolength{#2}{2\tabcolsep}%
+  \grmaxvaltofirst{\grmaxwidth}{#2}%
+  \ifthenelse{\lengthtest{#2 < #4} \or \lengthtest{#2 < \grprorated}}%
+    { \setlength{#3}{#2}%
+      \addtolength{\grwidthused}{#2} }%
+    { \stepcounter{grtofixcnt} }%
+  \addtolength{\grcurcolend}{#2}%
+}%
+%
+\newcommand{\grcolssecondfix}[4]{%
+  \ifthenelse{\lengthtest{\grcurcolend < \grtabwidth}}%
+    { \setlength{#3}{#2} }%
+    { \addtolength{#1}{-\grreduce}%
+      \ifthenelse{\lengthtest{#2 = \grmaxwidth}}%
+        { \stepcounter{grxwdcolcnt}}%
+        { \ifthenelse{\lengthtest{#3 = 0em} \and %
+                       \lengthtest{#4 > 0em}}%
+            { \setlength{\grtempwd}{#4}%
+              \grmaxvaltofirst{\grtempwd}{\grxwd}%
+              \addtolength{\grreduce}{#2 - \grtempwd}%
+              \setlength{#2}{\grtempwd}%
+              \addtolength{\grwidthused}{#2}%
+              \addtocounter{grtofixcnt}{-1}%
+              \setlength{#3}{#2}%
+            }{}%
+        }%
+    }%
+}%
+%
+\newcommand{\grcolsthirdfix}[3]{%
+  \ifthenelse{\lengthtest{\grcurcolend < \grtabwidth}}%
+    {}{ \addtolength{#1}{-\grreduce}%
+        \ifthenelse{\lengthtest{#3 = 0em} \and %
+                     \lengthtest{#2 < \grmaxwidth}}%
+          { \ifthenelse{\lengthtest{#2 < 0.5\grmaxwidth}}%
+              { \setlength{\grtempwd}{0.5\grxwd}%
+                \grmaxvaltofirst{\grtempwd}{0.7\grprorated}}%
+              { \setlength{\grtempwd}{\grxwd}}%
+            \addtolength{\grreduce}{#2 - \grtempwd}%
+            \setlength{#2}{\grtempwd}%
+            \addtolength{\grwidthused}{#2}%
+            \addtocounter{grtofixcnt}{-1}%
+            \setlength{#3}{#2}%
+          }{}%
+      }%
+}%
+%
+\newcommand{\grcolsfourthfix}[3]{%
+  \ifthenelse{\lengthtest{\grcurcolend < \grtabwidth}}%
+    {}{ \addtolength{#1}{-\grreduce}%
+        \ifthenelse{\lengthtest{#3 = 0em}}%
+          { \addtolength{\grreduce}{#2 - \grxwd}%
+            \setlength{#2}{\grxwd}%
+            \setlength{#3}{#2}%
+          }{}%
+      }%
+}%
+%
+\newcommand{\grgetspanwidth}[4]{%
+  \grinitlength{#1}{#3 - #2 + #4}%
+}%
+%
+\newcommand{\tabheadstrutceil}{%
+  \rule[0.0ex]{0.00em}{3.5ex}}%
+\newcommand{\tabheadstrutfloor}{%
+  \rule[-2.0ex]{0.00em}{2.5ex}}%
+\newcommand{\tabrowstrutceil}{%
+  \rule[0.0ex]{0.00em}{2.9ex}}%
+\newcommand{\tabrowstrutfloor}{%
+  \rule[-0.1ex]{0.00em}{2.0ex}}%
+%
+\newcommand{\grempty}[1]{}%
+%
+\newcommand{\graddvdots}[1]{%
+  \hspace*{\fill}\hspace*{\fill}\raisebox{#1}{\vdots}%
+}%
+%
+\newcommand{\grtabpgbreak}[4]{%
+  #1 { \parbox[t]{ #2 - 2\tabcolsep}{\tabheadstrutceil\hspace*{\fill}%
+  \raisebox{#4}{\vdots} #3{#4} \hspace*{\fill}\tabheadstrutfloor}}%
+}%
+%
+\newcommand{\grcolpart}[3]{%
+  #1 { \parbox[t]{ #2 - 2\tabcolsep}%
+  {\tabrowstrutceil #3~\\[-1.6ex]\tabrowstrutfloor}}%
+}%
+%
+\newcommand{\grminpghead}[2]{%
+  \setlength{\grminpgindent}{#1\grbaseindent-\grlistbacksp}%
+  \hspace*{\grminpgindent}%
+  \ifthenelse{\not \lengthtest{#2em > 0em}}%
+    {\begin{minipage}[t]{\textwidth -\grminpgindent}}%
+    {\begin{minipage}[t]{\textwidth -\grminpgindent%
+        -#2\grbaseindent -4\tabcolsep}}%
+}%
+%
+\newcommand{\grminpgtail}{%
+  \end{minipage}\parindent0em%
+}%
+%
+\newcommand{\grlisthead}[1]{%
+  \begin{list}{#1}%
+    { \setlength{\labelsep}{0.5em}%
+      \setlength{\labelwidth}{\grleadlabelwidth}%
+      \setlength{\leftmargin}{\grlistbacksp}%
+    }\item%
+}%
+%
+\newcommand{\grlisttail}{%
+  \end{list}%
+}%
+%
+\newcommand{\grprepleader}[1]{%
+  \settowidth{\grtempwd}{#1}%
+  \ifthenelse{\lengthtest{\grtempwd > \grleadlabelwidth}}%
+    { \setlength{\grleadlabelwidth}{\grtempwd}}{}%
+  \setlength{\grlistbacksp}{\grleadlabelwidth + 1.0em}%
+}%
+%
+\newcommand{\grprepnoleader}{%
+  \setlength{\grleadlabelwidth}{0em}%
+  \setlength{\grlistbacksp}{0em}%
+}%
+%
+\newcommand{\grmkpicture}[4]{%
+    \begin{wrapfigure}{r}{#2\grbaseindent}%
+      \vspace{-6ex}%
+      \begin{center}%
+      \includegraphics[%
+        width= #2\grbaseindent,%
+        height= #3\grbaseindent,%
+          keepaspectratio]%
+        {#1}\\%
+      {\RaggedRight\footnotesize#4}%
+      \end{center}%
+    \end{wrapfigure}%
+    \settowidth{\grtempwd}{\footnotesize#4}%
+    \setlength{\grxwd}{#2\grbaseindent}%
+    \ifthenelse{\lengthtest{\grtempwd < 0.7\grxwd}}%
+                    {\setlength{\grxwd}{1ex}}{%
+      \ifthenelse{\lengthtest{\grtempwd < 1.2\grxwd}}%
+                    {\setlength{\grxwd}{2ex}}{%
+        \ifthenelse{\lengthtest{\grtempwd < 1.8\grxwd}}%
+                    {\setlength{\grxwd}{6ex}}{%
+          \ifthenelse{\lengthtest{\grtempwd < 2.0\grxwd}}%
+                    {\setlength{\grxwd}{10ex}}{%
+                     \setlength{\grxwd}{12ex}}%
+                    }}}%
+  \setlength{\grtempwd}{#3\grbaseindent + \grxwd}%
+  \rule[-\grtempwd]{0pt}{\grtempwd}%
+  \setlength{\grtabprepos}{-\grtempwd}%
+}%
+%
+%
+\begin{document}%
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+{\centering\sffamily\bfseries\Large  Ancestral Report for Garner von Zieliński, Lewis Anderson Sr \mdseries\rmfamily
+
+}\normalsize %
+
+\grminpgtail%
+
+\vspace{5ex}%
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 1 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{1.}%
+\grminpghead{1.0}{0}%
+\grlisthead{1.}%
+\textbf{Garner von Zieliński, Lewis Anderson Sr .  }Lewis Anderson was born on 1855-06-21 in Great Falls, MT, USA.   He died on 1911-06-28 in Twin Falls, Twin Falls, ID, USA at the age of 56 years, 7 days.   He was buried on 1911-07-01 in Twin Falls, Twin Falls, ID, USA.  He was the son of Garner, Robert W. and Zieliński, Phoebe Emily.    He married Martel, Luella Jacques on 1875-04-01 in Paragould, Greene, AR, USA.  
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+\sffamily\bfseries\small  Spouse: Martel, Luella Jacques . \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+  Luella Jacques was born on 1852-01-23 in Eureka, Humboldt, CA, USA.   She died on 1921-04-28 in Myrtle Beach, SC, USA at the age of 69 years, 3 months.   She was buried on 1921-04-30 in Myrtle Beach, SC, USA.  She was the daughter of Martel, Henry and Hébert, Ruth Ann.     %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+\sffamily\bfseries\small  Notes for Garner von Zieliński, Lewis Anderson Sr \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+  We have committed to synergistically disseminate resource-leveling methods of empowerment to set us apart from the competition. We envision to globally integrate inexpensive paradigms and professionally engineer timely technology while promoting personal employee growth. Our mission is to assertively build world-class methods of empowerment so that we may professionally promote parallel services to set us apart from the competition. It's our responsibility to dramatically maintain value-added services as well as to professionally simplify principle-centered technology for 100\% customer satisfaction.~\newline 
+~\newline 
+Thanks to the Mission Statement Generator from http://www.dilbert.com.~\newline 
+ %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+  This is a note {\LARGE }{\ttfamily {\LARGE showing a lot of differen}}{\LARGE }t markup that mixes with each other making it a good stress test for markup notes.~\newline 
+This is a note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.~\newline 
+~\newline 
+This is a note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.~\newline 
+ %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+  This\ is\ a\ preformatted\ note\ showing\ a\ lot\ of\ differe{\ttfamily nt\ markup\ that\ mixes\ with\ e}ach\ other\ making\ it\ a\ good\ stress\ test\ for\ markup\ notes.~\newline 
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ This\ is\ a\ note\ showing\ a\ lot\ of\ different\ markup\ that\ mixes\ with\ each\ other\ making\ it\ a\ good\ stress\ test\ for\ markup\ notes.~\newline 
+~\newline 
+This\ is\ ~\newline 
+\ \ \ \ \ \ \ \ a\ note\ showing\ ~\newline 
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ lot\ of\ different\ markup\ ~\newline 
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ that\ mixes\ with\ each\ ~\newline 
+other\ making\ it\ a\ good\ stress\ test\ for\ markup\ notes.~\newline 
+~\newline 
+{\ttfamily \ \ \ test\ \ |\ \ \ \ val1\ \ |\ \ \ \ \ val2~\newline 
+\ \ ------------------------------~\newline 
+\ \ \ \ me\ \ \ |\ \ \ blue\ \ \ |\ \ \ \ red} %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+  This\ source\ has\ all\ possible\ references\ pointing\ to\ it.\ The\ references\ are\ as\ follows:~\newline 
+~\newline 
+This\ note\ appears\ as\ a\ note\ to\ the\ source\ and\ also\ as\ a\ note\ for\ the\ person.~\newline 
+~\newline 
+page\ 01\ \ Person~\newline 
+page\ 02\ \ \ \ Name~\newline 
+page\ 03\ \ \ \ Address~\newline 
+page\ 04\ \ \ \ Attribute~\newline 
+page\ 05\ \ \ \ PersonRef~\newline 
+page\ 06\ \ \ \ MediaRef~\newline 
+page\ 07\ \ \ \ \ \ Attribute~\newline 
+page\ 08\ \ \ \ LdsOrd~\newline 
+page\ 09\ \ \ \ EventRef:Attribute\ ~\newline 
+page\ 10\ \ Family~\newline 
+page\ 11\ \ \ \ Attribute~\newline 
+page\ 12\ \ \ \ ChildRef~\newline 
+page\ 13\ \ \ \ MediaRef~\newline 
+page\ 14\ \ \ \ \ \ Attribute~\newline 
+page\ 15\ \ \ \ LdsOrd~\newline 
+page\ 16\ \ \ \ EventRef:Attribute~\newline 
+page\ 17\ \ Event~\newline 
+page\ 18\ \ \ \ Attribute~\newline 
+page\ 19\ \ \ \ MediaRef~\newline 
+page\ 20\ \ \ \ \ \ Attribute~\newline 
+page\ 21\ \ MediaObject~\newline 
+page\ 22\ \ \ \ Attribute~\newline 
+page\ 23\ \ Place~\newline 
+page\ 24\ \ \ \ MediaRef~\newline 
+page\ 25\ \ \ \ \ \ Attribute~\newline 
+page\ 26\ \ Repository:Address %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+\sffamily\bfseries\small  Children of Martel, Luella Jacques and Garner von Zieliński, Lewis Anderson Sr \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{i.}%
+\grminpghead{1.75}{0}%
+\grlisthead{i.}%
+Garner, Eugene Stanley.  Eugene Stanley was born on 1895-12-01 in Portsmouth, OH, USA.   He died on 1984-03-01 in Twin Falls, Twin Falls, ID, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{ii.}%
+Garner, Jesse V..  Jesse V. was born on 1876-06-18 in Paragould, Greene, AR, USA.   He died on 1929-01-21 in Cedar City, UT, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{iii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{iii.}%
+Garner, Raymond E..  Raymond E. was born on 1878-09-16 in Paragould, Greene, AR, USA.   He died on 1921-05-02 in Astoria, OR, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{iv.}%
+\grminpghead{1.75}{0}%
+\grlisthead{iv.}%
+Garner, Jennie S..  Jennie S. was born on 1880-09-11 in Paragould, Greene, AR, USA.   She died on 1964-06-20 in Columbus, Bartholomew, IN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{v.}%
+\grminpghead{1.75}{0}%
+\grlisthead{v.}%
+Garner, Walter E..  Walter E. was born on 1882-02-17 in Paragould, Greene, AR, USA.   He died on 1946-10-23 in Battle Creek, MI, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{vi.}%
+\grminpghead{1.75}{0}%
+\grlisthead{vi.}%
+Garner, Daniel Webster.  Daniel Webster was born on 1883-09-30 in Hood River, OR, USA.   He died on 1936-03-02 in Gary, Lake, IN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{vii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{vii.}%
+Garner, Bertha P..  Bertha P. was born on 1888-03-13 in Hagerstown, MD, USA.   She died on 1918-04-05 in Columbus, Bartholomew, IN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{viii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{viii.}%
+Garner, Elizabeth.  Elizabeth was born in 1883.   She was buried in Hays, Ellis, KS, USA.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 2 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{2.}%
+\grminpghead{1.0}{0}%
+\grlisthead{2.}%
+\textbf{Garner, Robert W.   }Robert W. was born on 1826/7-04-24 (Julien) in Aberdeen, WA, USA.   He died on 1916-02-03 in Portsmouth, OH, USA at the age of 88 years, 8 months.   He was buried on 1916-02-05 (Mar25) in Knoxville, TN, USA.  He was the son of Garner, Joseph and Edwards, Lucy.    He married Zieliński, Phoebe Emily on 1849-10-04 in Paragould, Greene, AR, USA.  
+\grlisttail%
+ \grminpgtail%
+
+\grprepleader{3.}%
+\grminpghead{1.0}{0}%
+\grlisthead{3.}%
+\textbf{Zieliński, Phoebe Emily .  }Phoebe Emily was born on 1827-04-12 in Bogalusa, Washington, LA, USA.   She died on 1882-03-07 in Albuquerque, NM, USA at the age of 54 years, 10 months.   She was buried on 1882-03-09 in Michigan City, LaPorte, IN, USA.  She was the daughter of Шестаков, George and Daniels, Phoebe.    
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+\sffamily\bfseries\small  Children of Zieliński, Phoebe Emily and Garner, Robert W. \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{i.}%
+\grminpghead{1.75}{0}%
+\grlisthead{i.}%
+Garner von Zieliński, Lewis Anderson Sr [1].  Lewis Anderson was born on 1855-06-21 in Great Falls, MT, USA.   He died on 1911-06-28 in Twin Falls, Twin Falls, ID, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{ii.}%
+Garner, Phebe.  Phebe was born in 1850 in Orlando, Orange, FL, USA.   She died avant 1860.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{iii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{iii.}%
+Garner, Mary J..  Mary J. was born on 1851-10-12.   She died on 1852-04-01.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{iv.}%
+\grminpghead{1.75}{0}%
+\grlisthead{iv.}%
+Garner, Mary M..  Mary M. was born on 1851-10-12.   She died on 1858-05-24.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{v.}%
+\grminpghead{1.75}{0}%
+\grlisthead{v.}%
+Garner.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{vi.}%
+\grminpghead{1.75}{0}%
+\grlisthead{vi.}%
+Garner, Rebecca Catharine.  Rebecca Catharine was born on 1857-05-30 in Denver-Aurora, CO, USA.   She died on 1937-04-09 in Alice, Jim Wells, TX, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{vii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{vii.}%
+Carr, Zelpha Josephine.  Zelpha Josephine was born on 1858-12-31 in Brownwood, Harris, TX, USA.   She died on 1895-02-08 in Beckley, WV, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{viii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{viii.}%
+Garner, Iola Elizabeth Betty.  Iola Elizabeth Betty was born on 1860-11-01 in Orlando, Orange, FL, USA.   She died on 1941-04-17 in Killeen, Bell, TX, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ix.}%
+\grminpghead{1.75}{0}%
+\grlisthead{ix.}%
+Garner, Robert F..  Robert F. was born on 1863-04-04 in Paragould, Greene, AR, USA.   He died on 1940-02-17 in Marshalltown, Marshall, IA, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{x.}%
+\grminpghead{1.75}{0}%
+\grlisthead{x.}%
+Garner, Emma A..  Emma A. was born on 1868-08-18.   She died on 1869-02-23.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{xi.}%
+\grminpghead{1.75}{0}%
+\grlisthead{xi.}%
+Garner, Anetta.  Anetta was born on 1870-06-13 in Centralia, WA, USA.   She died on 1900-10-04 in Columbus, Bartholomew, IN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{xii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{xii.}%
+Garner, Antoinette.  Antoinette was born on 1870-06-13 in Starkville, MS, USA.   She died avant 1880.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 3 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{4.}%
+\grminpghead{1.0}{0}%
+\grlisthead{4.}%
+\textbf{Garner, Joseph .  }Joseph was born in 1792 in Steubenville, OH, USA.   He died in Shawnee, OK, USA.   He married Edwards, Lucy on 1823-01-03 in Picayune, MS, USA.  
+\grlisttail%
+ \grminpgtail%
+
+\grprepleader{5.}%
+\grminpghead{1.0}{0}%
+\grlisthead{5.}%
+\textbf{Edwards, Lucy .  }Lucy was born on 1799-01-17 in Jamestowna, NY, USA.   She died on 1879-04-02 at the age of 80 years, 2 months.   She was buried on 1879-04-04 in Logan, UT-ID, USA.  
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+\sffamily\bfseries\small  Children of Edwards, Lucy and Garner, Joseph \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{i.}%
+\grminpghead{1.75}{0}%
+\grlisthead{i.}%
+Garner, Robert W. [2].  Robert W. was born on 1826/7-04-24 (Julien) in Aberdeen, WA, USA.   He died on 1916-02-03 in Portsmouth, OH, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{ii.}%
+Garner, Lewis.  Lewis was born on 1823-11-18 in Moscow, Latah, ID, USA.   He died on 1911-01-21 in Twin Falls, Twin Falls, ID, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{iii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{iii.}%
+Garner, Anderson.  Anderson was born on 1825-01-28 in Steubenville, OH, USA.   He died on 1887-04-07 in Oakland, Alameda, CA, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{6.}%
+\grminpghead{1.0}{0}%
+\grlisthead{6.}%
+\textbf{Шестаков, George .  }George was born vers 1784-09-00 in Bogalusa, Washington, LA, USA.   He died on 1864-03-09 in Orlando, Orange, FL, USA at the age of about 79 years, 6 months.   He was buried in 1864-03-00 in Michigan City, LaPorte, IN, USA.  He married Daniels, Phoebe.  
+\grlisttail%
+ \grminpgtail%
+
+\grprepleader{7.}%
+\grminpghead{1.0}{0}%
+\grlisthead{7.}%
+\textbf{Daniels, Phoebe .  }Phoebe was born in Bogalusa, Washington, LA, USA.   
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.0}{0}%
+
+\sffamily\bfseries\small  Children of Daniels, Phoebe and Шестаков, George \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{i.}%
+\grminpghead{1.75}{0}%
+\grlisthead{i.}%
+Zieliński, Phoebe Emily [3].  Phoebe Emily was born on 1827-04-12 in Bogalusa, Washington, LA, USA.   She died on 1882-03-07 in Albuquerque, NM, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{ii.}%
+Тимофеев, Willoughby M..  Willoughby M. was born on 1813-02-04 in Miami Beach, Miami-Dade, FL, USA.   He died on 1877-01-16 in Jamestown, ND, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{iii.}%
+\grminpghead{1.75}{0}%
+\grlisthead{iii.}%
+Тимофеев, Mary Ann.  Mary Ann was born on 1812-03-07 in Duluth, MN, USA.   She died on 1880-11-27 in Starkville, MS, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{iv.}%
+\grminpghead{1.75}{0}%
+\grlisthead{iv.}%
+Тимофеев, John P..  John P. was born vers 1818 in Waterloo-Cedar Falls, IA, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{v.}%
+\grminpghead{1.75}{0}%
+\grlisthead{v.}%
+Тимофеев, Sarah Jane.  Sarah Jane was born on 1825-07-29 in Steubenville, OH, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{vi.}%
+\grminpghead{1.75}{0}%
+\grlisthead{vi.}%
+Тимофеев.  She was born après 1824.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\end{document}

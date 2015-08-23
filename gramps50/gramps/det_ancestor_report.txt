@@ -1,0 +1,227 @@
+      Ancestral Report for Garner von Zieliński, Lewis Anderson Sr
+
+Generation 1
+
+1.  Garner von Zieliński, Lewis Anderson Sr. Lewis Anderson was born on 
+    1855-06-21 in Great Falls, MT, USA. He died on 1911-06-28 in Twin 
+    Falls, Twin Falls, ID, USA at the age of 56 years, 7 days. He was 
+    buried on 1911-07-01 in Twin Falls, Twin Falls, ID, USA. He was the 
+    son of Garner, Robert W. and Zieliński, Phoebe Emily. He married 
+    Martel, Luella Jacques on 1875-04-01 in Paragould, Greene, AR, USA.
+
+    Spouse: Martel, Luella Jacques.
+
+    Luella Jacques was born on 1852-01-23 in Eureka, Humboldt, CA, USA. 
+    She died on 1921-04-28 in Myrtle Beach, SC, USA at the age of 69 
+    years, 3 months. She was buried on 1921-04-30 in Myrtle Beach, SC, 
+    USA. She was the daughter of Martel, Henry and Hébert, Ruth Ann.
+
+    Notes for Garner von Zieliński, Lewis Anderson Sr
+
+    We have committed to synergistically disseminate resource-leveling 
+    methods of empowerment to set us apart from the competition. We 
+    envision to globally integrate inexpensive paradigms and 
+    professionally engineer timely technology while promoting personal 
+    employee growth. Our mission is to assertively build world-class 
+    methods of empowerment so that we may professionally promote 
+    parallel services to set us apart from the competition. It's our 
+    responsibility to dramatically maintain value-added services as well
+    as to professionally simplify principle-centered technology for 100%
+    customer satisfaction.
+
+    Thanks to the Mission Statement Generator from 
+    http://www.dilbert.com.
+
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+
+    This is a preformatted note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.
+                      This is a note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.
+    
+    This is 
+            a note showing 
+                                 a lot of different markup 
+                                          that mixes with each 
+    other making it a good stress test for markup notes.
+    
+       test  |    val1  |     val2
+      ------------------------------
+        me   |   blue   |    red
+    
+    This source has all possible references pointing to it. The references are as follows:
+    
+    This note appears as a note to the source and also as a note for the person.
+    
+    page 01  Person
+    page 02    Name
+    page 03    Address
+    page 04    Attribute
+    page 05    PersonRef
+    page 06    MediaRef
+    page 07      Attribute
+    page 08    LdsOrd
+    page 09    EventRef:Attribute 
+    page 10  Family
+    page 11    Attribute
+    page 12    ChildRef
+    page 13    MediaRef
+    page 14      Attribute
+    page 15    LdsOrd
+    page 16    EventRef:Attribute
+    page 17  Event
+    page 18    Attribute
+    page 19    MediaRef
+    page 20      Attribute
+    page 21  MediaObject
+    page 22    Attribute
+    page 23  Place
+    page 24    MediaRef
+    page 25      Attribute
+    page 26  Repository:Address
+    
+    Children of Martel, Luella Jacques and Garner von Zieliński, Lewis 
+    Anderson Sr
+
+    i. Garner, Eugene Stanley. Eugene Stanley was born on 1895-12-01 in 
+       Portsmouth, OH, USA. He died on 1984-03-01 in Twin Falls, Twin 
+       Falls, ID, USA.
+
+    ii. Garner, Jesse V.. Jesse V. was born on 1876-06-18 in Paragould, 
+       Greene, AR, USA. He died on 1929-01-21 in Cedar City, UT, USA.
+
+    iii. Garner, Raymond E.. Raymond E. was born on 1878-09-16 in 
+       Paragould, Greene, AR, USA. He died on 1921-05-02 in Astoria, OR,
+       USA.
+
+    iv. Garner, Jennie S.. Jennie S. was born on 1880-09-11 in Paragould,
+       Greene, AR, USA. She died on 1964-06-20 in Columbus, Bartholomew,
+       IN, USA.
+
+    v. Garner, Walter E.. Walter E. was born on 1882-02-17 in Paragould,
+       Greene, AR, USA. He died on 1946-10-23 in Battle Creek, MI, USA.
+
+    vi. Garner, Daniel Webster. Daniel Webster was born on 1883-09-30 in 
+       Hood River, OR, USA. He died on 1936-03-02 in Gary, Lake, IN, 
+       USA.
+
+    vii. Garner, Bertha P.. Bertha P. was born on 1888-03-13 in 
+       Hagerstown, MD, USA. She died on 1918-04-05 in Columbus, 
+       Bartholomew, IN, USA.
+
+    viii. Garner, Elizabeth. Elizabeth was born in 1883. She was buried in 
+       Hays, Ellis, KS, USA.
+
+Generation 2
+
+2.  Garner, Robert W. Robert W. was born on 1826/7-04-24 (Julien) in 
+    Aberdeen, WA, USA. He died on 1916-02-03 in Portsmouth, OH, USA at 
+    the age of 88 years, 8 months. He was buried on 1916-02-05 (Mar25) 
+    in Knoxville, TN, USA. He was the son of Garner, Joseph and Edwards,
+    Lucy. He married Zieliński, Phoebe Emily on 1849-10-04 in Paragould,
+    Greene, AR, USA.
+
+3.  Zieliński, Phoebe Emily. Phoebe Emily was born on 1827-04-12 in 
+    Bogalusa, Washington, LA, USA. She died on 1882-03-07 in 
+    Albuquerque, NM, USA at the age of 54 years, 10 months. She was 
+    buried on 1882-03-09 in Michigan City, LaPorte, IN, USA. She was the
+    daughter of Шестаков, George and Daniels, Phoebe.
+
+    Children of Zieliński, Phoebe Emily and Garner, Robert W.
+
+    i. Garner von Zieliński, Lewis Anderson Sr [1]. Lewis Anderson was 
+       born on 1855-06-21 in Great Falls, MT, USA. He died on 1911-06-28
+       in Twin Falls, Twin Falls, ID, USA.
+
+    ii. Garner, Phebe. Phebe was born in 1850 in Orlando, Orange, FL, 
+       USA. She died avant 1860.
+
+    iii. Garner, Mary J.. Mary J. was born on 1851-10-12. She died on 
+       1852-04-01.
+
+    iv. Garner, Mary M.. Mary M. was born on 1851-10-12. She died on 
+       1858-05-24.
+
+    v. Garner.
+
+    vi. Garner, Rebecca Catharine. Rebecca Catharine was born on 
+       1857-05-30 in Denver-Aurora, CO, USA. She died on 1937-04-09 in 
+       Alice, Jim Wells, TX, USA.
+
+    vii. Carr, Zelpha Josephine. Zelpha Josephine was born on 1858-12-31 
+       in Brownwood, Harris, TX, USA. She died on 1895-02-08 in Beckley,
+       WV, USA.
+
+    viii. Garner, Iola Elizabeth Betty. Iola Elizabeth Betty was born on 
+       1860-11-01 in Orlando, Orange, FL, USA. She died on 1941-04-17 in
+       Killeen, Bell, TX, USA.
+
+    ix. Garner, Robert F.. Robert F. was born on 1863-04-04 in Paragould,
+       Greene, AR, USA. He died on 1940-02-17 in Marshalltown, Marshall,
+       IA, USA.
+
+    x. Garner, Emma A.. Emma A. was born on 1868-08-18. She died on 
+       1869-02-23.
+
+    xi. Garner, Anetta. Anetta was born on 1870-06-13 in Centralia, WA, 
+       USA. She died on 1900-10-04 in Columbus, Bartholomew, IN, USA.
+
+    xii. Garner, Antoinette. Antoinette was born on 1870-06-13 in 
+       Starkville, MS, USA. She died avant 1880.
+
+Generation 3
+
+4.  Garner, Joseph. Joseph was born in 1792 in Steubenville, OH, USA. He
+    died in Shawnee, OK, USA. He married Edwards, Lucy on 1823-01-03 in 
+    Picayune, MS, USA.
+
+5.  Edwards, Lucy. Lucy was born on 1799-01-17 in Jamestowna, NY, USA. 
+    She died on 1879-04-02 at the age of 80 years, 2 months. She was 
+    buried on 1879-04-04 in Logan, UT-ID, USA.
+
+    Children of Edwards, Lucy and Garner, Joseph
+
+    i. Garner, Robert W. [2]. Robert W. was born on 1826/7-04-24 
+       (Julien) in Aberdeen, WA, USA. He died on 1916-02-03 in 
+       Portsmouth, OH, USA.
+
+    ii. Garner, Lewis. Lewis was born on 1823-11-18 in Moscow, Latah, ID,
+       USA. He died on 1911-01-21 in Twin Falls, Twin Falls, ID, USA.
+
+    iii. Garner, Anderson. Anderson was born on 1825-01-28 in 
+       Steubenville, OH, USA. He died on 1887-04-07 in Oakland, Alameda,
+       CA, USA.
+
+6.  Шестаков, George. George was born vers 1784-09-00 in Bogalusa, 
+    Washington, LA, USA. He died on 1864-03-09 in Orlando, Orange, FL, 
+    USA at the age of about 79 years, 6 months. He was buried in 
+    1864-03-00 in Michigan City, LaPorte, IN, USA. He married Daniels, 
+    Phoebe.
+
+7.  Daniels, Phoebe. Phoebe was born in Bogalusa, Washington, LA, USA.
+
+    Children of Daniels, Phoebe and Шестаков, George
+
+    i. Zieliński, Phoebe Emily [3]. Phoebe Emily was born on 1827-04-12 
+       in Bogalusa, Washington, LA, USA. She died on 1882-03-07 in 
+       Albuquerque, NM, USA.
+
+    ii. Тимофеев, Willoughby M.. Willoughby M. was born on 1813-02-04 in 
+       Miami Beach, Miami-Dade, FL, USA. He died on 1877-01-16 in 
+       Jamestown, ND, USA.
+
+    iii. Тимофеев, Mary Ann. Mary Ann was born on 1812-03-07 in Duluth, 
+       MN, USA. She died on 1880-11-27 in Starkville, MS, USA.
+
+    iv. Тимофеев, John P.. John P. was born vers 1818 in Waterloo-Cedar 
+       Falls, IA, USA.
+
+    v. Тимофеев, Sarah Jane. Sarah Jane was born on 1825-07-29 in 
+       Steubenville, OH, USA.
+
+    vi. Тимофеев. She was born après 1824.
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="21.59cm" height="27.94cm" xmlns="http://www.w3.org/2000/svg">
+<rect width="21.59cm" height="27.94cm" style="fill: none;"/>
+<line x1="9.69cm" y1="4.54cm" x2="9.69cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="11.46cm" y1="4.54cm" x2="11.46cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="13.23cm" y1="4.54cm" x2="13.23cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="15.00cm" y1="4.54cm" x2="15.00cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="16.78cm" y1="4.54cm" x2="16.78cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="18.55cm" y1="4.54cm" x2="18.55cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<polygon fill="#000000" style="stroke:#000000;  stroke-width:0.50pt;" points="651.92,467.11 653.69,473.36 651.92,479.61 650.15,473.36"/>
+<polygon fill="#000000" style="stroke:#000000;  stroke-width:0.50pt;" points="630.16,488.99 631.94,495.24 630.16,501.49 628.39,495.24"/>
+<polygon fill="#000000" style="stroke:#000000;  stroke-width:0.50pt;" points="645.33,663.99 647.10,670.24 645.33,676.49 643.56,670.24"/>
+<polygon fill="#000000" style="stroke:#000000;  stroke-width:0.50pt;" points="633.84,817.11 635.61,823.36 633.84,829.61 632.07,823.36"/>
+<text x="9.34cm" y="3.13cm" style="fill:#000000;font-size:14pt; font-family:sans-serif;">Timeline Chart</text>
+<text x="7.22cm" y="3.74cm" style="fill:#000000;font-size:14pt; font-family:sans-serif;">Entire Database -- Sorted by Birth Date</text>
+<text x="9.41cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">-50</text>
+<text x="11.16cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">360</text>
+<text x="12.94cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">770</text>
+<text x="14.65cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">1180</text>
+<text x="16.42cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">1590</text>
+<text x="18.19cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">2000</text>
+<text x="3.16cm" y="5.58cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Arnold, ???????</text>
+<text x="3.16cm" y="6.20cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Austin, Hans</text>
+<text x="3.16cm" y="6.82cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Baldwin, Peter</text>
+<text x="3.16cm" y="7.43cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, Ezekiel</text>
+<text x="3.16cm" y="8.05cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, Ida E.</text>
+<text x="3.16cm" y="8.67cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, John DeKalb</text>
+<text x="3.16cm" y="9.28cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, Lucy A.</text>
+<text x="3.16cm" y="9.90cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, Mary Elizabeth</text>
+<text x="3.16cm" y="10.52cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, Maude Waldon</text>
+<text x="3.16cm" y="11.14cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, Nathanial Green</text>
+<text x="3.16cm" y="11.75cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, William M.</text>
+<text x="3.16cm" y="12.37cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Ball, William M.</text>
+<text x="3.16cm" y="12.99cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Barker, Mary</text>
+<text x="3.16cm" y="13.61cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Barnes, Ernestina</text>
+<text x="3.16cm" y="14.22cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Bass, Mary</text>
+<text x="3.16cm" y="14.84cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Beck, Jack</text>
+<text x="3.16cm" y="15.46cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Bédard, Swanson</text>
+<text x="3.16cm" y="16.08cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Bélanger, Adrian</text>
+<text x="3.16cm" y="16.69cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Benson, Elizabeth</text>
+<text x="3.16cm" y="17.31cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Benson, Mary</text>
+<text x="3.16cm" y="17.93cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Benson, Nancy</text>
+<text x="3.16cm" y="18.55cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Benson, Walter</text>
+<text x="3.16cm" y="19.16cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Bernier, Margaret</text>
+<text x="3.16cm" y="19.78cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blais, ??</text>
+<text x="3.16cm" y="20.40cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blake, Conrad</text>
+<text x="3.16cm" y="21.01cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blanco, Anna Maria</text>
+<text x="3.16cm" y="21.63cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blanco, Barbara</text>
+<text x="3.16cm" y="22.25cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blanco, Catarina</text>
+<text x="3.16cm" y="22.87cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blanco, Elizabeth</text>
+<text x="3.16cm" y="23.48cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blanco, Henry</text>
+<text x="3.16cm" y="24.10cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blanco, Margareta</text>
+<text x="3.16cm" y="24.72cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blanco, Mary</text>
+<text x="3.16cm" y="25.34cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Blanco, Peter</text>
+</svg>

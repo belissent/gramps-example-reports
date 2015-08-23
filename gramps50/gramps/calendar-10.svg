@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="21.59cm" height="27.94cm" xmlns="http://www.w3.org/2000/svg">
+<rect width="21.59cm" height="27.94cm" style="fill: none;"/>
+<line x1="2.54cm" y1="2.54cm" x2="2.54cm" y2="25.40cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="2.54cm" x2="19.05cm" y2="2.54cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="19.05cm" y1="2.54cm" x2="19.05cm" y2="25.40cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="25.40cm" x2="19.05cm" y2="25.40cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<rect x="2.54cm" y="2.54cm" width="16.51cm" height="2.54cm" style="fill:#eaeaea; stroke:#000000; stroke-width:0.000000;"/>
+<line x1="2.54cm" y1="5.08cm" x2="19.05cm" y2="5.08cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="5.08cm" x2="9.62cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="5.08cm" x2="11.97cm" y2="5.08cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="5.08cm" x2="11.97cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="8.47cm" x2="11.97cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="5.08cm" x2="11.97cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="5.08cm" x2="14.33cm" y2="5.08cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="5.08cm" x2="14.33cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="8.47cm" x2="14.33cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="5.08cm" x2="14.33cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="5.08cm" x2="16.69cm" y2="5.08cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="5.08cm" x2="16.69cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="8.47cm" x2="16.69cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="5.08cm" x2="16.69cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="5.08cm" x2="19.05cm" y2="5.08cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="19.05cm" y1="5.08cm" x2="19.05cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="8.47cm" x2="19.05cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="8.47cm" x2="2.54cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="8.47cm" x2="4.90cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="8.47cm" x2="4.90cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="11.85cm" x2="4.90cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="8.47cm" x2="4.90cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="8.47cm" x2="7.26cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="8.47cm" x2="7.26cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="11.85cm" x2="7.26cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="8.47cm" x2="7.26cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="8.47cm" x2="9.62cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="8.47cm" x2="9.62cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="11.85cm" x2="9.62cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="8.47cm" x2="9.62cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="8.47cm" x2="11.97cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="8.47cm" x2="11.97cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="11.85cm" x2="11.97cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="8.47cm" x2="11.97cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="8.47cm" x2="14.33cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="8.47cm" x2="14.33cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="11.85cm" x2="14.33cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="8.47cm" x2="14.33cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="8.47cm" x2="16.69cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="8.47cm" x2="16.69cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="11.85cm" x2="16.69cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="8.47cm" x2="16.69cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="8.47cm" x2="19.05cm" y2="8.47cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="19.05cm" y1="8.47cm" x2="19.05cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="11.85cm" x2="19.05cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="11.85cm" x2="2.54cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="11.85cm" x2="4.90cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="11.85cm" x2="4.90cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="15.24cm" x2="4.90cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="11.85cm" x2="4.90cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="11.85cm" x2="7.26cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="11.85cm" x2="7.26cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="15.24cm" x2="7.26cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="11.85cm" x2="7.26cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="11.85cm" x2="9.62cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="11.85cm" x2="9.62cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="15.24cm" x2="9.62cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="11.85cm" x2="9.62cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="11.85cm" x2="11.97cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="11.85cm" x2="11.97cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="15.24cm" x2="11.97cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="11.85cm" x2="11.97cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="11.85cm" x2="14.33cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="11.85cm" x2="14.33cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="15.24cm" x2="14.33cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="11.85cm" x2="14.33cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="11.85cm" x2="16.69cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="11.85cm" x2="16.69cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="15.24cm" x2="16.69cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="11.85cm" x2="16.69cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="11.85cm" x2="19.05cm" y2="11.85cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="19.05cm" y1="11.85cm" x2="19.05cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="15.24cm" x2="19.05cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="15.24cm" x2="2.54cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="15.24cm" x2="4.90cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="15.24cm" x2="4.90cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="18.63cm" x2="4.90cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="15.24cm" x2="4.90cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="15.24cm" x2="7.26cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="15.24cm" x2="7.26cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="18.63cm" x2="7.26cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="15.24cm" x2="7.26cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="15.24cm" x2="9.62cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="15.24cm" x2="9.62cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="18.63cm" x2="9.62cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="15.24cm" x2="9.62cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="15.24cm" x2="11.97cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="15.24cm" x2="11.97cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="18.63cm" x2="11.97cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="15.24cm" x2="11.97cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="15.24cm" x2="14.33cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="15.24cm" x2="14.33cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="18.63cm" x2="14.33cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="15.24cm" x2="14.33cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="15.24cm" x2="16.69cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="15.24cm" x2="16.69cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="18.63cm" x2="16.69cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="15.24cm" x2="16.69cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="15.24cm" x2="19.05cm" y2="15.24cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="19.05cm" y1="15.24cm" x2="19.05cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="18.63cm" x2="19.05cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="18.63cm" x2="2.54cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="18.63cm" x2="4.90cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="18.63cm" x2="4.90cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="2.54cm" y1="22.01cm" x2="4.90cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="18.63cm" x2="4.90cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="18.63cm" x2="7.26cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="18.63cm" x2="7.26cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="4.90cm" y1="22.01cm" x2="7.26cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="18.63cm" x2="7.26cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="18.63cm" x2="9.62cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="18.63cm" x2="9.62cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="7.26cm" y1="22.01cm" x2="9.62cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="18.63cm" x2="9.62cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="18.63cm" x2="11.97cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="18.63cm" x2="11.97cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="9.62cm" y1="22.01cm" x2="11.97cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="18.63cm" x2="11.97cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="18.63cm" x2="14.33cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="18.63cm" x2="14.33cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="11.97cm" y1="22.01cm" x2="14.33cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="18.63cm" x2="14.33cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="18.63cm" x2="16.69cm" y2="18.63cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="16.69cm" y1="18.63cm" x2="16.69cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<line x1="14.33cm" y1="22.01cm" x2="16.69cm" y2="22.01cm" style="stroke:#000000; stroke-width:0.50pt;"/>
+<text x="8.98cm" y="3.56cm" style="fill:#000000;font-weight:bold;font-style:italic;font-size:20pt; font-family:serif;">Octobre 2015</text>
+<text x="3.14cm" y="4.95cm" style="fill:#000000;font-weight:bold;font-style:italic;font-size:12pt; font-family:serif;">Lundi</text>
+<text x="5.49cm" y="4.95cm" style="fill:#000000;font-weight:bold;font-style:italic;font-size:12pt; font-family:serif;">Mardi</text>
+<text x="7.64cm" y="4.95cm" style="fill:#000000;font-weight:bold;font-style:italic;font-size:12pt; font-family:serif;">Mercredi</text>
+<text x="10.25cm" y="4.95cm" style="fill:#000000;font-weight:bold;font-style:italic;font-size:12pt; font-family:serif;">Jeudi</text>
+<text x="12.36cm" y="4.95cm" style="fill:#000000;font-weight:bold;font-style:italic;font-size:12pt; font-family:serif;">Vendredi</text>
+<text x="14.84cm" y="4.95cm" style="fill:#000000;font-weight:bold;font-style:italic;font-size:12pt; font-family:serif;">Samedi</text>
+<text x="16.99cm" y="4.95cm" style="fill:#000000;font-weight:bold;font-style:italic;font-size:12pt; font-family:serif;">Dimanche</text>
+<text x="10.52cm" y="5.63cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">1</text>
+<text x="9.72cm" y="8.35cm" style="fill:#000000;font-size:9pt; font-family:serif;">Garner, Vanich...</text>
+<text x="9.72cm" y="7.95cm" style="fill:#000000;font-size:9pt; font-family:serif;"> Герасимов, Jo...</text>
+<text x="2.54cm" y="2.92cm" style="fill:#000000;font-size:9pt; font-family:serif;"></text>
+<text x="9.72cm" y="7.56cm" style="fill:#000000;font-size:9pt; font-family:serif;">Garrett, Doris ...</text>
+<text x="2.54cm" y="2.92cm" style="fill:#000000;font-size:9pt; font-family:serif;"></text>
+<text x="12.88cm" y="5.63cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">2</text>
+<text x="12.07cm" y="8.35cm" style="fill:#000000;font-size:9pt; font-family:serif;">Evans, James P...</text>
+<text x="12.07cm" y="7.95cm" style="fill:#000000;font-size:9pt; font-family:serif;">Wheeler, Richa...</text>
+<text x="15.24cm" y="5.63cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">3</text>
+<text x="14.43cm" y="8.35cm" style="fill:#000000;font-size:9pt; font-family:serif;">Gosselin, Joel ...</text>
+<text x="14.43cm" y="7.95cm" style="fill:#000000;font-size:9pt; font-family:serif;">Hale, Gina Mar...</text>
+<text x="17.60cm" y="5.63cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">4</text>
+<text x="16.79cm" y="8.35cm" style="fill:#000000;font-size:9pt; font-family:serif;">Cruz, Marsha ...</text>
+<text x="16.79cm" y="7.95cm" style="fill:#000000;font-size:9pt; font-family:serif;">Warner, Christ...</text>
+<text x="3.45cm" y="9.02cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">5</text>
+<text x="2.64cm" y="11.74cm" style="fill:#000000;font-size:9pt; font-family:serif;">Garner, Stephe...</text>
+<text x="2.64cm" y="11.34cm" style="fill:#000000;font-size:9pt; font-family:serif;">Wheeler, Lynn...</text>
+<text x="5.81cm" y="9.02cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">6</text>
+<text x="5.00cm" y="11.74cm" style="fill:#000000;font-size:9pt; font-family:serif;">Osborne, Julia ...</text>
+<text x="8.17cm" y="9.02cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">7</text>
+<text x="7.36cm" y="11.74cm" style="fill:#000000;font-size:9pt; font-family:serif;"> Garner, John ...</text>
+<text x="2.54cm" y="2.92cm" style="fill:#000000;font-size:9pt; font-family:serif;"></text>
+<text x="7.36cm" y="11.34cm" style="fill:#000000;font-size:9pt; font-family:serif;">Брюханов, Viol...</text>
+<text x="2.54cm" y="2.92cm" style="fill:#000000;font-size:9pt; font-family:serif;"></text>
+<text x="10.52cm" y="9.02cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">8</text>
+<text x="9.72cm" y="11.74cm" style="fill:#000000;font-size:9pt; font-family:serif;">Warner, Robert...</text>
+<text x="12.88cm" y="9.02cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">9</text>
+<text x="15.15cm" y="9.02cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">10</text>
+<text x="14.43cm" y="11.74cm" style="fill:#000000;font-size:9pt; font-family:serif;">Díez, William ...</text>
+<text x="14.43cm" y="11.34cm" style="fill:#000000;font-size:9pt; font-family:serif;">Lane, Joseph E...</text>
+<text x="14.43cm" y="10.94cm" style="fill:#000000;font-size:9pt; font-family:serif;">Warner, Sheryl...</text>
+<text x="17.51cm" y="9.02cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">11</text>
+<text x="3.36cm" y="12.40cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">12</text>
+<text x="5.72cm" y="12.40cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">13</text>
+<text x="8.08cm" y="12.40cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">14</text>
+<text x="7.36cm" y="15.12cm" style="fill:#000000;font-size:9pt; font-family:serif;">Warner, Shirle...</text>
+<text x="10.43cm" y="12.40cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">15</text>
+<text x="9.72cm" y="15.12cm" style="fill:#000000;font-size:9pt; font-family:serif;">Cruz, Thomas ...</text>
+<text x="12.79cm" y="12.40cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">16</text>
+<text x="12.07cm" y="15.12cm" style="fill:#000000;font-size:9pt; font-family:serif;">Garner, Mark ...</text>
+<text x="12.07cm" y="14.73cm" style="fill:#000000;font-size:9pt; font-family:serif;">Norman, Dorot...</text>
+<text x="12.07cm" y="14.33cm" style="fill:#000000;font-size:9pt; font-family:serif;"> Harrison, Paul ...</text>
+<text x="2.54cm" y="2.92cm" style="fill:#000000;font-size:9pt; font-family:serif;"></text>
+<text x="12.07cm" y="13.93cm" style="fill:#000000;font-size:9pt; font-family:serif;">Данилов, Luci...</text>
+<text x="2.54cm" y="2.92cm" style="fill:#000000;font-size:9pt; font-family:serif;"></text>
+<text x="15.15cm" y="12.40cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">17</text>
+<text x="14.43cm" y="15.12cm" style="fill:#000000;font-size:9pt; font-family:serif;">Bélanger, Amy...</text>
+<text x="17.51cm" y="12.40cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">18</text>
+<text x="3.36cm" y="15.79cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">19</text>
+<text x="5.72cm" y="15.79cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">20</text>
+<text x="5.00cm" y="18.51cm" style="fill:#000000;font-size:9pt; font-family:serif;">Garner, Jason ...</text>
+<text x="5.00cm" y="18.11cm" style="fill:#000000;font-size:9pt; font-family:serif;">Osborne, Andr...</text>
+<text x="5.00cm" y="17.72cm" style="fill:#000000;font-size:9pt; font-family:serif;">Warner, Monic...</text>
+<text x="5.00cm" y="17.32cm" style="fill:#000000;font-size:9pt; font-family:serif;">Warner, Nancy...</text>
+<text x="8.08cm" y="15.79cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">21</text>
+<text x="7.36cm" y="18.51cm" style="fill:#000000;font-size:9pt; font-family:serif;">Garner, Bernet...</text>
+<text x="10.43cm" y="15.79cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">22</text>
+<text x="9.72cm" y="18.51cm" style="fill:#000000;font-size:9pt; font-family:serif;">Gagnon, Bettie ...</text>
+<text x="9.72cm" y="18.11cm" style="fill:#000000;font-size:9pt; font-family:serif;">Максимов, Rod...</text>
+<text x="12.79cm" y="15.79cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">23</text>
+<text x="12.07cm" y="18.51cm" style="fill:#000000;font-size:9pt; font-family:serif;">Flores, Jamie L...</text>
+<text x="12.07cm" y="18.11cm" style="fill:#000000;font-size:9pt; font-family:serif;"> Garner, Richar...</text>
+<text x="2.54cm" y="2.92cm" style="fill:#000000;font-size:9pt; font-family:serif;"></text>
+<text x="12.07cm" y="17.72cm" style="fill:#000000;font-size:9pt; font-family:serif;">Gibbs, Elaine a...</text>
+<text x="2.54cm" y="2.92cm" style="fill:#000000;font-size:9pt; font-family:serif;"></text>
+<text x="12.07cm" y="17.32cm" style="fill:#000000;font-size:9pt; font-family:serif;">Данилов, Elain...</text>
+<text x="15.15cm" y="15.79cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">24</text>
+<text x="17.51cm" y="15.79cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">25</text>
+<text x="16.79cm" y="18.51cm" style="fill:#000000;font-size:9pt; font-family:serif;">Wójcik, Patrici...</text>
+<text x="3.36cm" y="19.18cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">26</text>
+<text x="2.64cm" y="21.90cm" style="fill:#000000;font-size:9pt; font-family:serif;">Gill, Lawrence,...</text>
+<text x="2.64cm" y="21.50cm" style="fill:#000000;font-size:9pt; font-family:serif;">Harrison, Paul ...</text>
+<text x="2.64cm" y="21.10cm" style="fill:#000000;font-size:9pt; font-family:serif;">Данилов, Dani...</text>
+<text x="5.72cm" y="19.18cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">27</text>
+<text x="5.00cm" y="21.90cm" style="fill:#000000;font-size:9pt; font-family:serif;">Willis, Carissa ...</text>
+<text x="8.08cm" y="19.18cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">28</text>
+<text x="10.43cm" y="19.18cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">29</text>
+<text x="9.72cm" y="21.90cm" style="fill:#000000;font-size:9pt; font-family:serif;">Bates, John All...</text>
+<text x="9.72cm" y="21.50cm" style="fill:#000000;font-size:9pt; font-family:serif;">Garner, John R...</text>
+<text x="9.72cm" y="21.10cm" style="fill:#000000;font-size:9pt; font-family:serif;">Webb, Joan Lo...</text>
+<text x="12.79cm" y="19.18cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">30</text>
+<text x="12.07cm" y="21.90cm" style="fill:#000000;font-size:9pt; font-family:serif;">Hale, Lawrenc...</text>
+<text x="12.07cm" y="21.50cm" style="fill:#000000;font-size:9pt; font-family:serif;">Warner, Jeffrey...</text>
+<text x="15.15cm" y="19.18cm" style="fill:#000000;font-weight:bold;font-size:13pt; font-family:serif;">31</text>
+<text x="9.75cm" y="24.00cm" style="fill:#000000;font-size:12pt; font-family:serif;">My Calendar</text>
+<text x="9.09cm" y="24.64cm" style="fill:#000000;font-size:12pt; font-family:serif;">Produced with Gramps</text>
+<text x="9.38cm" y="25.15cm" style="fill:#000000;font-size:9pt; font-family:serif;">http://gramps-project.org/</text>
+</svg>

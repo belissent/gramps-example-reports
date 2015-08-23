@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="21.59cm" height="27.94cm" xmlns="http://www.w3.org/2000/svg">
+<rect width="21.59cm" height="27.94cm" style="fill: none;"/>
+<line x1="9.69cm" y1="4.54cm" x2="9.69cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="11.46cm" y1="4.54cm" x2="11.46cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="13.23cm" y1="4.54cm" x2="13.23cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="15.00cm" y1="4.54cm" x2="15.00cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="16.78cm" y1="4.54cm" x2="16.78cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<line x1="18.55cm" y1="4.54cm" x2="18.55cm" y2="25.40cm" style="stroke:#000000; stroke-dasharray: 2,4; stroke-width:0.50pt;"/>
+<polygon fill="#000000" style="stroke:#000000;  stroke-width:0.50pt;" points="626.03,248.37 627.80,254.62 626.03,260.87 624.26,254.62"/>
+<polygon fill="#000000" style="stroke:#000000;  stroke-width:0.50pt;" points="620.05,292.12 621.82,298.37 620.05,304.62 618.28,298.37"/>
+<polygon fill="#000000" style="stroke:#000000;  stroke-width:0.50pt;" points="631.54,488.99 633.31,495.24 631.54,501.49 629.77,495.24"/>
+<polygon fill="#000000" style="stroke:#000000;  stroke-width:0.50pt;" points="646.86,773.36 648.64,779.61 646.86,785.86 645.09,779.61"/>
+<text x="9.34cm" y="3.13cm" style="fill:#000000;font-size:14pt; font-family:sans-serif;">Timeline Chart</text>
+<text x="7.22cm" y="3.74cm" style="fill:#000000;font-size:14pt; font-family:sans-serif;">Entire Database -- Sorted by Birth Date</text>
+<text x="9.41cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">-50</text>
+<text x="11.16cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">360</text>
+<text x="12.94cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">770</text>
+<text x="14.65cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">1180</text>
+<text x="16.42cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">1590</text>
+<text x="18.19cm" y="4.54cm" style="fill:#000000;font-size:8pt; font-family:sans-serif;">2000</text>
+<text x="3.16cm" y="5.58cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Castro, ???</text>
+<text x="3.16cm" y="6.20cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Chambers, William</text>
+<text x="3.16cm" y="6.82cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Christensen, William</text>
+<text x="3.16cm" y="7.43cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Christiansen, Frances</text>
+<text x="3.16cm" y="8.05cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Coleman</text>
+<text x="3.16cm" y="8.67cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Cole, Susannah</text>
+<text x="3.16cm" y="9.28cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Colon, William</text>
+<text x="3.16cm" y="9.90cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Couture, Honora</text>
+<text x="3.16cm" y="10.52cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Craig, Mary J.</text>
+<text x="3.16cm" y="11.14cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Crawford, Lori</text>
+<text x="3.16cm" y="11.75cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Cross, Loraine (Fanny)</text>
+<text x="3.16cm" y="12.37cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Cross, Ralph (Scotty)</text>
+<text x="3.16cm" y="12.99cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Cross, Thomas</text>
+<text x="3.16cm" y="13.61cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Cummings, Leonnah</text>
+<text x="3.16cm" y="14.22cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Cunningham, Peter Sr.</text>
+<text x="3.16cm" y="14.84cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Dąbrowski, Letitia C.</text>
+<text x="3.16cm" y="15.46cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Daniels, Phoebe</text>
+<text x="3.16cm" y="16.08cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Daniels</text>
+<text x="3.16cm" y="16.69cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Davis, Benjamin</text>
+<text x="3.16cm" y="17.31cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Davis, John</text>
+<text x="3.16cm" y="17.93cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Dawson, Mary</text>
+<text x="3.16cm" y="18.55cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Dawson</text>
+<text x="3.16cm" y="19.16cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Day, Charles</text>
+<text x="3.16cm" y="19.78cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Dean, John</text>
+<text x="3.16cm" y="20.40cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Delgado, Catherine</text>
+<text x="3.16cm" y="21.01cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Delgado</text>
+<text x="3.16cm" y="21.63cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Dennis, Mary (Hannah?)</text>
+<text x="3.16cm" y="22.25cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Dennis, Susan</text>
+<text x="3.16cm" y="22.87cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Desjardins, J.</text>
+<text x="3.16cm" y="23.48cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Diaz, Anne</text>
+<text x="3.16cm" y="24.10cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Diaz, Clemence</text>
+<text x="3.16cm" y="24.72cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Diaz, Cuthbert</text>
+<text x="3.16cm" y="25.34cm" style="fill:#000000;font-size:10pt; font-family:sans-serif;">Diaz, James</text>
+</svg>

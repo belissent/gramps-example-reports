@@ -1,0 +1,2149 @@
+\documentclass[12pt,letterpaper]{article}
+%
+%
+\usepackage[T1]{fontenc}%
+%
+% We use latin1 encoding at a minimum by default.
+% GRAMPS uses unicode UTF-8 encoding for its
+% international support. LaTeX can deal gracefully
+% with unicode encoding by using the ucs style invoked
+% when utf8 is specified as an option to the inputenc
+% package. This package is included by default in some
+% installations, but not in others, so we do not make it
+% the default.  Uncomment the first line if you wish to use it
+% (If you do not have ucs.sty, you may obtain it from
+%  http://www.tug.org/tex-archive/macros/latex/contrib/supported/unicode/)
+%
+%\usepackage[latin1]{inputenc}%
+\usepackage[latin1,utf8]{inputenc}%
+\usepackage{graphicx}% Extended graphics support
+\usepackage{longtable}% For multi-page tables
+\usepackage{calc}% For some calculations
+\usepackage{ifthen}% For table width calculations
+\usepackage{ragged2e}% For left aligning with hyphenation
+\usepackage{wrapfig}% wrap pictures in text
+%
+% Depending on your LaTeX installation, the margins may be too
+% narrow.  This can be corrected by uncommenting the following
+% two lines and adjusting the width appropriately. The example
+% removes 0.5in from each margin. (Adds 1 inch to the text)
+%\addtolength{\oddsidemargin}{-0.5in}%
+%\addtolength{\textwidth}{1.0in}%
+%
+% Vertical spacing between paragraphs:
+% take one of three possibilities or modify to your taste:
+%\setlength{\parskip}{1.0ex plus0.2ex minus0.2ex}%
+\setlength{\parskip}{1.5ex plus0.3ex minus0.3ex}%
+%\setlength{\parskip}{2.0ex plus0.4ex minus0.4ex}%
+%
+% Vertical spacing between lines:
+% take one of three possibilities or modify to your taste:
+\renewcommand{\baselinestretch}{1.0}%
+%\renewcommand{\baselinestretch}{1.1}%
+%\renewcommand{\baselinestretch}{1.2}%
+%
+% Indentation; substitute for '1cm' of gramps, 2.5em is right for 12pt
+% take one of three possibilities or modify to your taste:
+\newlength{\grbaseindent}%
+%\setlength{\grbaseindent}{3.0em}%
+\setlength{\grbaseindent}{2.5em}%
+%\setlength{\grbaseindent}{2.0em}%
+%
+%
+% -------------------------------------------------------------
+% New lengths, counters and commands for calculations in tables
+% -------------------------------------------------------------
+%
+\newlength{\grtabwidth}%
+\newlength{\grtabprepos}%
+\newlength{\grreqwidth}%
+\newlength{\grtempwd}%
+\newlength{\grmaxwidth}%
+\newlength{\grprorated}%
+\newlength{\grxwd}%
+\newlength{\grwidthused}%
+\newlength{\grreduce}%
+\newlength{\grcurcolend}%
+\newlength{\grspanwidth}%
+\newlength{\grleadlabelwidth}%
+\newlength{\grminpgindent}%
+\newlength{\grlistbacksp}%
+\newlength{\grpictsize}%
+\newlength{\grmaxpictsize}%
+\newlength{\grtextsize}%
+\newlength{\grmaxtextsize}%
+\newcounter{grtofixcnt}%
+\newcounter{grxwdcolcnt}%
+%
+%
+\newcommand{\grinitlength}[2]{%
+  \ifthenelse{\isundefined{#1}}%
+    {\newlength{#1}}{}%
+  \setlength{#1}{#2}%
+}%
+%
+\newcommand{\grinittab}[2]{%    #1: tabwidth, #2 = 1.0/anz-cols
+  \setlength{\grtabwidth}{#1}%
+  \setlength{\grprorated}{#2\grtabwidth}%
+  \setlength{\grwidthused}{0em}%
+  \setlength{\grreqwidth}{0em}%
+  \setlength{\grmaxwidth }{0em}%
+  \setlength{\grxwd}{0em}%
+  \setlength{\grtempwd}{0em}%
+  \setlength{\grpictsize}{0em}%
+  \setlength{\grmaxpictsize}{0em}%
+  \setlength{\grtextsize}{0em}%
+  \setlength{\grmaxtextsize}{0em}%
+  \setlength{\grcurcolend}{0em}%
+  \setcounter{grxwdcolcnt}{0}%
+  \setcounter{grtofixcnt}{0}%  number of wide cols%
+  \grinitlength{\grcolbega}{0em}% beg of first col
+}%
+%
+\newcommand{\grmaxvaltofirst}[2]{%
+  \ifthenelse{\lengthtest{#1 < #2}}%
+    {\setlength{#1}{#2}}{}%
+}%
+%
+\newcommand{\grsetreqfull}{%
+  \grmaxvaltofirst{\grmaxpictsize}{\grpictsize}%
+  \grmaxvaltofirst{\grmaxtextsize}{\grtextsize}%
+}%
+%
+\newcommand{\grsetreqpart}[1]{%
+  \addtolength{\grtextsize}{#1 - \grcurcolend}%
+  \addtolength{\grpictsize}{#1 - \grcurcolend}%
+  \grsetreqfull%
+}%
+%
+\newcommand{\grdividelength}{%
+ \setlength{\grtempwd}{\grtabwidth - \grwidthused}%
+%    rough division of lengths:
+%    if 0 < #1 <= 10: \grxwd = ~\grtempwd / grtofixcnt
+%    otherwise: \grxwd =  \grprorated
+ \ifthenelse{\value{grtofixcnt} > 0}%
+  {\ifthenelse{\value{grtofixcnt}=1}%
+                    {\setlength{\grxwd}{\grtempwd}}{%
+    \ifthenelse{\value{grtofixcnt}=2}
+                    {\setlength{\grxwd}{0.5\grtempwd}}{%
+     \ifthenelse{\value{grtofixcnt}=3}
+                    {\setlength{\grxwd}{0.333\grtempwd}}{%
+      \ifthenelse{\value{grtofixcnt}=4}
+                    {\setlength{\grxwd}{0.25\grtempwd}}{%
+       \ifthenelse{\value{grtofixcnt}=5}
+                    {\setlength{\grxwd}{0.2\grtempwd}}{%
+        \ifthenelse{\value{grtofixcnt}=6}
+                    {\setlength{\grxwd}{0.166\grtempwd}}{%
+         \ifthenelse{\value{grtofixcnt}=7}
+                    {\setlength{\grxwd}{0.143\grtempwd}}{%
+          \ifthenelse{\value{grtofixcnt}=8}
+                    {\setlength{\grxwd}{0.125\grtempwd}}{%
+           \ifthenelse{\value{grtofixcnt}=9}
+                    {\setlength{\grxwd}{0.111\grtempwd}}{%
+            \ifthenelse{\value{grtofixcnt}=10}
+                    {\setlength{\grxwd}{0.1\grtempwd}}{%
+             \setlength{\grxwd}{\grprorated}% give up, take \grprorated%
+    }}}}}}}}}}%
+  \setlength{\grreduce}{0em}%
+  }{\setlength{\grxwd}{0em}}%
+}%
+%
+\newcommand{\grtextneedwidth}[1]{%
+  \settowidth{\grtempwd}{#1}%
+  \grmaxvaltofirst{\grtextsize}{\grtempwd}%
+}%
+%
+\newcommand{\grcolsfirstfix}[5]{%
+  \grinitlength{#1}{\grcurcolend}%
+  \grinitlength{#3}{0em}%
+  \grinitlength{#4}{\grmaxpictsize}%
+  \grinitlength{#5}{\grmaxtextsize}%
+  \grinitlength{#2}{#5}%
+  \grmaxvaltofirst{#2}{#4}%
+  \addtolength{#2}{2\tabcolsep}%
+  \grmaxvaltofirst{\grmaxwidth}{#2}%
+  \ifthenelse{\lengthtest{#2 < #4} \or \lengthtest{#2 < \grprorated}}%
+    { \setlength{#3}{#2}%
+      \addtolength{\grwidthused}{#2} }%
+    { \stepcounter{grtofixcnt} }%
+  \addtolength{\grcurcolend}{#2}%
+}%
+%
+\newcommand{\grcolssecondfix}[4]{%
+  \ifthenelse{\lengthtest{\grcurcolend < \grtabwidth}}%
+    { \setlength{#3}{#2} }%
+    { \addtolength{#1}{-\grreduce}%
+      \ifthenelse{\lengthtest{#2 = \grmaxwidth}}%
+        { \stepcounter{grxwdcolcnt}}%
+        { \ifthenelse{\lengthtest{#3 = 0em} \and %
+                       \lengthtest{#4 > 0em}}%
+            { \setlength{\grtempwd}{#4}%
+              \grmaxvaltofirst{\grtempwd}{\grxwd}%
+              \addtolength{\grreduce}{#2 - \grtempwd}%
+              \setlength{#2}{\grtempwd}%
+              \addtolength{\grwidthused}{#2}%
+              \addtocounter{grtofixcnt}{-1}%
+              \setlength{#3}{#2}%
+            }{}%
+        }%
+    }%
+}%
+%
+\newcommand{\grcolsthirdfix}[3]{%
+  \ifthenelse{\lengthtest{\grcurcolend < \grtabwidth}}%
+    {}{ \addtolength{#1}{-\grreduce}%
+        \ifthenelse{\lengthtest{#3 = 0em} \and %
+                     \lengthtest{#2 < \grmaxwidth}}%
+          { \ifthenelse{\lengthtest{#2 < 0.5\grmaxwidth}}%
+              { \setlength{\grtempwd}{0.5\grxwd}%
+                \grmaxvaltofirst{\grtempwd}{0.7\grprorated}}%
+              { \setlength{\grtempwd}{\grxwd}}%
+            \addtolength{\grreduce}{#2 - \grtempwd}%
+            \setlength{#2}{\grtempwd}%
+            \addtolength{\grwidthused}{#2}%
+            \addtocounter{grtofixcnt}{-1}%
+            \setlength{#3}{#2}%
+          }{}%
+      }%
+}%
+%
+\newcommand{\grcolsfourthfix}[3]{%
+  \ifthenelse{\lengthtest{\grcurcolend < \grtabwidth}}%
+    {}{ \addtolength{#1}{-\grreduce}%
+        \ifthenelse{\lengthtest{#3 = 0em}}%
+          { \addtolength{\grreduce}{#2 - \grxwd}%
+            \setlength{#2}{\grxwd}%
+            \setlength{#3}{#2}%
+          }{}%
+      }%
+}%
+%
+\newcommand{\grgetspanwidth}[4]{%
+  \grinitlength{#1}{#3 - #2 + #4}%
+}%
+%
+\newcommand{\tabheadstrutceil}{%
+  \rule[0.0ex]{0.00em}{3.5ex}}%
+\newcommand{\tabheadstrutfloor}{%
+  \rule[-2.0ex]{0.00em}{2.5ex}}%
+\newcommand{\tabrowstrutceil}{%
+  \rule[0.0ex]{0.00em}{2.9ex}}%
+\newcommand{\tabrowstrutfloor}{%
+  \rule[-0.1ex]{0.00em}{2.0ex}}%
+%
+\newcommand{\grempty}[1]{}%
+%
+\newcommand{\graddvdots}[1]{%
+  \hspace*{\fill}\hspace*{\fill}\raisebox{#1}{\vdots}%
+}%
+%
+\newcommand{\grtabpgbreak}[4]{%
+  #1 { \parbox[t]{ #2 - 2\tabcolsep}{\tabheadstrutceil\hspace*{\fill}%
+  \raisebox{#4}{\vdots} #3{#4} \hspace*{\fill}\tabheadstrutfloor}}%
+}%
+%
+\newcommand{\grcolpart}[3]{%
+  #1 { \parbox[t]{ #2 - 2\tabcolsep}%
+  {\tabrowstrutceil #3~\\[-1.6ex]\tabrowstrutfloor}}%
+}%
+%
+\newcommand{\grminpghead}[2]{%
+  \setlength{\grminpgindent}{#1\grbaseindent-\grlistbacksp}%
+  \hspace*{\grminpgindent}%
+  \ifthenelse{\not \lengthtest{#2em > 0em}}%
+    {\begin{minipage}[t]{\textwidth -\grminpgindent}}%
+    {\begin{minipage}[t]{\textwidth -\grminpgindent%
+        -#2\grbaseindent -4\tabcolsep}}%
+}%
+%
+\newcommand{\grminpgtail}{%
+  \end{minipage}\parindent0em%
+}%
+%
+\newcommand{\grlisthead}[1]{%
+  \begin{list}{#1}%
+    { \setlength{\labelsep}{0.5em}%
+      \setlength{\labelwidth}{\grleadlabelwidth}%
+      \setlength{\leftmargin}{\grlistbacksp}%
+    }\item%
+}%
+%
+\newcommand{\grlisttail}{%
+  \end{list}%
+}%
+%
+\newcommand{\grprepleader}[1]{%
+  \settowidth{\grtempwd}{#1}%
+  \ifthenelse{\lengthtest{\grtempwd > \grleadlabelwidth}}%
+    { \setlength{\grleadlabelwidth}{\grtempwd}}{}%
+  \setlength{\grlistbacksp}{\grleadlabelwidth + 1.0em}%
+}%
+%
+\newcommand{\grprepnoleader}{%
+  \setlength{\grleadlabelwidth}{0em}%
+  \setlength{\grlistbacksp}{0em}%
+}%
+%
+\newcommand{\grmkpicture}[4]{%
+    \begin{wrapfigure}{r}{#2\grbaseindent}%
+      \vspace{-6ex}%
+      \begin{center}%
+      \includegraphics[%
+        width= #2\grbaseindent,%
+        height= #3\grbaseindent,%
+          keepaspectratio]%
+        {#1}\\%
+      {\RaggedRight\footnotesize#4}%
+      \end{center}%
+    \end{wrapfigure}%
+    \settowidth{\grtempwd}{\footnotesize#4}%
+    \setlength{\grxwd}{#2\grbaseindent}%
+    \ifthenelse{\lengthtest{\grtempwd < 0.7\grxwd}}%
+                    {\setlength{\grxwd}{1ex}}{%
+      \ifthenelse{\lengthtest{\grtempwd < 1.2\grxwd}}%
+                    {\setlength{\grxwd}{2ex}}{%
+        \ifthenelse{\lengthtest{\grtempwd < 1.8\grxwd}}%
+                    {\setlength{\grxwd}{6ex}}{%
+          \ifthenelse{\lengthtest{\grtempwd < 2.0\grxwd}}%
+                    {\setlength{\grxwd}{10ex}}{%
+                     \setlength{\grxwd}{12ex}}%
+                    }}}%
+  \setlength{\grtempwd}{#3\grbaseindent + \grxwd}%
+  \rule[-\grtempwd]{0pt}{\grtempwd}%
+  \setlength{\grtabprepos}{-\grtempwd}%
+}%
+%
+%
+\begin{document}%
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+{\centering\sffamily\bfseries\Large  Descendant Report for Garner von Zieliński, Lewis Anderson Sr \mdseries\rmfamily
+
+}\normalsize %
+
+\grminpgtail%
+
+\vspace{5ex}%
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 1 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{1.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1.}%
+\textbf{Garner von Zieliński, Lewis Anderson Sr .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Lewis Anderson was born on 1855-06-21 in Great Falls, MT, USA.   He died on 1911-06-28 in Twin Falls, Twin Falls, ID, USA at the age of 56 years, 7 days.   He was buried on 1911-07-01 in Twin Falls, Twin Falls, ID, USA.  He was the son of Garner, Robert W. and Zieliński, Phoebe Emily.    He married Martel, Luella Jacques on 1875-04-01 in Paragould, Greene, AR, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Notes for Garner von Zieliński, Lewis Anderson Sr \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  We have committed to synergistically disseminate resource-leveling methods of empowerment to set us apart from the competition. We envision to globally integrate inexpensive paradigms and professionally engineer timely technology while promoting personal employee growth. Our mission is to assertively build world-class methods of empowerment so that we may professionally promote parallel services to set us apart from the competition. It's our responsibility to dramatically maintain value-added services as well as to professionally simplify principle-centered technology for 100\% customer satisfaction.~\newline 
+~\newline 
+Thanks to the Mission Statement Generator from http://www.dilbert.com.~\newline 
+ %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  This is a note {\LARGE }{\ttfamily {\LARGE showing a lot of differen}}{\LARGE }t markup that mixes with each other making it a good stress test for markup notes.~\newline 
+This is a note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.~\newline 
+~\newline 
+This is a note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.~\newline 
+ %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  This\ is\ a\ preformatted\ note\ showing\ a\ lot\ of\ differe{\ttfamily nt\ markup\ that\ mixes\ with\ e}ach\ other\ making\ it\ a\ good\ stress\ test\ for\ markup\ notes.~\newline 
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ This\ is\ a\ note\ showing\ a\ lot\ of\ different\ markup\ that\ mixes\ with\ each\ other\ making\ it\ a\ good\ stress\ test\ for\ markup\ notes.~\newline 
+~\newline 
+This\ is\ ~\newline 
+\ \ \ \ \ \ \ \ a\ note\ showing\ ~\newline 
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ lot\ of\ different\ markup\ ~\newline 
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ that\ mixes\ with\ each\ ~\newline 
+other\ making\ it\ a\ good\ stress\ test\ for\ markup\ notes.~\newline 
+~\newline 
+{\ttfamily \ \ \ test\ \ |\ \ \ \ val1\ \ |\ \ \ \ \ val2~\newline 
+\ \ ------------------------------~\newline 
+\ \ \ \ me\ \ \ |\ \ \ blue\ \ \ |\ \ \ \ red} %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  This\ source\ has\ all\ possible\ references\ pointing\ to\ it.\ The\ references\ are\ as\ follows:~\newline 
+~\newline 
+This\ note\ appears\ as\ a\ note\ to\ the\ source\ and\ also\ as\ a\ note\ for\ the\ person.~\newline 
+~\newline 
+page\ 01\ \ Person~\newline 
+page\ 02\ \ \ \ Name~\newline 
+page\ 03\ \ \ \ Address~\newline 
+page\ 04\ \ \ \ Attribute~\newline 
+page\ 05\ \ \ \ PersonRef~\newline 
+page\ 06\ \ \ \ MediaRef~\newline 
+page\ 07\ \ \ \ \ \ Attribute~\newline 
+page\ 08\ \ \ \ LdsOrd~\newline 
+page\ 09\ \ \ \ EventRef:Attribute\ ~\newline 
+page\ 10\ \ Family~\newline 
+page\ 11\ \ \ \ Attribute~\newline 
+page\ 12\ \ \ \ ChildRef~\newline 
+page\ 13\ \ \ \ MediaRef~\newline 
+page\ 14\ \ \ \ \ \ Attribute~\newline 
+page\ 15\ \ \ \ LdsOrd~\newline 
+page\ 16\ \ \ \ EventRef:Attribute~\newline 
+page\ 17\ \ Event~\newline 
+page\ 18\ \ \ \ Attribute~\newline 
+page\ 19\ \ \ \ MediaRef~\newline 
+page\ 20\ \ \ \ \ \ Attribute~\newline 
+page\ 21\ \ MediaObject~\newline 
+page\ 22\ \ \ \ Attribute~\newline 
+page\ 23\ \ Place~\newline 
+page\ 24\ \ \ \ MediaRef~\newline 
+page\ 25\ \ \ \ \ \ Attribute~\newline 
+page\ 26\ \ Repository:Address %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Martel, Luella Jacques and Garner von Zieliński, Lewis Anderson Sr \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{+ 11 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 11 i.}%
+Garner, Eugene Stanley.  Eugene Stanley was born on 1895-12-01 in Portsmouth, OH, USA.   He died on 1984-03-01 in Twin Falls, Twin Falls, ID, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 12 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 12 ii.}%
+Garner, Jesse V..  Jesse V. was born on 1876-06-18 in Paragould, Greene, AR, USA.   He died on 1929-01-21 in Cedar City, UT, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 13 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 13 iii.}%
+Garner, Raymond E..  Raymond E. was born on 1878-09-16 in Paragould, Greene, AR, USA.   He died on 1921-05-02 in Astoria, OR, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 14 iv.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 14 iv.}%
+Garner, Jennie S..  Jennie S. was born on 1880-09-11 in Paragould, Greene, AR, USA.   She died on 1964-06-20 in Columbus, Bartholomew, IN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 15 v.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 15 v.}%
+Garner, Walter E..  Walter E. was born on 1882-02-17 in Paragould, Greene, AR, USA.   He died on 1946-10-23 in Battle Creek, MI, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 16 vi.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 16 vi.}%
+Garner, Daniel Webster.  Daniel Webster was born on 1883-09-30 in Hood River, OR, USA.   He died on 1936-03-02 in Gary, Lake, IN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 17 vii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 17 vii.}%
+Garner, Bertha P..  Bertha P. was born on 1888-03-13 in Hagerstown, MD, USA.   She died on 1918-04-05 in Columbus, Bartholomew, IN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 18 viii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 18 viii.}%
+Garner, Elizabeth.  Elizabeth was born in 1883.   She was buried in Hays, Ellis, KS, USA.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Notes for Martel, Luella Jacques and Garner von Zieliński, Lewis Anderson Sr: \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  GRAMPS aid to look for its tree to him of family.  It allows that you store data of genealogische to draw for above and investigating.  GRAMPS tries to make all the general capacities available of other programs of genealogischer more importantly but, to put an additional capacity of integration at your service not generally for these programs.  This one is the capacity to directly incorporate all the possible pieces of the information in Gramps and the cases of the data cambiar/manipulateany/all in the whole data base (in any order or order) around the user to support, if it makes the investigation, analysis and interrelation with the potential of the distances of the relation that fill.~\newline 
+~\newline 
+This is a paragraph from the gramps-project.org page that was translated by Google's Language Tools to German, back to English, then to Spanish, and once again back to English.~\newline 
+ %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 2 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{11.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11.}%
+\textbf{Garner, Eugene Stanley .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Eugene Stanley was born on 1895-12-01 in Portsmouth, OH, USA.   He died on 1984-03-01 in Twin Falls, Twin Falls, ID, USA at the age of 88 years, 3 months.   He was buried on 1984-03-03 in Twin Falls, Twin Falls, ID, USA.  He was the son of Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques.    He married Reed, Frances Lucille (Babe) on 1921-01-03 in Edison, NJ, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Reed, Frances Lucille (Babe) and Garner, Eugene Stanley \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{+ 111 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 111 i.}%
+Garner, Howard Lane.  Howard Lane was born on 1928-07-09 in LaGrange, GA, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 112 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 112 ii.}%
+Garner, Eugene Stanley, Jr..  Eugene Stanley, Jr. was born in Vernon, Wilbarger, TX, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 113 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 113 iii.}%
+Garner, John Roger.  John Roger was born on 1925-10-29 in Lafayette, Tippecanoe, IN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{12.}%
+\grminpghead{1.5}{0}%
+\grlisthead{12.}%
+\textbf{Garner, Jesse V.   }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Jesse V. was born on 1876-06-18 in Paragould, Greene, AR, USA.   He died on 1929-01-21 in Cedar City, UT, USA at the age of 52 years, 7 months.   He was buried in 1929 in Sterling, Whiteside, IL, USA.  He was the son of Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques.    He married Taylor, Viola.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Taylor, Viola and Garner, Jesse V. \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 121 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 121 i.}%
+Garner, Marie.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 122 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 122 ii.}%
+Garner, Victor.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{13.}%
+\grminpghead{1.5}{0}%
+\grlisthead{13.}%
+\textbf{Garner, Raymond E.   }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Raymond E. was born on 1878-09-16 in Paragould, Greene, AR, USA.   He died on 1921-05-02 in Astoria, OR, USA at the age of 42 years, 7 months.   He was the son of Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques.     %
+
+\grminpgtail%
+
+\grprepleader{14.}%
+\grminpghead{1.5}{0}%
+\grlisthead{14.}%
+\textbf{Garner, Jennie S.   }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Jennie S. was born on 1880-09-11 in Paragould, Greene, AR, USA.   She died on 1964-06-20 in Columbus, Bartholomew, IN, USA at the age of 83 years, 9 months.   She was buried in 1964-06-00 in Sterling, Whiteside, IL, USA.  She was the daughter of Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques.    She married Яковлев, George avant 1911-07-06.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Garner, Jennie S. and Яковлев, George \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 141 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 141 i.}%
+Яковлев, Everett.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 142 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 142 ii.}%
+Яковлев, Esther Faye.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 143 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 143 iii.}%
+Яковлев, Georgia.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{15.}%
+\grminpghead{1.5}{0}%
+\grlisthead{15.}%
+\textbf{Garner, Walter E.   }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Walter E. was born on 1882-02-17 in Paragould, Greene, AR, USA.   He died on 1946-10-23 in Battle Creek, MI, USA at the age of 64 years, 8 months.   He was buried in 1946-10-00 in Sterling, Whiteside, IL, USA.  He was the son of Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques.    He married García, Maude.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of García, Maude and Garner, Walter E. \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 151 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 151 i.}%
+Garner, Maude.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 152 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 152 ii.}%
+Garner, Marguarite.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{16.}%
+\grminpghead{1.5}{0}%
+\grlisthead{16.}%
+\textbf{Garner, Daniel Webster .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Daniel Webster was born on 1883-09-30 in Hood River, OR, USA.   He died on 1936-03-02 in Gary, Lake, IN, USA at the age of 52 years, 5 months.   He was buried on 1936-03-04 in Sterling, Whiteside, IL, USA.  He was the son of Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques.    He married Jackson, Cora Ellen on 1907-06-02.   %
+
+\grminpgtail%
+
+\grprepleader{17.}%
+\grminpghead{1.5}{0}%
+\grlisthead{17.}%
+\textbf{Garner, Bertha P.   }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Bertha P. was born on 1888-03-13 in Hagerstown, MD, USA.   She died on 1918-04-05 in Columbus, Bartholomew, IN, USA at the age of 30 years, 23 days.   She was buried in 1918-04-00 in Sterling, Whiteside, IL, USA.  She was the daughter of Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques.    She married Robinson, Clarence on 1907-11-16 in Columbus, Bartholomew, IN, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Garner, Bertha P. and Robinson, Clarence \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 171 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 171 i.}%
+Robinson, Robert.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 172 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 172 ii.}%
+Robinson, Luther.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 173 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 173 iii.}%
+Robinson, Albert Raymond.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 174 iv.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 174 iv.}%
+Robinson, Hugh Martin.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{18.}%
+\grminpghead{1.5}{0}%
+\grlisthead{18.}%
+\textbf{Garner, Elizabeth .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Elizabeth was born in 1883.   She was buried in Hays, Ellis, KS, USA.  She was the daughter of Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques.     %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 3 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{111.}%
+\grminpghead{1.5}{0}%
+\grlisthead{111.}%
+\textbf{Garner, Howard Lane .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Howard Lane was born on 1928-07-09 in LaGrange, GA, USA.   He is the son of Garner, Eugene Stanley and Reed, Frances Lucille (Babe).    He married Marín, Mary Anne on 1948-02-02 in Worthington, MN, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Marín, Mary Anne and Garner, Howard Lane \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{+ 1111 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1111 i.}%
+Garner, Rita Marie.  Rita Marie was born on 1952-09-07 in Worthington, MN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1112 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1112 ii.}%
+Garner, Barry Joseph.  Barry Joseph was born on 1948-12-14 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1113 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1113 iii.}%
+Garner, Anne Therese.  Anne Therese was born on 1950-09-10 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1114 iv.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1114 iv.}%
+Garner, Gerard Stephen.  Gerard Stephen was born on 1955-07-31 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 1115 v.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 1115 v.}%
+Garner, David Walter.  David Walter was born on 1956-12-21 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1116 vi.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1116 vi.}%
+Garner, Thomas James.  Thomas James was born on 1965-12-10 in Worthington, MN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{112.}%
+\grminpghead{1.5}{0}%
+\grlisthead{112.}%
+\textbf{Garner, Eugene Stanley, Jr.   }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Eugene Stanley, Jr. was born in Vernon, Wilbarger, TX, USA.   He is the son of Garner, Eugene Stanley and Reed, Frances Lucille (Babe).    He married Pelletier, Josephine.  He also married Washington, Pearline.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Pelletier, Josephine and Garner, Eugene Stanley, Jr. \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{+ 1121 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1121 i.}%
+Garner, Francis William.  Francis William was born on 1945-01-03.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1122 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1122 ii.}%
+Garner, Richard Eugene.  Richard Eugene was born on 1947-02-28 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1123 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1123 iii.}%
+Garner, Michael Stanley.  Michael Stanley was born on 1948-06-12 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1124 iv.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1124 iv.}%
+Garner, Barbara Jo.  Barbara Jo was born on 1949-11-08 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1125 v.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1125 v.}%
+Garner, Kathryn Mary.  Kathryn Mary was born on 1952-09-10 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1126 vi.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1126 vi.}%
+Garner, Peter George.  Peter George was born on 1954-08-05 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 1127 vii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 1127 vii.}%
+Garner, Bernadette.  Bernadette was born on 1957-08-31 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 1128 viii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 1128 viii.}%
+Garner, Louella Marie.  Louella Marie was born in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 1129 ix.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 1129 ix.}%
+Garner, Cecilia.  Cecilia was born on 1960-07-14 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 112A x.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 112A x.}%
+Garner, Mark Gerard.  Mark Gerard was born on 1962-10-16 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 112B xi.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 112B xi.}%
+Garner, John Joseph.  John Joseph was born on 1961-08-15 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 112C xii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 112C xii.}%
+Garner, Margaret Ann.  Margaret Ann was born on 1951-07-18 in Ottawa, La Salle, IL, USA.   She died on 1952-02-10 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{113.}%
+\grminpghead{1.5}{0}%
+\grlisthead{113.}%
+\textbf{Garner, John Roger .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  John Roger was born on 1925-10-29 in Lafayette, Tippecanoe, IN, USA.   He is the son of Garner, Eugene Stanley and Reed, Frances Lucille (Babe).    He married Брюханов, Violet Louise on 1961-10-07 in Ottawa, La Salle, IL, USA.   %
+
+\grminpgtail%
+
+\grprepleader{121.}%
+\grminpghead{1.5}{0}%
+\grlisthead{121.}%
+\textbf{Garner, Marie .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  She was the daughter of Garner, Jesse V. and Taylor, Viola.    She married Burgess, Edward.   %
+
+\grminpgtail%
+
+\grprepleader{122.}%
+\grminpghead{1.5}{0}%
+\grlisthead{122.}%
+\textbf{Garner, Victor .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  He was the son of Garner, Jesse V. and Taylor, Viola.     %
+
+\grminpgtail%
+
+\grprepleader{141.}%
+\grminpghead{1.5}{0}%
+\grlisthead{141.}%
+\textbf{Яковлев, Everett .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  He was the son of Яковлев, George and Garner, Jennie S..     %
+
+\grminpgtail%
+
+\grprepleader{142.}%
+\grminpghead{1.5}{0}%
+\grlisthead{142.}%
+\textbf{Яковлев, Esther Faye .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  She was the daughter of Яковлев, George and Garner, Jennie S..    She married Arnold, ???????.   %
+
+\grminpgtail%
+
+\grprepleader{143.}%
+\grminpghead{1.5}{0}%
+\grlisthead{143.}%
+\textbf{Яковлев, Georgia .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  She was the daughter of Яковлев, George and Garner, Jennie S..     %
+
+\grminpgtail%
+
+\grprepleader{151.}%
+\grminpghead{1.5}{0}%
+\grlisthead{151.}%
+\textbf{Garner, Maude .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  She was the daughter of Garner, Walter E. and García, Maude.    She married Cooper, ???????.   %
+
+\grminpgtail%
+
+\grprepleader{152.}%
+\grminpghead{1.5}{0}%
+\grlisthead{152.}%
+\textbf{Garner, Marguarite .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  She was the daughter of Garner, Walter E. and García, Maude.     %
+
+\grminpgtail%
+
+\grprepleader{171.}%
+\grminpghead{1.5}{0}%
+\grlisthead{171.}%
+\textbf{Robinson, Robert .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  He is the son of Robinson, Clarence and Garner, Bertha P..     %
+
+\grminpgtail%
+
+\grprepleader{172.}%
+\grminpghead{1.5}{0}%
+\grlisthead{172.}%
+\textbf{Robinson, Luther .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  He is the son of Robinson, Clarence and Garner, Bertha P..     %
+
+\grminpgtail%
+
+\grprepleader{173.}%
+\grminpghead{1.5}{0}%
+\grlisthead{173.}%
+\textbf{Robinson, Albert Raymond .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  He is the son of Robinson, Clarence and Garner, Bertha P..     %
+
+\grminpgtail%
+
+\grprepleader{174.}%
+\grminpghead{1.5}{0}%
+\grlisthead{174.}%
+\textbf{Robinson, Hugh Martin .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  He is the son of Robinson, Clarence and Garner, Bertha P..     %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 4 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{1111.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1111.}%
+\textbf{Garner, Rita Marie .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Rita Marie was born on 1952-09-07 in Worthington, MN, USA.   She is the daughter of Garner, Howard Lane and Marín, Mary Anne.    She married Warner, Allen Carl on 1974-08-10 in Worthington, MN, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Garner, Rita Marie and Warner, Allen Carl \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11111 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11111 i.}%
+Warner, Sarah Suzanne.  Sarah Suzanne was born on 1987-08-29 in Gainesville, Llano, TX, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11112 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11112 ii.}%
+Warner, James Jeffrey.  James Jeffrey was born on 1984-05-03 in Gainesville, Llano, TX, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11113 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11113 iii.}%
+Warner, Carl Thomas.  Carl Thomas was born on 1981-05-11 in Gainesville, Llano, TX, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11114 iv.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11114 iv.}%
+Warner, John Allen.  John Allen was born on 1979-05-04 in New Haven, New Haven, CT, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11115 v.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11115 v.}%
+Warner, Matthew Steven.  Matthew Steven was born on 1977-06-23 in New Haven, New Haven, CT, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1112.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1112.}%
+\textbf{Garner, Barry Joseph .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Barry Joseph was born on 1948-12-14 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Howard Lane and Marín, Mary Anne.    He married Vázquez, April Lynn on 1992-11-07 in Greeneville, TN, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Vázquez, April Lynn and Garner, Barry Joseph \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11121 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11121 i.}%
+Garner, Andrew Joseph.  Andrew Joseph was born on 1999-04-11 in Worthington, MN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1113.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1113.}%
+\textbf{Garner, Anne Therese .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Anne Therese was born on 1950-09-10 in Ottawa, La Salle, IL, USA.   She is the daughter of Garner, Howard Lane and Marín, Mary Anne.    She married Hale, Lawrence Paul on 1973-09-15 in Ottawa, La Salle, IL, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Garner, Anne Therese and Hale, Lawrence Paul \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11131 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11131 i.}%
+Hale, Joseph Brendan.  Joseph Brendan was born on 1975-07-17 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11132 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11132 ii.}%
+Hale, Michael Patrick.  Michael Patrick was born on 1977-07-27 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11133 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11133 iii.}%
+Hale, Gina Marie.  Gina Marie was born on 1982-10-03 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11134 iv.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11134 iv.}%
+Hale, Jeffrey Brian.  Jeffrey Brian was born on 1988-12-23 in Jefferson City, MO, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1114.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1114.}%
+\textbf{Garner, Gerard Stephen .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Gerard Stephen was born on 1955-07-31 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Howard Lane and Marín, Mary Anne.    He married George, Elizabeth on 1979-01-06 in Farmington, MO, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of George, Elizabeth and Garner, Gerard Stephen \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11141 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11141 i.}%
+Garner, Stephen Gerard.  Stephen Gerard was born on 1983-10-05 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11142 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11142 ii.}%
+Garner, Daniel Patrick.  Daniel Patrick was born on 1985-02-11 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1115.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1115.}%
+\textbf{Garner, David Walter .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  David Walter was born on 1956-12-21 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Howard Lane and Marín, Mary Anne.     %
+
+\grminpgtail%
+
+\grprepleader{1116.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1116.}%
+\textbf{Garner, Thomas James .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Thomas James was born on 1965-12-10 in Worthington, MN, USA.   He is the son of Garner, Howard Lane and Marín, Mary Anne.    He married Сорокин, Holly Ruth on 1997-07-07 in Blacksburg, VA, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Сорокин, Holly Ruth and Garner, Thomas James \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11161 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11161 i.}%
+Garner, Alecia "Allie" Clare.  Alecia "Allie" Clare was born on 1997-12-26 in Fergus Falls, MN, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1121.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1121.}%
+\textbf{Garner, Francis William .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Francis William was born on 1945-01-03.   He is the son of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    He married Gibbs, Connie on 1991-06-22.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Gibbs, Connie and Garner, Francis William \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{+ 11211 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 11211 i.}%
+Garner, Melissa Sue.  Melissa Sue was born on 1969-12-03.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1122.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1122.}%
+\textbf{Garner, Richard Eugene .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Richard Eugene was born on 1947-02-28 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    He married Gibbs, Elaine on 1971-10-23.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Gibbs, Elaine and Garner, Richard Eugene \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11221 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11221 i.}%
+Garner, Heather Jo.  Heather Jo was born on 1972-03-14.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11222 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11222 ii.}%
+Garner, Regina Lynne.  Regina Lynne was born on 1973-08-27.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{+ 11223 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{+ 11223 iii.}%
+Garner, Jason Richard.  Jason Richard was born on 1975-10-20.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1123.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1123.}%
+\textbf{Garner, Michael Stanley .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Michael Stanley was born on 1948-06-12 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    He married Gibbs, Sharon on 1970-08-08.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Gibbs, Sharon and Garner, Michael Stanley \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11231 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11231 i.}%
+Garner, Michael Christopher.  Michael Christopher was born on 1975-06-01.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11232 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11232 ii.}%
+Garner, Megan Ann.  Megan Ann was born on 1978-07-17.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1124.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1124.}%
+\textbf{Garner, Barbara Jo .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Barbara Jo was born on 1949-11-08 in Ottawa, La Salle, IL, USA.   She is the daughter of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    She married Díez, William George.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Garner, Barbara Jo and Díez, William George \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11241 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11241 i.}%
+Díez, William George Jr..  William George Jr. was born on 1972-10-10.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1125.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1125.}%
+\textbf{Garner, Kathryn Mary .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Kathryn Mary was born on 1952-09-10 in Ottawa, La Salle, IL, USA.   She is the daughter of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    She married Сергеев, Dennis on 1975-02-08 in Ottawa, La Salle, IL, USA.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Garner, Kathryn Mary and Сергеев, Dennis \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11251 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11251 i.}%
+Сергеев, Jon Dennis.  Jon Dennis was born on 1978-02-10 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11252 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11252 ii.}%
+Сергеев, Adria Maria.  Adria Maria was born on 1971-06-01 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11253 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11253 iii.}%
+Сергеев, Jacqueline Denise.  Jacqueline Denise was born on 1981-01-18 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11254 iv.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11254 iv.}%
+Сергеев, Joshua David.  Joshua David was born on 1984-04-07 in Ottawa, La Salle, IL, USA.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1126.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1126.}%
+\textbf{Garner, Peter George .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Peter George was born on 1954-08-05 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    He married Gibbs, Joy on 1976-01-25.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Gibbs, Joy and Garner, Peter George \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11261 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11261 i.}%
+Garner, Allison Renee.  Allison Renee was born on 1984-03-20.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11262 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11262 ii.}%
+Garner, Amy Elizabeth.  Amy Elizabeth was born on 1989-04-11.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1127.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1127.}%
+\textbf{Garner, Bernadette .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Bernadette was born on 1957-08-31 in Ottawa, La Salle, IL, USA.   She is the daughter of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    She married Beck, Jack.   %
+
+\grminpgtail%
+
+\grprepleader{1128.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1128.}%
+\textbf{Garner, Louella Marie .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Louella Marie was born in Ottawa, La Salle, IL, USA.   She is the daughter of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    She married Hill.  She also married Coleman.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Garner, Louella Marie and Hill \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 11281 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11281 i.}%
+Hill, Jo Lynn.  Jo Lynn was born on 1977-03-12.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11282 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11282 ii.}%
+Hill, Leigh Ann.  Leigh Ann was born on 1979-01-23.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 11283 iii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 11283 iii.}%
+Hill, Sean Michael.  Sean Michael was born on 1980-05-10.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{1129.}%
+\grminpghead{1.5}{0}%
+\grlisthead{1129.}%
+\textbf{Garner, Cecilia .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Cecilia was born on 1960-07-14 in Ottawa, La Salle, IL, USA.   She is the daughter of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    She married Горбунов, Matt.   %
+
+\grminpgtail%
+
+\grprepleader{112A.}%
+\grminpghead{1.5}{0}%
+\grlisthead{112A.}%
+\textbf{Garner, Mark Gerard .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Mark Gerard was born on 1962-10-16 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    He married Gibbs, Lori on 1991-12-02.   %
+
+\grminpgtail%
+
+\grprepleader{112B.}%
+\grminpghead{1.5}{0}%
+\grlisthead{112B.}%
+\textbf{Garner, John Joseph .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  John Joseph was born on 1961-08-15 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.    He married Crawford, Lori on 1994-03-04.   %
+
+\grminpgtail%
+
+\grprepleader{112C.}%
+\grminpghead{1.5}{0}%
+\grlisthead{112C.}%
+\textbf{Garner, Margaret Ann .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Margaret Ann was born on 1951-07-18 in Ottawa, La Salle, IL, USA.   She died on 1952-02-10 in Ottawa, La Salle, IL, USA at the age of 6 months, 23 days.   She was the daughter of Garner, Eugene Stanley, Jr. and Pelletier, Josephine.     %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 5 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{11111.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11111.}%
+\textbf{Warner, Sarah Suzanne .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Sarah Suzanne was born on 1987-08-29 in Gainesville, Llano, TX, USA.   She is the daughter of Warner, Allen Carl and Garner, Rita Marie.     %
+
+\grminpgtail%
+
+\grprepleader{11112.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11112.}%
+\textbf{Warner, James Jeffrey .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  James Jeffrey was born on 1984-05-03 in Gainesville, Llano, TX, USA.   He is the son of Warner, Allen Carl and Garner, Rita Marie.     %
+
+\grminpgtail%
+
+\grprepleader{11113.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11113.}%
+\textbf{Warner, Carl Thomas .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Carl Thomas was born on 1981-05-11 in Gainesville, Llano, TX, USA.   He is the son of Warner, Allen Carl and Garner, Rita Marie.     %
+
+\grminpgtail%
+
+\grprepleader{11114.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11114.}%
+\textbf{Warner, John Allen .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  John Allen was born on 1979-05-04 in New Haven, New Haven, CT, USA.   He is the son of Warner, Allen Carl and Garner, Rita Marie.     %
+
+\grminpgtail%
+
+\grprepleader{11115.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11115.}%
+\textbf{Warner, Matthew Steven .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Matthew Steven was born on 1977-06-23 in New Haven, New Haven, CT, USA.   He is the son of Warner, Allen Carl and Garner, Rita Marie.     %
+
+\grminpgtail%
+
+\grprepleader{11121.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11121.}%
+\textbf{Garner, Andrew Joseph .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Andrew Joseph was born on 1999-04-11 in Worthington, MN, USA.   He is the son of Garner, Barry Joseph and Vázquez, April Lynn.     %
+
+\grminpgtail%
+
+\grprepleader{11131.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11131.}%
+\textbf{Hale, Joseph Brendan .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Joseph Brendan was born on 1975-07-17 in Ottawa, La Salle, IL, USA.   He is the son of Hale, Lawrence Paul and Garner, Anne Therese.     %
+
+\grminpgtail%
+
+\grprepleader{11132.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11132.}%
+\textbf{Hale, Michael Patrick .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Michael Patrick was born on 1977-07-27 in Ottawa, La Salle, IL, USA.   He is the son of Hale, Lawrence Paul and Garner, Anne Therese.     %
+
+\grminpgtail%
+
+\grprepleader{11133.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11133.}%
+\textbf{Hale, Gina Marie .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Gina Marie was born on 1982-10-03 in Ottawa, La Salle, IL, USA.   She is the daughter of Hale, Lawrence Paul and Garner, Anne Therese.     %
+
+\grminpgtail%
+
+\grprepleader{11134.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11134.}%
+\textbf{Hale, Jeffrey Brian .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Jeffrey Brian was born on 1988-12-23 in Jefferson City, MO, USA.   He is the son of Hale, Lawrence Paul and Garner, Anne Therese.     %
+
+\grminpgtail%
+
+\grprepleader{11141.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11141.}%
+\textbf{Garner, Stephen Gerard .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Stephen Gerard was born on 1983-10-05 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Gerard Stephen and George, Elizabeth.     %
+
+\grminpgtail%
+
+\grprepleader{11142.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11142.}%
+\textbf{Garner, Daniel Patrick .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Daniel Patrick was born on 1985-02-11 in Ottawa, La Salle, IL, USA.   He is the son of Garner, Gerard Stephen and George, Elizabeth.     %
+
+\grminpgtail%
+
+\grprepleader{11161.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11161.}%
+\textbf{Garner, Alecia "Allie" Clare .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Alecia "Allie" Clare was born on 1997-12-26 in Fergus Falls, MN, USA.   She is the daughter of Garner, Thomas James and Сорокин, Holly Ruth.     %
+
+\grminpgtail%
+
+\grprepleader{11211.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11211.}%
+\textbf{Garner, Melissa Sue .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Melissa Sue was born on 1969-12-03.   She is the daughter of Garner, Francis William and Gibbs, Connie.    She married Martín.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Garner, Melissa Sue and Martín \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 112111 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 112111 i.}%
+Martín, Tyler William.  Tyler William was born on 1993-11-29.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{11221.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11221.}%
+\textbf{Garner, Heather Jo .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Heather Jo was born on 1972-03-14.   She is the daughter of Garner, Richard Eugene and Gibbs, Elaine.     %
+
+\grminpgtail%
+
+\grprepleader{11222.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11222.}%
+\textbf{Garner, Regina Lynne .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Regina Lynne was born on 1973-08-27.   She is the daughter of Garner, Richard Eugene and Gibbs, Elaine.     %
+
+\grminpgtail%
+
+\grprepleader{11223.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11223.}%
+\textbf{Garner, Jason Richard .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Jason Richard was born on 1975-10-20.   He is the son of Garner, Richard Eugene and Gibbs, Elaine.    He married Harper, ??.   %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+\sffamily\bfseries\small  Children of Harper, ?? and Garner, Jason Richard \mdseries\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{ 112231 i.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 112231 i.}%
+Garner, Victoria Laine.  
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{ 112232 ii.}%
+\grminpghead{2.25}{0}%
+\grlisthead{ 112232 ii.}%
+Garner, Vanichia Elaine.  Vanichia Elaine was born on 1993-10-01.   
+\grlisttail%
+\normalsize \grminpgtail%
+
+\grprepleader{11231.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11231.}%
+\textbf{Garner, Michael Christopher .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Michael Christopher was born on 1975-06-01.   He is the son of Garner, Michael Stanley and Gibbs, Sharon.     %
+
+\grminpgtail%
+
+\grprepleader{11232.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11232.}%
+\textbf{Garner, Megan Ann .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Megan Ann was born on 1978-07-17.   She is the daughter of Garner, Michael Stanley and Gibbs, Sharon.     %
+
+\grminpgtail%
+
+\grprepleader{11241.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11241.}%
+\textbf{Díez, William George Jr.   }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  William George Jr. was born on 1972-10-10.   He is the son of Díez, William George and Garner, Barbara Jo.     %
+
+\grminpgtail%
+
+\grprepleader{11251.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11251.}%
+\textbf{Сергеев, Jon Dennis .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Jon Dennis was born on 1978-02-10 in Ottawa, La Salle, IL, USA.   He is the son of Сергеев, Dennis and Garner, Kathryn Mary.     %
+
+\grminpgtail%
+
+\grprepleader{11252.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11252.}%
+\textbf{Сергеев, Adria Maria .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Adria Maria was born on 1971-06-01 in Ottawa, La Salle, IL, USA.   She is the daughter of Сергеев, Dennis and Garner, Kathryn Mary.    She married Demers, ?? in 1993-06-00.   %
+
+\grminpgtail%
+
+\grprepleader{11253.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11253.}%
+\textbf{Сергеев, Jacqueline Denise .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Jacqueline Denise was born on 1981-01-18 in Ottawa, La Salle, IL, USA.   She is the daughter of Сергеев, Dennis and Garner, Kathryn Mary.     %
+
+\grminpgtail%
+
+\grprepleader{11254.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11254.}%
+\textbf{Сергеев, Joshua David .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Joshua David was born on 1984-04-07 in Ottawa, La Salle, IL, USA.   He is the son of Сергеев, Dennis and Garner, Kathryn Mary.     %
+
+\grminpgtail%
+
+\grprepleader{11261.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11261.}%
+\textbf{Garner, Allison Renee .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Allison Renee was born on 1984-03-20.   She is the daughter of Garner, Peter George and Gibbs, Joy.     %
+
+\grminpgtail%
+
+\grprepleader{11262.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11262.}%
+\textbf{Garner, Amy Elizabeth .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Amy Elizabeth was born on 1989-04-11.   She is the daughter of Garner, Peter George and Gibbs, Joy.     %
+
+\grminpgtail%
+
+\grprepleader{11281.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11281.}%
+\textbf{Hill, Jo Lynn .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Jo Lynn was born on 1977-03-12.   She is the daughter of Hill and Garner, Louella Marie.     %
+
+\grminpgtail%
+
+\grprepleader{11282.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11282.}%
+\textbf{Hill, Leigh Ann .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Leigh Ann was born on 1979-01-23.   She is the daughter of Hill and Garner, Louella Marie.     %
+
+\grminpgtail%
+
+\grprepleader{11283.}%
+\grminpghead{1.5}{0}%
+\grlisthead{11283.}%
+\textbf{Hill, Sean Michael .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Sean Michael was born on 1980-05-10.   He is the son of Hill and Garner, Louella Marie.     %
+
+\grminpgtail%
+
+\grprepnoleader%
+\grminpghead{0}{0}%
+
+\sffamily\itshape\large  Generation 6 \upshape\rmfamily\normalsize %
+
+\grminpgtail%
+
+\grprepleader{112111.}%
+\grminpghead{1.5}{0}%
+\grlisthead{112111.}%
+\textbf{Martín, Tyler William .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Tyler William was born on 1993-11-29.   He is the son of Martín and Garner, Melissa Sue.     %
+
+\grminpgtail%
+
+\grprepleader{112231.}%
+\grminpghead{1.5}{0}%
+\grlisthead{112231.}%
+\textbf{Garner, Victoria Laine .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  She is the daughter of Garner, Jason Richard and Harper, ??.     %
+
+\grminpgtail%
+
+\grprepleader{112232.}%
+\grminpghead{1.5}{0}%
+\grlisthead{112232.}%
+\textbf{Garner, Vanichia Elaine .  }
+\grlisttail%
+ \grminpgtail%
+
+\grprepnoleader%
+\grminpghead{1.5}{0}%
+
+  Vanichia Elaine was born on 1993-10-01.   She is the daughter of Garner, Jason Richard and Harper, ??.     %
+
+\grminpgtail%
+
+\end{document}
