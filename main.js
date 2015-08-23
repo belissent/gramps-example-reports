@@ -71,6 +71,7 @@ function build_list(version, report_list)
 	html += '<table class="table table-striped">';
 	html += '<thead><tr>';
 	html += '<th>Report name</th>';
+	html += '<th>Title</th>';
 	html += '<th>Type</th>';
 	html += '<th>Version</th>';
 	html += '<th>Status</th>';
@@ -79,7 +80,8 @@ function build_list(version, report_list)
 	for (var i = 0; i < report_list.length; i++)
 	{
 		html += '<tr>';
-		html += '<td><a href="/gramps-example-reports/' + version + '/' + report_list[i].directory + '">' + report_list[i].name + '</a></td>';
+		html += '<td><a href="/gramps-example-reports/' + report_list[i].result + '">' + report_list[i].name + '</a></td>';
+		html += '<td>' + report_list[i].title + '</td>';
 		html += '<td>' + report_list[i].type + '</td>';
 		html += '<td>' + report_list[i].version + '</td>';
 		html += '<td>' + report_list[i].status + '</td>';

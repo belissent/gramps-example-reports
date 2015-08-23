@@ -37,6 +37,7 @@ for report in GRPH_REP:
                 'off': fmt,
                 'of': of,
                 'maxgen': 10,
+                'type': 'Native',
             }
         })
 
@@ -54,6 +55,7 @@ for report in TEXT_REP:
                 'off': fmt,
                 'of': of,
                 'maxgen': 10,
+                'type': 'Native',
             }
         })
 

@@ -56,6 +56,7 @@ for report in reports:
         'title': report['title'],
         "version": "?",
         "status": (os.path.exists(report['result'])),
+        'type': report['type'],
     })
 
 # Export data

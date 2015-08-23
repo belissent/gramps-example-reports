@@ -489,7 +489,7 @@
             "status": "ok",
             "name": "Toto",
             "directory": "gramps/toto",
-            "version": "1"
+            "result": "1"
         }
     ]
 }
