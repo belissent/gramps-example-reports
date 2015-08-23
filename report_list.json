@@ -1,20 +1,495 @@
 {
-"gramps42":
-[
-	{
-		"directory": "gramps/toto",
-		"name": "Toto",
-		"version": "1",
-		"status": "ok"
-	}
-],
-"gramps50":
-[
-	{
-		"directory": "addons/DynamicWeb",
-		"name": "DynamicWeb report",
-		"version": "1",
-		"status": "ok"
-	}
-]
+    "gramps50": [
+        {
+            "status": true,
+            "title": "Graphical report \"ancestor_chart\" in format \"sxw\")",
+            "version": "?",
+            "name": "ancestor_chart",
+            "result": "gramps50/gramps/ancestor_chart.sxw"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"ancestor_chart\" in format \"ps\")",
+            "version": "?",
+            "name": "ancestor_chart",
+            "result": "gramps50/gramps/ancestor_chart.ps"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"ancestor_chart\" in format \"pdf\")",
+            "version": "?",
+            "name": "ancestor_chart",
+            "result": "gramps50/gramps/ancestor_chart.pdf"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"ancestor_chart\" in format \"svg\")",
+            "version": "?",
+            "name": "ancestor_chart",
+            "result": "gramps50/gramps/ancestor_chart.svg"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"descend_chart\" in format \"sxw\")",
+            "version": "?",
+            "name": "descend_chart",
+            "result": "gramps50/gramps/descend_chart.sxw"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"descend_chart\" in format \"ps\")",
+            "version": "?",
+            "name": "descend_chart",
+            "result": "gramps50/gramps/descend_chart.ps"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"descend_chart\" in format \"pdf\")",
+            "version": "?",
+            "name": "descend_chart",
+            "result": "gramps50/gramps/descend_chart.pdf"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"descend_chart\" in format \"svg\")",
+            "version": "?",
+            "name": "descend_chart",
+            "result": "gramps50/gramps/descend_chart.svg"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"fan_chart\" in format \"sxw\")",
+            "version": "?",
+            "name": "fan_chart",
+            "result": "gramps50/gramps/fan_chart.sxw"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"fan_chart\" in format \"ps\")",
+            "version": "?",
+            "name": "fan_chart",
+            "result": "gramps50/gramps/fan_chart.ps"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"fan_chart\" in format \"pdf\")",
+            "version": "?",
+            "name": "fan_chart",
+            "result": "gramps50/gramps/fan_chart.pdf"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"fan_chart\" in format \"svg\")",
+            "version": "?",
+            "name": "fan_chart",
+            "result": "gramps50/gramps/fan_chart.svg"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"statistics_chart\" in format \"sxw\")",
+            "version": "?",
+            "name": "statistics_chart",
+            "result": "gramps50/gramps/statistics_chart.sxw"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"statistics_chart\" in format \"ps\")",
+            "version": "?",
+            "name": "statistics_chart",
+            "result": "gramps50/gramps/statistics_chart.ps"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"statistics_chart\" in format \"pdf\")",
+            "version": "?",
+            "name": "statistics_chart",
+            "result": "gramps50/gramps/statistics_chart.pdf"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"statistics_chart\" in format \"svg\")",
+            "version": "?",
+            "name": "statistics_chart",
+            "result": "gramps50/gramps/statistics_chart.svg"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"timeline\" in format \"sxw\")",
+            "version": "?",
+            "name": "timeline",
+            "result": "gramps50/gramps/timeline.sxw"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"timeline\" in format \"ps\")",
+            "version": "?",
+            "name": "timeline",
+            "result": "gramps50/gramps/timeline.ps"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"timeline\" in format \"pdf\")",
+            "version": "?",
+            "name": "timeline",
+            "result": "gramps50/gramps/timeline.pdf"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"timeline\" in format \"svg\")",
+            "version": "?",
+            "name": "timeline",
+            "result": "gramps50/gramps/timeline.svg"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"calendar\" in format \"sxw\")",
+            "version": "?",
+            "name": "calendar",
+            "result": "gramps50/gramps/calendar.sxw"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"calendar\" in format \"ps\")",
+            "version": "?",
+            "name": "calendar",
+            "result": "gramps50/gramps/calendar.ps"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"calendar\" in format \"pdf\")",
+            "version": "?",
+            "name": "calendar",
+            "result": "gramps50/gramps/calendar.pdf"
+        },
+        {
+            "status": true,
+            "title": "Graphical report \"calendar\" in format \"svg\")",
+            "version": "?",
+            "name": "calendar",
+            "result": "gramps50/gramps/calendar.svg"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"sxw\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.sxw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"ps\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.ps"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"pdf\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.pdf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"kwd\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.kwd"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"abw\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.abw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"rtf\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.rtf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"txt\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.txt"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"html\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.html"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"ancestor_report\" in format \"tex\")",
+            "version": "?",
+            "name": "ancestor_report",
+            "result": "gramps50/gramps/ancestor_report.tex"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"sxw\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.sxw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"ps\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.ps"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"pdf\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.pdf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"kwd\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.kwd"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"abw\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.abw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"rtf\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.rtf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"txt\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.txt"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"html\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.html"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"descend_report\" in format \"tex\")",
+            "version": "?",
+            "name": "descend_report",
+            "result": "gramps50/gramps/descend_report.tex"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"sxw\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.sxw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"ps\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.ps"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"pdf\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.pdf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"kwd\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.kwd"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"abw\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.abw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"rtf\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.rtf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"txt\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.txt"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"html\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.html"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_ancestor_report\" in format \"tex\")",
+            "version": "?",
+            "name": "det_ancestor_report",
+            "result": "gramps50/gramps/det_ancestor_report.tex"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"sxw\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.sxw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"ps\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.ps"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"pdf\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.pdf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"kwd\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.kwd"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"abw\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.abw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"rtf\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.rtf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"txt\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.txt"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"html\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.html"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"det_descendant_report\" in format \"tex\")",
+            "version": "?",
+            "name": "det_descendant_report",
+            "result": "gramps50/gramps/det_descendant_report.tex"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"sxw\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.sxw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"ps\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.ps"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"pdf\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.pdf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"kwd\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.kwd"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"abw\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.abw"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"rtf\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.rtf"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"txt\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.txt"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"html\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.html"
+        },
+        {
+            "status": true,
+            "title": "Textual report \"family_group\" in format \"tex\")",
+            "version": "?",
+            "name": "family_group",
+            "result": "gramps50/gramps/family_group.tex"
+        }
+    ],
+    "gramps42": [
+        {
+            "status": "ok",
+            "name": "Toto",
+            "directory": "gramps/toto",
+            "version": "1"
+        }
+    ]
 }
