@@ -55,6 +55,8 @@ env50:
 pip50:
 	env/gramps50/bin/pip3 install Django==1.7
 	env/gramps50/bin/pip3 install pyicu==1.8
+	env/gramps50/bin/pip3 install cffi
+	env/gramps50/bin/pip3 install cairosvg
 	env/gramps50/bin/pip install Pillow
 
 clone50:

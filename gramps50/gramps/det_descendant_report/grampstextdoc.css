@@ -1,3 +1,30 @@
+#grampstextdoc .DDR-ChildList {
+	font-size: 10pt;
+	text-align: left; text-indent: -0.75cm;
+	margin-right: 0.00cm; margin-left: 2.25cm;
+	margin-top: 0.12cm; margin-bottom: 0.12cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .DDR-ChildTitle {
+	font-size: 10pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 1.50cm;
+	margin-top: 0.25cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .DDR-Entry {
+	font-size: 12pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 1.50cm;
+	margin-top: 0.25cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
 #grampstextdoc .DDR-First-Entry {
 	font-size: 12pt;
 	text-align: left; text-indent: -1.50cm;
@@ -16,41 +43,14 @@
 	border-left:none; border-right:none;
 	font-style:italic; 
 }
-#grampstextdoc .DDR-Title {
-	font-size: 16pt;
-	text-align: center; text-indent: 0.00cm;
-	margin-right: 0.00cm; margin-left: 0.00cm;
-	margin-top: 0.25cm; margin-bottom: 0.25cm;
-	border-top:none; border-bottom:none;
-	border-left:none; border-right:none;
-	font-weight:bold; 
-}
-#grampstextdoc .DDR-ChildTitle {
+#grampstextdoc .DDR-MoreDetails {
 	font-size: 10pt;
 	text-align: left; text-indent: 0.00cm;
 	margin-right: 0.00cm; margin-left: 1.50cm;
 	margin-top: 0.25cm; margin-bottom: 0.25cm;
 	border-top:none; border-bottom:none;
 	border-left:none; border-right:none;
-	font-weight:bold; 
-}
-#grampstextdoc .Endnotes-Ref {
-	font-size: 12pt;
-	text-align: left; text-indent: -0.90cm;
-	margin-right: 0.00cm; margin-left: 1.90cm;
-	margin-top: 0.20cm; margin-bottom: 0.00cm;
-	border-top:none; border-bottom:none;
-	border-left:none; border-right:none;
 	
-}
-#grampstextdoc .Endnotes-Header {
-	font-size: 14pt;
-	text-align: left; text-indent: 0.00cm;
-	margin-right: 0.00cm; margin-left: 0.00cm;
-	margin-top: 0.20cm; margin-bottom: 0.20cm;
-	border-top:none; border-bottom:none;
-	border-left:none; border-right:none;
-	font-style:italic; 
 }
 #grampstextdoc .DDR-MoreHeader {
 	font-size: 10pt;
@@ -61,15 +61,6 @@
 	border-left:none; border-right:none;
 	font-weight:bold; 
 }
-#grampstextdoc .DDR-Entry {
-	font-size: 12pt;
-	text-align: left; text-indent: 0.00cm;
-	margin-right: 0.00cm; margin-left: 1.50cm;
-	margin-top: 0.25cm; margin-bottom: 0.25cm;
-	border-top:none; border-bottom:none;
-	border-left:none; border-right:none;
-	
-}
 #grampstextdoc .DDR-NoteHeader {
 	font-size: 10pt;
 	text-align: left; text-indent: 0.00cm;
@@ -79,19 +70,28 @@
 	border-left:none; border-right:none;
 	font-weight:bold; 
 }
-#grampstextdoc .DDR-ChildList {
-	font-size: 10pt;
-	text-align: left; text-indent: -0.75cm;
-	margin-right: 0.00cm; margin-left: 2.25cm;
-	margin-top: 0.12cm; margin-bottom: 0.12cm;
+#grampstextdoc .DDR-Title {
+	font-size: 16pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.25cm; margin-bottom: 0.25cm;
 	border-top:none; border-bottom:none;
 	border-left:none; border-right:none;
-	
+	font-weight:bold; 
 }
-#grampstextdoc .Endnotes-Source {
+#grampstextdoc .Endnotes-Header {
+	font-size: 14pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.20cm; margin-bottom: 0.20cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-style:italic; 
+}
+#grampstextdoc .Endnotes-Ref {
 	font-size: 12pt;
-	text-align: left; text-indent: -0.75cm;
-	margin-right: 0.00cm; margin-left: 0.75cm;
+	text-align: left; text-indent: -0.90cm;
+	margin-right: 0.00cm; margin-left: 1.90cm;
 	margin-top: 0.20cm; margin-bottom: 0.00cm;
 	border-top:none; border-bottom:none;
 	border-left:none; border-right:none;
@@ -106,11 +106,11 @@
 	border-left:none; border-right:none;
 	
 }
-#grampstextdoc .DDR-MoreDetails {
-	font-size: 10pt;
-	text-align: left; text-indent: 0.00cm;
-	margin-right: 0.00cm; margin-left: 1.50cm;
-	margin-top: 0.25cm; margin-bottom: 0.25cm;
+#grampstextdoc .Endnotes-Source {
+	font-size: 12pt;
+	text-align: left; text-indent: -0.75cm;
+	margin-right: 0.00cm; margin-left: 0.75cm;
+	margin-top: 0.20cm; margin-bottom: 0.00cm;
 	border-top:none; border-bottom:none;
 	border-left:none; border-right:none;
 	

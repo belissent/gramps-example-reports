@@ -1,15 +1,13 @@
 
 
-full_report_list = [];
+// Get current directory
+var winloc = window.location.pathname;
+var curdir = winloc.substring(0, winloc.lastIndexOf('/'));
+var homedir = winloc.substring(0, winloc.lastIndexOf('/gramps-example-reports/'));
+homedir += '/gramps-example-reports';
 
-$.getJSON("/gramps-example-reports/report_list.json", function(data) {
-	full_report_list = data;
-	build_report_list();
-})
-.fail(function() {
-	full_report_list = [];
-	$("#contents").html('<div class="alert alert-danger" role="alert">Internal error</div>');
-});
+
+$(document).ready(build_report_list);
 
 
 function build_report_list()
@@ -70,8 +68,8 @@ function build_list(version, report_list)
 	var html = '';
 	html += '<table class="table table-striped">';
 	html += '<thead><tr>';
-	html += '<th>Report name</th>';
 	html += '<th>Title</th>';
+	html += '<th>Name</th>';
 	html += '<th>Type</th>';
 	html += '<th>Version</th>';
 	html += '<th>Status</th>';
@@ -80,8 +78,8 @@ function build_list(version, report_list)
 	for (var i = 0; i < report_list.length; i++)
 	{
 		html += '<tr>';
-		html += '<td><a href="/gramps-example-reports/' + report_list[i].result + '">' + report_list[i].name + '</a></td>';
-		html += '<td>' + report_list[i].title + '</td>';
+		html += '<td><a href="' + homedir + '/' + report_list[i].result + '">' + report_list[i].title + '</a></td>';
+		html += '<td>' + report_list[i].name + '</td>';
 		html += '<td>' + report_list[i].type + '</td>';
 		html += '<td>' + report_list[i].version + '</td>';
 		html += '<td>' + report_list[i].status + '</td>';

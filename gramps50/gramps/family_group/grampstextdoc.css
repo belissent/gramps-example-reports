@@ -1,13 +1,3 @@
-#grampstextdoc .FGR-TextChild1 {
-	padding: 0.100cm 0.100cm 0.100cm 0.100cm;
-	border-top:none; border-bottom:none;
-	border-left:thin solid #000000; border-right:none;
-}
-#grampstextdoc .FGR-TextContents {
-	padding: 0.100cm 0.100cm 0.100cm 0.100cm;
-	border-top:none; border-bottom:thin solid #000000;
-	border-left:thin solid #000000; border-right:none;
-}
 #grampstextdoc .FGR-ChildName {
 	padding: 0.200cm 0.200cm 0.200cm 0.200cm;
 	border-top:none; border-bottom:thin solid #000000;
@@ -18,33 +8,25 @@
 	border-top:thin solid #000000; border-bottom:thin solid #000000;
 	border-left:thin solid #000000; border-right:thin solid #000000;
 }
-#grampstextdoc .FGR-TextContentsEnd {
+#grampstextdoc .FGR-TextChild1 {
 	padding: 0.100cm 0.100cm 0.100cm 0.100cm;
-	border-top:none; border-bottom:thin solid #000000;
-	border-left:thin solid #000000; border-right:thin solid #000000;
+	border-top:none; border-bottom:none;
+	border-left:thin solid #000000; border-right:none;
 }
 #grampstextdoc .FGR-TextChild2 {
 	padding: 0.100cm 0.100cm 0.100cm 0.100cm;
 	border-top:none; border-bottom:thin solid #000000;
 	border-left:thin solid #000000; border-right:none;
 }
-#grampstextdoc .FGR-Title {
-	font-size: 16pt;
-	text-align: center; text-indent: 0.00cm;
-	margin-right: 0.00cm; margin-left: 0.00cm;
-	margin-top: 0.00cm; margin-bottom: 0.00cm;
-	border-top:none; border-bottom:none;
-	border-left:none; border-right:none;
-	font-weight:bold; 
+#grampstextdoc .FGR-TextContents {
+	padding: 0.100cm 0.100cm 0.100cm 0.100cm;
+	border-top:none; border-bottom:thin solid #000000;
+	border-left:thin solid #000000; border-right:none;
 }
-#grampstextdoc .FGR-ParentName {
-	font-size: 12pt;
-	text-align: left; text-indent: 0.00cm;
-	margin-right: 0.00cm; margin-left: 0.00cm;
-	margin-top: 0.00cm; margin-bottom: 0.00cm;
-	border-top:none; border-bottom:none;
-	border-left:none; border-right:none;
-	font-weight:bold; 
+#grampstextdoc .FGR-TextContentsEnd {
+	padding: 0.100cm 0.100cm 0.100cm 0.100cm;
+	border-top:none; border-bottom:thin solid #000000;
+	border-left:thin solid #000000; border-right:thin solid #000000;
 }
 #grampstextdoc .FGR-ChildText {
 	font-size: 10pt;
@@ -55,6 +37,15 @@
 	border-left:none; border-right:none;
 	font-weight:bold; 
 }
+#grampstextdoc .FGR-Normal {
+	font-size: 10pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
 #grampstextdoc .FGR-Note {
 	font-size: 10pt;
 	text-align: left; text-indent: 0.00cm;
@@ -64,17 +55,26 @@
 	border-left:none; border-right:none;
 	
 }
-#grampstextdoc .FGR-blank {
-	font-size: 4pt;
+#grampstextdoc .FGR-ParentName {
+	font-size: 12pt;
 	text-align: left; text-indent: 0.00cm;
 	margin-right: 0.00cm; margin-left: 0.00cm;
 	margin-top: 0.00cm; margin-bottom: 0.00cm;
 	border-top:none; border-bottom:none;
 	border-left:none; border-right:none;
-	
+	font-weight:bold; 
 }
-#grampstextdoc .FGR-Normal {
-	font-size: 10pt;
+#grampstextdoc .FGR-Title {
+	font-size: 16pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .FGR-blank {
+	font-size: 4pt;
 	text-align: left; text-indent: 0.00cm;
 	margin-right: 0.00cm; margin-left: 0.00cm;
 	margin-top: 0.00cm; margin-bottom: 0.00cm;
