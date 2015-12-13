@@ -8,6 +8,7 @@
 import os
 
 from gramps.version import VERSION
+from gramps.plugins.webreport.narrativeweb import _INCLUDE_LIVING_VALUE
 
 reports = []
 
@@ -15,7 +16,7 @@ reports = []
 # GRAMPS native plugins
 ##################################################################
 
-GRAMPS_REP_DIR = os.path.join(os.environ['GRAMPS_REPORTS'], "gramps")
+GRAMPS_REP_DIR = os.path.join(os.environ['GRAMPS_REPORTS'], 'gramps')
 
 GRPH_FMT = ["odt", "ps", "pdf", "svg"]
 # GRPH_FMT = ["svg"]
@@ -137,7 +138,76 @@ for rep_info in TEXT_REP:
         })
 
 ##################################################################
+# GRAMPS addons reports listing
+##################################################################
+
+def read_listing(filename):
+    listing = []
+    fp = open(filename, 'r')
+    for line in fp.readlines():
+        try:
+            plugin_dict = eval(line, {})
+            if type(plugin_dict) == type({}): listing.append(plugin_dict)
+        except:
+            pass
+    fp.close()
+    return listing
+
+lang = 'en'
+listing = read_listing(os.path.join(os.environ['GRAMPS_ADDONS_SOURCE'], 'listings', 'addons-%s.txt' % lang))
+
+
+##################################################################
 # GRAMPS addons reports
 ##################################################################
 
-#TODO
+ADDONS_REP_DIR = os.path.join(os.environ['GRAMPS_REPORTS'], 'addons')
+
+addons=[]
+addons.append({
+    'title': 'DynammicWeb report with "Mainz" style',
+    'result': os.path.join(ADDONS_REP_DIR, 'example_DynamicWeb', 'index.html'),
+    'i': 'DynamicWeb',
+    'options': {
+        'target': os.path.join(ADDONS_REP_DIR, 'example_DynamicWeb'),
+        'template': 1,
+        'inc_pageconf': True,
+        'incpriv': True,
+        'living': _INCLUDE_LIVING_VALUE,
+    },
+})
+# addons=[]
+# addons.append({
+#     'title': 'DenominoViso with default options',
+#     'result': os.path.join(ADDONS_REP_DIR, 'example_denominoviso', 'index.html'),
+#     'i': 'denominoviso',
+#     'options': {
+#         'DNMinc_attributes_m': 'True, ',
+#     },
+# })
+# addons=[]
+# for fmt in TEXT_FMT:
+#     of = os.path.join(ADDONS_REP_DIR, 'ListeEclair.' + fmt)
+#     addons.append({
+#         'title': 'Textual report "ListeEclair" in format "%s"' % fmt,
+#         'result': of,
+#         'i': 'ListeEclair',
+#         'options': {
+#             'off': fmt,
+#             'of': of,
+#         },
+#     })
+
+
+reports=[]
+
+for addon in addons:
+    addon_id = next(l for l in listing if l['i'] == addon['i'])
+    addon['options'].update({
+        'name': addon['i'],
+    })
+    addon.update({
+        'type': 'Addon',
+        'version': addon_id['v'],
+    })
+    reports.append(addon)

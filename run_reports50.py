@@ -27,9 +27,12 @@ def call(cmd):
     print(sys.stderr, err_str)
 
 ##################################################################
-#
+# Create database
 ##################################################################
 
+# Note: the database is created only once
+# This allows to name the database, which is mandatory for some reports
+call([sys.executable, os.path.join(TOP_DIR, "Gramps.py"), "-q", "-y", "-C", "example", "-i", EXAMPLE_XML])
 
 
 ##################################################################
@@ -44,7 +47,7 @@ for report in reports:
             for (key, value) in report['options'].items()
         ])
     ]
-call([sys.executable, os.path.join(TOP_DIR, "Gramps.py"), "-q", "-i", EXAMPLE_XML] + params)
+call([sys.executable, os.path.join(TOP_DIR, "Gramps.py"), "-q", "-O", "example"] + params)
 
 
 ##################################################################
@@ -124,11 +127,12 @@ def buildThumbnail(filename):
     (base, ext) = os.path.splitext(filename)
     if (ext == '.svg'):
         png = filename + '.png'
-        f = open(filename, 'r')
-        fout = open(png, 'wb')
-        cairosvg.svg2png(file_obj = f, write_to = fout, dpi = 19)
-        f.close()
-        fout.close()
+        if os.path.exists(filename):
+            f = open(filename, 'r')
+            fout = open(png, 'wb')
+            cairosvg.svg2png(file_obj = f, write_to = fout, dpi = 19)
+            f.close()
+            fout.close()
         return(png)
     return(None)
 
