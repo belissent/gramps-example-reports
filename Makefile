@@ -49,7 +49,7 @@ copy_addons: copy_addons42 copy_addons50
 run_reports.: run_reports42 run_reports50
 
 clean:
-	rm -rf env sources databases
+	rm -rf env sources databases gramps50/gramps gramps50/addons gramps42/gramps gramps42/addons
 	find . -name "*.stackdump" -exec rm {} +
 
 ############################################## 4.2
