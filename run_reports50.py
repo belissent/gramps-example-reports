@@ -142,8 +142,8 @@ def buildThumbnail(filename):
 ##################################################################
 
 # Get previous data
-flist_name = "report_list.json"
-jslist_name = "report_list.js"
+flist_name = os.path.join('site', "report_list.json")
+jslist_name = os.path.join('site', "report_list.js")
 list_data = {}
 if os.path.exists(flist_name):
     flist = open(flist_name, "r")
@@ -152,8 +152,8 @@ if os.path.exists(flist_name):
 if ('gramps50' not in list_data): list_data['gramps50'] = []
 list_data['gramps50'] = []
 
-fvers_name = "report_version.json"
-jsvers_name = "report_version.js"
+fvers_name = os.path.join('site', "report_version.json")
+jsvers_name = os.path.join('site', "report_version.js")
 vers_data = {}
 if os.path.exists(fvers_name):
     fvers = open(fvers_name, "r")
