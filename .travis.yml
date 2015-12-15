@@ -1,0 +1,46 @@
+
+language: c
+# python:
+# - 3.5
+
+# sudo: false
+# missing in whitelist: python3-bsddb3
+
+# addons:
+  # apt:
+    # packages:
+    # - gir1.2-pango-1.0
+    # - gir1.2-gtk-2.0
+    # - xdg-utils
+    # - librsvg2-common
+    # - libglib2.0-dev
+    # - intltool
+    # - python3-gi
+    # - python3-cairo
+    # - python3-gi-cairo
+    # - python3-bsddb3
+    # - python3-dev
+    # - python3-nose
+
+env:
+  global:
+  - secure: "QzY+R8GFp7lNaOGAlRKgp1zxNOQJcwOJy3vqbSvNc+/Dfh86F96xYA/AbtzY1uukJoSxq714qmuf1nXJ3TS+X/m/+i8ZxAdP2Se2S4gFtoj32e1g8EK/zTADF8wll4wjYdJjDijfYctiadXq3sgyD95AHFN0oe6hOO4rb1QKWQ49itO9oAsIGCV8K+8mgK8XZJcORWlHGqPMnAuujEamRimiozar57fzXfIOecH8bMj/g42Q0tM4/mlKz/r0lGEWMwHeM1Fzzi7jQqs8lvnn9IjwAdH2ZF3gE/kgUrsGubzYtvl7tKsbwY187I8RACidn+t/Qk1VIIwehsOuKxZzezVGBUnBRKRvLplra+Qh/Bhsi3pfQ2bbeEYVsu8clzibk45b+WIIuaq+ARZgAr4lJY3IvcB8fO171NvuSeurCInsmSU2tegNUJI3I26SmYGHOPlANAuu6GoX+8lzBmGDyCMj5m2nVPVpgmM7EQF3dG6ucUI09TglVZgc+ZUga6hC8Ib6OE7HcpacZuhpC66EWqcgAUGpBo4kv4oclIGbwOkJ366usqHPpDjGMjLCPcZUyH4MWoWMI36ow7FWy3wnGrKiw4gQklqELUhx+xyT/pobhm27h2nteT2cB9vZZXfktMRQbOV6iP/72yjcTAMJmOaFppW7uPgq++DbYbS/SSc="
+
+install:
+- travis_retry sudo apt-get update
+- travis_retry sudo apt-get install gir1.2-pango gir1.2-gtk xdg-utils librsvg2-common
+  libglib2.0-dev intltool
+- travis_retry sudo apt-get install python3-gobject python3-gi python3-cairo python3-gi-cairo ttf-freefont
+  python3-bsddb3 python3-dev python3-nose
+- travis_retry sudo apt-get install python-pygoocanvas gir1.2-goocanvas
+- travis_retry curl https://bootstrap.pypa.io/get-pip.py | sudo python3
+- export EXAMPLES_REPO_SLUG=${TRAVIS_REPO_SLUG}
+- export GRAMPS_REPO_SLUG=${TRAVIS_REPO_SLUG/gramps-example-reports/gramps}
+- export ADDONS_REPO_SLUG=${TRAVIS_REPO_SLUG/gramps-example-reports/addons}
+- bash ./install3.sh
+
+script:
+- bash ./run.sh
+
+after_success:
+- bash ./deploy.sh

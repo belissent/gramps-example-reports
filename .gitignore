@@ -63,4 +63,5 @@ target/
 # GRAMPS example build
 sources/
 databases/
-
+site/gramps50/gramps
+site/gramps50/addons
