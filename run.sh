@@ -21,7 +21,7 @@ cat downloads/gramps42_build.txt
 
 mkdir -v -p site/gramps42/gramps
 mkdir -v -p site/gramps42/addons
-# $PYTHON_42 run_reports.py 42
+$PYTHON_42 run_reports.py 42
 
 
 ##############################################
