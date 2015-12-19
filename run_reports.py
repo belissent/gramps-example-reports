@@ -8,9 +8,10 @@
 # You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
 
-import sys, os, subprocess, json, re
+import sys, os, subprocess, json, re, time
 import cairosvg
 from report_set import *
+from gramps.gen.plug.report import standalone_categories
 
 
 ##################################################################
@@ -79,17 +80,36 @@ def call(cmd):
     :type cmd: list
     """
     print(' '.join(cmd))
+    retcode = ULTIMATE_ANSWER
+    t0 = time.time()
     process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    out_str, err_str = process.communicate('')
-    out_str = out_str.decode()
-    err_str = err_str.decode()
-    if out_str != '': print(out_str)
-    if err_str != '': print(err_str, file = sys.stderr)
-    print('The command exited with %s.' % str(process.returncode))
-    log = '\n'.join([out_str, err_str])
-    # Remove progress (lines with XX%) in the log
-    log = re.sub(r'\d\d%\n', '', log)
-    return(process.returncode, log)
+    for i in range (5 * 60): # 5 minutes timeout
+        time.sleep(1.0)
+        if process.poll() is not None: break
+    t1 = time.time()
+    if process.poll() is None:
+        # Timeout reached
+        try:
+            process.kill()
+        except OSError as e:
+            # Subprocess process may terminate between the process.poll() and process.kill() calls
+            if e.errno != errno.ESRCH:
+                raise
+        log = 'Error: process taking too long to complete (%.3f seconds), terminating' % (t1 - t0)
+        print(log)
+    else:
+        out_str, err_str = process.communicate('')
+        out_str = out_str.decode()
+        err_str = err_str.decode()
+        if out_str != '': print(out_str)
+        if err_str != '': print(err_str, file = sys.stderr)
+        print('The command exited with %s (execution time: %.3f seconds).' % (str(process.returncode), t1 - t0))
+        log = '\n'.join([out_str, err_str])
+        # Remove progress (lines with XX%) in the log
+        log = re.sub(r'100%\r', r'100%\n', log)
+        log = re.sub(r'\d\d%\r', '', log)
+        retcode = process.returncode
+    return(retcode, log)
 
 
 ##################################################################
@@ -107,10 +127,11 @@ if r != 0: sys.exit(ULTIMATE_ANSWER)
 ##################################################################
 
 # Split reports list in groups of 10 reports
-CHUNK_SIZE = 10
+CHUNK_SIZE = 1
 chunks=[reports[x : x + CHUNK_SIZE] for x in range(0, len(reports), CHUNK_SIZE)]
 # Update with current data
 for chunk in chunks:
+    # Build parameter string
     params = []
     for report in chunk:
         params += ['-a', 'report', '-p',
@@ -119,11 +140,14 @@ for chunk in chunks:
                 for (key, value) in report['options'].items()
             ])
         ]
+        # Create result directory if needed
+        resdir = os.path.dirname(report['result'])
+        if not os.path.isdir(resdir): os.makedirs(resdir)
     (r, out) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-O', 'example'] + params)
     # (r, out) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-d', '', '-q', '-y', '-O', 'example'] + params)
     for report in chunk:
         report['log'] = out
-    if r != 0: sys.exit(ULTIMATE_ANSWER)
+    report['status'] = (r == 0)
 
 
 ##################################################################
@@ -240,7 +264,7 @@ for report in reports:
     vers_data[report['options']['name']] = report['version']
     buildMultiFilesReport(report)
     # check if reports is correctly generated
-    status = os.path.exists(report['result'])
+    status = report['status'] and os.path.exists(report['result'])
     if status and os.path.isfile(report['result']):
         sz = os.path.getsize(report['result'])
         if sz == 0: status = False
@@ -252,9 +276,10 @@ for report in reports:
         'title': report['title'],
         'version': report['version'],
         'status': status,
-        'log': '' if status else report['log'],
+        'log': report['log'],
         'type': report['type'],
-        'category': report['category'],
+        'category': standalone_categories[report['category']][1],
+        'format': report['options']['off'] if 'off' in report['options'] else '',
     })
 
 # Export data

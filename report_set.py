@@ -271,18 +271,21 @@ def build_report_set():
         ['default', False],
         ['Mainz', True],
     ]):
+        report = 'navwebpage'
+        plugin = gpr.get_plugin(report)
         opts = {
-            'name': 'navwebpage',
+            'name': report,
             'target': os.path.join(ADDONS_REP_DIR, 'example_NAVWEB%i' % i),
             # 'css':  CSS[css]['id'],
             'living': _INCLUDE_LIVING_VALUE,
         }
         if (full): opts.update(full_options)
         reports.append({
-            'title': 'NarrativeWeb report example %i' % i,
-            'name': 'navwebpage',
+            'title': '"%s" report example %i' % (plugin.name, i),
+            'name': report,
             'result': os.path.join(ADDONS_REP_DIR, 'example_NAVWEB%i' % i, 'index.html'),
             'type': 'Native',
+            'category': plugin.category,
             'version': VERSION,
             'options': opts,
         })
@@ -299,8 +302,10 @@ def build_report_set():
         ['default', False],
         ['Mainz', True],
     ]):
+        report = 'WebCal'
+        plugin = gpr.get_plugin(report)
         opts = {
-            'name': 'WebCal',
+            'name': report,
             'target': os.path.join(ADDONS_REP_DIR, 'example_WebCal%i' % i),
             # 'css':  CSS[css]['id'],
             'home_link': '../../example_NAVWEB%i/index.html' % i,
@@ -308,10 +313,11 @@ def build_report_set():
         }
         if (full): opts.update(full_options)
         reports.append({
-            'title': 'Web Calendar report example %i' % i,
-            'name': 'WebCal',
+            'title': '"%s" report example %i' % (plugin.name, i),
+            'name': report,
             'result': os.path.join(ADDONS_REP_DIR, 'example_WebCal%i' % i, 'January.html'),
             'type': 'Native',
+            'category': plugin.category,
             'version': VERSION,
             'options': opts,
         })

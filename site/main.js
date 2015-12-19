@@ -231,7 +231,7 @@ function build_list()
 	for (var f = 0; f < filters.length; f += 1)
 	{
 		var filter = filters[f];
-		if (typeof(search[filter]) == 'undefined') continue;
+		if ((typeof(search[filter]) == 'undefined') || (search[filter] == '')) continue;
 		reports = $.grep(reports, function(elt, index) {
 			return((elt[filter] == search[filter]) || (typeof(elt[filter]) == 'undefined'));
 		});
@@ -415,13 +415,15 @@ function build_log()
 {
 	var report = full_report_list['gramps' + search.gramps_version][search.log];
 	var html = '';
-	html += '<p>Report log for the report <mark>' + report.title + '</mark> (name: <mark>' + report.name + '</mark>, id: <mark>' + report.id + '</mark>)</p>';
+	html += '<p>Report log for the report "' + report.title + '" (name: "' + report.name + '", id: <mark>' + report.id + '</mark>)</p>';
 	var txt = report.log
 	var txt = txt.replace(/&/g, '&amp;');
 	var txt = txt.replace(/>/g, '&gt;');
 	var txt = txt.replace(/</g, '&lt;');
 	var re = new RegExp('(Using options string.*name=)(' + report.id + ')([ ,\\n].*)', 'g');
-	var txt = txt.replace(re, '<p><span class="alert alert-danger" role="alert">$1<mark>$2</mark>$3</span></p>');
+	// var txt = txt.replace(re, '<p><span class="alert alert-danger" role="alert">$1<mark>$2</mark>$3</span></p>');
+	// var txt = txt.replace(re, '<p class="alert">$1<mark>$2</mark>$3</p>');
+	var txt = txt.replace(re, '<p class="bg-danger">$1<mark>$2</mark>$3</p>');
 	html += '<pre>' + txt + '</pre>';
 	$("#contents").html(html);
 }

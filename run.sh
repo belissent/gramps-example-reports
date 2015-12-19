@@ -10,11 +10,23 @@ source vars.sh
 
 
 ##############################################
+### Retrieve the last generated report list
+##############################################
+
+mkdir -p downloads
+for file in report_list.js report_list.json report_version.js report_version.json; do
+	curl -o downloads/$file https://raw.githubusercontent.com/$EXAMPLES_REPO_SLUG/gh-pages/$file
+	if [ -f downloads/$file ]; then
+		cp downloads/$file site/$file
+	fi
+done
+
+
+##############################################
 ###  4.2
 ##############################################
 
 $WORKON_42
-mkdir -p downloads
 echo "build id" > downloads/gramps42_build.txt
 curl -o downloads/gramps42_build.txt https://raw.githubusercontent.com/$EXAMPLES_REPO_SLUG/gh-pages/gramps42_build.txt
 cat downloads/gramps42_build.txt
