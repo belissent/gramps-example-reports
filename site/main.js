@@ -84,14 +84,13 @@ function BuildSearchString(params)
 	// "params" has the same structure as "search"
 	params = (typeof(params) !== 'undefined') ? params : {};
 	var s = '';
-	page = window.location.href.replace(/\?.*/, '').replace(toRoot, '£££').replace(/.*£££/, '');
-	s = SetURLParameter(s, 'v', params.Txt, search.gramps_version, '');
-	s = SetURLParameter(s, 'l', params.Txt, search.log, -1);
-	s = SetURLParameter(s, 'n', params.Txt, search.name, '');
-	s = SetURLParameter(s, 'id', params.Txt, search.id, '');
-	s = SetURLParameter(s, 't', params.Txt, search.type, '');
-	s = SetURLParameter(s, 'c', params.Txt, search.category, '');
-	s = SetURLParameter(s, 's', params.Txt, search.status, '');
+	s = SetURLParameter(s, 'v', params.gramps_version, search.gramps_version, '');
+	s = SetURLParameter(s, 'l', params.log, search.log, -1);
+	s = SetURLParameter(s, 'n', params.name, search.name, '');
+	s = SetURLParameter(s, 'id', params.id, search.id, '');
+	s = SetURLParameter(s, 't', params.type, search.type, '');
+	s = SetURLParameter(s, 'c', params.category, search.category, '');
+	s = SetURLParameter(s, 's', params.status, search.status, '');
 	return(s);
 }
 
@@ -213,7 +212,7 @@ function build_header()
 //=============================================== Reports list page
 //=================================================================
 
-function build_list()
+function filter_list()
 {
 	// Build one report list
 	var reports = [];
@@ -236,6 +235,14 @@ function build_list()
 			return((elt[filter] == search[filter]) || (typeof(elt[filter]) == 'undefined'));
 		});
 	}
+	
+	return(reports);
+}
+
+
+function build_list()
+{
+	var reports = filter_list();
 	// Write the table
 	var html = '';
 	if (reports.length == 0)
@@ -267,7 +274,7 @@ function build_list()
 		if (reports[i].status)
 			datum.status = 'OK';
 		else
-			datum.status = '<a href="' + url + '?v=' + reports[i].gramps_version + '&l=' + i + '">Error</a>';
+			datum.status = '<a href="' + url + '?' + BuildSearchString({log: i}) + '">Error</a>';
 		data.push(datum);
 	}
 	$('#reports').bootstrapTable({
@@ -306,6 +313,12 @@ function build_list()
 			align: 'center',
 			sortable: true
 		}, {
+			field: 'gramps_version',
+			title: 'Gramps version',
+			filterControl: 'select',
+			align: 'center',
+			sortable: true
+		}, {
 			field: 'status',
 			title: 'Status',
 			filterControl: 'select',
@@ -318,94 +331,6 @@ function build_list()
 	});
 }
 
-function _build_list()
-{
-	// Build one report list
-	var reports = [];
-	for (var i = 0; i < versions.length; i += 1)
-	{
-		var v = versions[i];
-		if (typeof(full_report_list[v]) == 'undefined') continue;
-		for (var j = 0; j < full_report_list[v].length; j += 1)
-		{
-			full_report_list[v][j].gramps_version = versions2[i];
-			reports.push(full_report_list[v][j]);
-		}
-	}
-	// Filter the reports
-	for (var f = 0; f < filters.length; f += 1)
-	{
-		var filter = filters[f];
-		$.grep(reports, function(elt, index) {
-			return(elt[filter] == search[filter]);
-		});
-	}
-	// Print table
-	var html = '';
-	if (reports.length == 0)
-	{
-		html += '<div class="alert alert-warning" role="alert">';
-		html += 'No reports match the filter:';
-		html += '<ul>';
-		for (var f = 0; f < filters.length; f += 1)
-		{
-			var filter = filters[f];
-			if (search[filter] != '') html += '<li>' + filter_names[f] + ': ' + search[filter] + '</li>';
-		}
-		html += '</ul>';
-		html += '</div>';
-	}
-	else
-	{
-		html += build_filtered_list(reports);
-	}
-	$('#contents').html(html);
-}
-
-
-function build_filtered_list(report_list)
-{
-	var html = '';
-	html += '<table id="reports" data-toggle="table" class="table table-striped" data-filter-control="true">';
-	html += '<thead><tr>';
-	html += '<th>Title</th>';
-	html += '<th data-filter-control="select">Name</th>';
-	html += '<th data-filter-control="select">Type</th>';
-	html += '<th data-filter-control="select">Category</th>';
-	html += '<th>Version</th>';
-	html += '<th data-filter-control="select">Status</th>';
-	html += '</tr></thead>';
-	html += '<tbody>';
-	for (var i = 0; i < report_list.length; i++)
-	{
-		html += '<tr>';
-		if (report_list[i].status)
-		{
-			html += '<td><a href="' + homedir + '/' + report_list[i].result + '">' + report_list[i].title + '</a></td>';
-		}
-		else
-		{
-			html += '<td>' + report_list[i].title + '</td>';
-		}
-		html += '<td>' + report_list[i].name + '</td>';
-		html += '<td>' + report_list[i].type + '</td>';
-		html += '<td>' + report_list[i].category + '</td>';
-		html += '<td>' + report_list[i].version + '</td>';
-		if (report_list[i].status)
-		{
-			html += '<td>OK</td>';
-		}
-		else
-		{
-			html += '<td><a href="' + url + '?v=' + report_list[i].gramps_version + '&l=' + i + '">Error</a></td>';
-		}
-		html += '</tr>';
-	}
-	html += '</tbody>';
-	html += '</table>';
-	return(html);
-}
-
 
 //=================================================================
 //=================================================== log page
@@ -413,7 +338,8 @@ function build_filtered_list(report_list)
 
 function build_log()
 {
-	var report = full_report_list['gramps' + search.gramps_version][search.log];
+	var reports = filter_list();
+	var report = reports[search.log];
 	var html = '';
 	html += '<p>Report log for the report "' + report.title + '" (name: "' + report.name + '", id: <mark>' + report.id + '</mark>)</p>';
 	var txt = report.log

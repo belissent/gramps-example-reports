@@ -95,7 +95,7 @@ def call(cmd):
             # Subprocess process may terminate between the process.poll() and process.kill() calls
             if e.errno != errno.ESRCH:
                 raise
-        log = 'Error: process taking too long to complete (%.3f seconds), terminating' % (t1 - t0)
+        log = 'Error: process taking too long to complete (%.0f seconds), terminating' % (t1 - t0)
         print(log)
     else:
         out_str, err_str = process.communicate('')
@@ -103,7 +103,7 @@ def call(cmd):
         err_str = err_str.decode()
         if out_str != '': print(out_str)
         if err_str != '': print(err_str, file = sys.stderr)
-        print('The command exited with %s (execution time: %.3f seconds).' % (str(process.returncode), t1 - t0))
+        print('The command exited with %s (execution time: %.0f seconds).' % (str(process.returncode), t1 - t0))
         log = '\n'.join([out_str, err_str])
         # Remove progress (lines with XX%) in the log
         log = re.sub(r'100%\r', r'100%\n', log)
