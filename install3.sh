@@ -27,7 +27,7 @@ $PIP_50 install Pillow
 ###  Clone GITHUB addons
 ##############################################
 
-mkdir -v -p sources
+mkdir -v -p sources/addons
 git clone --depth=1 --branch=master https://github.com/$ADDONS_REPO_SLUG.git sources/addons
 
 
@@ -37,9 +37,9 @@ git clone --depth=1 --branch=master https://github.com/$ADDONS_REPO_SLUG.git sou
 
 $WORKON_42
 ### clone
-mkdir -v -p sources
-git clone --depth=1 --branch=maintenance/gramps42 https://github.com/$GRAMPS_REPO_SLUG.git sources/gramps42
-cd sources/gramps42
+mkdir -v -p $GRAMPS_RESOURCES
+git clone --depth=1 --branch=maintenance/gramps42 https://github.com/$GRAMPS_REPO_SLUG.git $GRAMPS_RESOURCES
+cd $GRAMPS_RESOURCES
 $PYTHON_42 setup.py build
 cd $MY_PATH
 
@@ -59,9 +59,9 @@ fi
 
 $WORKON_50
 ### clone
-mkdir -v -p sources
-git clone --depth=1 --branch=master https://github.com/$GRAMPS_REPO_SLUG.git sources/gramps50
-cd sources/gramps50
+mkdir -v -p $GRAMPS_RESOURCES
+git clone --depth=1 --branch=master https://github.com/$GRAMPS_REPO_SLUG.git $GRAMPS_RESOURCES
+cd $GRAMPS_RESOURCES
 $PYTHON_50 setup.py build
 cd $MY_PATH
 
@@ -73,3 +73,18 @@ then
 		tar -xzf $archive -C databases/dbgramps50/gramps/gramps50/plugins
 	done
 fi
+
+
+##############################################
+###  Read the last generated data in the gramps-example-reports/gh-pages branch
+##############################################
+
+mkdir -v -p downloads
+for fname in report_list report_version report_build; do
+	for ext in js json; do
+		curl -o downloads/$fname.$ext https://raw.githubusercontent.com/$EXAMPLES_REPO_SLUG/gh-pages/$fname.$ext
+		if [ -e downloads/$fname.$ext ]; then
+			cp downloads/$fname.$ext site/$fname.$ext
+		fi
+	done
+done

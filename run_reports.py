@@ -8,7 +8,7 @@
 # You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
 
-import sys, os, subprocess, json, re, time
+import sys, os, subprocess, json, re, time, shutil
 import cairosvg
 from report_set import *
 from gramps.gen.plug.report import standalone_categories
@@ -37,31 +37,77 @@ EXAMPLE_XML = os.path.join(TOP_DIR, 'example', 'gramps', 'example.gramps')
 
 sys.path.append(TOP_DIR)
 
+if not os.path.isdir(GRAMPS_REP_DIR): os.makedirs(GRAMPS_REP_DIR)
+if not os.path.isdir(ADDONS_REP_DIR): os.makedirs(ADDONS_REP_DIR)
+
+
+##################################################################
+# Save JS data
+##################################################################
+
+def save_jsdata(fname, jsdata, data_name):
+    f = open('site/%s.json' % fname, 'w')
+    json.dump(jsdata, f, indent=4, sort_keys=True)
+    f.close()
+    js = open('site/%s.js' % fname, 'w')
+    js.write('%s = ' % data_name)
+    json.dump(jsdata, js, indent=4, sort_keys=True)
+    js.write(';')
+    js.close()
+
+
+##################################################################
+### Read the last generated data
+##################################################################
+
+def read_jsdata(fname):
+    # Load JSON data
+    jsdata = {}
+    if os.path.exists('site/%s.json' % fname):
+        f = open('site/%s.json' % fname, 'r')
+        jsdata = json.load(f)
+        f.close()
+    return jsdata
+
+
+##################################################################
+# Get previously generated data
+##################################################################
+
+# Get previous data
+flist_name = 'report_list'
+fvers_name = 'report_version'
+fbuild_name = 'report_build'
+
+list_data = read_jsdata(flist_name)
+vers_data = read_jsdata(fvers_name)
+build_data = read_jsdata(fbuild_name)
+
 
 ##################################################################
 # Check if the reports need to be regenerated
 ##################################################################
 
-# The report is regenerated when the grampsXX_build.txt file changes
+# The report is regenerated when the
+# - gramps-example-reports repository changes
+# - gramps repository (for the current branch) changes
+# - the addon version changes (for addons only)
 
-fname_build = os.path.join('site', GRAMPS_TARGET_DIR + '_build.txt')
-last_fname_build = os.path.join('downloads', GRAMPS_TARGET_DIR + '_build.txt')
-if not os.path.exists(fname_build):
-    # Create the file
-    fbuild = open(fname_build, 'r')
-    fbuild.write('\n')
-    fbuild.close()
-if os.path.exists(last_fname_build):
-    fbuild = open(fname_build, 'r')
-    last_fbuild = open(last_fname_build, 'r')
-    txt = fbuild.read()
-    last_txt = last_fbuild.read()
-    fbuild.close()
-    last_fbuild.close()
-    if txt == last_txt:
-        # Same grampsXX_build.txt file contents
-        print('No need to regenerate the reports for ' + GRAMPS_TARGET_DIR)
-        sys.exit(0)
+sha_examples = subprocess.check_output('git rev-parse HEAD', shell = True).decode().strip()
+sha_gramps = subprocess.check_output('git rev-parse HEAD', cwd = os.environ['GRAMPS_RESOURCES'], shell = True).decode().strip()
+sha_addons = subprocess.check_output('git rev-parse HEAD', cwd = 'sources/addons', shell = True).decode().strip()
+
+if ('gramps-example-reports/master' not in build_data): build_data['gramps-example-reports/master'] = ""
+if ('gramps/' + GRAMPS_TARGET_DIR not in build_data): build_data['gramps/' + GRAMPS_TARGET_DIR] = ""
+if ('addons/master' not in build_data): build_data['addons/master'] = ""
+
+native_rebuild = (sha_examples == build_data['gramps-example-reports/master']) and (sha_gramps == build_data['gramps/' + GRAMPS_TARGET_DIR])
+if (sha_addons == build_data['addons/master']) and not native_rebuild:
+    print('No need to regenerate the reports for ' + GRAMPS_TARGET_DIR)
+    sys.exit(0)
+build_data['gramps-example-reports/master'] = sha_examples
+build_data['gramps/' + GRAMPS_TARGET_DIR] = sha_gramps
+build_data['addons/master'] = sha_addons
 
 
 ##################################################################
@@ -126,15 +172,18 @@ if r != 0: sys.exit(ULTIMATE_ANSWER)
 # Generate reports
 ##################################################################
 
-# Split reports list in groups of 10 reports
-CHUNK_SIZE = 1
-chunks=[reports[x : x + CHUNK_SIZE] for x in range(0, len(reports), CHUNK_SIZE)]
-# Update with current data
-for chunk in chunks:
-    # Build parameter string
-    params = []
-    for report in chunk:
-        params += ['-a', 'report', '-p',
+if GRAMPS_TARGET_DIR not in vers_data: vers_data[GRAMPS_TARGET_DIR] = {}
+for report in reports:
+    # Check if report is to be rebuilt
+    v = ""
+    id = report['options']['name']
+    if id in vers_data[GRAMPS_TARGET_DIR]: v = vers_data[GRAMPS_TARGET_DIR][id]
+    report['rebuilt'] = native_rebuild or ((report['type'] == 'Addon') and (report['version'] != v))
+    if not report['rebuilt']: continue
+    else:
+        vers_data[GRAMPS_TARGET_DIR][id] = report['version']
+        # Build parameters string
+        params = ['-a', 'report', '-p',
             ','.join([
                 (key + '=' + (str(value) if isinstance(value, (int, bool)) else value))
                 for (key, value) in report['options'].items()
@@ -143,11 +192,9 @@ for chunk in chunks:
         # Create result directory if needed
         resdir = os.path.dirname(report['result'])
         if not os.path.isdir(resdir): os.makedirs(resdir)
-    (r, out) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-O', 'example'] + params)
-    # (r, out) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-d', '', '-q', '-y', '-O', 'example'] + params)
-    for report in chunk:
+        (r, out) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-O', 'example'] + params)
         report['log'] = out
-    report['status'] = (r == 0)
+        report['status'] = (r == 0)
 
 
 ##################################################################
@@ -241,27 +288,13 @@ def buildThumbnail(filename):
 # Generate JSON data for the index page
 ##################################################################
 
-# Get previous data
-flist_name = os.path.join('site', 'report_list.json')
-jslist_name = os.path.join('site', 'report_list.js')
-list_data = {}
-if os.path.exists(flist_name):
-    flist = open(flist_name, 'r')
-    list_data = json.load(flist)
-    flist.close()
-if (GRAMPS_TARGET_DIR not in list_data): list_data[GRAMPS_TARGET_DIR] = []
+old_list_data = []
+if GRAMPS_TARGET_DIR in list_data: old_list_data = list_data[GRAMPS_TARGET_DIR]
 list_data[GRAMPS_TARGET_DIR] = []
-
-fvers_name = os.path.join('site', 'report_version.json')
-jsvers_name = os.path.join('site', 'report_version.js')
-vers_data = {}
-if os.path.exists(fvers_name):
-    fvers = open(fvers_name, 'r')
-    vers_data = json.load(fvers)
-    fvers.close()
-
 for report in reports:
-    vers_data[report['options']['name']] = report['version']
+    if not report['rebuilt']:
+        list_data[GRAMPS_TARGET_DIR].extend([r for r in old_list_data if r['title'] == report['title']])
+        continue
     buildMultiFilesReport(report)
     # check if reports is correctly generated
     status = report['status'] and os.path.exists(report['result'])
@@ -283,20 +316,6 @@ for report in reports:
     })
 
 # Export data
-flist = open(flist_name, 'w')
-json.dump(list_data, flist, indent=4, sort_keys=True)
-flist.close()
-jslist = open(jslist_name, 'w')
-jslist.write('full_report_list = ')
-json.dump(list_data, jslist, indent=4, sort_keys=True)
-jslist.write(';')
-jslist.close()
-
-fvers = open(fvers_name, 'w')
-json.dump(vers_data, fvers, indent=4, sort_keys=True)
-fvers.close()
-jsvers = open(jsvers_name, 'w')
-jsvers.write('full_report_vers = ')
-json.dump(vers_data, jsvers, indent=4, sort_keys=True)
-jsvers.write(';')
-jsvers.close()
+save_jsdata(flist_name, list_data, 'full_report_list')
+save_jsdata(fvers_name, vers_data, 'full_report_vers')
+save_jsdata(fbuild_name, build_data, 'builds')

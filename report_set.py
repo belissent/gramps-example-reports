@@ -275,7 +275,7 @@ def build_report_set():
         plugin = gpr.get_plugin(report)
         opts = {
             'name': report,
-            'target': os.path.join(ADDONS_REP_DIR, 'example_NAVWEB%i' % i),
+            'target': os.path.join(GRAMPS_REP_DIR, 'example_NAVWEB%i' % i),
             # 'css':  CSS[css]['id'],
             'living': _INCLUDE_LIVING_VALUE,
         }
@@ -283,7 +283,7 @@ def build_report_set():
         reports.append({
             'title': '"%s" report example %i' % (plugin.name, i),
             'name': report,
-            'result': os.path.join(ADDONS_REP_DIR, 'example_NAVWEB%i' % i, 'index.html'),
+            'result': os.path.join(GRAMPS_REP_DIR, 'example_NAVWEB%i' % i, 'index.html'),
             'type': 'Native',
             'category': plugin.category,
             'version': VERSION,
@@ -306,7 +306,7 @@ def build_report_set():
         plugin = gpr.get_plugin(report)
         opts = {
             'name': report,
-            'target': os.path.join(ADDONS_REP_DIR, 'example_WebCal%i' % i),
+            'target': os.path.join(GRAMPS_REP_DIR, 'example_WebCal%i' % i),
             # 'css':  CSS[css]['id'],
             'home_link': '../../example_NAVWEB%i/index.html' % i,
             'prefix': '../../example_NAVWEB%i/' % i,
@@ -315,7 +315,7 @@ def build_report_set():
         reports.append({
             'title': '"%s" report example %i' % (plugin.name, i),
             'name': report,
-            'result': os.path.join(ADDONS_REP_DIR, 'example_WebCal%i' % i, 'January.html'),
+            'result': os.path.join(GRAMPS_REP_DIR, 'example_WebCal%i' % i, 'January.html'),
             'type': 'Native',
             'category': plugin.category,
             'version': VERSION,
