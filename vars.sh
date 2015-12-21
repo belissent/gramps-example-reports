@@ -26,7 +26,7 @@ fi
 
 export VARS_50="export GRAMPSHOME=$MY_PATH/databases/dbgramps50"
 export VARS_50="$VARS_50; export GRAMPS_RESOURCES=$MY_PATH/sources/gramps50"
-export VARS_50="$VARS_50; export GRAMPS_REPORTS=$MY_PATH/site/gramps50"
+export VARS_50="$VARS_50; export GRAMPS_REPORTS=$MY_PATH/gh-pages/gramps50"
 export VARS_50="$VARS_50; export GRAMPS_ADDONS_SOURCE=$MY_PATH/sources/addons/gramps50"
 export VARS_50="$VARS_50; export PYTHONPATH=$MY_PATH/sources/gramps50"
 export VARS_50="$VARS_50; export LANG=en_US.UTF-8"

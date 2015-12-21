@@ -20,8 +20,8 @@ from gramps.gen.plug import PluginRegister
 from gramps.gen.dbstate import DbState
 from gramps.cli.grampscli import CLIManager
 
-GRAMPS_REP_DIR = os.path.join(os.environ['GRAMPS_REPORTS'], 'gramps')
-ADDONS_REP_DIR = os.path.join(os.environ['GRAMPS_REPORTS'], 'addons')
+GRAMPS_REP_DIR = os.path.realpath(os.path.join(os.environ['GRAMPS_REPORTS'], 'gramps'))
+ADDONS_REP_DIR = os.path.realpath(os.path.join(os.environ['GRAMPS_REPORTS'], 'addons'))
 
 def build_report_set():
 

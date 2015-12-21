@@ -2,8 +2,7 @@
 set -ev # exit with nonzero exit code if anything fails
 
 # go to the out directory and create a *new* Git repo
-cd site
-git init
+cd gh-pages
 
 # inside this git repo we'll pretend to be a new user
 git config user.name "gramps_example_reports"
@@ -19,4 +18,4 @@ git commit -m "Deploy example reports to GitHub pages"
 # will be lost, since we are overwriting it.) We redirect any output to
 # /dev/null to hide any sensitive credential data that might otherwise be exposed.
 echo "Pushing to the repository: github.com/${EXAMPLES_REPO_SLUG}.git"
-git push --force --quiet "https://${GH_TOKEN}@github.com/${EXAMPLES_REPO_SLUG}.git" master:gh-pages > /dev/null 2>&1
+git push --quiet "https://${GH_TOKEN}@github.com/${EXAMPLES_REPO_SLUG}.git" gh-pages:gh-pages > /dev/null 2>&1

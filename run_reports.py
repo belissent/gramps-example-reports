@@ -31,7 +31,7 @@ del sys.argv[1:]
 # Set paths
 ##################################################################
 
-SITE_DIR = os.path.join(os.path.dirname(__file__), 'site')
+SITE_DIR = os.path.join(os.path.dirname(__file__), 'gh-pages')
 TOP_DIR = os.environ['GRAMPS_RESOURCES']
 EXAMPLE_XML = os.path.join(TOP_DIR, 'example', 'gramps', 'example.gramps')
 
@@ -46,10 +46,10 @@ if not os.path.isdir(ADDONS_REP_DIR): os.makedirs(ADDONS_REP_DIR)
 ##################################################################
 
 def save_jsdata(fname, jsdata, data_name):
-    f = open('site/%s.json' % fname, 'w')
+    f = open(os.path.join(SITE_DIR, '%s.json' % fname), 'w')
     json.dump(jsdata, f, indent=4, sort_keys=True)
     f.close()
-    js = open('site/%s.js' % fname, 'w')
+    js = open(os.path.join(SITE_DIR, '%s.js' % fname), 'w')
     js.write('%s = ' % data_name)
     json.dump(jsdata, js, indent=4, sort_keys=True)
     js.write(';')
@@ -63,8 +63,8 @@ def save_jsdata(fname, jsdata, data_name):
 def read_jsdata(fname):
     # Load JSON data
     jsdata = {}
-    if os.path.exists('site/%s.json' % fname):
-        f = open('site/%s.json' % fname, 'r')
+    if os.path.exists(os.path.join(SITE_DIR, '%s.json' % fname)):
+        f = open(os.path.join(SITE_DIR, '%s.json' % fname), 'r')
         jsdata = json.load(f)
         f.close()
     return jsdata
@@ -97,17 +97,19 @@ sha_examples = subprocess.check_output('git rev-parse HEAD', shell = True).decod
 sha_gramps = subprocess.check_output('git rev-parse HEAD', cwd = os.environ['GRAMPS_RESOURCES'], shell = True).decode().strip()
 sha_addons = subprocess.check_output('git rev-parse HEAD', cwd = 'sources/addons', shell = True).decode().strip()
 
-if ('gramps-example-reports/master' not in build_data): build_data['gramps-example-reports/master'] = ""
-if ('gramps/' + GRAMPS_TARGET_DIR not in build_data): build_data['gramps/' + GRAMPS_TARGET_DIR] = ""
-if ('addons/master' not in build_data): build_data['addons/master'] = ""
+if GRAMPS_TARGET_DIR not in build_data: build_data[GRAMPS_TARGET_DIR] = {}
+build_data_tgt = build_data[GRAMPS_TARGET_DIR]
+if ('gramps-example-reports/master' not in build_data_tgt): build_data_tgt['gramps-example-reports/master'] = ""
+if ('gramps/' + GRAMPS_TARGET_DIR not in build_data_tgt): build_data_tgt['gramps/' + GRAMPS_TARGET_DIR] = ""
+if ('addons/master' not in build_data_tgt): build_data_tgt['addons/master'] = ""
 
-native_rebuild = (sha_examples != build_data['gramps-example-reports/master']) or (sha_gramps != build_data['gramps/' + GRAMPS_TARGET_DIR])
-if (sha_addons == build_data['addons/master']) and not native_rebuild:
+native_rebuild = (sha_examples != build_data_tgt['gramps-example-reports/master']) or (sha_gramps != build_data_tgt['gramps/' + GRAMPS_TARGET_DIR])
+if (sha_addons == build_data_tgt['addons/master']) and not native_rebuild:
     print('No need to regenerate the reports for ' + GRAMPS_TARGET_DIR)
     sys.exit(0)
-build_data['gramps-example-reports/master'] = sha_examples
-build_data['gramps/' + GRAMPS_TARGET_DIR] = sha_gramps
-build_data['addons/master'] = sha_addons
+build_data_tgt['gramps-example-reports/master'] = sha_examples
+build_data_tgt['gramps/' + GRAMPS_TARGET_DIR] = sha_gramps
+build_data_tgt['addons/master'] = sha_addons
 
 
 ##################################################################
@@ -184,6 +186,17 @@ for report in reports:
         continue
     else:
         vers_data[GRAMPS_TARGET_DIR][id] = report['version']
+        # Clean previous report results
+        if os.path.exists(report['result']):
+            subprocess.check_output('rm -rf %s' % report['result'], shell = True)
+        resdir = os.path.realpath(os.path.dirname(report['result']))
+        if (os.path.exists(resdir) and
+            not os.path.samefile(resdir, GRAMPS_REP_DIR) and
+            not os.path.samefile(resdir, ADDONS_REP_DIR) and (
+            os.path.commonprefix([GRAMPS_REP_DIR, resdir]) == GRAMPS_REP_DIR or
+            os.path.commonprefix([ADDONS_REP_DIR, resdir]) == ADDONS_REP_DIR
+        )):
+            subprocess.check_output('rm -rf %s' % resdir, shell = True)
         # Build parameters string
         params = ['-a', 'report', '-p',
             ','.join([
@@ -192,7 +205,6 @@ for report in reports:
             ])
         ]
         # Create result directory if needed
-        resdir = os.path.dirname(report['result'])
         if not os.path.isdir(resdir): os.makedirs(resdir)
         (r, out) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-O', 'example'] + params)
         report['log'] = out

@@ -76,15 +76,11 @@ fi
 
 
 ##############################################
-###  Read the last generated data in the gramps-example-reports/gh-pages branch
+###  Clone gramps-example-reports/gh-pages
 ##############################################
 
-mkdir -v -p downloads
-for fname in report_list report_version report_build; do
-	for ext in js json; do
-		curl -o downloads/$fname.$ext https://raw.githubusercontent.com/$EXAMPLES_REPO_SLUG/gh-pages/$fname.$ext
-		if [ -e downloads/$fname.$ext ]; then
-			cp downloads/$fname.$ext site/$fname.$ext
-		fi
-	done
-done
+mkdir -v -p gh-pages
+git clone --depth=1 --branch=gh-pages https://github.com/$EXAMPLES_REPO_SLUG.git ./gh-pages
+
+# Update gh-pages with master files
+cp -r -f ./site/* ./gh-pages
