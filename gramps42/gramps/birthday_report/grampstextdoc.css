@@ -1,0 +1,63 @@
+#grampstextdoc .BIR-Datastyle {
+	font-size: 12pt;
+	text-align: left; text-indent: 1.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .BIR-Daystyle {
+	font-size: 12pt;
+	text-align: left; text-indent: 0.50cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-style:italic; font-weight:bold; 
+}
+#grampstextdoc .BIR-Monthstyle {
+	font-size: 14pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .BIR-Text1style {
+	font-size: 12pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .BIR-Text2style {
+	font-size: 12pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .BIR-Text3style {
+	font-size: 12pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .BIR-Title {
+	font-size: 14pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}

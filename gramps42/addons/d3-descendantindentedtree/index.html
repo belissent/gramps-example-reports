@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Descendant Indented Tree for Garner, Joseph</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" src="js/d3/d3.min.js"></script>
+    <script type="text/javascript" src="js/d3/d3.tip.v0.6.3.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-2.0.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/d3.tip.css"/>
+    <link type="text/css" rel="stylesheet" href="css/indentedtree-index.css"/>
+  </head>
+  <body>
+    <div id="body">
+      <div id="start">
+       <h1>Descendant Indented Tree for Garner, Joseph</h1>
+      </div>
+      <div id="chart">
+      </div>
+      <div id="end">
+        <h3>Click people to expand/collapse</h3>
+        <h3>Hover over person to see biography information.
+        On touch-screen devices tap on person</h3>
+        <button class="button" id="default-button" type="button">Default View</button>
+        <button class="button" id="expand-button" type="button">Expand All</button>
+      </div>
+    </div>
+    <div class="div_svg">
+    </div>
+    <div class="calc_svg">
+    </div>
+    <script type="text/javascript">
+      var cur_view = "DEFAULT";
+      window.onload = function() {
+        $.getScript("js/indentedtree-index.js", function( data, textStatus, jqxhr ) {
+          // do some stuff after script is loaded
+        });
+        this.cur_view = "DEFAULT";
+      };
+      $("#default-button").on("click", function() {
+        if (cur_view !== "DEFAULT") {
+          d3.select("div.div_svg").select("svg").remove();
+          d3.select("div.d3-tip").remove();
+          $.getScript("js/indentedtree-index.js", function( data, textStatus, jqxhr ) {
+            // do some stuff after script is loaded
+          });
+          cur_view = "DEFAULT";
+        }
+      });
+      $("#expand-button").on("click", function() {
+        if (cur_view == "DEFAULT") {
+          d3.select("div.div_svg").select("svg").remove();
+          d3.select("div.d3-tip").remove();
+          $.getScript("js/indentedtree-index-expanded.js", function( data, textStatus, jqxhr ) {
+            // do some stuff after script is loaded
+          });
+          cur_view = "EXPANDED";
+        }
+      });
+    </script>
+  </body>
+</html>

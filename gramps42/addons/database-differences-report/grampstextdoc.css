@@ -1,0 +1,46 @@
+#grampstextdoc .DIFF-TableCell {
+	padding: 0.000cm 0.000cm 0.000cm 0.000cm;
+	border-top:thin solid #000000; border-bottom:thin solid #000000;
+	border-left:thin solid #000000; border-right:thin solid #000000;
+}
+#grampstextdoc .DIFF-TableCellNoBorder {
+	padding: 0.000cm 0.000cm 0.000cm 0.000cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+}
+#grampstextdoc .DIFF-Heading {
+	font-size: 14pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-style:italic; font-weight:bold; 
+}
+#grampstextdoc .DIFF-TableHeading {
+	font-size: 12pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .DIFF-Text {
+	font-size: 12pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .DIFF-Title {
+	font-size: 16pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}

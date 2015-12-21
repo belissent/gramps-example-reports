@@ -1,0 +1,101 @@
+                              Place Report
+
+1. Tifton, Tift, GA, USA
+
+      Gramps ID: P1679
+
+      Street:
+
+      Parish:
+
+      Locality:
+
+      City: Tifton
+
+      County: Tift
+
+      State: GA
+
+      Country: USA
+
+Events that happened at this place
+
+Date              Type of   Person                   Description
+                  Event                              
+                                                                       
+Birth     Hansen, Nula (I0817)     Birth of Hansen, 
+                                   Nula
+                                                     
+Birth     Hansen, Irene (I0818)    Birth of Hansen, 
+                                   Irene
+                                                     
+Birth     Hansen, Monica (I0819)   Birth of Hansen, 
+                                   Monica
+                                                     
+1953-12-00        Birth     Hansen, Noel (I0816)     Birth of Hansen, 
+                                                     Noel
+                                                     
+2. Twin Falls, Twin Falls, ID, USA
+
+      Gramps ID: P1678
+
+      Street:
+
+      Parish:
+
+      Locality:
+
+      City: Twin Falls
+
+      County: Twin Falls
+
+      State: ID
+
+      Country: USA
+
+Events that happened at this place
+
+Date              Type of   Person                   Description
+                  Event                              
+                                                                       
+1911-01-21        Death     Garner, Lewis (I1105)    Death of Garner, 
+                                                     Lewis
+                                                     
+1911-06-28        Death     Garner von Zieliński,    Death of Garner, 
+                            Lewis Anderson Sr (I0044)Lewis Anderson
+                                                     
+1911-07-01        Burial    Garner von Zieliński,    Burial of Garner, 
+                            Lewis Anderson Sr (I0044)Lewis Anderson
+                                                     
+1984-03-01        Death     Garner, Eugene Stanley   Death of Garner, 
+                            (I0046)                  Eugene Stanley
+                                                     
+1984-03-03        Burial    Garner, Eugene Stanley   Burial of Garner, 
+                            (I0046)                  Eugene Stanley
+                                                     
+3. Valdosta, Lowndes, GA, USA
+
+      Gramps ID: P1680
+
+      Street:
+
+      Parish:
+
+      Locality:
+
+      City: Valdosta
+
+      County: Lowndes
+
+      State: GA
+
+      Country: USA
+
+Events that happened at this place
+
+Date              Type of   Person                   Description
+                  Event                              
+                                                                       
+1786-08-17        Birth     Benson, Col. David       Birth of Benson, 
+                            (I0774)                  Col. David
+                                                     

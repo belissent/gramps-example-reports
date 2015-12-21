@@ -1,0 +1,27 @@
+#grampstextdoc .LOD-Entry {
+	font-size: 12pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 1.50cm;
+	margin-top: 0.25cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .LOD-Line {
+	font-size: 15pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 1.50cm;
+	margin-top: 0.25cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .LOD-Title {
+	font-size: 16pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.25cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}

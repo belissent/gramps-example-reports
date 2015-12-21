@@ -1,0 +1,48 @@
+                        Database Summary Report
+
+Individuals
+
+Number of individuals: 2102
+
+Males: 1154
+
+Females: 928
+
+Individuals with unknown gender: 20
+
+Incomplete names: 76
+
+Individuals missing birth dates: 966
+
+Disconnected individuals: 72
+
+Unique surnames: 602
+
+Individuals with media objects: 5
+
+Family Information
+
+Number of families: 738
+
+Media Objects
+
+Number of unique media objects: 7
+
+Total size of media objects: 0 MB
+
+Missing Media Objects
+
+1897_expeditionsmannschaft_rio_a.jpg
+
+Gunnlaugur_Larusson_-_Yawn.jpg
+
+654px-Aksel_Andersson.jpg
+
+E_W_Dahlgren.jpg
+
+Alimehemet.jpg
+
+AntoineClaudet.png
+
+scanned_microfilm.png
+

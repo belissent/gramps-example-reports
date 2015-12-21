@@ -1,0 +1,41 @@
+                       Tag Report for ToDo Items
+
+People
+
+Id     Name                 Birth                Death
+                                                 
+I0044  Garner von Zieliński,1855-06-21           1911-06-28
+          Lewis Anderson Sr                      
+                                                                      
+Families
+
+Id     Father               Mother               Relationship
+                                                 
+F0017  Garner von Zieliński,Martel, Luella       Married
+          Lewis Anderson Sr    Jacques           
+                                                                      
+Notes
+
+Id     Type                 Text
+                            
+N0009  Repository Note      Ask librarian for key to the microfilm 
+                            closet of Great Falls church, it is closed
+                            normally
+                            
+N0013  Person Note          This is a note showing a lot of different 
+                            markup that mixes with each other making 
+                            it a good stress test for markup notes.
+                            This is a note showing a lot of different 
+                            markup that mixes with each other making 
+                            it a good stress test for markup notes.
+                            
+                            This is a note showing a lot of different 
+                            markup that mixes with each other making 
+                            it a good stress test for markup notes.
+                            
+Media
+
+Id     Title                Type                 Date
+                                                 
+O0010  1897_expeditionsmannschaft_rio_aimage/jpeg           1897
+                                                 

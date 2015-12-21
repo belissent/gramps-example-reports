@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="27.94cm" height="21.59cm" xmlns="http://www.w3.org/2000/svg">
+<rect width="27.94cm" height="21.59cm" style="fill: none;"/>
+<rect x="10.50cm" y="10.53cm" width="3.41cm" height="0.70cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="10.46cm" y="10.49cm" width="3.41cm" height="0.70cm" style="fill:#dfff13f; stroke:#000000; stroke-width:0.130566;"/>
+<rect x="6.93cm" y="9.94cm" width="3.41cm" height="0.63cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="6.89cm" y="9.90cm" width="3.41cm" height="0.63cm" style="fill:#efef11f; stroke:#000000; stroke-width:0.130566;"/>
+<rect x="3.36cm" y="9.59cm" width="3.41cm" height="0.63cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="3.32cm" y="9.55cm" width="3.41cm" height="0.63cm" style="fill:#ffdfff; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="6.89cm" y1="10.05cm" x2="6.81cm" y2="10.05cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="6.81cm" y1="10.05cm" x2="6.81cm" y2="9.86cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="6.81cm" y1="9.86cm" x2="6.74cm" y2="9.86cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="3.36cm" y="10.29cm" width="3.41cm" height="0.55cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="3.32cm" y="10.25cm" width="3.41cm" height="0.55cm" style="fill:#ffdfff; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="6.89cm" y1="10.38cm" x2="6.81cm" y2="10.38cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="6.81cm" y1="10.38cm" x2="6.81cm" y2="10.53cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="6.81cm" y1="10.53cm" x2="6.74cm" y2="10.53cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="10.46cm" y1="10.68cm" x2="10.38cm" y2="10.68cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="10.38cm" y1="10.68cm" x2="10.38cm" y2="10.22cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="10.38cm" y1="10.22cm" x2="10.30cm" y2="10.22cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="6.93cm" y="10.92cm" width="3.41cm" height="0.63cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="6.89cm" y="10.88cm" width="3.41cm" height="0.63cm" style="fill:#efef11f; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="10.46cm" y1="11.05cm" x2="10.38cm" y2="11.05cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="10.38cm" y1="11.05cm" x2="10.38cm" y2="11.19cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="10.38cm" y1="11.19cm" x2="10.30cm" y2="11.19cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="13.87cm" y1="10.84cm" x2="13.95cm" y2="10.84cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="13.95cm" y1="7.99cm" x2="13.95cm" y2="18.71cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="13.95cm" y1="7.99cm" x2="14.03cm" y2="7.99cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="14.07cm" y="7.88cm" width="3.41cm" height="0.63cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="14.03cm" y="7.84cm" width="3.41cm" height="0.63cm" style="fill:#ef10fdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.44cm" y1="8.16cm" x2="17.52cm" y2="8.16cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="4.18cm" x2="17.52cm" y2="13.12cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="4.18cm" x2="17.60cm" y2="4.18cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="4.11cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="4.07cm" width="3.41cm" height="0.47cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.01cm" y1="4.31cm" x2="21.09cm" y2="4.31cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="21.09cm" y1="2.94cm" x2="21.09cm" y2="5.42cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="21.09cm" y1="2.94cm" x2="21.17cm" y2="2.94cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="2.87cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="2.83cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="3.48cm" x2="21.17cm" y2="3.48cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="3.42cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="3.38cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="4.03cm" x2="21.17cm" y2="4.03cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="3.96cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="3.92cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="4.58cm" x2="21.17cm" y2="4.58cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="4.51cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="4.47cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="5.13cm" x2="21.17cm" y2="5.13cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="5.06cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="5.02cm" width="3.41cm" height="0.22cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="5.42cm" x2="21.17cm" y2="5.42cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="5.36cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="5.32cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="9.05cm" x2="17.60cm" y2="9.05cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="8.98cm" width="3.41cm" height="0.55cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="8.94cm" width="3.41cm" height="0.55cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.01cm" y1="9.22cm" x2="21.09cm" y2="9.22cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="21.09cm" y1="5.97cm" x2="21.09cm" y2="12.42cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="21.09cm" y1="5.97cm" x2="21.17cm" y2="5.97cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="5.90cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="5.86cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="6.52cm" x2="21.17cm" y2="6.52cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="6.45cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="6.41cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="7.07cm" x2="21.17cm" y2="7.07cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="7.00cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="6.96cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="7.62cm" x2="21.17cm" y2="7.62cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="7.55cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="7.51cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="8.17cm" x2="21.17cm" y2="8.17cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="8.10cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="8.06cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="8.72cm" x2="21.17cm" y2="8.72cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="8.65cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="8.61cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="9.26cm" x2="21.17cm" y2="9.26cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="9.20cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="9.16cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="9.81cm" x2="21.17cm" y2="9.81cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="9.74cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="9.71cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="22.87cm" y1="10.18cm" x2="22.87cm" y2="10.25cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="10.29cm" width="3.41cm" height="0.29cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="10.25cm" width="3.41cm" height="0.29cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="10.73cm" x2="21.17cm" y2="10.73cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="10.67cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="10.63cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="11.28cm" x2="21.17cm" y2="11.28cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="11.21cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="11.17cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="11.83cm" x2="21.17cm" y2="11.83cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="11.76cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="11.72cm" width="3.41cm" height="0.47cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="21.09cm" y1="12.42cm" x2="21.17cm" y2="12.42cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="21.21cm" y="12.31cm" width="3.41cm" height="0.29cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="21.17cm" y="12.27cm" width="3.41cm" height="0.29cm" style="fill:#10fefdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="19.31cm" y1="9.49cm" x2="19.31cm" y2="12.64cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="12.68cm" width="3.41cm" height="0.29cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="12.64cm" width="3.41cm" height="0.29cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="13.12cm" x2="17.60cm" y2="13.12cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="13.05cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="13.02cm" width="3.41cm" height="0.47cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="13.95cm" y1="13.82cm" x2="14.03cm" y2="13.82cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="14.07cm" y="13.71cm" width="3.41cm" height="0.55cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="14.03cm" y="13.67cm" width="3.41cm" height="0.55cm" style="fill:#ef10fdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.44cm" y1="13.95cm" x2="17.52cm" y2="13.95cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="13.67cm" x2="17.52cm" y2="14.22cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="13.67cm" x2="17.60cm" y2="13.67cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="13.60cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="13.56cm" width="3.41cm" height="0.47cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="14.22cm" x2="17.60cm" y2="14.22cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="14.15cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="14.11cm" width="3.41cm" height="0.22cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="13.95cm" y1="14.55cm" x2="14.03cm" y2="14.55cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="14.07cm" y="14.45cm" width="3.41cm" height="0.29cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="14.03cm" y="14.41cm" width="3.41cm" height="0.29cm" style="fill:#ef10fdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="13.95cm" y1="15.14cm" x2="14.03cm" y2="15.14cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="14.07cm" y="15.03cm" width="3.41cm" height="0.63cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="14.03cm" y="15.00cm" width="3.41cm" height="0.63cm" style="fill:#ef10fdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.44cm" y1="15.31cm" x2="17.52cm" y2="15.31cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="14.89cm" x2="17.52cm" y2="15.73cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="14.89cm" x2="17.60cm" y2="14.89cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="14.82cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="14.78cm" width="3.41cm" height="0.22cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="15.18cm" x2="17.60cm" y2="15.18cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="15.11cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="15.07cm" width="3.41cm" height="0.47cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="15.73cm" x2="17.60cm" y2="15.73cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="15.66cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="15.62cm" width="3.41cm" height="0.22cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="13.95cm" y1="16.13cm" x2="14.03cm" y2="16.13cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="14.07cm" y="16.03cm" width="3.41cm" height="0.63cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="14.03cm" y="15.99cm" width="3.41cm" height="0.63cm" style="fill:#ef10fdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.44cm" y1="16.30cm" x2="17.52cm" y2="16.30cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="16.02cm" x2="17.52cm" y2="16.57cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="16.02cm" x2="17.60cm" y2="16.02cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="15.96cm" width="3.41cm" height="0.47cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="15.92cm" width="3.41cm" height="0.47cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="16.57cm" x2="17.60cm" y2="16.57cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="16.50cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="16.46cm" width="3.41cm" height="0.22cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="13.95cm" y1="16.91cm" x2="14.03cm" y2="16.91cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="14.07cm" y="16.80cm" width="3.41cm" height="0.55cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="14.03cm" y="16.76cm" width="3.41cm" height="0.55cm" style="fill:#ef10fdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="13.95cm" y1="17.77cm" x2="14.03cm" y2="17.77cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="14.07cm" y="17.66cm" width="3.41cm" height="0.63cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="14.03cm" y="17.62cm" width="3.41cm" height="0.63cm" style="fill:#ef10fdf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.44cm" y1="17.93cm" x2="17.52cm" y2="17.93cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="17.49cm" x2="17.52cm" y2="18.38cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<line x1="17.52cm" y1="17.49cm" x2="17.60cm" y2="17.49cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="17.42cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="17.39cm" width="3.41cm" height="0.22cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="17.79cm" x2="17.60cm" y2="17.79cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="17.72cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="17.68cm" width="3.41cm" height="0.22cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="18.08cm" x2="17.60cm" y2="18.08cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="18.01cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="17.97cm" width="3.41cm" height="0.22cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="17.52cm" y1="18.38cm" x2="17.60cm" y2="18.38cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="17.64cm" y="18.31cm" width="3.41cm" height="0.22cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="17.60cm" y="18.27cm" width="3.41cm" height="0.22cm" style="fill:#ffffbf; stroke:#000000; stroke-width:0.130566;"/>
+<line x1="13.95cm" y1="18.71cm" x2="14.03cm" y2="18.71cm" style="stroke:#000000; stroke-width:0.13pt;"/>
+<rect x="14.07cm" y="18.60cm" width="3.41cm" height="0.29cm" style="fill:#808080; stroke:#808080; stroke-width:1;"/>
+<rect x="14.03cm" y="18.56cm" width="3.41cm" height="0.29cm" style="fill:#ef10fdf; stroke:#000000; stroke-width:0.130566;"/>
+<text x="12.18cm" y="2.68cm" style="fill:#000000;font-size:3pt; font-family:sans-serif;">Family Tree for Garner von Zieliński, Lewis Anderson Sr and Martel, Luella Jacques</text>
+<text x="10.48cm" y="10.61cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner von Zieliński, Lewis Anderson Sr</text>
+<text x="10.48cm" y="10.69cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1855-06-21 in Great Falls, MT (Birth of Garner, Lewis Anderson)</text>
+<text x="10.48cm" y="10.76cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1911-06-28 in Twin Falls, ID (Death of Garner, Lewis Anderson)</text>
+<text x="10.48cm" y="10.84cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">We have committed to synergistically disseminate...</text>
+<text x="10.48cm" y="10.92cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1875-04-01 in Paragould, AR (Marriage of Garner, Lewis Anderson and Martel, Luella Jacques)</text>
+<text x="10.48cm" y="11.02cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Martel, Luella Jacques</text>
+<text x="10.48cm" y="11.10cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1852-01-23 in Eureka, CA (Birth of Martel, Luella Jacques)</text>
+<text x="10.48cm" y="11.17cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1921-04-28 in Myrtle Beach, SC (Death of Martel, Luella Jacques)</text>
+<text x="6.91cm" y="10.02cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Robert W.</text>
+<text x="6.91cm" y="10.10cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1826/7-04-24 (Julian) in Aberdeen, WA (Birth of Garner, Robert W.)</text>
+<text x="6.91cm" y="10.18cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1916-02-03 in Portsmouth, OH (Death of Garner, Robert W.)</text>
+<text x="6.91cm" y="10.25cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1849-10-04 in Paragould, AR (Marriage of Garner, Robert W. and Zieliński, Phoebe Emily)</text>
+<text x="6.91cm" y="10.35cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Zieliński, Phoebe Emily</text>
+<text x="6.91cm" y="10.43cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1827-04-12 in Bogalusa, LA (Birth of Zieliński, Phoebe Emily)</text>
+<text x="6.91cm" y="10.51cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1882-03-07 in Albuquerque, NM (Death of Zieliński, Phoebe Emily)</text>
+<text x="3.34cm" y="9.67cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Joseph</text>
+<text x="3.34cm" y="9.75cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ (in 1792) in Steubenville, OH (Birth of Garner, Joseph)</text>
+<text x="3.34cm" y="9.83cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on __________ in Shawnee, OK (Death of Garner, Joseph)</text>
+<text x="3.34cm" y="9.90cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1823-01-03 in Picayune, MS (Marriage of Garner, Joseph and Edwards, Lucy)</text>
+<text x="3.34cm" y="10.00cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Edwards, Lucy</text>
+<text x="3.34cm" y="10.08cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1799-01-17 in Jamestowna, NY (Birth of Edwards, Lucy)</text>
+<text x="3.34cm" y="10.16cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1879-04-02 in ____________ (Death of Edwards, Lucy)</text>
+<text x="3.34cm" y="10.37cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Шестаков, George</text>
+<text x="3.34cm" y="10.45cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ (about 1784-09-00) in Bogalusa, LA (Birth of Шестаков, George)</text>
+<text x="3.34cm" y="10.53cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1864-03-09 in Orlando, FL (Death of Шестаков, George)</text>
+<text x="3.34cm" y="10.61cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Шестаков, George and Daniels, Phoebe)</text>
+<text x="3.34cm" y="10.71cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Daniels, Phoebe</text>
+<text x="3.34cm" y="10.78cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in Bogalusa, LA (Birth of Daniels, Phoebe)</text>
+<text x="6.91cm" y="11.00cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Martel, Henry</text>
+<text x="6.91cm" y="11.08cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1805-10-27 in Wauchula, FL (Birth of Martel, Henry)</text>
+<text x="6.91cm" y="11.15cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1902-01-18 in Helena, MT (Death of Martel, Henry)</text>
+<text x="6.91cm" y="11.23cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1840-04-04 in ____________ (Marriage of Martel, Henry and Hébert, Ruth Ann)</text>
+<text x="6.91cm" y="11.33cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Hébert, Ruth Ann</text>
+<text x="6.91cm" y="11.41cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in Ardmore, OK (Birth of Hébert, Ruth Ann)</text>
+<text x="6.91cm" y="11.49cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on __________ (in 1843) in ____________ (Death of Hébert, Ruth Ann)</text>
+<text x="14.05cm" y="7.96cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Eugene Stanley</text>
+<text x="14.05cm" y="8.04cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1895-12-01 in Portsmouth, OH (Birth of Garner, Eugene Stanley)</text>
+<text x="14.05cm" y="8.12cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1984-03-01 in Twin Falls, ID (Death of Garner, Eugene Stanley)</text>
+<text x="14.05cm" y="8.20cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1921-01-03 in Edison, NJ (Marriage of Garner, Eugene Stanley and Reed, Frances Lucille (Babe))</text>
+<text x="14.05cm" y="8.29cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Reed, Frances Lucille (Babe)</text>
+<text x="14.05cm" y="8.37cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1902-07-08 in Worthington, MN (Birth of Reed, Frances Lucille (Babe))</text>
+<text x="14.05cm" y="8.45cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1988-08-09 in Worthington, MN (Death of Reed, Frances Lucille (Babe))</text>
+<text x="17.62cm" y="4.19cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Howard Lane</text>
+<text x="17.62cm" y="4.27cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1928-07-09 in LaGrange, GA (Birth of Garner, Howard Lane)</text>
+<text x="17.62cm" y="4.35cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1948-02-02 in Worthington, MN (Marriage of Garner, Howard Lane and Marín, Mary Anne)</text>
+<text x="17.62cm" y="4.45cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Marín, Mary Anne</text>
+<text x="17.62cm" y="4.52cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1927-01-13 in Worthington, MN (Birth of Marín, Mary Anne)</text>
+<text x="21.19cm" y="2.95cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Rita Marie</text>
+<text x="21.19cm" y="3.02cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1952-09-07 in Worthington, MN (Birth of Garner, Rita Marie)</text>
+<text x="21.19cm" y="3.10cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1974-08-10 in Worthington, MN (Marriage of Warner, Allen Carl and Garner, Rita Marie)</text>
+<text x="21.19cm" y="3.20cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Warner, Allen Carl</text>
+<text x="21.19cm" y="3.28cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1952-02-01 in Worthington, MN (Birth of Warner, Allen Carl)</text>
+<text x="21.19cm" y="3.50cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Barry Joseph</text>
+<text x="21.19cm" y="3.57cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1948-12-14 in Ottawa, IL (Birth of Garner, Barry Joseph)</text>
+<text x="21.19cm" y="3.65cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1992-11-07 in Greeneville, TN (Marriage of Garner, Barry Joseph and Vázquez, April Lynn)</text>
+<text x="21.19cm" y="3.75cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Vázquez, April Lynn</text>
+<text x="21.19cm" y="3.83cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1963-09-17 in Aberdeen, SD (Birth of Vázquez, April Lynn)</text>
+<text x="21.19cm" y="4.04cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Anne Therese</text>
+<text x="21.19cm" y="4.12cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1950-09-10 in Ottawa, IL (Birth of Garner, Anne Therese)</text>
+<text x="21.19cm" y="4.20cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1973-09-15 in Ottawa, IL (Marriage of Hale, Lawrence Paul and Garner, Anne Therese)</text>
+<text x="21.19cm" y="4.30cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Hale, Lawrence Paul</text>
+<text x="21.19cm" y="4.38cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1950-10-30 in Ottawa, IL (Birth of Hale, Lawrence Paul)</text>
+<text x="21.19cm" y="4.59cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Gerard Stephen</text>
+<text x="21.19cm" y="4.67cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1955-07-31 in Ottawa, IL (Birth of Garner, Gerard Stephen)</text>
+<text x="21.19cm" y="4.75cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1979-01-06 in Farmington, MO (Marriage of Garner, Gerard Stephen and George, Elizabeth)</text>
+<text x="21.19cm" y="4.85cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">George, Elizabeth</text>
+<text x="21.19cm" y="4.92cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1957-01-31 in ____________ (Birth of George, Elizabeth)</text>
+<text x="21.19cm" y="5.14cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, David Walter</text>
+<text x="21.19cm" y="5.22cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1956-12-21 in Ottawa, IL (Birth of Garner, David Walter)</text>
+<text x="21.19cm" y="5.44cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Thomas James</text>
+<text x="21.19cm" y="5.51cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1965-12-10 in Worthington, MN (Birth of Garner, Thomas James)</text>
+<text x="21.19cm" y="5.59cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1997-07-07 in Blacksburg, VA (Marriage of Garner, Thomas James and Сорокин, Holly Ruth)</text>
+<text x="21.19cm" y="5.69cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Сорокин, Holly Ruth</text>
+<text x="21.19cm" y="5.77cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="9.06cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Eugene Stanley, Jr.</text>
+<text x="17.62cm" y="9.14cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in Vernon, TX (Birth of Garner, Eugene Stanley, Jr.)</text>
+<text x="17.62cm" y="9.22cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Garner, Eugene Stanley, Jr. and Pelletier, Josephine)</text>
+<text x="17.62cm" y="9.31cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Ⅰ. Pelletier, Josephine</text>
+<text x="17.62cm" y="9.39cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1922-09-07 in Levelland, TX (Birth of Pelletier, Josephine)</text>
+<text x="17.62cm" y="9.47cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1998-09-15 in Worthington, MN (Death of Pelletier, Josephine)</text>
+<text x="21.19cm" y="5.98cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Francis William</text>
+<text x="21.19cm" y="6.06cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1945-01-03 in ____________ (Birth of Garner, Francis William)</text>
+<text x="21.19cm" y="6.14cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1991-06-22 in ____________ (Marriage of Garner, Francis William and Gibbs, Connie)</text>
+<text x="21.19cm" y="6.24cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Gibbs, Connie</text>
+<text x="21.19cm" y="6.32cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1943-02-08 in ____________ (Birth of Gibbs, Connie)</text>
+<text x="21.19cm" y="6.53cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Richard Eugene</text>
+<text x="21.19cm" y="6.61cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1947-02-28 in Ottawa, IL (Birth of Garner, Richard Eugene)</text>
+<text x="21.19cm" y="6.69cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1971-10-23 in ____________ (Marriage of Garner, Richard Eugene and Gibbs, Elaine)</text>
+<text x="21.19cm" y="6.79cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Gibbs, Elaine</text>
+<text x="21.19cm" y="6.86cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="7.08cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Michael Stanley</text>
+<text x="21.19cm" y="7.16cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1948-06-12 in Ottawa, IL (Birth of Garner, Michael Stanley)</text>
+<text x="21.19cm" y="7.24cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1970-08-08 in ____________ (Marriage of Garner, Michael Stanley and Gibbs, Sharon)</text>
+<text x="21.19cm" y="7.34cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Gibbs, Sharon</text>
+<text x="21.19cm" y="7.41cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="7.63cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Barbara Jo</text>
+<text x="21.19cm" y="7.71cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1949-11-08 in Ottawa, IL (Birth of Garner, Barbara Jo)</text>
+<text x="21.19cm" y="7.78cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Díez, William George and Garner, Barbara Jo)</text>
+<text x="21.19cm" y="7.88cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Díez, William George</text>
+<text x="21.19cm" y="7.96cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="8.18cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Kathryn Mary</text>
+<text x="21.19cm" y="8.26cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1952-09-10 in Ottawa, IL (Birth of Garner, Kathryn Mary)</text>
+<text x="21.19cm" y="8.33cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1975-02-08 in Ottawa, IL (Marriage of Сергеев, Dennis and Garner, Kathryn Mary)</text>
+<text x="21.19cm" y="8.43cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Сергеев, Dennis</text>
+<text x="21.19cm" y="8.51cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="8.73cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Peter George</text>
+<text x="21.19cm" y="8.80cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1954-08-05 in Ottawa, IL (Birth of Garner, Peter George)</text>
+<text x="21.19cm" y="8.88cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1976-01-25 in ____________ (Marriage of Garner, Peter George and Gibbs, Joy)</text>
+<text x="21.19cm" y="8.98cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Gibbs, Joy</text>
+<text x="21.19cm" y="9.06cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="9.28cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Bernadette</text>
+<text x="21.19cm" y="9.35cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1957-08-31 in Ottawa, IL (Birth of Garner, Bernadette)</text>
+<text x="21.19cm" y="9.43cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Beck, Jack and Garner, Bernadette)</text>
+<text x="21.19cm" y="9.53cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Beck, Jack</text>
+<text x="21.19cm" y="9.61cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="9.82cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Louella Marie</text>
+<text x="21.19cm" y="9.90cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in Ottawa, IL (Birth of Garner, Louella Marie)</text>
+<text x="21.19cm" y="9.98cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Hill and Garner, Louella Marie)</text>
+<text x="21.19cm" y="10.08cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Ⅰ. Hill, ____________</text>
+<text x="21.19cm" y="10.16cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="10.35cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Coleman and Garner, Louella Marie)</text>
+<text x="21.19cm" y="10.45cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Ⅱ. Coleman, ____________</text>
+<text x="21.19cm" y="10.53cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="10.74cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Cecilia</text>
+<text x="21.19cm" y="10.82cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1960-07-14 in Ottawa, IL (Birth of Garner, Cecilia)</text>
+<text x="21.19cm" y="10.90cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Горбунов, Matt and Garner, Cecilia)</text>
+<text x="21.19cm" y="11.00cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Горбунов, Matt</text>
+<text x="21.19cm" y="11.08cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="11.29cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Mark Gerard</text>
+<text x="21.19cm" y="11.37cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1962-10-16 in Ottawa, IL (Birth of Garner, Mark Gerard)</text>
+<text x="21.19cm" y="11.45cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1991-12-02 in ____________ (Marriage of Garner, Mark Gerard and Gibbs, Lori)</text>
+<text x="21.19cm" y="11.55cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Gibbs, Lori</text>
+<text x="21.19cm" y="11.63cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="11.84cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, John Joseph</text>
+<text x="21.19cm" y="11.92cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1961-08-15 in Ottawa, IL (Birth of Garner, John Joseph)</text>
+<text x="21.19cm" y="12.00cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1994-03-04 in ____________ (Marriage of Garner, John Joseph and Crawford, Lori)</text>
+<text x="21.19cm" y="12.10cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Crawford, Lori</text>
+<text x="21.19cm" y="12.17cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="21.19cm" y="12.39cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Margaret Ann</text>
+<text x="21.19cm" y="12.47cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1951-07-18 in Ottawa, IL (Birth of Garner, Margaret Ann)</text>
+<text x="21.19cm" y="12.55cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1952-02-10 in Ottawa, IL (Death of Garner, Margaret Ann)</text>
+<text x="17.62cm" y="12.74cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Garner, Eugene Stanley, Jr. and Washington, Pearline)</text>
+<text x="17.62cm" y="12.84cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Ⅱ. Washington, Pearline</text>
+<text x="17.62cm" y="12.92cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="13.13cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, John Roger</text>
+<text x="17.62cm" y="13.21cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1925-10-29 in Lafayette, IN (Birth of Garner, John Roger)</text>
+<text x="17.62cm" y="13.29cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1961-10-07 in Ottawa, IL (Marriage of Garner, John Roger and Брюханов, Violet Louise)</text>
+<text x="17.62cm" y="13.39cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Брюханов, Violet Louise</text>
+<text x="17.62cm" y="13.47cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1915-09-28 in Duncan, OK (Birth of Брюханов, Violet Louise)</text>
+<text x="14.05cm" y="13.79cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Jesse V.</text>
+<text x="14.05cm" y="13.87cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1876-06-18 in Paragould, AR (Birth of Garner, Jesse V.)</text>
+<text x="14.05cm" y="13.95cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1929-01-21 in Cedar City, UT (Death of Garner, Jesse V.)</text>
+<text x="14.05cm" y="14.02cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Garner, Jesse V. and Taylor, Viola)</text>
+<text x="14.05cm" y="14.12cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Taylor, Viola</text>
+<text x="14.05cm" y="14.20cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="13.68cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Marie</text>
+<text x="17.62cm" y="13.76cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="13.84cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Burgess, Edward and Garner, Marie)</text>
+<text x="17.62cm" y="13.94cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Burgess, Edward</text>
+<text x="17.62cm" y="14.01cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="14.23cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Victor</text>
+<text x="17.62cm" y="14.31cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="14.05cm" y="14.53cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Raymond E.</text>
+<text x="14.05cm" y="14.60cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1878-09-16 in Paragould, AR (Birth of Garner, Raymond E.)</text>
+<text x="14.05cm" y="14.68cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1921-05-02 in Astoria, OR (Death of Garner, Raymond E.)</text>
+<text x="14.05cm" y="15.11cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Jennie S.</text>
+<text x="14.05cm" y="15.19cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1880-09-11 in Paragould, AR (Birth of Garner, Jennie S.)</text>
+<text x="14.05cm" y="15.27cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1964-06-20 in Columbus, IN (Death of Garner, Jennie S.)</text>
+<text x="14.05cm" y="15.35cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ (before 1911-07-06) in ____________ (Marriage of Яковлев, George and Garner, Jennie S.)</text>
+<text x="14.05cm" y="15.45cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Яковлев, George</text>
+<text x="14.05cm" y="15.52cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="14.05cm" y="15.60cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">buried on __________ in Sterling, IL (Burial of Яковлев, George)</text>
+<text x="17.62cm" y="14.90cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Яковлев, Everett</text>
+<text x="17.62cm" y="14.98cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="15.19cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Яковлев, Esther Faye</text>
+<text x="17.62cm" y="15.27cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="15.35cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Arnold, ??????? and Яковлев, Esther Faye)</text>
+<text x="17.62cm" y="15.45cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Arnold, ???????</text>
+<text x="17.62cm" y="15.52cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="15.74cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Яковлев, Georgia</text>
+<text x="17.62cm" y="15.82cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="14.05cm" y="16.10cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Walter E.</text>
+<text x="14.05cm" y="16.18cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1882-02-17 in Paragould, AR (Birth of Garner, Walter E.)</text>
+<text x="14.05cm" y="16.26cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1946-10-23 in Battle Creek, MI (Death of Garner, Walter E.)</text>
+<text x="14.05cm" y="16.34cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Garner, Walter E. and García, Maude)</text>
+<text x="14.05cm" y="16.44cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">García, Maude</text>
+<text x="14.05cm" y="16.51cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="14.05cm" y="16.59cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">buried on __________ in Sterling, IL (Burial of García, Maude)</text>
+<text x="17.62cm" y="16.04cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Maude</text>
+<text x="17.62cm" y="16.11cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="16.19cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on __________ in ____________ (Marriage of Cooper, ??????? and Garner, Maude)</text>
+<text x="17.62cm" y="16.29cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Cooper, ???????</text>
+<text x="17.62cm" y="16.37cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="16.58cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Marguarite</text>
+<text x="17.62cm" y="16.66cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="14.05cm" y="16.88cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Daniel Webster</text>
+<text x="14.05cm" y="16.96cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1883-09-30 in Hood River, OR (Birth of Garner, Daniel Webster)</text>
+<text x="14.05cm" y="17.03cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1936-03-02 in Gary, IN (Death of Garner, Daniel Webster)</text>
+<text x="14.05cm" y="17.11cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1907-06-02 in ____________ (Marriage of Garner, Daniel Webster and Jackson, Cora Ellen)</text>
+<text x="14.05cm" y="17.21cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Jackson, Cora Ellen</text>
+<text x="14.05cm" y="17.29cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="14.05cm" y="17.74cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Bertha P.</text>
+<text x="14.05cm" y="17.82cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on 1888-03-13 in Hagerstown, MD (Birth of Garner, Bertha P.)</text>
+<text x="14.05cm" y="17.90cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">died on 1918-04-05 in Columbus, IN (Death of Garner, Bertha P.)</text>
+<text x="14.05cm" y="17.97cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">married on 1907-11-16 in Columbus, IN (Marriage of Robinson, Clarence and Garner, Bertha P.)</text>
+<text x="14.05cm" y="18.07cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Robinson, Clarence</text>
+<text x="14.05cm" y="18.15cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="14.05cm" y="18.23cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">buried on __________ in Sterling, IL (Burial of Robinson, Clarence)</text>
+<text x="17.62cm" y="17.50cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Robinson, Robert</text>
+<text x="17.62cm" y="17.58cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="17.80cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Robinson, Luther</text>
+<text x="17.62cm" y="17.88cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="18.09cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Robinson, Albert Raymond</text>
+<text x="17.62cm" y="18.17cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="17.62cm" y="18.39cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Robinson, Hugh Martin</text>
+<text x="17.62cm" y="18.46cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ in ____________</text>
+<text x="14.05cm" y="18.68cm" style="fill:#000000;font-size:2pt; font-family:sans-serif;">Garner, Elizabeth</text>
+<text x="14.05cm" y="18.76cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">born on __________ (in 1883) in ____________ (Birth of Garner, Elizabeth)</text>
+<text x="14.05cm" y="18.84cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;">buried on __________ in Hays, KS (Burial of Garner, Elizabeth)</text>
+<text x="13.94cm" y="19.05cm" style="fill:#000000;font-size:1pt; font-family:sans-serif;"></text>
+</svg>

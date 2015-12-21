@@ -1,0 +1,89 @@
+body {
+    background: url(../images/texture-noise.png);
+    margin: 0;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica;
+}
+
+.node rect {
+    fill: #fff;
+    fill-opacity: .5;
+    stroke: #3182bd;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 10px sans-serif;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.node_test text {
+    font: 10px sans-serif;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+svg a {
+    fill: blue;
+}
+
+svg a:visited {
+    fill: #800080;
+}
+
+path.link {
+    fill: none;
+    stroke: #9ecae1;
+    stroke-width: 1.5px;
+}
+
+.bio_box {
+    max-width: 400px;
+}
+
+.bio_header {
+    font: 12px sans-serif;
+    font-weight: bold;
+    text-align: left;
+    margin-right: 0.25cm; margin-left: 0.25cm;
+    margin-top: 0.25cm; margin-bottom: 0.25cm;
+    border-top:none; border-bottom:none;
+    border-left:none; border-right:none;
+}
+
+.bio_text {
+    font: 10px sans-serif;
+    font-weight: bold;
+    text-align: left;
+    margin-right: 0.25cm; margin-left: 0.25cm;
+    margin-top: 0.25cm; margin-bottom: 0.25cm;
+    border-top:none; border-bottom:none;
+    border-left:none; border-right:none;
+}
+
+.button{
+    background: #ECECEC;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-family: arial;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow:0px 1px 0px #fff;
+    border:2px solid #3182bd;
+    width: 145px;
+    margin:0px auto;
+    box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition:box-shadow 0.5s;
+}
+
+.button:hover{
+    box-shadow: 0px 2px 1px white inset, 0px -2px 20px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button:active{
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5) inset, 0px -2px 20px white, 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1);
+    background:-webkit-linear-gradient(top, #d1d1d1 0%,#ECECEC 100%);
+}
+

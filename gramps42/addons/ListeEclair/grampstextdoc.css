@@ -1,0 +1,18 @@
+#grampstextdoc .Eclair-Report {
+	font-size: 16pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.25cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .Eclair-ReportTitle {
+	font-size: 12pt;
+	text-align: left; text-indent: -1.50cm;
+	margin-right: 0.00cm; margin-left: 1.50cm;
+	margin-top: 0.75cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}

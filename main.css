@@ -1,0 +1,9 @@
+
+body {
+	padding: 20px;
+}
+
+.my_thumbnail {	
+	margin: 15px;
+	box-shadow: 0 0 20px black;
+}

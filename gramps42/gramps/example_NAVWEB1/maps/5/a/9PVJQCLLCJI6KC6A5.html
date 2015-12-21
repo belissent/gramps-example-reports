@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en-US">
+	<title>My Family Tree - Family Map</title>
+	<meta charset="UTF-8" />
+	<meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+	<meta name ="apple-mobile-web-app-capable" content="yes" />
+	<meta name="generator" content="Gramps 4.2.2 http://gramps-project.org/" />
+	<meta name="author" content="" />
+	<link href="../../../images/favicon2.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="../../../css/narrative-screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../css/narrative-print.css" media="print" rel="stylesheet" type="text/css" />
+	<link href="../../../css/narrative-maps.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script deter="deter" style="width =100%; height =100%;" type="text/javascript">
+
+  var tracelife = [
+    new google.maps.LatLng(29.19664050, -96.26968670),
+    new google.maps.LatLng(38.05646790, -83.94325560),
+    new google.maps.LatLng(41.34365550, -86.30972780),
+    new google.maps.LatLng(31.31129360, -92.44513710),
+    new google.maps.LatLng(41.34558920, -88.84257690),
+    new google.maps.LatLng(34.60592540, -86.98334170)
+  ];
+
+  function initialize() {
+    var myLatLng = new google.maps.LatLng(35.27111500, -90.10647000);
+
+    var mapOptions = {
+      scaleControl:    true,
+      panControl:      true,
+      backgroundColor: '#000000',
+      zoom:            4,
+      center:          myLatLng,
+      mapTypeId:       google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+    var flightPath = new google.maps.Polyline({
+      path:          tracelife,
+      strokeColor:   "#FF0000",
+      strokeOpacity: 1.0,
+      strokeWeight:  2
+    });
+
+   flightPath.setMap(map);
+  }
+</script>
+</head>
+<body id ="FamilyMap" onload ="initialize()">
+	<div id="header">
+		<h1 id="SiteTitle">My Family Tree</h1>
+	</div>
+	<div class="wrapper" id="nav" role="navigation">
+		<div class="container">
+			<ul class="menu" id="dropmenu">
+				<li><a href="../../../individuals.html" title="Individuals">Individuals</a></li>
+				<li><a href="../../../index.html" title="Surnames">Surnames</a></li>
+				<li><a href="../../../families.html" title="Families">Families</a></li>
+				<li><a href="../../../places.html" title="Places">Places</a></li>
+				<li><a href="../../../sources.html" title="Sources">Sources</a></li>
+				<li><a href="../../../repositories.html" title="Repositories">Repositories</a></li>
+				<li><a href="../../../media.html" title="Media">Media</a></li>
+				<li><a href="../../../thumbnails.html" title="Thumbnails">Thumbnails</a></li>
+				<li><a href="../../../addressbook.html" title="Address Book">Address Book</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="content" id="FamilyMapDetail">
+		<h3>Tracking Reed, John</h3>
+		<p id="description">
+		This map page represents that person and any descendants with all of their event/ places. If you place your mouse over the marker it will display the place name. The markers and the Reference list are sorted in date order (if any?). Clicking on a place&#8217;s name in the Reference section will take you to that place&#8217;s page.
+		</p>
+		<div id="map_canvas">
+		</div>
+		<div class="subsection" id="references">
+			<h4>References</h4>
+			<table class="infolist">
+				<thead>
+					<tr>
+						<th class="ColumnDate">Date</th>
+						<th class="ColumnPlace">Place Title</th>
+						<th class="ColumnType">Event Type</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="ColumnDate">1847-06-28</td>
+						<td class="ColumnPlace"><a href="../../../plc/y/8/J2GKQCBJT5JAJ9JK8Y.html" title="El Campo, Wharton, TX, USA">El Campo, Wharton, TX, USA</a></td>
+						<td class="ColumnType">Birth</td>
+					</tr>
+					<tr>
+						<td class="ColumnDate">1857-05-02</td>
+						<td class="ColumnPlace"><a href="../../../plc/9/a/JQUJQCG0F0HPOQTQA9.html" title="Mount Sterling, Montgomery, KY, USA">Mount Sterling, Montgomery, KY, USA</a></td>
+						<td class="ColumnType">Birth</td>
+					</tr>
+					<tr>
+						<td class="ColumnDate">1892-03-05</td>
+						<td class="ColumnPlace"><a href="../../../plc/3/2/V2GKQCR213Y4KBPG23.html" title="Plymouth, Marshall, IN, USA">Plymouth, Marshall, IN, USA</a></td>
+						<td class="ColumnType">Death</td>
+					</tr>
+					<tr>
+						<td class="ColumnDate">1901-08-13</td>
+						<td class="ColumnPlace"><a href="../../../plc/h/z/4HYJQC0HRLDEGL0UZH.html" title="Alexandria, Rapides, LA, USA">Alexandria, Rapides, LA, USA</a></td>
+						<td class="ColumnType">Death</td>
+					</tr>
+					<tr>
+						<td class="ColumnDate">1945-03-02</td>
+						<td class="ColumnPlace"><a href="../../../plc/1/3/5HTJQCSB91P69HY731.html" title="Ottawa, La Salle, IL, USA">Ottawa, La Salle, IL, USA</a></td>
+						<td class="ColumnType">Death</td>
+					</tr>
+					<tr>
+						<td class="ColumnDate">0000-00-00</td>
+						<td class="ColumnPlace"><a href="../../../plc/r/u/L5GKQCK8A9XTAHXBUR.html" title="Decatur, Morgan, AL, USA">Decatur, Morgan, AL, USA</a></td>
+						<td class="ColumnType">Death</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="fullclear"></div>
+	<div id="footer">
+		<p id="createdate">
+		Generated by <a href="http://gramps-project.org/">Gramps</a> 4.2.2 on 2015-12-21<br />Created for <a href="../../../ppl/h/o/GNUJQCL9MD64AM56OH.html">Garner von Zieliński, Lewis Anderson Sr</a>
+		</p>
+		<p id="copyright">
+		
+		</p>
+	</div>
+</body>
+</html>

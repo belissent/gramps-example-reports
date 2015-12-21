@@ -1,0 +1,756 @@
+     All information about Garner von Zieliński, Lewis Anderson Sr
+
+Garner von Zieliński, Lewis Anderson Sr (b. 1855-06-21 - Great Falls, 
+MT, USA, d. 1911-06-28 - Twin Falls, Twin Falls, ID, USA)
+
+Person [I0044] Gender : male[1, 2, 3]
+
+Primary name. Type : Birth Name[4]
+
+    Date : 1875-04-01
+
+    Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family 
+    Nick Name : Dr., Lewis Anderson, Sr, Anderson, Big Louie, Beauregard
+
+    Surname Origin type : Taken
+
+        Prefix, surname, connector : , Garner, {This is the primary 
+        surname}
+
+    Surname Origin type : Inherited
+
+        Prefix, surname, connector : von, Zieliński,
+
+Alternate name. Type : Also Known As[5]
+
+    Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family 
+    Nick Name : , Louis, , , ,
+
+    Note [N0001] Note type : Name Note
+
+        Names can notes, too. This is a note for the alternate name of 
+        Louse Garner for Lewis Anderson Garner.
+
+    Surname Origin type :
+
+        Prefix, surname, connector : , Garner, {This is the primary 
+        surname}
+
+Alternate name. Type : Other Name
+
+    Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family 
+    Nick Name : , Louie, , , ,
+
+    Surname Origin type :
+
+        Prefix, surname, connector : , Garner, {This is the primary 
+        surname}
+
+Address[6]
+
+    Date : 2000-01-02
+
+    Street, City, County, State, Postal Code, Country, Phone number : 
+    1600 Pennsylvania Ave., Washington DC, , District of Columbia, , 
+    USA,
+
+Attribute. Nickname : Big Louie
+
+Attribute. Social Security Number : 123-456-7890 {Private}[7]
+
+Attribute. Description : 10 fingers, 10 toes.
+
+LDS Ordinance : Sealed to Parents[8]
+
+    Date : 1875
+
+    Temple and status : Adelaide, Australia, Uncleared
+
+        LDS Ordinance family [F0018] Relationship : Married[9]
+
+            Father : [I0106] Garner, Robert W.
+
+            Mother : [I0107] Zieliński, Phoebe Emily
+
+    Place [P1643] Place Title : Aberdeen, SD, USA
+
+        Name : Aberdeen Type : City Code :
+
+        Parent Place
+
+            Place [P0059] Place Title : SD, USA
+
+                Name : SD Type : State Code :
+
+                Parent Place
+
+                    Place [P0957] Place Title : USA
+
+                        Name : USA Type : Country Code :
+
+Media Reference[10]
+
+    Attribute. Age : 50[11]
+
+    Media Object [O0008] Mime type : JPEG image[12]
+
+        Attribute. Description : This seems to be a photo of a 
+        relative[13]
+
+        Description and Path : 654px-Aksel_Andersson, 
+        654px-Aksel_Andersson.jpg
+
+Media Reference
+
+    Referenced Region : 51, 19, 59, 33
+
+    Media Object [O0010] Mime type : JPEG image
+
+        Date : 1897
+
+        Description and Path : 1897_expeditionsmannschaft_rio_a, 
+        1897_expeditionsmannschaft_rio_a.jpg
+
+        Tag name : ToDo
+
+            Tag colour and priority : #efb60c280c28, 0
+
+Note [N0003] Note type : Person Note
+
+    We have committed to synergistically disseminate resource-leveling 
+    methods of empowerment to set us apart from the competition. We 
+    envision to globally integrate inexpensive paradigms and 
+    professionally engineer timely technology while promoting personal 
+    employee growth. Our mission is to assertively build world-class 
+    methods of empowerment so that we may professionally promote 
+    parallel services to set us apart from the competition. It's our 
+    responsibility to dramatically maintain value-added services as well
+    as to professionally simplify principle-centered technology for 100%
+    customer satisfaction.
+
+    Thanks to the Mission Statement Generator from 
+    http://www.dilbert.com.
+
+Note [N0013] Note type : Person Note
+
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+
+    Tag name : ToDo
+
+        Tag colour and priority : #efb60c280c28, 0
+
+Note [N0014] Note type : Person Note
+
+    This is a preformatted note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.
+                      This is a note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.
+    
+    This is 
+            a note showing 
+                                 a lot of different markup 
+                                          that mixes with each 
+    other making it a good stress test for markup notes.
+    
+       test  |    val1  |     val2
+      ------------------------------
+        me   |   blue   |    red
+    
+Note [N0015] Note type : General
+
+    This source has all possible references pointing to it. The references are as follows:
+    
+    This note appears as a note to the source and also as a note for the person.
+    
+    page 01  Person
+    page 02    Name
+    page 03    Address
+    page 04    Attribute
+    page 05    PersonRef
+    page 06    MediaRef
+    page 07      Attribute
+    page 08    LdsOrd
+    page 09    EventRef:Attribute 
+    page 10  Family
+    page 11    Attribute
+    page 12    ChildRef
+    page 13    MediaRef
+    page 14      Attribute
+    page 15    LdsOrd
+    page 16    EventRef:Attribute
+    page 17  Event
+    page 18    Attribute
+    page 19    MediaRef
+    page 20      Attribute
+    page 21  MediaObject
+    page 22    Attribute
+    page 23  Place
+    page 24    MediaRef
+    page 25      Attribute
+    page 26  Repository:Address
+    
+Tag name : ToDo
+
+    Tag colour and priority : #efb60c280c28, 0
+
+URL Type : Web Home
+
+    Description and Path : , http://www.gramps-project.org/
+
+
+                             Person Events
+
+Event reference. This is the primary birth event. Role : Primary
+
+    Attribute. Father's Age : 28[14]
+
+    Event [E1656] Event type : Birth[15, 16]
+
+        Attribute. Time : 10:00 pm[17]
+
+        Date : 1855-06-21
+
+        Description : Birth of Garner, Lewis Anderson
+
+        Media Reference[18]
+
+            Attribute. Father's Age : 25[19]
+
+            Media Object [O0000] Mime type : unknown
+
+                Description and Path : 1855-06-25 scanned birth record, 
+                scanned_microfilm.png
+
+        Place [P1435] Place Title : Great Falls, MT, USA
+
+            Name : Great Falls Type : City Code :
+
+            Parent Place
+
+                Place [P0066] Place Title : MT, USA
+
+                    Name : MT Type : State Code :
+
+                    Parent Place
+
+                        Place [P0957] Place Title : USA
+
+                            Name : USA Type : Country Code :
+
+Event reference. This is the primary death event. Role : Primary
+
+    Event [E1657] Event type : Death
+
+        Attribute. Cause : Laughter
+
+        Date : 1911-06-28
+
+        Description : Death of Garner, Lewis Anderson
+
+        Note [N0012] Note type : Event Note
+
+            How did he die? We need to find out!
+
+            Perhaps we find info in the new york library
+
+        Place [P1678] Place Title : Twin Falls, Twin Falls, ID, USA[20]
+
+            Name : Twin Falls Type : City Code :
+
+            Latitude, Longitude : -114.4608711, 42.5629668
+
+            Media Reference[21]
+
+                Attribute. Nickname : Fred[22]
+
+                Media Object [O0010] Mime type : JPEG image
+
+                    Date : 1897
+
+                    Description and Path : 
+                    1897_expeditionsmannschaft_rio_a, 
+                    1897_expeditionsmannschaft_rio_a.jpg
+
+                    Tag name : ToDo
+
+                        Tag colour and priority : #efb60c280c28, 0
+
+            Parent Place
+
+                Place [P0409] Place Title : Twin Falls, ID, USA
+
+                    Name : Twin Falls Type : County Code :
+
+                    Parent Place
+
+                        Place [P0070] Place Title : ID, USA
+
+                            Name : ID Type : State Code :
+
+                            Parent Place
+
+                                Place [P0957] Place Title : USA
+
+                                    Name : USA Type : Country Code :
+
+Event reference. Role : Primary
+
+    Event [E1658] Event type : Burial
+
+        Date : 1911-07-01
+
+        Description : Burial of Garner, Lewis Anderson
+
+        Place [P1678] Place Title : Twin Falls, Twin Falls, ID, USA[23]
+
+            Name : Twin Falls Type : City Code :
+
+            Latitude, Longitude : -114.4608711, 42.5629668
+
+            Media Reference[24]
+
+                Attribute. Nickname : Fred[25]
+
+                Media Object [O0010] Mime type : JPEG image
+
+                    Date : 1897
+
+                    Description and Path : 
+                    1897_expeditionsmannschaft_rio_a, 
+                    1897_expeditionsmannschaft_rio_a.jpg
+
+                    Tag name : ToDo
+
+                        Tag colour and priority : #efb60c280c28, 0
+
+            Parent Place
+
+                Place [P0409] Place Title : Twin Falls, ID, USA
+
+                    Name : Twin Falls Type : County Code :
+
+                    Parent Place
+
+                        Place [P0070] Place Title : ID, USA
+
+                            Name : ID Type : State Code :
+
+                            Parent Place
+
+                                Place [P0957] Place Title : USA
+
+                                    Name : USA Type : Country Code :
+
+
+                                Families
+
+Family [F0017] Relationship : Married[26, 27]
+
+    Father : [I0044] Garner von Zieliński, Lewis Anderson Sr
+
+    Mother : [I0045] Martel, Luella Jacques
+
+    Child : [I0046] Garner, Eugene Stanley Relationship to Father : 
+    Birth Relationship to Mother : Birth[28]
+
+    Child : [I0623] Garner, Jesse V. Relationship to Father : Birth 
+    Relationship to Mother : Birth
+
+    Child : [I0624] Garner, Raymond E. Relationship to Father : Birth 
+    Relationship to Mother : Adopted
+
+    Child : [I0625] Garner, Jennie S. Relationship to Father : Adopted 
+    Relationship to Mother : Birth
+
+    Child : [I0626] Garner, Walter E. Relationship to Father : Birth 
+    Relationship to Mother : Birth
+
+    Child : [I0627] Garner, Daniel Webster Relationship to Father : 
+    Birth Relationship to Mother : Birth
+
+    Child : [I0628] Garner, Bertha P. Relationship to Father : Birth 
+    Relationship to Mother : Birth
+
+    Child : [I0629] Garner, Elizabeth Relationship to Father : Birth 
+    Relationship to Mother : Birth
+
+    Attribute. Number of Children : 8[29, 30]
+
+        Note [N0004] Note type : Attribute Note
+
+            Courtesy of pyschoanalyze-pinhead from Emacs.
+
+            I am the psychotherapist. Please, describe your problems. 
+            Each time
+            you are finished talking, type RET twice.
+
+            SHHHH!! I hear SIX TATTOOED TRUCK-DRIVERS tossing ENGINE 
+            BLOCKS
+            into empty OIL DRUMS..
+
+            Why do you say that?
+
+            I have accepted Provolone into my life!
+
+            What makes you believe you have accepted provolone into your
+            life?
+
+            It's 74 degrees, 12 minutes NORTH, and 41 degrees, 3 minutes
+            EAST!!
+            Soon, it will be TUESDAY!!
+
+            Maybe your plans have something to do with this.
+
+            GOOD-NIGHT, everybody.. Now I have to go administer 
+            FIRST-AID
+            to my pet LEISURE SUIT!!
+
+            I don't understand.
+
+            I'm QUIETLY reading the latest issue of ``BOWLING WORLD''
+            while my wife and two children stand QUIETLY BY..
+
+            Tell me something about your family.
+
+            How do I get HOME?
+
+            Is it because do you get home that you came to me?
+
+            Kids, the seven basic food groups are GUM, PUFF PASTRY, 
+            PIZZA,
+            PESTICIDES, ANTIBIOTICS, NUTRA-SWEET and MILK DUDS!!
+
+    LDS Ordinance : Sealed to Spouse[31]
+
+        Temple and status : Halifax, Nova Scotia, Completed
+
+    Media Reference[32]
+
+        Attribute. Identification Number : 12345[33]
+
+        Media Object [O0006] Mime type : JPEG image
+
+            Description and Path : Alimehemet, Alimehemet.jpg
+
+    Note [N0005] Note type : Family Note
+
+        GRAMPS aid to look for its tree to him of family. It allows that
+        you store data of genealogische to draw for above and 
+        investigating. GRAMPS tries to make all the general capacities 
+        available of other programs of genealogischer more importantly 
+        but, to put an additional capacity of integration at your 
+        service not generally for these programs. This one is the 
+        capacity to directly incorporate all the possible pieces of the 
+        information in Gramps and the cases of the data 
+        cambiar/manipulateany/all in the whole data base (in any order 
+        or order) around the user to support, if it makes the 
+        investigation, analysis and interrelation with the potential of 
+        the distances of the relation that fill.
+
+        This is a paragraph from the gramps-project.org page that was 
+        translated by Google's Language Tools to German, back to 
+        English, then to Spanish, and once again back to English.
+
+    Tag name : ToDo
+
+        Tag colour and priority : #efb60c280c28, 0
+
+    Event reference. Role : Family
+
+        Attribute. Age : 23[34]
+
+        Event [E2815] Event type : Marriage
+
+            Date : 1875-04-01
+
+            Description : Marriage of Garner, Lewis Anderson and Martel,
+            Luella Jacques
+
+            Place [P1498] Place Title : Paragould, Greene, AR, USA
+
+                Name : Paragould Type : City Code :
+
+                Latitude, Longitude : -90.4973286, 36.0584021
+
+                Parent Place
+
+                    Place [P0266] Place Title : Greene, AR, USA
+
+                        Name : Greene Type : County Code :
+
+                        Parent Place
+
+                            Place [P0036] Place Title : AR, USA
+
+                                Name : AR Type : State Code :
+
+                                Parent Place
+
+                                    Place [P0957] Place Title : USA
+
+                                        Name : USA Type : Country Code :
+
+Parent Family [F0018] Relationship : Married[35]
+
+    Father : [I0106] Garner, Robert W.
+
+    Mother : [I0107] Zieliński, Phoebe Emily
+
+    Details of any children and events etc. would be in a similar report
+    for the father or mother.
+
+
+                                Endnotes
+
+ 1. "Import from test2.ged" [S0003], [C0974]
+
+    Source [S0003]
+
+        Note [N0007] Note type : Source Note
+
+            The repository reference from the source is important
+
+        Repository reference Media type : Film
+
+            Call number : CA-123-LL-456_Num/ber
+
+            Repository [R0002] Repository type : Library
+
+                Address[36]
+
+                    Street, City, County, State, Postal Code, Country, 
+                    Phone number : 5th Ave at 42 street, New York, , New
+                    York, 11111, USA,
+
+ 2. Priests of Great Falls Church 1850 - 1867, "Baptize registry 1850 - 
+    1867 Great Falls Church"(BR-GFC 1850), Microfilm Public Library 
+    Great Falls [S0000], [C0975]
+
+    Source [S0000]
+
+        Media Reference
+
+            Media Object [O0000] Mime type : unknown
+
+                Description and Path : 1855-06-25 scanned birth record, 
+                scanned_microfilm.png
+
+        Note [N0010] Note type : Source text
+
+            1855-06-25
+            
+                line 1    fac secunda Junij Baptiza- 
+                line 2    tus est Lewis Anderson
+                line 3    filius legitimus Guillielmus 
+                line 4    Garner et Elisabetha  
+                line 5    Becks. Susceptores fuerent 
+                line 6    petrus Arts et Catharina 
+                line 7    van de Voorde
+            
+        Note [N0011] Note type : Transcript
+
+            1855-06-25:
+            I baptized on June the second Lewis Anderson legitimate son 
+            of Guillielmus Garner and Elisabetha Becke. Godparents were 
+            petrus Arts and Catharina Van de Voorde
+
+        Repository reference Media type : Microfilm
+
+            Call number : 32Z-345
+
+            Repository [R0000] Repository type : Library
+
+                Address
+
+                    Street, City, County, State, Postal Code, Country, 
+                    Phone number : Bookstore street 5, Great Falls, , 
+                    MT, , USA,
+
+                Note [N0009] Note type : Repository Note
+
+                    Ask librarian for key to the microfilm closet of 
+                    Great Falls church, it is closed normally
+
+                    Tag name : ToDo
+
+                        Tag colour and priority : #efb60c280c28, 0
+
+                URL Type : Web Home
+
+                    Description and Path : , http://great-falls.org
+
+    Citation [C0975]
+
+        Confidence : High
+
+        Date : 1855-06-25
+
+ 3. "All possible citations" [S0001], page 01 [C2828]
+
+    Source [S0001]
+
+        Note [N0015] Note type : General
+
+            This source has all possible references pointing to it. The references are as follows:
+            
+            This note appears as a note to the source and also as a note for the person.
+            
+            page 01  Person
+            page 02    Name
+            page 03    Address
+            page 04    Attribute
+            page 05    PersonRef
+            page 06    MediaRef
+            page 07      Attribute
+            page 08    LdsOrd
+            page 09    EventRef:Attribute 
+            page 10  Family
+            page 11    Attribute
+            page 12    ChildRef
+            page 13    MediaRef
+            page 14      Attribute
+            page 15    LdsOrd
+            page 16    EventRef:Attribute
+            page 17  Event
+            page 18    Attribute
+            page 19    MediaRef
+            page 20      Attribute
+            page 21  MediaObject
+            page 22    Attribute
+            page 23  Place
+            page 24    MediaRef
+            page 25      Attribute
+            page 26  Repository:Address
+            
+ 4. ibid., page 02 [C2829]
+
+ 5. John Jacob Jinglehiemerschmitt, "World of the Wierd"(WOTW) [S0002], 
+    Page 11 2/3. [C0973]
+
+    Source [S0002]
+
+        Note [N0006] Note type : Source Note
+
+            His name is my name, too.
+
+        Repository reference Media type : Photo
+
+            Call number : what-321-ever
+
+            Repository [R0002] Repository type : Library
+
+                Address[37]
+
+                    Street, City, County, State, Postal Code, Country, 
+                    Phone number : 5th Ave at 42 street, New York, , New
+                    York, 11111, USA,
+
+        Repository reference Media type : Manuscript
+
+            Call number : nothing-0
+
+            Repository [R0003] Repository type : Collection
+
+                Address
+
+                    Street, City, County, State, Postal Code, Country, 
+                    Phone number : 123 Main St, Someville, , ST, , USA,
+
+                Note [N0008] Note type : Repository Note
+
+                    Some note on the repo
+
+                URL Type : Web Home
+
+                    Description and Path : , 
+                    http://library.gramps-project.org
+
+    Citation [C0973]
+
+        Confidence : High
+
+        Date : 1990-03-05
+
+        Note [N0002] Note type : Source Reference Note
+
+            Strange, isn't it.
+
+        Note [N0000] Note type : Source text
+
+            On every third blue moon, Lewis Anderson Garner would dress 
+            in a purple dress and claim that his name was Louis Garner.
+
+ 6. "All possible citations", op.cit., page 03 [C2830]
+
+ 7. ibid., page 04 [C2831]
+
+ 8. ibid., page 08 [C2835]
+
+ 9. "Import from test2.ged", op.cit., [C2300]
+
+ 10. "All possible citations", op.cit., page 06 [C2833]
+
+ 11. ibid., page 07 [C2834]
+
+ 12. ibid., page 21 [C2848]
+
+ 13. ibid., page 22 [C2849]
+
+ 14. ibid., page 09 [C2836]
+
+ 15. Priests of Great Falls Church 1850 - 1867, op.cit., [C0000]
+
+    Citation [C0000]
+
+        Confidence : High
+
+        Date : 1855-06-25
+
+ 16. "All possible citations", op.cit., page 17 [C2844]
+
+ 17. ibid., page 18 [C2845]
+
+ 18. ibid., page 19 [C2846]
+
+ 19. ibid., page 20 [C2847]
+
+ 20. ibid., page 23 [C2850]
+
+ 21. ibid., page 24 [C2851]
+
+ 22. ibid., page 25 [C2852]
+
+ 23. ibid., page 23 [C2850]
+
+ 24. ibid., page 24 [C2851]
+
+ 25. ibid., page 25 [C2852]
+
+ 26. "Import from test2.ged", op.cit., [C2325]
+
+ 27. "All possible citations", op.cit., page 10 [C2837]
+
+ 28. ibid., page 12 [C2839]
+
+ 29. John Jacob Jinglehiemerschmitt, op.cit., Page pi [C2324]
+
+ 30. "All possible citations", op.cit., page 11 [C2838]
+
+ 31. ibid., page 15 [C2842]
+
+ 32. ibid., page 13 [C2840]
+
+ 33. ibid., page 14 [C2841]
+
+ 34. ibid., page 16 [C2843]
+
+ 35. "Import from test2.ged", op.cit., [C2300]
+
+ 36. "All possible citations", op.cit., page 26 [C2853]
+
+ 37. ibid., page 26 [C2853]
+
