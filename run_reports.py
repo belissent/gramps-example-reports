@@ -101,7 +101,7 @@ if ('gramps-example-reports/master' not in build_data): build_data['gramps-examp
 if ('gramps/' + GRAMPS_TARGET_DIR not in build_data): build_data['gramps/' + GRAMPS_TARGET_DIR] = ""
 if ('addons/master' not in build_data): build_data['addons/master'] = ""
 
-native_rebuild = (sha_examples == build_data['gramps-example-reports/master']) and (sha_gramps == build_data['gramps/' + GRAMPS_TARGET_DIR])
+native_rebuild = (sha_examples != build_data['gramps-example-reports/master']) or (sha_gramps != build_data['gramps/' + GRAMPS_TARGET_DIR])
 if (sha_addons == build_data['addons/master']) and not native_rebuild:
     print('No need to regenerate the reports for ' + GRAMPS_TARGET_DIR)
     sys.exit(0)
@@ -179,7 +179,9 @@ for report in reports:
     id = report['options']['name']
     if id in vers_data[GRAMPS_TARGET_DIR]: v = vers_data[GRAMPS_TARGET_DIR][id]
     report['rebuilt'] = native_rebuild or ((report['type'] == 'Addon') and (report['version'] != v))
-    if not report['rebuilt']: continue
+    if not report['rebuilt']:
+        print('No need to regenerate the report \"\", for %s' % (report['title'], GRAMPS_TARGET_DIR))
+        continue
     else:
         vers_data[GRAMPS_TARGET_DIR][id] = report['version']
         # Build parameters string
