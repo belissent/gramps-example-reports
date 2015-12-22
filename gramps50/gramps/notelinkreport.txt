@@ -1,0 +1,33 @@
+                         Note Link Check Report
+
+Note IDLink Type Links To                                      Status
+                                                               
+N0001  Person    Garner von Zieliński, Lewis Anderson Sr       Ok
+                    [I0044]                                    
+                                                                      
+N0009  Place     Great Falls, MT, USA [P1435]                  Ok
+                                                               
+_custom1Internet  relative://relative.archive.zip               
+                                                               
+                                                               
+_custom1Media     1897_expeditionsmannschaft_rio_a [O0010]      Ok
+                                                               
+_custom1Media     1897_expeditionsmannschaft_rio_a [O0010]      Ok
+                                                               
+_custom1Family    Garner, Rita Marie/Warner, Allen Carl [F0001] Ok
+                                                               
+_custom1Person    Garner von Zieliński, Lewis Anderson Sr       Ok
+                    [I0044]                                    
+                                                                      
+_custom1Internet  http://blog.codinghorror.com/                 
+                                                               
+                                                               
+_custom1Source    World of the Wierd [S0002]                    Ok
+                                                               
+_custom1Place     Warren-Farmington Hills-Troy, MI, USA [P0948] Ok
+                                                               
+_custom1Media     AntoineClaudet [O0011]                        Ok
+                                                               
+_custom1Internet  relative://relative.archive.tgz               
+                                                               
+                                                               

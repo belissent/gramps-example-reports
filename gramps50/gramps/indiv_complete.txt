@@ -1,0 +1,282 @@
+           Summary of Garner von Zieliński, Lewis Anderson Sr
+
+
+
+
+Name:         Garner von Zieliński, Lewis Anderson(photo)    (Age: 50)[3c, 3d]
+              Sr[1, 2a, 3a, 3b]                   
+Gender:                                                                
+              Male                                                     
+Father:                                                                
+              Garner, Robert W.                                        
+Mother:                                                                
+              Zieliński, Phoebe Emily                                  
+                                                                       
+
+
+
+Alternate Names
+
+Also Known As Garner, Louis[4a]
+              
+Other Name    Garner, Louie
+              
+
+
+
+Life Events
+
+Birth         Birth of Garner, Lewis Anderson, 1855-06-21 in Great 
+              Falls, MT, USA. [2a, 3e]
+              
+              Time: 10:00 pm[3f]
+              
+              Father's Age: 28[3g]
+              
+Death         Death of Garner, Lewis Anderson, 1911-06-28 in Twin 
+              Falls, Twin Falls, ID, USA. [3h]
+              
+              Cause: Laughter
+              
+              How did he die? We need to find out!
+              
+              Perhaps we find info in the new york library
+              
+Burial        Burial of Garner, Lewis Anderson, 1911-07-01 in Twin 
+              Falls, Twin Falls, ID, USA. [3h]
+              
+
+
+
+Marriages/Children
+
+Martel, Luella Jacques[1, 3i]
+
+Marriage      Marriage of Garner, Lewis Anderson and Martel, Luella 
+              Jacques, 1875-04-01 in Paragould, Greene, AR, USA.
+              
+              Age: 23[3j]
+              
+Children      Garner, Eugene Stanley[3k]
+              
+              Garner, Jesse V.
+              
+              Garner, Raymond E.
+              
+              Garner, Jennie S.
+              
+              Garner, Walter E.
+              
+              Garner, Daniel Webster
+              
+              Garner, Bertha P.
+              
+              Garner, Elizabeth
+              
+Attributes    Number of Children: 8[4b, 3l]
+              
+LDS Ordinance Type        Date        Status    Temple      Place
+                                                            
+Sealed to   Completed Halifax,    
+Spouse[3m]            Nova Scotia 
+                                                            
+
+
+
+Addresses
+
+2000-01-02    1600 Pennsylvania Ave., Washington DC, District of 
+              Columbia, USA[3n]
+              
+
+
+
+Associations
+
+Godfather     Garner, Anderson[3o]
+              
+
+
+
+Attributes
+
+Nickname      Big Louie
+              
+Social        123-456-7890[3p]
+Security      
+Number                                                                 
+                                                                       
+Description   10 fingers, 10 toes.
+              
+
+
+
+LDS Ordinance
+
+Type           Date           Status     Temple         Place
+                                                        
+Sealed to      1875           Uncleared  Adelaide,      Aberdeen, 
+Parents[3q]                              Australia      SD, USA
+                                                        
+
+
+
+Tags
+
+ToDo                                                                   
+                                                                       
+
+
+
+Images
+
+ 654px-Aksel_Andersson 1897_expeditionsmannschaft_rio_a                        
+                                                                      
+(photo)Description: This seems(photo)                                               
+to be a photo of a                                                    
+relative[3r]                                                          
+                                                                      
+Age: 50[3d]                                                           
+                                                                      
+
+
+
+Notes
+
+We have committed to synergistically disseminate resource-leveling 
+methods of empowerment to set us apart from the competition. We 
+envision to globally integrate inexpensive paradigms and professionally
+engineer timely technology while promoting personal employee growth. 
+Our mission is to assertively build world-class methods of empowerment 
+so that we may professionally promote parallel services to set us apart
+from the competition. It's our responsibility to dramatically maintain 
+value-added services as well as to professionally simplify 
+principle-centered technology for 100% customer satisfaction.
+
+Thanks to the Mission Statement Generator from http://www.dilbert.com.
+
+This is a note showing a lot of different markup that mixes with each 
+other making it a good stress test for markup notes.
+This is a note showing a lot of different markup that mixes with each 
+other making it a good stress test for markup notes.
+
+This is a note showing a lot of different markup that mixes with each 
+other making it a good stress test for markup notes.
+
+This is a preformatted note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.
+                  This is a note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.
+
+This is 
+        a note showing 
+                             a lot of different markup 
+                                      that mixes with each 
+other making it a good stress test for markup notes.
+
+   test  |    val1  |     val2
+  ------------------------------
+    me   |   blue   |    red
+
+This source has all possible references pointing to it. The references are as follows:
+
+This note appears as a note to the source and also as a note for the person.
+
+page 01  Person
+page 02    Name
+page 03    Address
+page 04    Attribute
+page 05    PersonRef
+page 06    MediaRef
+page 07      Attribute
+page 08    LdsOrd
+page 09    EventRef:Attribute 
+page 10  Family
+page 11    Attribute
+page 12    ChildRef
+page 13    MediaRef
+page 14      Attribute
+page 15    LdsOrd
+page 16    EventRef:Attribute
+page 17  Event
+page 18    Attribute
+page 19    MediaRef
+page 20      Attribute
+page 21  MediaObject
+page 22    Attribute
+page 23  Place
+page 24    MediaRef
+page 25      Attribute
+page 26  Repository:Address
+
+GRAMPS aid to look for its tree to him of family. It allows that you 
+store data of genealogische to draw for above and investigating. GRAMPS
+tries to make all the general capacities available of other programs of
+genealogischer more importantly but, to put an additional capacity of 
+integration at your service not generally for these programs. This one 
+is the capacity to directly incorporate all the possible pieces of the 
+information in Gramps and the cases of the data 
+cambiar/manipulateany/all in the whole data base (in any order or 
+order) around the user to support, if it makes the investigation, 
+analysis and interrelation with the potential of the distances of the 
+relation that fill.
+
+This is a paragraph from the gramps-project.org page that was 
+translated by Google's Language Tools to German, back to English, then 
+to Spanish, and once again back to English.
+
+
+
+
+Endnotes
+
+1. "Import from test2.ged"
+
+2. Priests of Great Falls Church 1850 - 1867, "Baptize registry 1850 - 
+   1867 Great Falls Church", Microfilm Public Library Great Falls, 
+   (BR-GFC 1850)
+
+    a: 1855-06-25 [High]
+
+3. "All possible citations"
+
+    a: page 01
+
+    b: page 02
+
+    c: page 06
+
+    d: page 07
+
+    e: page 17
+
+    f: page 18
+
+    g: page 09
+
+    h: page 23
+
+    i: page 10
+
+    j: page 16
+
+    k: page 12
+
+    l: page 11
+
+    m: page 15
+
+    n: page 03
+
+    o: page 05
+
+    p: page 04
+
+    q: page 08
+
+    r: page 22
+
+4. John Jacob Jinglehiemerschmitt, "World of the Wierd", (WOTW)
+
+    a: Page 11 2/3. - 1990-03-05 [High]
+
+    b: Page pi
+

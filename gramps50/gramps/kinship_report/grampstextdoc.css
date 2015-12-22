@@ -1,0 +1,27 @@
+#grampstextdoc .KIN-Normal {
+	font-size: 10pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.50cm;
+	margin-top: 0.00cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .KIN-Subtitle {
+	font-size: 12pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.21cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .KIN-Title {
+	font-size: 16pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.28cm;
+	border-top:none; border-bottom:thin solid #000000;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}

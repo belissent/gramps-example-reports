@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+                "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+            <html:html xmlns:html="http://www.w3.org/1999/xhtml"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xml:lang="nl">
+            <html:head>
+            <html:meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
+            <html:title></html:title>
+            <html:style>
+        
+            div#infoField {position: fixed;
+                   height:   auto;
+                   top:      3%;
+                   right:    0;
+                   bottom:   5%;
+                   left:     50%;
+                   overflow: auto;}
+            form#searchForm {position: fixed;}
+            input.valid {background: rgb(191,255,191);}
+            input.invalid {background: rgb(255,191,191);}
+            pre#copyright {position: fixed;
+                    bottom: 0;}
+            line {stroke-width: 5px;}
+            rect {fill: black;}
+            path {stroke: white; stroke-width: 1;}
+            .male {fill: rgb(0,0,102);}
+            .female {fill: rgb(102,0,0);}
+            rect.activated {stroke: black;
+                   fill:   rgb(255,255,0) ! important;}
+            rect.searched {stroke: black;
+                   fill:   rgb(255,0,0);}
+            path.activated {stroke: black;
+                   fill:   rgb(255,255,0) ! important;}
+            path.searched {stroke: black;
+                   fill:   rgb(255,0,0);}
+            h3 {clear: left;}
+            dt {clear: right;}
+            li {clear: right;}
+            div.imgTable {position: relative;
+                    float: right;
+                    max-width: 70%;}
+            object:before {content: attr(imgref);
+                color: black;
+                font-size: smaller;}
+            object { width: 100%;
+                    max-height: 5em;
+                    margin: 1px;
+                    border-style: none;}
+            object.portret {float: left;
+                    max-width: 25%;
+                    max-height: 10em;}
+            img:before {content: attr(imgref);
+                color: black;
+                font-size: smaller;}
+            img { width: 100%;
+                    max-height: 5em;
+                    margin: 1px;
+                    border-style: none;}
+            img.portret {float: left;
+                    max-width: 25%;
+                    max-height: 10em;}
+            line.VeryLow {stroke: #000000;}
+span.VeryLow {color: #000000;}
+line.Low {stroke: #000000;}
+span.Low {color: #000000;}
+line.Normal {stroke: #000000;}
+span.Normal {color: #000000;}
+line.High {stroke: #000000;}
+span.High {color: #000000;}
+line.VeryHigh {stroke: #000000;}
+span.VeryHigh {color: #000000;}
+
+line {stroke:#000000;}
+span.witnesses {font-size: smaller;}
+span.bron {font-size: smaller;}</html:style>
+            <html:script type="text/javascript">
+            <![CDATA[
+        var infoWindow
+        function activate(aRect,person) {
+            var class_ = ""
+            class_ = aRect.getAttribute('class');
+            if (! class_ || class_.indexOf('activated') == -1) {
+                aRect.setAttribute('class',class_ + ' activated');
+            }
+            var infoField = getInfoField(person);
+            infoField.scrollTop = 0;
+            addText(person,infoField);
+            var rects = document.getElementsByTagName('rect');
+            for (var i=0; i<rects.length; i++) {
+                class_ = rects[i].getAttribute('class');
+                if (/activated/.test(class_) && rects[i] != aRect) {
+                    rects[i].setAttribute('class',class_.replace(/activated/g,''));
+                }
+            }
+        }
+        function addText(person,infoField) {
+            //var infoField = document.getElementById('infoField');
+            removeText(infoField);
+            var nameF = document.createElement('h2');
+            if (person.url != undefined && person.url.url_path != undefined) {
+                var a = document.createElement('a');
+                a.setAttribute('href',person.url.url_path);
+                a.setAttribute('target','_blank');
+                if (person.url.url_desc != undefined) {
+                    a.setAttribute('title',person.url.url_desc);
+                }
+                a.appendChild(document.createTextNode(person.person_name));
+                nameF.appendChild(a);
+            } else {
+                nameF.appendChild(document.createTextNode(person.person_name));
+            }
+            infoField.appendChild(nameF);
+            if (person.person_img != undefined) {
+                infoField.appendChild(photo2html(person.person_img,'portret'))
+            }
+
+            var vitalDL = document.createElement('dl');
+            birth2html(person,vitalDL);
+            death2html(person,vitalDL);
+            infoField.appendChild(vitalDL);
+            events2html(person,infoField);
+            attributes2html(person,infoField);
+            addresses2html(person,infoField);
+            notes2html(person,infoField);
+            sources2html(person,infoField);
+            img_sources2html(person,infoField);
+        }
+        function removeText(infoField) {
+            //var infoField = document.getElementById('infoField');
+            while (infoField.hasChildNodes()) {
+                infoField.removeChild(infoField.firstChild);
+            }
+        }
+        function photo2html(photo) {
+            var a = document.createElement('a');
+            //var img = document.createElement('img');
+            var img = document.createElement('object');
+            //img.setAttribute('src',photo.img_path);
+            img.setAttribute('data',photo.img_path);
+            if (arguments.length > 1) {
+                img.setAttribute('class',arguments[1]);
+            }
+            a.setAttribute('href',photo.img_path);
+            if (photo.img_ref != undefined) {
+                img.setAttribute('imgref',photo.img_ref);
+            }
+            a.appendChild(img);
+            return a
+        }
+        function img_sources2html(person,containerDIV) {
+            if (person.img_sources != undefined) {
+                var sourcesOL = document.createElement('ol');
+                for (var i=0; i < person.img_sources.length; i++) {
+                    var sourceLI = document.createElement('li');
+                    sourceLI.appendChild(document.createTextNode(person.img_sources[i]));
+                    sourcesOL.appendChild(sourceLI);
+                }
+                var subtitle = document.createElement('h3');
+                subtitle.appendChild(document.createTextNode('Image Sources:'));
+                containerDIV.appendChild(subtitle);
+                containerDIV.appendChild(sourcesOL);
+            }
+            return;
+        }
+        function replaceSubstring(mainStr,subsStr,replText) {
+            //mainStr is a multiline string
+            //subStr is the substring that must be replaced.
+            // replText is a string or an array of strings.
+            var delete_start;
+            if ((replText) &&
+                ((delete_start = mainStr.indexOf(subsStr)) >=0)) {
+                if (typeof(replText) != 'string') {
+                    replText = replText.join(", ");
+                }
+                var newline_index = mainStr.substr(0,delete_start).lastIndexOf('\n');
+                return mainStr.substr(0,newline_index+1) + subsStr + mainStr.substring(newline_index+1,delete_start) + replText + mainStr.substring(delete_start+subsStr.length,mainStr.length)
+            } else {
+                //remove whole line
+                var re = new RegExp("^.*?" + subsStr + ".*?(?:\n|$)","m")
+                return mainStr.replace(re,"")
+            }
+        }
+        function event_str2html(event_str,containerEL) {
+            var empty_line = false;
+            event_pieces = event_str.split(/\n/);
+            for (j=0; j<event_pieces.length; j++) {
+                var end_class_index = event_pieces[j].indexOf('>');
+                if (event_pieces[j] == '') {
+                    empty_line = true;
+                    continue;
+                }
+                if (empty_line) {
+                    containerEL.appendChild(document.createElement('br'));
+                    empty_line = false;
+                }
+                if (event_pieces[j].charAt(0) == '<' && end_class_index != -1) {
+                    var cls = event_pieces[j].substr(1,end_class_index-1);
+                    var span = document.createElement('span');
+                    span.setAttribute('class',cls);
+                    span.appendChild(document.createTextNode(event_pieces[j].substr(end_class_index+1) + ' '));
+                    containerEL.appendChild(span);
+                } else {
+                    containerEL.appendChild(document.createTextNode(event_pieces[j] + ' '));
+                }
+            }
+            return
+        }
+        function witness_array2string_array(witnesses) {
+            // The input of replaceSubstring() needs to be an array of string.
+            // This function converts the array of witness objects to an
+            // array of strings.
+            if (witnesses == undefined) { return witnesses; }
+            var ret_ar = [];
+            for (var i=0; i<witnesses.length; i++) {
+                ret_ar[i] = witnesses[i].witness_name
+                if (witnesses[i].witness_note != undefined) {
+                    ret_ar[i] += " (" + witnesses[i].witness_note + ")";
+                }
+            }
+            return ret_ar;
+        }
+        function searchStrInSubj() {
+            var inp = document.getElementById('searchString');
+            var strng = inp.value;
+            var sel = document.getElementById('searchSubject');
+            var subj = sel.options[sel.selectedIndex].value;
+            var resultFound = search(strng,subj);
+            if (resultFound) {
+                inp.setAttribute('class','valid');
+            } else {
+                if (strng != '') {
+                    inp.setAttribute('class','invalid');
+                } else {
+                    inp.setAttribute('class','');
+                }
+            }
+            return true;
+        }
+        function search(strg,subj) {
+            //make sure subj is unique so no name: and event_name:!
+            // There is trouble with witnesses because it is an array
+            // ..._witnesses:['... in stead of ..._date:'...
+            var eureka = false;
+            strng = strg.replace(/\\/g,"\\\\").replace(/'/g,"\\'")
+            var rects = document.getElementsByTagName('rect');
+            RectangleLoop: for (var i=0; i<rects.length; i++) {
+                var found = false;
+                var class_ = "";
+                if (rects[i].hasAttribute('class')) {
+                    class_ = rects[i].getAttribute('class');
+                    found = (class_.indexOf('searched') != -1);
+                }
+                var personObj = rects[i].getAttribute('onclick');
+                //var personObj = rects[i].getAttribute('onmouseover');
+                var startIndex = personObj.indexOf(subj);
+                if (startIndex == -1 && found) {
+                    rects[i].setAttribute('class',class_.replace(/searched/g,''));
+                }
+                while (startIndex != -1) {
+                    startIndex += subj.length;
+                    var endIndex = personObj.indexOf("'",startIndex);
+                    while (personObj.charAt(endIndex-1) == '\\') {
+                        endIndex = personObj.indexOf("'",endIndex+1);
+                    }
+                    subjVal = personObj.substring(startIndex,endIndex);
+                    if (strng == strng.toLowerCase()) { 
+                        if (strng != "" && subjVal.toLowerCase().indexOf(strng) != -1) {
+                            if (! found) {
+                                rects[i].setAttribute('class',class_ + " searched");
+                            }
+                            eureka = true;
+                            continue RectangleLoop;
+                        }
+                    } else {
+                        if (subjVal.indexOf(strng) != -1) {
+                            if (! found) {
+                                rects[i].setAttribute('class',class_ + " searched");
+                            }
+                            eureka = true;
+                            continue RectangleLoop;
+                        }
+                    }
+                    startIndex = personObj.indexOf(subj,endIndex+1);
+                }
+                if (found) {
+                    rects[i].setAttribute('class',class_.replace(/searched/g,''));
+                }
+            }
+            return eureka;
+        }
+        function start_halo(evt) {
+            var ring_width_px = 3
+            var r_min_px = 10
+            if (evt.detail != 2) { return; }
+            var persons = document.getElementsByTagName('rect')
+            for (var i=0; i<persons.length; i++) {
+                if (persons[i].hasAttribute('class') && persons[i].getAttribute('class').indexOf('activated') != -1) {
+                    if (persons[i].hasAttribute('x')) {
+                        var x = persons[i].getAttribute('x')
+                        var y = persons[i].getAttribute('y')
+                    } else {
+                        /^M(-?\d+),(-?\d+)/.exec(persons[i].getAttribute('d'))
+                        var x = RegExp.$1
+                        var y = RegExp.$2
+                    }
+                    var halo = document.getElementById('halo')
+                    halo.setAttribute('fill','none')
+                    halo.setAttribute('cx',x);
+                    halo.setAttribute('cy',y);
+                    var svg = document.getElementById('AncestorChart')
+                    var ctm = svg.getScreenCTM()
+                    x_click = (evt.clientX-ctm.e)/ctm.a
+                    y_click = (evt.clientY-ctm.f)/ctm.a
+                    var radius = Math.sqrt(Math.pow(x_click-x,2) + Math.pow(y_click-y,2))
+                    halo.setAttribute('r',radius);
+                    halo.setAttribute('stroke','rgb(255,255,0)')
+                    halo.setAttribute('stroke-width',ring_width_px/ctm.a)
+                    var r_min = r_min_px/ctm.a
+                    window.setTimeout(self.halo,100,x,y,radius,r_min);
+                    break;
+                }
+            } 
+        }
+        function halo(cx,cy,r,r_min) {
+            var h = document.getElementById('halo');
+            if (r > r_min) {
+                h.setAttribute('r',0.85*r);
+                window.setTimeout(self.halo,100,cx,cy,0.85*r,r_min);
+            } else {
+                h.setAttribute('stroke','none')
+                h.setAttribute('r',1);
+                h.setAttribute('cx',1);
+                h.setAttribute('cy',1);
+            }
+        }
+        function cleanUp() {
+            if (infoWindow != undefined && ! infoWindow.closed) {
+                infoWindow.close();
+            }
+        }
+                function getInfoField(person) {
+                    return document.getElementById('infoField');
+                }
+function birth2html(person,containerDL) {
+    if (person.birth != undefined) {
+        var eventDT = document.createElement('dt');
+        eventDT.appendChild(document.createTextNode(person.birth.event_type + ":"));
+        containerDL.appendChild(eventDT);
+        var eventDD = document.createElement('dd');
+        if (person.birth.event_imgs != undefined) {
+            var imgDIV = document.createElement('div');
+            imgDIV.setAttribute('class','imgTable');
+            var imgTABLE = document.createElement('table');
+            var imgTR = document.createElement('tr');
+            for (var j=0; j<person.birth.event_imgs.length; j++) {
+                 var imgTD = document.createElement('td');
+                 imgTD.appendChild(photo2html(person.birth.event_imgs[j]));
+                 imgTR.appendChild(imgTD);
+            }
+            imgTABLE.appendChild(imgTR);
+            imgDIV.appendChild(imgTABLE);
+            eventDD.appendChild(imgDIV);
+        }
+        var event_str = "<date>\n<role> at\n<type>:\n<description>\nin <place>"
+        event_str = replaceSubstring(event_str,"<date>",
+                    person.birth.birth_date);
+        event_str = replaceSubstring(event_str,"<place>",
+                    person.birth.birth_place);
+        event_str = replaceSubstring(event_str,"<role>","");
+        event_str = replaceSubstring(event_str,"<type>","");
+        event_str = replaceSubstring(event_str,"<description>","");
+        event_str = replaceSubstring(event_str,"<witnesses>",
+            witness_array2string_array(person.birth.event_witnesses));
+        if ('event_source' in person.birth) {
+            event_str = replaceSubstring(event_str,"<source>",
+                    person.birth.event_source.source_page);
+            if ('source_conf' in person.birth.event_source) {
+                var src_cls = '<source ' + person.birth.event_source.source_conf + ">";
+                event_str = event_str.replace('<source>',src_cls);
+            }
+        } else {
+            event_str = replaceSubstring(event_str,"<source>","");
+        }
+        
+        event_str2html(event_str,eventDD);
+        containerDL.appendChild(eventDD);
+    }
+    return;
+}
+    
+function death2html(person,containerDL) {
+    if (person.death != undefined) {
+        var eventDT = document.createElement('dt');
+        eventDT.appendChild(document.createTextNode(person.death.event_type + ":"));
+        containerDL.appendChild(eventDT);
+        var eventDD = document.createElement('dd');
+        if (person.death.event_imgs != undefined) {
+            var imgDIV = document.createElement('div');
+            imgDIV.setAttribute('class','imgTable');
+            var imgTABLE = document.createElement('table');
+            var imgTR = document.createElement('tr');
+            for (var j=0; j<person.death.event_imgs.length; j++) {
+                 var imgTD = document.createElement('td');
+                 imgTD.appendChild(photo2html(person.death.event_imgs[j]));
+                 imgTR.appendChild(imgTD);
+            }
+            imgTABLE.appendChild(imgTR);
+            imgDIV.appendChild(imgTABLE);
+            eventDD.appendChild(imgDIV);
+        }
+        var event_str = "<date>\n<role> at\n<type>:\n<description>\nin <place>"
+        event_str = replaceSubstring(event_str,"<date>",
+                    person.death.death_date);
+        event_str = replaceSubstring(event_str,"<place>",
+                    person.death.death_place);
+        event_str = replaceSubstring(event_str,"<role>","");
+        event_str = replaceSubstring(event_str,"<type>","");
+        event_str = replaceSubstring(event_str,"<description>","");
+        event_str = replaceSubstring(event_str,"<witnesses>",
+            witness_array2string_array(person.death.event_witnesses));
+        if ('event_source' in person.death) {
+            event_str = replaceSubstring(event_str,"<source>",
+                    person.death.event_source.source_page);
+            if ('source_conf' in person.death.event_source) {
+                var src_cls = '<source ' + person.death.event_source.source_conf + ">";
+                event_str = event_str.replace('<source>',src_cls);
+            }
+        } else {
+            event_str = replaceSubstring(event_str,"<source>","");
+        }
+        
+        event_str2html(event_str,eventDD);
+        containerDL.appendChild(eventDD);
+    }
+    return;
+}
+    
+        function events2html(person,containerDIV) {
+            if (person.events != undefined) {
+                var eventsUL = document.createElement('ul');
+                for (i=0; i< person.events.length; i++) {
+                    var eventLI = document.createElement('li');
+                    if (person.events[i].event_imgs != undefined) {
+                        var imgDIV = document.createElement('div');
+                        imgDIV.setAttribute('class','imgTable');
+                        var imgTABLE = document.createElement('table');
+                        var imgTR = document.createElement('tr');
+                        for (var j=0; j<person.events[i].event_imgs.length; j++) {
+                            var imgTD = document.createElement('td');
+                            imgTD.appendChild(photo2html(person.events[i].event_imgs[j]));
+                            imgTR.appendChild(imgTD);
+                        }
+                        imgTABLE.appendChild(imgTR);
+                        imgDIV.appendChild(imgTABLE);
+                        eventLI.appendChild(imgDIV);
+                    }
+                    var event_str = "<date>\n<role> at\n<type>:\n<description>\nin <place>"
+                    event_str = replaceSubstring(event_str,"<date>",
+                                person.events[i].event_date);
+                    event_str = replaceSubstring(event_str,"<role>",
+                                person.events[i].event_role);
+                    event_str = replaceSubstring(event_str,"<type>",
+                                person.events[i].event_type)
+                    event_str = replaceSubstring(event_str,"<description>",
+                                person.events[i].event_desc);
+                    event_str = replaceSubstring(event_str,"<place>",
+                                person.events[i].event_place);
+                    event_str = replaceSubstring(event_str,"<witnesses>",
+                                witness_array2string_array(person.events[i].event_witnesses));
+                    if ('event_source' in person.events[i]) {
+                        event_str = replaceSubstring(event_str,"<source>",
+                                person.events[i].event_source.source_page);
+                        if ('source_conf' in person.events[i].event_source) {
+                            var src_cls = '<source ' + person.events[i].event_source.source_conf + '>';
+                            event_str = event_str.replace('<source>',src_cls);
+                        }
+                    } else {
+                        event_str = replaceSubstring(event_str,"<source>","");
+                    }
+        
+                    event_str2html(event_str,eventLI)
+                    eventsUL.appendChild(eventLI);
+                }
+                var subtitle = document.createElement('h3');
+                subtitle.appendChild(document.createTextNode('Events:'));
+                containerDIV.appendChild(subtitle);
+                containerDIV.appendChild(eventsUL);
+            }
+            return;
+        }
+        
+        function attributes2html(person,containerDIV) {
+            if (person.attributes != undefined) {
+                var attributesDL = document.createElement('dl');
+                for (i=0; i< person.attributes.length; i++) {
+                    var attributeDT = document.createElement('dt');
+                    if (person.attributes[i].attr_type != undefined) {
+                        attributeDT.appendChild(document.createTextNode(person.attributes[i].attr_type));
+                    }
+                    attributesDL.appendChild(attributeDT);
+                    var attributeDD = document.createElement('dd');
+                    var attr_str = "";
+                    if (person.attributes[i].attr_val != undefined) {
+                        var attr_str = person.attributes[i].attr_val + attr_str;
+                    }
+                    if ('attr_source' in person.attributes[i]) {
+                        attr_str = replaceSubstring(attr_str,"<source>",
+                            person.attributes[i].attr_source.source_page);
+                        if ('source_conf' in person.attributes[i].attr_source) {
+                            var src_cls = '<source ' + person.attributes[i].attr_source.source_conf + '>';
+                            attr_str = attr_str.replace('<source>',src_cls);
+                        }
+                    } else {
+                        attr_str = replaceSubstring(attr_str,"<source>","");
+                    }
+                    event_str2html(attr_str,attributeDD);
+                    attributesDL.appendChild(attributeDD);
+                }
+                var subtitle = document.createElement('h3');
+                subtitle.appendChild(document.createTextNode('Attributes:'));
+                containerDIV.appendChild(subtitle);
+                containerDIV.appendChild(attributesDL);
+            }
+            return;
+        }
+        
+        function addresses2html(person,containerDIV) {
+            if (person.addresses != undefined) {
+                var addressesDL = document.createElement('dl');
+                for (i=0; i< person.addresses.length; i++) {
+                    var addressDT = document.createElement('dt');
+                    if (person.addresses[i].address_date != undefined) {
+                        addressDT.appendChild(document.createTextNode(person.addresses[i].address_date))
+                    }
+                    addressesDL.appendChild(addressDT);
+                    var addressDD = document.createElement('dd');
+                    var addr_str = "";
+                    if (person.addresses[i].address_str != undefined) {
+                        addr_str = person.addresses[i].address_str + addr_str
+                    }
+                    if ('addr_source' in person.addresses[i]) {
+                        addr_str = replaceSubstring(addr_str,"<source>",
+                            person.addresses[i].addr_source.source_page);
+                        if ('source_conf' in person.addresses[i].addr_source) {
+                            var src_cls = '<source ' + person.addresses[i].addr_source.source_conf + '>';
+                            addr_str = addr_str.replace('<source>',src_cls);
+                        }
+                    } else {
+                        addr_str = replaceSubstring(addr_str,"<source>","");
+                    }
+                    event_str2html(addr_str,addressDD);
+                    addressesDL.appendChild(addressDD);
+                }
+                var subtitle = document.createElement('h3');
+                subtitle.appendChild(document.createTextNode('Addresses:'));
+                containerDIV.appendChild(subtitle);
+                containerDIV.appendChild(addressesDL);
+            }
+            return;
+        }
+        
+        function notes2html(person,containerDIV) {
+            if (person.notes != undefined) {
+                if (person.notes.note_format) {
+                    var notesP = document.createElement('pre');
+                } else {
+                    var notesP = document.createElement('p');
+                }
+                notesP.appendChild(document.createTextNode(person.notes.note_text));
+                subtitle = document.createElement('h3');
+                subtitle.appendChild(document.createTextNode('Notes:'));
+                containerDIV.appendChild(subtitle);
+                containerDIV.appendChild(notesP);
+            }
+            return;
+        }
+        
+        function sources2html(person,containerDIV) {
+            if (person.sources != undefined) {
+                var sourcesOL = document.createElement('ol');
+                for (i=0; i< person.sources.length; i++) {
+                    var sourceLI = document.createElement('li');
+                    var source_str = "<title>"
+                    source_str = replaceSubstring(source_str,"<title>",
+                                 person.sources[i].source_title);
+                    source_str = replaceSubstring(source_str,"<volume>",
+                                 person.sources[i].source_page);
+                    source_str = replaceSubstring(source_str,"<author>",
+                                 person.sources[i].source_author);
+                    source_str = replaceSubstring(source_str,"<publication_info>",
+                                person.sources[i].source_pub_info);
+                    source_str = replaceSubstring(source_str,"<abbreviation>",
+                                 person.sources[i].source_abbr);
+                    event_str2html(source_str,sourceLI);
+                    sourcesOL.appendChild(sourceLI);
+                }
+                subtitle = document.createElement('h3');
+                subtitle.appendChild(document.createTextNode('Sources:'));
+                containerDIV.appendChild(subtitle);
+                containerDIV.appendChild(sourcesOL);
+            }
+            return;
+        }
+        ]]>
+            </html:script>
+            </html:head>
+            <html:body>
+            <html:div id="infoField"></html:div>
+            <html:form id="searchForm" action="">
+            <html:label>Search:
+            <html:input id="searchString" type="text" onkeyup="searchStrInSubj()"/>
+            </html:label>
+            <html:label>in:
+            <html:select id="searchSubject" onchange="searchStrInSubj()">
+            </html:select>
+            </html:label>
+            </html:form>
+            <html:p><html:br/></html:p> <!-- To accomodate the search form. -->
+            <svg id="AncestorChart" width="50%" height="1000px"
+                viewBox="0 0 1000 3000" preserveAspectRatio="xMinYMin" onclick="start_halo(evt)">
+        <rect x="-233.00" y="-7.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Marie',events:[{event_type:'Marriage',event_date:'',event_desc:'Burgess, Edward'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Marie</title></rect>
+<rect x="-233.00" y="12.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Victor',sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Victor</title></rect>
+<line x1="-133.00" y1="1.00" x2="-167.00" y2="1.00" class=""/>
+<line x1="-133.00" y1="1.00" x2="-167.00" y2="20.00" class=""/>
+<rect x="-133.00" y="-7.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Jesse V.',person_img:{img_path:'DenominoViso3/O0007.jpg'},birth:{event_type:'Birth',birth_date:'1876-06-18',birth_place:'Paragould, AR',event_desc:'Birth of Garner, Jesse V.'},death:{event_type:'Death',death_date:'1929-01-21',death_place:'Cedar City, UT',event_desc:'Death of Garner, Jesse V.'},events:[{event_type:'Burial',event_date:'1929',event_place:'Sterling, IL',event_desc:'Burial of Garner, Jesse V.'},{event_type:'Marriage',event_date:'',event_desc:'Taylor, Viola'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Jesse V.</title></rect>
+<rect x="-133.00" y="50.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Raymond E.',birth:{event_type:'Birth',birth_date:'1878-09-16',birth_place:'Paragould, AR',event_desc:'Birth of Garner, Raymond E.'},death:{event_type:'Death',death_date:'1921-05-02',death_place:'Astoria, OR',event_desc:'Death of Garner, Raymond E.'},sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Raymond E.</title></rect>
+<rect x="-233.00" y="69.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Яковлев, Everett',sources:[{source_title:'Import from test2.ged'}]})"><title>Яковлев, Everett</title></rect>
+<rect x="-233.00" y="88.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Яковлев, Esther Faye',events:[{event_type:'Marriage',event_date:'',event_desc:'Arnold, ???????'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Яковлев, Esther Faye</title></rect>
+<rect x="-233.00" y="107.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Яковлев, Georgia',sources:[{source_title:'Import from test2.ged'}]})"><title>Яковлев, Georgia</title></rect>
+<line x1="-133.00" y1="77.00" x2="-167.00" y2="77.00" class=""/>
+<line x1="-133.00" y1="77.00" x2="-167.00" y2="96.00" class=""/>
+<line x1="-133.00" y1="77.00" x2="-167.00" y2="115.00" class=""/>
+<rect x="-133.00" y="69.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Jennie S.',birth:{event_type:'Birth',birth_date:'1880-09-11',birth_place:'Paragould, AR',event_desc:'Birth of Garner, Jennie S.'},death:{event_type:'Death',death_date:'1964-06-20',death_place:'Columbus, IN',event_desc:'Death of Garner, Jennie S.'},events:[{event_type:'Marriage',event_date:'before 1911-07-06',event_desc:'Яковлев, George'},{event_type:'Burial',event_date:'1964-06-00',event_place:'Sterling, IL',event_desc:'Burial of Garner, Jennie S.'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Jennie S.</title></rect>
+<rect x="-233.00" y="145.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Maude',events:[{event_type:'Marriage',event_date:'',event_desc:'Cooper, ???????'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Maude</title></rect>
+<rect x="-233.00" y="164.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Marguarite',sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Marguarite</title></rect>
+<line x1="-133.00" y1="153.00" x2="-167.00" y2="153.00" class=""/>
+<line x1="-133.00" y1="153.00" x2="-167.00" y2="172.00" class=""/>
+<rect x="-133.00" y="145.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Walter E.',birth:{event_type:'Birth',birth_date:'1882-02-17',birth_place:'Paragould, AR',event_desc:'Birth of Garner, Walter E.'},death:{event_type:'Death',death_date:'1946-10-23',death_place:'Battle Creek, MI',event_desc:'Death of Garner, Walter E.'},events:[{event_type:'Burial',event_date:'1946-10-00',event_place:'Sterling, IL',event_desc:'Burial of Garner, Walter E.'},{event_type:'Marriage',event_date:'',event_desc:'García, Maude'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Walter E.</title></rect>
+<rect x="-133.00" y="202.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Elizabeth',birth:{event_type:'Birth',birth_date:'1883',event_desc:'Birth of Garner, Elizabeth'},death:{event_type:'Burial',death_date:'',death_place:'Hays, KS',event_desc:'Burial of Garner, Elizabeth'},sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Elizabeth</title></rect>
+<rect x="-133.00" y="221.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Daniel Webster',birth:{event_type:'Birth',birth_date:'1883-09-30',birth_place:'Hood River, OR',event_desc:'Birth of Garner, Daniel Webster'},death:{event_type:'Death',death_date:'1936-03-02',death_place:'Gary, IN',event_desc:'Death of Garner, Daniel Webster'},events:[{event_type:'Marriage',event_date:'1907-06-02',event_desc:'Jackson, Cora Ellen'},{event_type:'Burial',event_date:'1936-03-04',event_place:'Sterling, IL',event_desc:'Burial of Garner, Daniel Webster'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Daniel Webster</title></rect>
+<rect x="-233.00" y="240.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Robinson, Robert',sources:[{source_title:'Import from test2.ged'}]})"><title>Robinson, Robert</title></rect>
+<rect x="-233.00" y="259.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Robinson, Luther',sources:[{source_title:'Import from test2.ged'}]})"><title>Robinson, Luther</title></rect>
+<rect x="-233.00" y="278.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Robinson, Albert Raymond',sources:[{source_title:'Import from test2.ged'}]})"><title>Robinson, Albert Raymond</title></rect>
+<rect x="-233.00" y="297.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Robinson, Hugh Martin',sources:[{source_title:'Import from test2.ged'}]})"><title>Robinson, Hugh Martin</title></rect>
+<line x1="-133.00" y1="248.00" x2="-167.00" y2="248.00" class=""/>
+<line x1="-133.00" y1="248.00" x2="-167.00" y2="267.00" class=""/>
+<line x1="-133.00" y1="248.00" x2="-167.00" y2="286.00" class=""/>
+<line x1="-133.00" y1="248.00" x2="-167.00" y2="305.00" class=""/>
+<rect x="-133.00" y="240.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Bertha P.',birth:{event_type:'Birth',birth_date:'1888-03-13',birth_place:'Hagerstown, MD',event_desc:'Birth of Garner, Bertha P.'},death:{event_type:'Death',death_date:'1918-04-05',death_place:'Columbus, IN',event_desc:'Death of Garner, Bertha P.'},events:[{event_type:'Marriage',event_date:'1907-11-16',event_place:'Columbus, IN',event_desc:'Robinson, Clarence'},{event_type:'Burial',event_date:'1918-04-00',event_place:'Sterling, IL',event_desc:'Burial of Garner, Bertha P.'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Bertha P.</title></rect>
+<rect x="-433.00" y="335.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Andrew Joseph',birth:{event_type:'Birth',birth_date:'1999-04-11',birth_place:'Worthington, MN',event_desc:'Birth of Garner, Andrew Joseph'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Andrew Joseph</title></rect>
+<line x1="-333.00" y1="343.00" x2="-367.00" y2="343.00" class=""/>
+<rect x="-333.00" y="335.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Barry Joseph',birth:{event_type:'Birth',birth_date:'1948-12-14',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Barry Joseph'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1992-11-07',event_place:'Greeneville, TN',event_desc:'Vázquez, April Lynn'},{event_type:'Birth Child',event_date:'1999-04-11',event_place:'Worthington, MN',event_desc:'Garner, Andrew Joseph'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Barry Joseph</title></rect>
+<rect x="-433.00" y="373.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Hale, Joseph Brendan',birth:{event_type:'Birth',birth_date:'1975-07-17',birth_place:'Ottawa, IL',event_desc:'Birth of Hale, Joseph Brendan'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Hale, Joseph Brendan</title></rect>
+<rect x="-433.00" y="392.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Hale, Michael Patrick',birth:{event_type:'Birth',birth_date:'1977-07-27',birth_place:'Ottawa, IL',event_desc:'Birth of Hale, Michael Patrick'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Hale, Michael Patrick</title></rect>
+<rect x="-433.00" y="411.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Hale, Gina Marie',birth:{event_type:'Birth',birth_date:'1982-10-03',birth_place:'Ottawa, IL',event_desc:'Birth of Hale, Gina Marie'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Hale, Gina Marie</title></rect>
+<rect x="-433.00" y="430.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Hale, Jeffrey Brian',birth:{event_type:'Birth',birth_date:'1988-12-23',birth_place:'Jefferson City, MO',event_desc:'Birth of Hale, Jeffrey Brian'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Hale, Jeffrey Brian</title></rect>
+<line x1="-333.00" y1="381.00" x2="-367.00" y2="381.00" class=""/>
+<line x1="-333.00" y1="381.00" x2="-367.00" y2="400.00" class=""/>
+<line x1="-333.00" y1="381.00" x2="-367.00" y2="419.00" class=""/>
+<line x1="-333.00" y1="381.00" x2="-367.00" y2="438.00" class=""/>
+<rect x="-333.00" y="373.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Anne Therese',birth:{event_type:'Birth',birth_date:'1950-09-10',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Anne Therese'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1973-09-15',event_place:'Ottawa, IL',event_desc:'Hale, Lawrence Paul'},{event_type:'Birth Child',event_date:'1975-07-17',event_place:'Ottawa, IL',event_desc:'Hale, Joseph Brendan'},{event_type:'Birth Child',event_date:'1977-07-27',event_place:'Ottawa, IL',event_desc:'Hale, Michael Patrick'},{event_type:'Birth Child',event_date:'1982-10-03',event_place:'Ottawa, IL',event_desc:'Hale, Gina Marie'},{event_type:'Birth Child',event_date:'1988-12-23',event_place:'Jefferson City, MO',event_desc:'Hale, Jeffrey Brian'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Anne Therese</title></rect>
+<rect x="-433.00" y="468.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Warner, Matthew Steven',birth:{event_type:'Birth',birth_date:'1977-06-23',birth_place:'New Haven, CT',event_desc:'Birth of Warner, Matthew Steven'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Warner, Matthew Steven</title></rect>
+<rect x="-433.00" y="487.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Warner, John Allen',birth:{event_type:'Birth',birth_date:'1979-05-04',birth_place:'New Haven, CT',event_desc:'Birth of Warner, John Allen'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Warner, John Allen</title></rect>
+<rect x="-433.00" y="506.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Warner, Carl Thomas',birth:{event_type:'Birth',birth_date:'1981-05-11',birth_place:'Gainesville, TX',event_desc:'Birth of Warner, Carl Thomas'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Warner, Carl Thomas</title></rect>
+<rect x="-433.00" y="525.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Warner, James Jeffrey',birth:{event_type:'Birth',birth_date:'1984-05-03',birth_place:'Gainesville, TX',event_desc:'Birth of Warner, James Jeffrey'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Warner, James Jeffrey</title></rect>
+<rect x="-433.00" y="544.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Warner, Sarah Suzanne',birth:{event_type:'Birth',birth_date:'1987-08-29',birth_place:'Gainesville, TX',event_desc:'Birth of Warner, Sarah Suzanne'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Warner, Sarah Suzanne</title></rect>
+<line x1="-333.00" y1="476.00" x2="-367.00" y2="476.00" class=""/>
+<line x1="-333.00" y1="476.00" x2="-367.00" y2="495.00" class=""/>
+<line x1="-333.00" y1="476.00" x2="-367.00" y2="514.00" class=""/>
+<line x1="-333.00" y1="476.00" x2="-367.00" y2="533.00" class=""/>
+<line x1="-333.00" y1="476.00" x2="-367.00" y2="552.00" class=""/>
+<rect x="-333.00" y="468.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Rita Marie',birth:{event_type:'Birth',birth_date:'1952-09-07',birth_place:'Worthington, MN',event_desc:'Birth of Garner, Rita Marie'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1974-08-10',event_place:'Worthington, MN',event_desc:'Warner, Allen Carl'},{event_type:'Birth Child',event_date:'1977-06-23',event_place:'New Haven, CT',event_desc:'Warner, Matthew Steven'},{event_type:'Birth Child',event_date:'1979-05-04',event_place:'New Haven, CT',event_desc:'Warner, John Allen'},{event_type:'Birth Child',event_date:'1981-05-11',event_place:'Gainesville, TX',event_desc:'Warner, Carl Thomas'},{event_type:'Birth Child',event_date:'1984-05-03',event_place:'Gainesville, TX',event_desc:'Warner, James Jeffrey'},{event_type:'Birth Child',event_date:'1987-08-29',event_place:'Gainesville, TX',event_desc:'Warner, Sarah Suzanne'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Rita Marie</title></rect>
+<rect x="-433.00" y="582.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Stephen Gerard',birth:{event_type:'Birth',birth_date:'1983-10-05',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Stephen Gerard'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Stephen Gerard</title></rect>
+<rect x="-433.00" y="601.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Daniel Patrick',birth:{event_type:'Birth',birth_date:'1985-02-11',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Daniel Patrick'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Daniel Patrick</title></rect>
+<line x1="-333.00" y1="590.00" x2="-367.00" y2="590.00" class=""/>
+<line x1="-333.00" y1="590.00" x2="-367.00" y2="609.00" class=""/>
+<rect x="-333.00" y="582.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Gerard Stephen',birth:{event_type:'Birth',birth_date:'1955-07-31',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Gerard Stephen'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1979-01-06',event_place:'Farmington, MO',event_desc:'George, Elizabeth'},{event_type:'Birth Child',event_date:'1983-10-05',event_place:'Ottawa, IL',event_desc:'Garner, Stephen Gerard'},{event_type:'Birth Child',event_date:'1985-02-11',event_place:'Ottawa, IL',event_desc:'Garner, Daniel Patrick'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Gerard Stephen</title></rect>
+<rect x="-333.00" y="639.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, David Walter',birth:{event_type:'Birth',birth_date:'1956-12-21',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, David Walter'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, David Walter</title></rect>
+<rect x="-433.00" y="658.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Alecia &quot;Allie&quot; Clare',birth:{event_type:'Birth',birth_date:'1997-12-26',birth_place:'Fergus Falls, MN',event_desc:'Birth of Garner, Alecia &quot;Allie&quot; Clare'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Alecia "Allie" Clare</title></rect>
+<line x1="-333.00" y1="666.00" x2="-367.00" y2="666.00" class=""/>
+<rect x="-333.00" y="658.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Thomas James',birth:{event_type:'Birth',birth_date:'1965-12-10',birth_place:'Worthington, MN',event_desc:'Birth of Garner, Thomas James'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1997-07-07',event_place:'Blacksburg, VA',event_desc:'Сорокин, Holly Ruth'},{event_type:'Birth Child',event_date:'1997-12-26',event_place:'Fergus Falls, MN',event_desc:'Garner, Alecia &quot;Allie&quot; Clare'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Thomas James</title></rect>
+<line x1="-233.00" y1="343.00" x2="-267.00" y2="343.00" class=""/>
+<line x1="-233.00" y1="343.00" x2="-267.00" y2="381.00" class=""/>
+<line x1="-233.00" y1="343.00" x2="-267.00" y2="476.00" class=""/>
+<line x1="-233.00" y1="343.00" x2="-267.00" y2="590.00" class=""/>
+<line x1="-233.00" y1="343.00" x2="-267.00" y2="647.00" class=""/>
+<line x1="-233.00" y1="343.00" x2="-267.00" y2="666.00" class=""/>
+<rect x="-233.00" y="335.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Howard Lane',birth:{event_type:'Birth',birth_date:'1928-07-09',birth_place:'LaGrange, GA',event_desc:'Birth of Garner, Howard Lane'},events:[{event_type:'Marriage',event_date:'1948-02-02',event_place:'Worthington, MN',event_desc:'Marín, Mary Anne'},{event_type:'Birth Child',event_date:'1948-12-14',event_place:'Ottawa, IL',event_desc:'Garner, Barry Joseph'},{event_type:'Birth Child',event_date:'1950-09-10',event_place:'Ottawa, IL',event_desc:'Garner, Anne Therese'},{event_type:'Birth Child',event_date:'1952-09-07',event_place:'Worthington, MN',event_desc:'Garner, Rita Marie'},{event_type:'Birth Child',event_date:'1955-07-31',event_place:'Ottawa, IL',event_desc:'Garner, Gerard Stephen'},{event_type:'Birth Child',event_date:'1956-12-21',event_place:'Ottawa, IL',event_desc:'Garner, David Walter'},{event_type:'Birth Child',event_date:'1965-12-10',event_place:'Worthington, MN',event_desc:'Garner, Thomas James'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Howard Lane</title></rect>
+<rect x="-533.00" y="715.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Martín, Tyler William',birth:{event_type:'Birth',birth_date:'1993-11-29',event_desc:'Birth of Martín, Tyler William'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Martín, Tyler William</title></rect>
+<line x1="-433.00" y1="723.00" x2="-467.00" y2="723.00" class=""/>
+<rect x="-433.00" y="715.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Melissa Sue',birth:{event_type:'Birth',birth_date:'1969-12-03',event_desc:'Birth of Garner, Melissa Sue'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Birth Child',event_date:'1993-11-29',event_desc:'Martín, Tyler William'},{event_type:'Marriage',event_date:'',event_desc:'Martín'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Melissa Sue</title></rect>
+<line x1="-333.00" y1="723.00" x2="-367.00" y2="723.00" class=""/>
+<rect x="-333.00" y="715.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Francis William',birth:{event_type:'Birth',birth_date:'1945-01-03',event_desc:'Birth of Garner, Francis William'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Birth Child',event_date:'1969-12-03',event_desc:'Garner, Melissa Sue'},{event_type:'Marriage',event_date:'1991-06-22',event_desc:'Gibbs, Connie'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Francis William</title></rect>
+<rect x="-433.00" y="772.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Heather Jo',birth:{event_type:'Birth',birth_date:'1972-03-14',event_desc:'Birth of Garner, Heather Jo'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Heather Jo</title></rect>
+<rect x="-433.00" y="791.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Regina Lynne',birth:{event_type:'Birth',birth_date:'1973-08-27',event_desc:'Birth of Garner, Regina Lynne'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Regina Lynne</title></rect>
+<rect x="-533.00" y="810.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Victoria Laine',sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Victoria Laine</title></rect>
+<rect x="-533.00" y="829.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Vanichia Elaine',birth:{event_type:'Birth',birth_date:'1993-10-01',event_desc:'Birth of Garner, Vanichia Elaine'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Vanichia Elaine</title></rect>
+<line x1="-433.00" y1="818.00" x2="-467.00" y2="818.00" class=""/>
+<line x1="-433.00" y1="818.00" x2="-467.00" y2="837.00" class=""/>
+<rect x="-433.00" y="810.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Jason Richard',birth:{event_type:'Birth',birth_date:'1975-10-20',event_desc:'Birth of Garner, Jason Richard'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Birth Child',event_date:'1993-10-01',event_desc:'Garner, Vanichia Elaine'},{event_type:'Marriage',event_date:'',event_desc:'Harper, ??'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Jason Richard</title></rect>
+<line x1="-333.00" y1="780.00" x2="-367.00" y2="780.00" class=""/>
+<line x1="-333.00" y1="780.00" x2="-367.00" y2="799.00" class=""/>
+<line x1="-333.00" y1="780.00" x2="-367.00" y2="818.00" class=""/>
+<rect x="-333.00" y="772.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Richard Eugene',birth:{event_type:'Birth',birth_date:'1947-02-28',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Richard Eugene'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1971-10-23',event_desc:'Gibbs, Elaine'},{event_type:'Birth Child',event_date:'1972-03-14',event_desc:'Garner, Heather Jo'},{event_type:'Birth Child',event_date:'1973-08-27',event_desc:'Garner, Regina Lynne'},{event_type:'Birth Child',event_date:'1975-10-20',event_desc:'Garner, Jason Richard'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Richard Eugene</title></rect>
+<rect x="-433.00" y="886.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Michael Christopher',birth:{event_type:'Birth',birth_date:'1975-06-01',event_desc:'Birth of Garner, Michael Christopher'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Michael Christopher</title></rect>
+<rect x="-433.00" y="905.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Megan Ann',birth:{event_type:'Birth',birth_date:'1978-07-17',event_desc:'Birth of Garner, Megan Ann'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Megan Ann</title></rect>
+<line x1="-333.00" y1="894.00" x2="-367.00" y2="894.00" class=""/>
+<line x1="-333.00" y1="894.00" x2="-367.00" y2="913.00" class=""/>
+<rect x="-333.00" y="886.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Michael Stanley',birth:{event_type:'Birth',birth_date:'1948-06-12',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Michael Stanley'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1970-08-08',event_desc:'Gibbs, Sharon'},{event_type:'Birth Child',event_date:'1975-06-01',event_desc:'Garner, Michael Christopher'},{event_type:'Birth Child',event_date:'1978-07-17',event_desc:'Garner, Megan Ann'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Michael Stanley</title></rect>
+<rect x="-433.00" y="943.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Díez, William George Jr.',birth:{event_type:'Birth',birth_date:'1972-10-10',event_desc:'Birth of Díez, William George Jr.'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Díez, William George Jr.</title></rect>
+<line x1="-333.00" y1="951.00" x2="-367.00" y2="951.00" class=""/>
+<rect x="-333.00" y="943.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Barbara Jo',birth:{event_type:'Birth',birth_date:'1949-11-08',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Barbara Jo'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Birth Child',event_date:'1972-10-10',event_desc:'Díez, William George Jr.'},{event_type:'Marriage',event_date:'',event_desc:'Díez, William George'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Barbara Jo</title></rect>
+<rect x="-333.00" y="981.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Margaret Ann',birth:{event_type:'Birth',birth_date:'1951-07-18',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Margaret Ann'},death:{event_type:'Death',death_date:'1952-02-10',death_place:'Ottawa, IL',event_desc:'Death of Garner, Margaret Ann'},sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Margaret Ann</title></rect>
+<rect x="-433.00" y="1000.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Сергеев, Adria Maria',birth:{event_type:'Birth',birth_date:'1971-06-01',birth_place:'Ottawa, IL',event_desc:'Birth of Сергеев, Adria Maria'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1993-06-00',event_desc:'Demers, ??'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Сергеев, Adria Maria</title></rect>
+<rect x="-433.00" y="1019.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Сергеев, Jon Dennis',birth:{event_type:'Birth',birth_date:'1978-02-10',birth_place:'Ottawa, IL',event_desc:'Birth of Сергеев, Jon Dennis'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Сергеев, Jon Dennis</title></rect>
+<rect x="-433.00" y="1038.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Сергеев, Jacqueline Denise',birth:{event_type:'Birth',birth_date:'1981-01-18',birth_place:'Ottawa, IL',event_desc:'Birth of Сергеев, Jacqueline Denise'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Сергеев, Jacqueline Denise</title></rect>
+<rect x="-433.00" y="1057.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Сергеев, Joshua David',birth:{event_type:'Birth',birth_date:'1984-04-07',birth_place:'Ottawa, IL',event_desc:'Birth of Сергеев, Joshua David'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Сергеев, Joshua David</title></rect>
+<line x1="-333.00" y1="1008.00" x2="-367.00" y2="1008.00" class=""/>
+<line x1="-333.00" y1="1008.00" x2="-367.00" y2="1027.00" class=""/>
+<line x1="-333.00" y1="1008.00" x2="-367.00" y2="1046.00" class=""/>
+<line x1="-333.00" y1="1008.00" x2="-367.00" y2="1065.00" class=""/>
+<rect x="-333.00" y="1000.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Kathryn Mary',birth:{event_type:'Birth',birth_date:'1952-09-10',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Kathryn Mary'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Birth Child',event_date:'1971-06-01',event_place:'Ottawa, IL',event_desc:'Сергеев, Adria Maria'},{event_type:'Marriage',event_date:'1975-02-08',event_place:'Ottawa, IL',event_desc:'Сергеев, Dennis'},{event_type:'Birth Child',event_date:'1978-02-10',event_place:'Ottawa, IL',event_desc:'Сергеев, Jon Dennis'},{event_type:'Birth Child',event_date:'1981-01-18',event_place:'Ottawa, IL',event_desc:'Сергеев, Jacqueline Denise'},{event_type:'Birth Child',event_date:'1984-04-07',event_place:'Ottawa, IL',event_desc:'Сергеев, Joshua David'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Kathryn Mary</title></rect>
+<rect x="-433.00" y="1095.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Allison Renee',birth:{event_type:'Birth',birth_date:'1984-03-20',event_desc:'Birth of Garner, Allison Renee'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Allison Renee</title></rect>
+<rect x="-433.00" y="1114.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Amy Elizabeth',birth:{event_type:'Birth',birth_date:'1989-04-11',event_desc:'Birth of Garner, Amy Elizabeth'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Amy Elizabeth</title></rect>
+<line x1="-333.00" y1="1103.00" x2="-367.00" y2="1103.00" class=""/>
+<line x1="-333.00" y1="1103.00" x2="-367.00" y2="1122.00" class=""/>
+<rect x="-333.00" y="1095.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Peter George',birth:{event_type:'Birth',birth_date:'1954-08-05',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Peter George'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1976-01-25',event_desc:'Gibbs, Joy'},{event_type:'Birth Child',event_date:'1984-03-20',event_desc:'Garner, Allison Renee'},{event_type:'Birth Child',event_date:'1989-04-11',event_desc:'Garner, Amy Elizabeth'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Peter George</title></rect>
+<rect x="-333.00" y="1152.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Bernadette',birth:{event_type:'Birth',birth_date:'1957-08-31',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Bernadette'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'',event_desc:'Beck, Jack'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Bernadette</title></rect>
+<rect x="-433.00" y="1171.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Hill, Jo Lynn',birth:{event_type:'Birth',birth_date:'1977-03-12',event_desc:'Birth of Hill, Jo Lynn'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Hill, Jo Lynn</title></rect>
+<rect x="-433.00" y="1190.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Hill, Leigh Ann',birth:{event_type:'Birth',birth_date:'1979-01-23',event_desc:'Birth of Hill, Leigh Ann'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Hill, Leigh Ann</title></rect>
+<rect x="-433.00" y="1209.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Hill, Sean Michael',birth:{event_type:'Birth',birth_date:'1980-05-10',event_desc:'Birth of Hill, Sean Michael'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Hill, Sean Michael</title></rect>
+<line x1="-333.00" y1="1179.00" x2="-367.00" y2="1179.00" class=""/>
+<line x1="-333.00" y1="1179.00" x2="-367.00" y2="1198.00" class=""/>
+<line x1="-333.00" y1="1179.00" x2="-367.00" y2="1217.00" class=""/>
+<rect x="-333.00" y="1171.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Louella Marie',birth:{event_type:'Birth',birth_date:'',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Louella Marie'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Birth Child',event_date:'1977-03-12',event_desc:'Hill, Jo Lynn'},{event_type:'Marriage',event_date:'',event_desc:'Coleman'},{event_type:'Birth Child',event_date:'1980-05-10',event_desc:'Hill, Sean Michael'},{event_type:'Marriage',event_date:'',event_desc:'Hill'},{event_type:'Birth Child',event_date:'1979-01-23',event_desc:'Hill, Leigh Ann'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Louella Marie</title></rect>
+<rect x="-333.00" y="1247.00" width="66.00" height="16.00"
+                        class="female" onclick="activate(this,{person_name:'Garner, Cecilia',birth:{event_type:'Birth',birth_date:'1960-07-14',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Cecilia'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'',event_desc:'Горбунов, Matt'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Cecilia</title></rect>
+<rect x="-333.00" y="1266.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, John Joseph',birth:{event_type:'Birth',birth_date:'1961-08-15',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, John Joseph'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1994-03-04',event_desc:'Crawford, Lori'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, John Joseph</title></rect>
+<rect x="-333.00" y="1285.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Mark Gerard',birth:{event_type:'Birth',birth_date:'1962-10-16',birth_place:'Ottawa, IL',event_desc:'Birth of Garner, Mark Gerard'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1991-12-02',event_desc:'Gibbs, Lori'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Mark Gerard</title></rect>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="723.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="780.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="894.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="951.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="989.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="1008.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="1103.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="1160.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="1179.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="1255.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="1274.00" class=""/>
+<line x1="-233.00" y1="723.00" x2="-267.00" y2="1293.00" class=""/>
+<rect x="-233.00" y="715.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Eugene Stanley, Jr.',birth:{event_type:'Birth',birth_date:'',birth_place:'Vernon, TX',event_desc:'Birth of Garner, Eugene Stanley, Jr.'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Birth Child',event_date:'1945-01-03',event_desc:'Garner, Francis William'},{event_type:'Birth Child',event_date:'1947-02-28',event_place:'Ottawa, IL',event_desc:'Garner, Richard Eugene'},{event_type:'Birth Child',event_date:'1948-06-12',event_place:'Ottawa, IL',event_desc:'Garner, Michael Stanley'},{event_type:'Birth Child',event_date:'1949-11-08',event_place:'Ottawa, IL',event_desc:'Garner, Barbara Jo'},{event_type:'Birth Child',event_date:'1951-07-18',event_place:'Ottawa, IL',event_desc:'Garner, Margaret Ann'},{event_type:'Birth Child',event_date:'1952-09-10',event_place:'Ottawa, IL',event_desc:'Garner, Kathryn Mary'},{event_type:'Birth Child',event_date:'1954-08-05',event_place:'Ottawa, IL',event_desc:'Garner, Peter George'},{event_type:'Birth Child',event_date:'1957-08-31',event_place:'Ottawa, IL',event_desc:'Garner, Bernadette'},{event_type:'Birth Child',event_date:'1960-07-14',event_place:'Ottawa, IL',event_desc:'Garner, Cecilia'},{event_type:'Birth Child',event_date:'1961-08-15',event_place:'Ottawa, IL',event_desc:'Garner, John Joseph'},{event_type:'Birth Child',event_date:'1962-10-16',event_place:'Ottawa, IL',event_desc:'Garner, Mark Gerard'},{event_type:'Marriage',event_date:'',event_desc:'Pelletier, Josephine'},{event_type:'Birth Child',event_date:'',event_place:'Ottawa, IL',event_desc:'Garner, Louella Marie'},{event_type:'Marriage',event_date:'',event_desc:'Washington, Pearline'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Eugene Stanley, Jr.</title></rect>
+<rect x="-233.00" y="1323.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, John Roger',birth:{event_type:'Birth',birth_date:'1925-10-29',birth_place:'Lafayette, IN',event_desc:'Birth of Garner, John Roger'},events:[{event_type:'LVG',event_date:'',event_desc:'Custom FTW5 tag to specify LIVING not specified in GEDCOM 5.5'},{event_type:'Marriage',event_date:'1961-10-07',event_place:'Ottawa, IL',event_desc:'Брюханов, Violet Louise'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, John Roger</title></rect>
+<line x1="-133.00" y1="343.00" x2="-167.00" y2="343.00" class=""/>
+<line x1="-133.00" y1="343.00" x2="-167.00" y2="723.00" class=""/>
+<line x1="-133.00" y1="343.00" x2="-167.00" y2="1331.00" class=""/>
+<rect x="-133.00" y="335.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner, Eugene Stanley',person_img:{img_path:'DenominoViso3/O0009.jpg'},birth:{event_type:'Birth',birth_date:'1895-12-01',birth_place:'Portsmouth, OH',event_desc:'Birth of Garner, Eugene Stanley'},death:{event_type:'Death',death_date:'1984-03-01',death_place:'Twin Falls, ID',event_desc:'Death of Garner, Eugene Stanley'},events:[{event_type:'Marriage',event_date:'1921-01-03',event_place:'Edison, NJ',event_desc:'Reed, Frances Lucille (Babe)'},{event_type:'Birth Child',event_date:'1925-10-29',event_place:'Lafayette, IN',event_desc:'Garner, John Roger'},{event_type:'Birth Child',event_date:'1928-07-09',event_place:'LaGrange, GA',event_desc:'Garner, Howard Lane'},{event_type:'Burial',event_date:'1984-03-03',event_place:'Twin Falls, ID',event_desc:'Burial of Garner, Eugene Stanley'},{event_type:'Birth Child',event_date:'',event_place:'Vernon, TX',event_desc:'Garner, Eugene Stanley, Jr.'}],sources:[{source_title:'Import from test2.ged'}]})"><title>Garner, Eugene Stanley</title></rect>
+<line x1="-33.00" y1="1.00" x2="-67.00" y2="1.00" class=""/>
+<line x1="-33.00" y1="1.00" x2="-67.00" y2="58.00" class=""/>
+<line x1="-33.00" y1="1.00" x2="-67.00" y2="77.00" class=""/>
+<line x1="-33.00" y1="1.00" x2="-67.00" y2="153.00" class=""/>
+<line x1="-33.00" y1="1.00" x2="-67.00" y2="210.00" class=""/>
+<line x1="-33.00" y1="1.00" x2="-67.00" y2="229.00" class=""/>
+<line x1="-33.00" y1="1.00" x2="-67.00" y2="248.00" class=""/>
+<line x1="-33.00" y1="1.00" x2="-67.00" y2="343.00" class=""/>
+<rect x="-33.00" y="-7.00" width="66.00" height="16.00"
+                        class="male" onclick="activate(this,{person_name:'Garner von Zieliński, Lewis Anderson Sr',person_img:{img_path:'DenominoViso3/O0008.jpg'},url:{url_path:'http://www.gramps-project.org/',url_desc:''},birth:{event_type:'Birth',birth_date:'1855-06-21',birth_place:'Great Falls, MT',event_desc:'Birth of Garner, Lewis Anderson',event_imgs:[{img_path:'DenominoViso3/O0000.png'}]},death:{event_type:'Death',death_date:'1911-06-28',death_place:'Twin Falls, ID',event_desc:'Death of Garner, Lewis Anderson'},events:[{event_type:'Marriage',event_date:'1875-04-01',event_place:'Paragould, AR',event_desc:'Martel, Luella Jacques'},{event_type:'Birth Child',event_date:'1876-06-18',event_place:'Paragould, AR',event_desc:'Garner, Jesse V.'},{event_type:'Birth Child',event_date:'1878-09-16',event_place:'Paragould, AR',event_desc:'Garner, Raymond E.'},{event_type:'Birth Child',event_date:'1880-09-11',event_place:'Paragould, AR',event_desc:'Garner, Jennie S.'},{event_type:'Birth Child',event_date:'1882-02-17',event_place:'Paragould, AR',event_desc:'Garner, Walter E.'},{event_type:'Birth Child',event_date:'1883',event_desc:'Garner, Elizabeth'},{event_type:'Birth Child',event_date:'1883-09-30',event_place:'Hood River, OR',event_desc:'Garner, Daniel Webster'},{event_type:'Birth Child',event_date:'1888-03-13',event_place:'Hagerstown, MD',event_desc:'Garner, Bertha P.'},{event_type:'Birth Child',event_date:'1895-12-01',event_place:'Portsmouth, OH',event_desc:'Garner, Eugene Stanley'},{event_type:'Burial',event_date:'1911-07-01',event_place:'Twin Falls, ID',event_desc:'Burial of Garner, Lewis Anderson'}],attributes:[{attr_type:'Description',attr_val:'10 fingers, 10 toes.'},{attr_type:'Social Security Number',attr_val:'123-456-7890'},{attr_type:'Nickname',attr_val:'Big Louie'}],addresses:[{address_date:'2000-01-02',address_str:'1600 Pennsylvania Ave., Washington DC, District of Columbia, USA'}],notes:{note_text:'We have committed to synergistically disseminate resource-leveling methods of empowerment to set us apart from the competition. We envision to globally integrate inexpensive paradigms and professionally engineer timely technology while promoting personal employee growth. Our mission is to assertively build world-class methods of empowerment so that we may professionally promote parallel services to set us apart from the competition. It\'s our responsibility to dramatically maintain value-added services as well as to professionally simplify principle-centered technology for 100% customer satisfaction.\n\nThanks to the Mission Statement Generator from http://www.dilbert.com.',note_format:0},sources:[{source_title:'Import from test2.ged'},{source_title:'Baptize registry 1850 - 1867 Great Falls Church'},{source_title:'All possible citations'}]})"><title>Garner von Zieliński, Lewis Anderson Sr</title></rect>
+
+            <circle id="halo" cx="1" cy="1" r="1" stroke="none" fill="none"/>
+            </svg>
+            <html:p><html:br/></html:p><!--To accomodate the copyright string.-->
+            <html:pre id="copyright">Copyright ....</html:pre>
+            
+            <html:script>
+                var svg_el = document.getElementById('AncestorChart');
+                svg_el.setAttribute('viewBox',"-967 -8 1000 1404");
+            </html:script>
+            <html:script>
+            var search_subject_sel = document.getElementById('searchSubject');
+        var opt = document.createElement('option');
+opt.setAttribute('value',"address_str:'");
+                opt.appendChild(document.createTextNode('Address'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"address_date:'");
+                opt.appendChild(document.createTextNode('Address Date'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"attr_type:'");
+                opt.appendChild(document.createTextNode('Attribute Type'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"attr_val:'");
+                opt.appendChild(document.createTextNode('Attribute Value'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"birth_date:'");
+                opt.appendChild(document.createTextNode('Birth Date'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"birth_place:'");
+                opt.appendChild(document.createTextNode('Birth Place'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"_date:'");
+                opt.appendChild(document.createTextNode('Date'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"death_date:'");
+                opt.appendChild(document.createTextNode('Death Date'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"death_place:'");
+                opt.appendChild(document.createTextNode('Death Place'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"event_date:'");
+                opt.appendChild(document.createTextNode('Event Date'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"event_desc:'");
+                opt.appendChild(document.createTextNode('Event Description'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"event_place:'");
+                opt.appendChild(document.createTextNode('Event Place'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"event_type:'");
+                opt.appendChild(document.createTextNode('Event Type'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('selected','selected');
+opt.setAttribute('value',"person_name:'");
+                opt.appendChild(document.createTextNode('Name'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"note_text:'");
+                opt.appendChild(document.createTextNode('Note'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"_place:'");
+                opt.appendChild(document.createTextNode('Place'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"source_title:'");
+                opt.appendChild(document.createTextNode('Source Title'));
+                search_subject_sel.appendChild(opt);
+                var opt = document.createElement('option');
+opt.setAttribute('value',"url_desc:'");
+                opt.appendChild(document.createTextNode('URL description'));
+                search_subject_sel.appendChild(opt);
+                </html:script></html:body></html:html>

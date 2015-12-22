@@ -1,0 +1,45 @@
+#grampstextdoc .REPO-Note {
+	font-size: 12pt;
+	text-align: left; text-indent: 0.75cm;
+	margin-right: 0.00cm; margin-left: 0.75cm;
+	margin-top: 0.11cm; margin-bottom: 0.11cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .REPO-ReportTitle {
+	font-size: 20pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.71cm; margin-bottom: 0.71cm;
+	border-top:none; border-bottom:thin solid #000000;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .REPO-RepositoryTitle {
+	font-size: 14pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.35cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .REPO-Section {
+	font-size: 10pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.50cm;
+	margin-top: 0.25cm; margin-bottom: 0.18cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .REPO-Section2 {
+	font-size: 10pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 1.00cm;
+	margin-top: 0.04cm; margin-bottom: 0.04cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-style:italic; 
+}

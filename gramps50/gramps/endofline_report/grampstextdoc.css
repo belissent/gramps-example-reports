@@ -1,0 +1,55 @@
+#grampstextdoc .EOL-TableCell {
+	padding: 0.000cm 0.000cm 0.000cm 0.000cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+}
+#grampstextdoc .EOL_GenerationCell {
+	padding: 0.000cm 0.000cm 0.000cm 0.000cm;
+	border-top:none; border-bottom:thin solid #000000;
+	border-left:none; border-right:none;
+}
+#grampstextdoc .EOL-Generation {
+	font-size: 12pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.21cm; margin-bottom: 0.00cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-style:italic; 
+}
+#grampstextdoc .EOL-Normal {
+	font-size: 10pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.21cm; margin-bottom: 0.21cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .EOL-Pedigree {
+	font-size: 8pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.21cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .EOL-Subtitle {
+	font-size: 12pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.21cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-style:italic; 
+}
+#grampstextdoc .EOL-Title {
+	font-size: 16pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.00cm; margin-bottom: 0.28cm;
+	border-top:none; border-bottom:thin solid #000000;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}

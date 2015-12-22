@@ -1,0 +1,786 @@
+                       Detailed Descendant Report
+
+Table Of Contents
+
+      1. Webb, Elias
+
+      2. Макаров, Joseph
+
+      3. Delgado
+
+      4. Blanco, Bendicht
+
+      5. Austin, Hans
+
+      6. Jenkins, Peter
+
+      7. Reid, Hans
+
+      8. Rodriquez
+
+      9. Douglas, Frederick
+
+      10. Todd, Charles
+
+      11. Oliver, Hans Michael
+
+      12. Harvey, John
+
+      13. Beaulieu, Johann Simon
+
+      14. Warner, John
+
+      15. Foster, John
+
+      16. Sanders, Henry
+
+      17. Massey, John
+
+      18. Gomez, Culthbert
+
+      19. Jones, Hugh
+
+      20. Thomas, Elder Thomas
+
+      21. Norris, William
+
+      22. Howell, JOHN
+
+      23. Johnson, Henry
+
+      24. Howard, Michael
+
+      25. Moran, Andrew
+
+      26. Webster, Conrad
+
+      27. Николаев, Veltin
+
+      28. Bishop, Quirinus
+
+      29. Воробьев, Rev. Samuel
+
+      30. 山本, Gabriel Gustave
+
+      31. Simard, Thomas
+
+      32. Page, John
+
+      33. Alvarado, Cadwallader
+
+      34. Parent, John Sr.
+
+      35. James, James
+
+      36. Reed, Peter James?
+
+      37. Moreno, Herman
+
+      38. Злобин, John
+
+      39. Ferguson, Lord Samuel
+
+      40. Adkins, Robert Sr.
+
+      41. Aguilar, John
+
+      42. Anderson, Thomas
+
+      43. Peters, John
+
+      44. Maldonado, Edward
+
+      45. Burns, Jonathan
+
+      46. Fox, William
+
+      47. Palmer, Robert
+
+      48. Green, Yelverton
+
+      49. Guerrero, Walter
+
+      50. Curtis, John
+
+      51. Гончаров, Thomas
+
+      52. Ramos, John
+
+      53. Максимов, George
+
+      54. Alvarado, Jeffrey
+
+      55. Davis, John
+
+      56. Reed, John
+
+      57. Тихонов, Miles?
+
+      58. Howell, John
+
+      59. Gibbs
+
+      60. Brooks, Guillaume de
+
+      61. Rubio, John III
+
+      62. Ball, Ezekiel
+
+      63. Maxwell, William
+
+      64. Зыков, John
+
+      65. Hawkins, Beckham
+
+      66. Reynolds, John
+
+      67. Murray, Nicholas
+
+      68. Boucher, William Donel
+
+      69. Mullins, Robert?
+
+      70. Henry, John
+
+      71. Blake, Conrad
+
+      72. Cunningham, Peter Sr.
+
+      73. Park, James
+
+      74. Marín, William
+
+      75. Payne, Leonard
+
+      76. Diaz, William (Rev.)
+
+      77. Baldwin, Peter
+
+      78. Lapointe, Sir Thomas
+
+      79. Goodman, Ralph
+
+      80. Mazur, William
+
+      81. Garner, Joseph
+
+      82. Шестаков, George
+
+      83. Martel, Henry
+
+      84. Pelletier, Esiquio
+
+      85. Landry, Michael Edward
+
+      86. Boucher, David
+
+      87. Watts, Michael
+
+      88. Bélanger, James
+
+      89. Floyd, John S.
+
+      90. Reed, Edward
+
+      91. Keller, Mathew
+
+      92. Reed, Matthew
+
+      93. Reeves, John
+
+      94. Holloway, John(?)
+
+      95. Wójcik, Arnold
+
+      96. Meyer, P.D.
+
+      97. Lane, Remo
+
+      98. Козлов, Samuel C.
+
+      99. Jackson, Cora Ellen
+
+      100. Gibbs, Rosina M.
+
+      101. Смирнов, Eudo
+
+      102. Knudsen, Ranulf
+
+      103. , محمد
+
+      104. Muñoz, Don
+
+      105. Hudson, Eugene Stanley
+
+      106. Walters, Daniel
+
+      107. Сорокин, Robert
+
+      108. Gibbs
+
+      109. , أحمد
+
+      110. Boucher, William C.
+
+      111. Gardner, Patrick
+
+      112. Wood, Peter
+
+      113. Kowalski, Thomas
+
+      114. Boucher, Michael
+
+      115. Woods, James
+
+      116. Hudson, Howard Lane
+
+      117. Blanco, Mr.
+
+      118. Frank, ???
+
+      119. Thomsen, new
+
+      120. Piotrowski, John
+
+      121. Lachance, Helen
+
+      122. Bergeron, John Henry
+
+      123. Todd, Wayne
+
+      124. González, John
+
+      125. Boucher, Nancy A.
+
+      126. Lessard, ???
+
+      127. Reeves, Honora
+
+      128. Patrick, Melvin
+
+      129. Reed, Michael
+
+      130. Boucher, Catherine
+
+      131. Todd, John
+
+      132. Warner, Daniel Arthur
+
+      133. Boucher, James
+
+      134. Thornton, Romaine
+
+      135. Myers, Nina Mae
+
+      136. Coleman, Marilyn
+
+      137. Чернов, Maud
+
+      138. Lopez, John Warren
+
+      139. Nielsen, Margaret A.
+
+      140. Reeves, Jesse
+
+      141. บุญ, Foon
+
+      142. Wallace, Abraham
+
+      143. Andrews, Harold
+
+      144. Hudson, Howard Lane
+
+      145. Кузьмин, Mary Anne
+
+      146. Kelly, Ashley Diane
+
+      147. Navarro, Grace
+
+      148. Boucher, Honora
+
+      149. Copeland, Mary
+
+      150. Reeves, James
+
+      151. Nielsen, Louise
+
+      152. Piotrowski, Sir John
+
+      153. Grant, Thomas
+
+      154. Boucher, Ella
+
+      155. Johnson, Richard F.
+
+      156. Thornton, Philip
+
+      157. Quinn, Abram
+
+      158. Boucher, William
+
+      159. Reeves, Mathew
+
+      160. Ford, Carl
+
+      161. Reeves, Catherine
+
+      162. Clark, Sarah
+
+      163. Knudsen, John
+
+      164. Зыков, ???????
+
+      165. Boucher, David
+
+      166. Gonzales, Linda S.
+
+      167. Berry, Honorah
+
+      168. Garner, Raymond Webster
+
+      169. Boucher, Michael
+
+      170. Gonzales, Mark R.
+
+      171. Boucher, Fr.Lawrence M.
+
+      172. Zimmerman, Edith Irene
+
+      173. Kelly, David
+
+      174. Boucher, Thomas
+
+      175. Boucher, Sylvia B.
+
+      176. Wright, Dr. Charles J.
+
+      177. Jacobs, Alice
+
+      178. Thomsen, new
+
+      179. Fortin, Mathas
+
+      180. Blanco, Hans
+
+      181. Reeves, Margaret
+
+      182. Demers, ??
+
+      183. Boucher, William J.
+
+      184. Reeves, Mary
+
+      185. Lopez, Lee William
+
+      186. Blanco, Hans
+
+      187. Cole, Susannah
+
+      188. Garner, Daniel Burton
+
+      189. Marín, Noah, Jr.
+
+      190. Douglas, Hans Peter
+
+      191. Castro, ???
+
+      192. Boyd, Charles Newton
+
+      193. Edwards, Lucy
+
+
+                  1. Descendant Report for Webb, Elias
+
+Generation 1
+
+1.    Webb, Elias.
+
+      He married Gibbs, Nancy.
+
+      Children of Gibbs, Nancy and Webb, Elias
+
+      + 11 i. Webb, Andrew. Andrew was born in 1788 in Loveland, Larimer, CO,
+         USA. He died before 1850 in Rolla, MO, USA.
+
+Generation 2
+
+11.   Webb, Andrew.
+
+      Andrew was born in 1788 in Loveland, Larimer, CO, USA. He died 
+      before 1850 in Rolla, MO, USA at the age of less than 62 years. He
+      was buried in Enid, OK, USA. He was the son of Webb, Elias and 
+      Gibbs, Nancy. He married Webb, Margaret Margarite? in Del Rio, Val
+      Verde, TX, USA.
+
+      Children of Webb, Margaret Margarite? and Webb, Andrew
+
+      + 111 i. Webb, Alexander. Alexander was born in 1821 in Ontario, OR-ID, 
+         USA. He died on 1854-02-02 in Janesville, WI, USA.
+
+       112 ii. Webb, Robert.
+
+       113 iii. Webb, R. Eaken.
+
+       114 iv. Webb, Nancy.
+
+       115 v. Webb, Mary. Mary was born on 1827-01-31 in Greenwood, SC, USA.
+
+      + 116 vi. Webb, William John. William John was born on 1829-07-14 in 
+         Rockingham, NC, USA. He died on 1888-04-17.
+
+       117 vii. Webb, Sarah Margarite. Sarah Margarite was born in 1832 in 
+         Rockingham, NC, USA.
+
+       118 viii. Webb, Charles Leroy Boyd. Charles Leroy Boyd was born in 1834 
+         in Rockingham, NC, USA.
+
+       119 ix. Webb, John McCrea. John McCrea was born in 1837 in Decatur, 
+         Adams, IN, USA.
+
+       11A x. Webb, James McPheeters. James McPheeters was born in Sault Ste,
+         MI, USA.
+
+       11B xi. Webb, Newton Kitridge. Newton Kitridge was born on 1842-10-13 
+         in Orlando, Orange, FL, USA. He died on 1912-07-28 in 
+         Lafayette, Tippecanoe, IN, USA.
+
+Generation 3
+
+111.  Webb, Alexander.
+
+      Alexander was born in 1821 in Ontario, OR-ID, USA. He died on 
+      1854-02-02 in Janesville, WI, USA at the age of 33 years, 1 month.
+      He was buried in 1854-02-00 in Fort Worth, Tarrant, TX, USA. He 
+      was the son of Webb, Andrew and Webb, Margaret Margarite?. He 
+      married Delgado, Mary Ann on 1845-01-23 in Charleston, SC, USA.
+
+      Report appearances for Webb, Alexander
+
+      Report: 2, Generation: 4, Person: 1111
+
+      Children of Delgado, Mary Ann and Webb, Alexander
+
+      + 1111 i. Webb, Livingstone Martin. Livingstone Martin was born on 
+         1846-02-11 in Concord, NH, USA. He died on 1902-04-10 in 
+         Ottawa, La Salle, IL, USA.
+
+       1112 ii. Webb, Joseph LeRoy. Joseph LeRoy was born in 1847-10-00 in 
+         Concord, NH, USA.
+
+       1113 iii. Webb, Lucinda E.. Lucinda E. was born in Carlsbad, NM, USA.
+
+       1114 iv. Webb, Homer.
+
+112.  Webb, Robert.
+
+      He was the son of Webb, Andrew and Webb, Margaret Margarite?.
+
+      Report appearances for Webb, Robert
+
+      Report: 2, Generation: 4, Person: 1112
+
+113.  Webb, R. Eaken.
+
+      He was the son of Webb, Andrew and Webb, Margaret Margarite?.
+
+      Report appearances for Webb, R. Eaken
+
+      Report: 2, Generation: 4, Person: 1113
+
+114.  Webb, Nancy.
+
+      She was the daughter of Webb, Andrew and Webb, Margaret 
+      Margarite?.
+
+      Report appearances for Webb, Nancy
+
+      Report: 2, Generation: 4, Person: 1114
+
+115.  Webb, Mary.
+
+      Mary was born on 1827-01-31 in Greenwood, SC, USA. She was the 
+      daughter of Webb, Andrew and Webb, Margaret Margarite?. She 
+      married Waters.
+
+      Report appearances for Webb, Mary
+
+      Report: 2, Generation: 4, Person: 1115
+
+116.  Webb, William John.
+
+      William John was born on 1829-07-14 in Rockingham, NC, USA. He 
+      died on 1888-04-17 at the age of 58 years, 9 months. He was the 
+      son of Webb, Andrew and Webb, Margaret Margarite?. He married 
+      Wagner, Martha Ann.
+
+      Report appearances for Webb, William John
+
+      Report: 2, Generation: 4, Person: 1116
+
+      Children of Wagner, Martha Ann and Webb, William John
+
+      + 1161 i. Webb, James Marshall. James Marshall was born on 1856-12-04 in 
+         Eau Claire, WI, USA. He died on 1938-08-04 in Pullman, WA, USA.
+
+117.  Webb, Sarah Margarite.
+
+      Sarah Margarite was born in 1832 in Rockingham, NC, USA. She was 
+      the daughter of Webb, Andrew and Webb, Margaret Margarite?.
+
+      Report appearances for Webb, Sarah Margarite
+
+      Report: 2, Generation: 4, Person: 1117
+
+118.  Webb, Charles Leroy Boyd.
+
+      Charles Leroy Boyd was born in 1834 in Rockingham, NC, USA. He was
+      the son of Webb, Andrew and Webb, Margaret Margarite?.
+
+      Report appearances for Webb, Charles Leroy Boyd
+
+      Report: 2, Generation: 4, Person: 1118
+
+119.  Webb, John McCrea.
+
+      John McCrea was born in 1837 in Decatur, Adams, IN, USA. He was 
+      the son of Webb, Andrew and Webb, Margaret Margarite?.
+
+      Report appearances for Webb, John McCrea
+
+      Report: 2, Generation: 4, Person: 1119
+
+11A.  Webb, James McPheeters.
+
+      James McPheeters was born in Sault Ste, MI, USA. He was the son of
+      Webb, Andrew and Webb, Margaret Margarite?.
+
+      Report appearances for Webb, James McPheeters
+
+      Report: 2, Generation: 4, Person: 111A
+
+11B.  Webb, Newton Kitridge.
+
+      Newton Kitridge was born on 1842-10-13 in Orlando, Orange, FL, 
+      USA. He died on 1912-07-28 in Lafayette, Tippecanoe, IN, USA at 
+      the age of 69 years, 9 months. He was buried on 1912-07-30 in 
+      Seaford, Sussex, DE, USA. He was the son of Webb, Andrew and Webb,
+      Margaret Margarite?.
+
+      Report appearances for Webb, Newton Kitridge
+
+      Report: 2, Generation: 4, Person: 111B
+
+Generation 4
+
+1111. Webb, Livingstone Martin.
+
+      Livingstone Martin was born on 1846-02-11 in Concord, NH, USA. He 
+      died on 1902-04-10 in Ottawa, La Salle, IL, USA at the age of 56 
+      years, 1 month. He was buried on 1902-04-13 in Crawfordsville, 
+      Montgomery, IN, USA. He was the son of Webb, Alexander and 
+      Delgado, Mary Ann. He married Blanco, Lucinda Catherine on 
+      1867-04-24.
+
+      Report appearances for Webb, Livingstone Martin
+
+      Report: 2, Generation: 5, Person: 11111
+
+      Report: 3, Generation: 3, Person: 111
+
+      Children of Blanco, Lucinda Catherine and Webb, Livingstone Martin
+
+      + 11111 i. Webb, Francis Irvin. Francis Irvin was born on 1869-04-28 in 
+         Richmond, Wayne, IN, USA. He died on 1957-02-07 in Granbury, 
+         Hood, TX, USA.
+
+       11112 ii. Webb, Clarence. Clarence was born on 1878-04-15 in Burlington, 
+         VT, USA. He died on 1953-12-24 in Troy, Pike, AL, USA.
+
+       11113 iii. Webb, Lawrence. Lawrence was born on 1878-04-15 in Burlington, 
+         VT, USA. He died on 1948-08-29 in Troy, Pike, AL, USA.
+
+1112. Webb, Joseph LeRoy.
+
+      Joseph LeRoy was born in 1847-10-00 in Concord, NH, USA. He was 
+      the son of Webb, Alexander and Delgado, Mary Ann.
+
+      Report appearances for Webb, Joseph LeRoy
+
+      Report: 2, Generation: 5, Person: 11112
+
+      Report: 3, Generation: 3, Person: 112
+
+1113. Webb, Lucinda E.
+
+      Lucinda E. was born in Carlsbad, NM, USA. She was the daughter of 
+      Webb, Alexander and Delgado, Mary Ann.
+
+      Report appearances for Webb, Lucinda E.
+
+      Report: 2, Generation: 5, Person: 11113
+
+      Report: 3, Generation: 3, Person: 113
+
+1114. Webb, Homer.
+
+      He was the son of Webb, Alexander and Delgado, Mary Ann.
+
+      Report appearances for Webb, Homer
+
+      Report: 2, Generation: 5, Person: 11114
+
+      Report: 3, Generation: 3, Person: 114
+
+1161. Webb, James Marshall.
+
+      James Marshall was born on 1856-12-04 in Eau Claire, WI, USA. He 
+      died on 1938-08-04 in Pullman, WA, USA at the age of 81 years, 8 
+      months. He was buried on 1938-08-06 in Seaford, Sussex, DE, USA. 
+      He was the son of Webb, William John and Wagner, Martha Ann. He 
+      married Ballard, Judith Ellen on 1880-12-14.
+
+      Report appearances for Webb, James Marshall
+
+      Report: 2, Generation: 5, Person: 11161
+
+      Children of Ballard, Judith Ellen and Webb, James Marshall
+
+       11611 i. Webb, Charles Edward. Charles Edward was born on 1901-09-23 in 
+         Reno-Sparks, NV, USA.
+
+      + 11612 ii. Webb, William Herman. William Herman was born on 1881-10-27 in 
+         Pullman, WA, USA. He died on 1952-08-23 in Reno-Sparks, NV, 
+         USA.
+
+      + 11613 iii. Webb, Ernest Arlington. Ernest Arlington was born on 1884-11-17
+         in Reno-Sparks, NV, USA. He died on 1957-10-07.
+
+       11614 iv. Webb, David Festus. David Festus was born on 1883-02-22 in 
+         Reno-Sparks, NV, USA. He died on 1950-08-23.
+
+       11615 v. Webb, James Leslie. James Leslie was born on 1886-11-09 in 
+         Reno-Sparks, NV, USA. He died on 1963-01-25.
+
+       11616 vi. Webb, Michael Christie. Michael Christie was born on 1888-11-19
+         in Reno-Sparks, NV, USA. He died on 1970-07-23.
+
+       11617 vii. Webb, Anna Mabel. Anna Mabel was born on 1890-10-02 in 
+         Reno-Sparks, NV, USA. She died on 1967-07-12.
+
+       11618 viii. Webb, Mary Ruth. Mary Ruth was born on 1892-12-15 in 
+         Reno-Sparks, NV, USA. She died on 1956-11-29.
+
+       11619 ix. Webb, Harry Noble. Harry Noble was born on 1895-11-10 in 
+         Reno-Sparks, NV, USA. He died on 1925-12-07.
+
+       1161A x. Webb, Frances Mae. Frances Mae was born on 1899-02-04 in 
+         Reno-Sparks, NV, USA. She died on 1989-05-05.
+
+Generation 5
+
+11111. Webb, Francis Irvin.
+
+      Francis Irvin was born on 1869-04-28 in Richmond, Wayne, IN, USA. 
+      He died on 1957-02-07 in Granbury, Hood, TX, USA at the age of 87 
+      years, 9 months. He was buried in 1957-02-00 in Boone, Boone, IA, 
+      USA. He was the son of Webb, Livingstone Martin and Blanco, 
+      Lucinda Catherine. He married Todd, Louella Jane on 1896-03-05 in 
+      Marinette, WI-MI, USA.
+
+      Report appearances for Webb, Francis Irvin
+
+      Report: 2, Generation: 6, Person: 111111
+
+      Report: 3, Generation: 4, Person: 1111
+
+      Report: 4, Generation: 10, Person: 1111111111
+
+      Report: 5, Generation: 10, Person: 1111111111
+
+      Report: 6, Generation: 10, Person: 1111111111
+
+      Report: 7, Generation: 9, Person: 111111111
+
+      Report: 8, Generation: 5, Person: 11111
+
+      Report: 9, Generation: 5, Person: 11111
+
+      Children of Todd, Louella Jane and Webb, Francis Irvin
+
+      + 111111 i. Webb, Luella Florence. Luella Florence was born on 1906-11-07 
+         in Tuscaloosa, Tuscaloosa, AL, USA. She died on 1986-10-08 in 
+         Worthington, MN, USA.
+
+       111112 ii. Webb, Lucy Mabel. Lucy Mabel was born on 1899-01-20 in La 
+         Crosse, WI, USA. She died on 1971-05-10 in Ada, OK, USA.
+
+      + 111113 iii. Webb, John Raymond. John Raymond was born on 1908-12-15 in 
+         Bridgeport, Fairfield, CT, USA. He died on 1996-02-07 in 
+         Longview-Kelso, WA, USA.
+
+      + 111114 iv. Webb, Lewis I.. Lewis I. was born on 1903-03-31 in Billings, 
+         MT, USA. He died on 1942-12-25 in Kendallville, Noble, IN, USA.
+
+11112. Webb, Clarence.
+
+      Clarence was born on 1878-04-15 in Burlington, VT, USA. He died on
+      1953-12-24 in Troy, Pike, AL, USA at the age of 75 years, 8 
+      months. He was buried on 1953-12-26 in Crawfordsville, Montgomery,
+      IN, USA. He was the son of Webb, Livingstone Martin and Blanco, 
+      Lucinda Catherine.
+
+      Report appearances for Webb, Clarence
+
+      Report: 2, Generation: 6, Person: 111112
+
+      Report: 3, Generation: 4, Person: 1112
+
+      Report: 4, Generation: 10, Person: 1111111112
+
+      Report: 5, Generation: 10, Person: 1111111112
+
+      Report: 6, Generation: 10, Person: 1111111112
+
+      Report: 7, Generation: 9, Person: 111111112
+
+      Report: 8, Generation: 5, Person: 11112
+
+      Report: 9, Generation: 5, Person: 11112
+
+11113. Webb, Lawrence.
+
+      Lawrence was born on 1878-04-15 in Burlington, VT, USA. He died on
+      1948-08-29 in Troy, Pike, AL, USA at the age of 70 years, 4 
+      months. He was buried on 1948-08-31 in Crawfordsville, Montgomery,
+      IN, USA. He was the son of Webb, Livingstone Martin and Blanco, 
+      Lucinda Catherine.
+
+      Report appearances for Webb, Lawrence
+
+      Report: 2, Generation: 6, Person: 111113
+
+      Report: 3, Generation: 4, Person: 1113
+
+      Report: 4, Generation: 10, Person: 1111111113
+
+      Report: 5, Generation: 10, Person: 1111111113
+
+      Report: 6, Generation: 10, Person: 1111111113
+
+      Report: 7, Generation: 9, Person: 111111113
+
+      Report: 8, Generation: 5, Person: 11113
+
+      Report: 9, Generation: 5, Person: 11113
+
+11611. Webb, Charles Edward.
+
+      Charles Edward was born on 1901-09-23 in Reno-Sparks, NV, USA. He 
+      was the son of Webb, James Marshall and Ballard, Judith Ellen.
+
+      Report appearances for Webb, Charles Edward
+
+      Report: 2, Generation: 6, Person: 111611
+
+11612. Webb, William Herman.
+

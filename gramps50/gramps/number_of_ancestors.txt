@@ -1,0 +1,34 @@
+               Number of Ancestors for Garner, Rita Marie
+
+Generation 1 has 1 individual. (100.00%)
+
+Generation 2 has 2 individuals. (100.00%)
+
+Generation 3 has 4 individuals. (100.00%)
+
+Generation 4 has 8 individuals. (100.00%)
+
+Generation 5 has 16 individuals. (100.00%)
+
+Generation 6 has 19 individuals. (59.38%)
+
+Generation 7 has 6 individuals. (9.38%)
+
+Generation 8 has 6 individuals. (4.69%)
+
+Generation 9 has 8 individuals. (3.12%)
+
+Generation 10 has 8 individuals. (1.56%)
+
+Generation 11 has 8 individuals. (0.78%)
+
+Generation 12 has 5 individuals. (0.24%)
+
+Generation 13 has 5 individuals. (0.12%)
+
+Generation 14 has 4 individuals. (0.05%)
+
+Generation 15 has 4 individuals. (0.02%)
+
+Total ancestors in generations 2 to 15 is 103. (0.31%)
+

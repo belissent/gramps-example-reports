@@ -1,0 +1,41 @@
+#grampstextdoc .NoteLink-TableCell {
+	padding: 0.000cm 0.000cm 0.000cm 0.000cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+}
+#grampstextdoc .NoteLink-Heading {
+	font-size: 14pt;
+	text-align: left; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.25cm; margin-bottom: 0.25cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-style:italic; 
+}
+#grampstextdoc .NoteLink-Normal {
+	font-size: 12pt;
+	text-align: left; text-indent: -0.75cm;
+	margin-right: 0.00cm; margin-left: 0.75cm;
+	margin-top: 0.11cm; margin-bottom: 0.11cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	
+}
+#grampstextdoc .NoteLink-Normal-Bold {
+	font-size: 12pt;
+	text-align: left; text-indent: -0.75cm;
+	margin-right: 0.00cm; margin-left: 0.75cm;
+	margin-top: 0.11cm; margin-bottom: 0.11cm;
+	border-top:none; border-bottom:none;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}
+#grampstextdoc .NoteLink-Title {
+	font-size: 16pt;
+	text-align: center; text-indent: 0.00cm;
+	margin-right: 0.00cm; margin-left: 0.00cm;
+	margin-top: 0.11cm; margin-bottom: 0.11cm;
+	border-top:none; border-bottom:thin solid #000000;
+	border-left:none; border-right:none;
+	font-weight:bold; 
+}

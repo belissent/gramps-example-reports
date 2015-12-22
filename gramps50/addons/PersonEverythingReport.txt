@@ -1,0 +1,448 @@
+     All information about Garner von Zieliński, Lewis Anderson Sr
+
+Garner von Zieliński, Lewis Anderson Sr (b. 1855-06-21 - Great Falls, 
+MT, USA, d. 1911-06-28 - Twin Falls, Twin Falls, ID, USA)
+
+Person [I0044] Gender : male[1, 2, 3]
+
+Primary name. Type : Birth Name[4]
+
+    Date : 1875-04-01
+
+    Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family 
+    Nick Name : Dr., Lewis Anderson, Sr, Anderson, Big Louie, Beauregard
+
+    Surname Origin type : Taken
+
+        Prefix, surname, connector : , Garner, {This is the primary 
+        surname}
+
+    Surname Origin type : Inherited
+
+        Prefix, surname, connector : von, Zieliński,
+
+Alternate name. Type : Also Known As[5]
+
+    Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family 
+    Nick Name : , Louis, , , ,
+
+    Note [N0001] Note type : Name Note
+
+        Names can notes, too. This is a note for the alternate name of 
+        Louse Garner for Lewis Anderson Garner.
+
+    Surname Origin type :
+
+        Prefix, surname, connector : , Garner, {This is the primary 
+        surname}
+
+Alternate name. Type : Other Name
+
+    Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family 
+    Nick Name : , Louie, , , ,
+
+    Surname Origin type :
+
+        Prefix, surname, connector : , Garner, {This is the primary 
+        surname}
+
+Address[6]
+
+    Date : 2000-01-02
+
+    Street, City, County, State, Postal Code, Country, Phone number : 
+    1600 Pennsylvania Ave., Washington DC, , District of Columbia, , 
+    USA,
+
+Attribute. Nickname : Big Louie
+
+Attribute. Social Security Number : 123-456-7890 {Private}[7]
+
+Attribute. Description : 10 fingers, 10 toes.
+
+LDS Ordinance : Sealed to Parents[8]
+
+    Date : 1875
+
+    Temple and status : Adelaide, Australia, Uncleared
+
+        LDS Ordinance family [F0018] Relationship : Married[9]
+
+            Father : [I0106] Garner, Robert W.
+
+            Mother : [I0107] Zieliński, Phoebe Emily
+
+    Place [P1643] Place Title : Aberdeen, SD, USA
+
+        Name : Aberdeen Type : City Code :
+
+        Parent Place
+
+            Place [P0059] Place Title : SD, USA
+
+                Name : SD Type : State Code :
+
+                Parent Place
+
+                    Place [P0957] Place Title : USA
+
+                        Name : USA Type : Country Code :
+
+Media Reference[10]
+
+    Attribute. Age : 50[11]
+
+    Media Object [O0008] Mime type : JPEG image[12]
+
+        Attribute. Description : This seems to be a photo of a 
+        relative[13]
+
+        Description and Path : 654px-Aksel_Andersson, 
+        654px-Aksel_Andersson.jpg
+
+(photo)
+
+
+Media Reference
+
+    Referenced Region : 51, 19, 59, 33
+
+(photo)
+
+
+    Media Object [O0010] Mime type : JPEG image
+
+        Date : 1897
+
+        Description and Path : 1897_expeditionsmannschaft_rio_a, 
+        1897_expeditionsmannschaft_rio_a.jpg
+
+(photo)
+
+
+        Tag name : ToDo
+
+            Tag colour and priority : #efb60c280c28, 0
+
+Note [N0003] Note type : Person Note
+
+    We have committed to synergistically disseminate resource-leveling 
+    methods of empowerment to set us apart from the competition. We 
+    envision to globally integrate inexpensive paradigms and 
+    professionally engineer timely technology while promoting personal 
+    employee growth. Our mission is to assertively build world-class 
+    methods of empowerment so that we may professionally promote 
+    parallel services to set us apart from the competition. It's our 
+    responsibility to dramatically maintain value-added services as well
+    as to professionally simplify principle-centered technology for 100%
+    customer satisfaction.
+
+    Thanks to the Mission Statement Generator from 
+    http://www.dilbert.com.
+
+Note [N0013] Note type : Person Note
+
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+
+    This is a note showing a lot of different markup that mixes with 
+    each other making it a good stress test for markup notes.
+
+    Tag name : ToDo
+
+        Tag colour and priority : #efb60c280c28, 0
+
+Note [N0014] Note type : Person Note
+
+    This is a preformatted note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.
+                      This is a note showing a lot of different markup that mixes with each other making it a good stress test for markup notes.
+    
+    This is 
+            a note showing 
+                                 a lot of different markup 
+                                          that mixes with each 
+    other making it a good stress test for markup notes.
+    
+       test  |    val1  |     val2
+      ------------------------------
+        me   |   blue   |    red
+    
+Note [N0015] Note type : General
+
+    This source has all possible references pointing to it. The references are as follows:
+    
+    This note appears as a note to the source and also as a note for the person.
+    
+    page 01  Person
+    page 02    Name
+    page 03    Address
+    page 04    Attribute
+    page 05    PersonRef
+    page 06    MediaRef
+    page 07      Attribute
+    page 08    LdsOrd
+    page 09    EventRef:Attribute 
+    page 10  Family
+    page 11    Attribute
+    page 12    ChildRef
+    page 13    MediaRef
+    page 14      Attribute
+    page 15    LdsOrd
+    page 16    EventRef:Attribute
+    page 17  Event
+    page 18    Attribute
+    page 19    MediaRef
+    page 20      Attribute
+    page 21  MediaObject
+    page 22    Attribute
+    page 23  Place
+    page 24    MediaRef
+    page 25      Attribute
+    page 26  Repository:Address
+    
+Tag name : ToDo
+
+    Tag colour and priority : #efb60c280c28, 0
+
+URL Type : Web Home
+
+    Description and Path : , http://www.gramps-project.org/
+
+
+                             Person Events
+
+Event reference. This is the primary birth event. Role : Primary
+
+    Attribute. Father's Age : 28[14]
+
+    Event [E1656] Event type : Birth[15, 16]
+
+        Attribute. Time : 10:00 pm[17]
+
+        Date : 1855-06-21
+
+        Description : Birth of Garner, Lewis Anderson
+
+        Media Reference[18]
+
+            Attribute. Father's Age : 25[19]
+
+            Media Object [O0000] Mime type : unknown
+
+                Description and Path : 1855-06-25 scanned birth record, 
+                scanned_microfilm.png
+
+(photo)
+
+
+        Place [P1435] Place Title : Great Falls, MT, USA
+
+            Name : Great Falls Type : City Code :
+
+            Parent Place
+
+                Place [P0066] Place Title : MT, USA
+
+                    Name : MT Type : State Code :
+
+                    Parent Place
+
+                        Place [P0957] Place Title : USA
+
+                            Name : USA Type : Country Code :
+
+Event reference. This is the primary death event. Role : Primary
+
+    Event [E1657] Event type : Death
+
+        Attribute. Cause : Laughter
+
+        Date : 1911-06-28
+
+        Description : Death of Garner, Lewis Anderson
+
+        Note [N0012] Note type : Event Note
+
+            How did he die? We need to find out!
+
+            Perhaps we find info in the new york library
+
+        Place [P1678] Place Title : Twin Falls, Twin Falls, ID, USA[20]
+
+            Name : Twin Falls Type : City Code :
+
+            Latitude, Longitude : -114.4608711, 42.5629668
+
+            Media Reference[21]
+
+                Attribute. Nickname : Fred[22]
+
+                Media Object [O0010] Mime type : JPEG image
+
+                    Date : 1897
+
+                    Description and Path : 
+                    1897_expeditionsmannschaft_rio_a, 
+                    1897_expeditionsmannschaft_rio_a.jpg
+
+(photo)
+
+
+                    Tag name : ToDo
+
+                        Tag colour and priority : #efb60c280c28, 0
+
+            Parent Place
+
+                Place [P0409] Place Title : Twin Falls, ID, USA
+
+                    Name : Twin Falls Type : County Code :
+
+                    Parent Place
+
+                        Place [P0070] Place Title : ID, USA
+
+                            Name : ID Type : State Code :
+
+                            Parent Place
+
+                                Place [P0957] Place Title : USA
+
+                                    Name : USA Type : Country Code :
+
+Event reference. Role : Primary
+
+    Event [E1658] Event type : Burial
+
+        Date : 1911-07-01
+
+        Description : Burial of Garner, Lewis Anderson
+
+        Place [P1678] Place Title : Twin Falls, Twin Falls, ID, USA[23]
+
+            Name : Twin Falls Type : City Code :
+
+            Latitude, Longitude : -114.4608711, 42.5629668
+
+            Media Reference[24]
+
+                Attribute. Nickname : Fred[25]
+
+                Media Object [O0010] Mime type : JPEG image
+
+                    Date : 1897
+
+                    Description and Path : 
+                    1897_expeditionsmannschaft_rio_a, 
+                    1897_expeditionsmannschaft_rio_a.jpg
+
+(photo)
+
+
+                    Tag name : ToDo
+
+                        Tag colour and priority : #efb60c280c28, 0
+
+            Parent Place
+
+                Place [P0409] Place Title : Twin Falls, ID, USA
+
+                    Name : Twin Falls Type : County Code :
+
+                    Parent Place
+
+                        Place [P0070] Place Title : ID, USA
+
+                            Name : ID Type : State Code :
+
+                            Parent Place
+
+                                Place [P0957] Place Title : USA
+
+                                    Name : USA Type : Country Code :
+
+
+                                Families
+
+Family [F0017] Relationship : Married[26, 27]
+
+    Father : [I0044] Garner von Zieliński, Lewis Anderson Sr
+
+    Mother : [I0045] Martel, Luella Jacques
+
+    Child : [I0046] Garner, Eugene Stanley Relationship to Father : 
+    Birth Relationship to Mother : Birth[28]
+
+    Child : [I0623] Garner, Jesse V. Relationship to Father : Birth 
+    Relationship to Mother : Birth
+
+    Child : [I0624] Garner, Raymond E. Relationship to Father : Birth 
+    Relationship to Mother : Adopted
+
+    Child : [I0625] Garner, Jennie S. Relationship to Father : Adopted 
+    Relationship to Mother : Birth
+
+    Child : [I0626] Garner, Walter E. Relationship to Father : Birth 
+    Relationship to Mother : Birth
+
+    Child : [I0627] Garner, Daniel Webster Relationship to Father : 
+    Birth Relationship to Mother : Birth
+
+    Child : [I0628] Garner, Bertha P. Relationship to Father : Birth 
+    Relationship to Mother : Birth
+
+    Child : [I0629] Garner, Elizabeth Relationship to Father : Birth 
+    Relationship to Mother : Birth
+
+    Attribute. Number of Children : 8[29, 30]
+
+        Note [N0004] Note type : Attribute Note
+
+            Courtesy of pyschoanalyze-pinhead from Emacs.
+
+            I am the psychotherapist. Please, describe your problems. 
+            Each time
+            you are finished talking, type RET twice.
+
+            SHHHH!! I hear SIX TATTOOED TRUCK-DRIVERS tossing ENGINE 
+            BLOCKS
+            into empty OIL DRUMS..
+
+            Why do you say that?
+
+            I have accepted Provolone into my life!
+
+            What makes you believe you have accepted provolone into your
+            life?
+
+            It's 74 degrees, 12 minutes NORTH, and 41 degrees, 3 minutes
+            EAST!!
+            Soon, it will be TUESDAY!!
+
+            Maybe your plans have something to do with this.
+
+            GOOD-NIGHT, everybody.. Now I have to go administer 
+            FIRST-AID
+            to my pet LEISURE SUIT!!
+
+            I don't understand.
+
+            I'm QUIETLY reading the latest issue of ``BOWLING WORLD''
+            while my wife and two children stand QUIETLY BY..
+
+            Tell me something about your family.
+
+            How do I get HOME?
+
+            Is it because do you get home that you came to me?
+
+            Kids, the seven basic food groups are GUM, PUFF PASTRY, 
+            PIZZA,
+            PESTICIDES, ANTIBIOTICS, NUTRA-SWEET and MILK DUDS!!
+
+    LDS Ordinance : Sealed to Spouse[31]
+
+        Temple and status : Halifax, Nova Scotia, Completed
+

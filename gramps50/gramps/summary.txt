@@ -1,0 +1,32 @@
+                        Database Summary Report
+
+Individuals
+
+Number of individuals: 2102
+
+Males: 1154
+
+Females: 928
+
+Individuals with unknown gender: 20
+
+Incomplete names: 76
+
+Individuals missing birth dates: 966
+
+Disconnected individuals: 72
+
+Unique surnames: 602
+
+Individuals with media objects: 5
+
+Family Information
+
+Number of families: 738
+
+Media Objects
+
+Number of unique media objects: 7
+
+Total size of media objects: less than 1 MB
+
