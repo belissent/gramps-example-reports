@@ -110,6 +110,9 @@ if (sha_addons == build_data_tgt['addons/master']) and not native_rebuild:
 build_data_tgt['gramps-example-reports/master'] = sha_examples
 build_data_tgt['gramps/' + GRAMPS_TARGET_DIR] = sha_gramps
 build_data_tgt['addons/master'] = sha_addons
+build_data_tgt['user'] = re.sub('/.*', '', os.environ['EXAMPLES_REPO_SLUG'])
+build_data_tgt['travis_build_id'] = os.environ['TRAVIS_BUILD_ID']
+build_data_tgt['travis_build_number'] = os.environ['TRAVIS_BUILD_NUMBER']
 
 
 ##################################################################
@@ -127,7 +130,8 @@ def call(cmd):
     """
     :type cmd: list
     """
-    print(' '.join(cmd))
+    log = ' '.join(cmd)
+    print(log)
     retcode = ULTIMATE_ANSWER
     t0 = time.time()
     process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -143,16 +147,18 @@ def call(cmd):
             # Subprocess process may terminate between the process.poll() and process.kill() calls
             if e.errno != errno.ESRCH:
                 raise
-        log = 'Error: process taking too long to complete (%.0f seconds), terminating' % (t1 - t0)
-        print(log)
+        s = 'Error: process taking too long to complete (%.0f seconds), terminating' % (t1 - t0)
+        print(s)
+        log += '\n' + s
     else:
         out_str, err_str = process.communicate('')
         out_str = out_str.decode()
         err_str = err_str.decode()
         if out_str != '': print(out_str)
         if err_str != '': print(err_str, file = sys.stderr)
-        print('The command exited with %s (execution time: %.0f seconds).' % (str(process.returncode), t1 - t0))
-        log = '\n'.join([out_str, err_str])
+        s = 'The command exited with %s (execution time: %.0f seconds).' % (str(process.returncode), t1 - t0)
+        print(s)
+        log = '\n'.join([log, out_str, err_str, s])
         # Remove progress (lines with XX%) in the log
         log = re.sub(r'100%\r', r'100%\n', log)
         log = re.sub(r'\d\d%\r', '', log)
@@ -327,6 +333,11 @@ for report in reports:
         'type': report['type'],
         'category': standalone_categories[report['category']][1],
         'format': report['options']['off'] if 'off' in report['options'] else '',
+        'commit_gramps': sha_gramps,
+        'commit_addons': sha_addons,
+        'commit_examples': sha_examples,
+        'travis_build_id': build_data_tgt['travis_build_id'],
+        'travis_build_number': build_data_tgt['travis_build_number'],
     })
 
 # Export data

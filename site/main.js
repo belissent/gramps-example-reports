@@ -150,8 +150,6 @@ url = url.substring(0, (url.indexOf('#') == -1) ? url.length : url.indexOf('#'))
 // this removes the query after the file name, if there is one
 url = url.substring(0, (url.indexOf('?') == -1) ? url.length : url.indexOf('?'));
 
-$(document).ready(build_page);
-
 versions = ['gramps40', 'gramps41', 'gramps42', 'gramps50'];
 versions2 = ['40', '41', '42', '50'];
 versions3 = ['4.0', '4.1', '4.2', '5.0'];
@@ -160,17 +158,12 @@ versions2 = ['42', '50'];
 versions3 = ['4.2', '5.0'];
 
 
+// Trigger page build
+$(document).ready(build_page);
+
+
 function build_page()
 {
-	// Get selected version
-	var terms = url.match(/gramps(\d\d)/);
-	if (!(terms == null))
-	{
-		// We are in a version directory '/grampsXX'
-		homedir = '..';
-		search.gramps_version = terms[1];
-	}
-	// Get selected version
 	var terms = url.match(/list.html/);
 	var is_header = (search.gramps_version == '') && !(url.match(/list.html/));
 	
@@ -201,7 +194,7 @@ function build_header()
 	var html = '';
 	for (var i = 0; i < versions3.length; i += 1)
 	{
-		html += ' <a href="gramps' + (versions3[i] * 10) + '/index.html"><button class="btn btn-primary" type="button">Version ' + versions3[i] + '</button></a>';
+		html += ' <a href="list.html?' + BuildSearchString({gramps_version: versions2[i]}) + '"><button class="btn btn-primary" type="button">Version ' + versions3[i] + '</button></a>';
 	}
 	html += ' <a href="list.html"><button class="btn btn-primary" type="button">All versions</button></a>';
 	$("#contents").html(html);
@@ -271,10 +264,7 @@ function build_list()
 		$.extend(datum, reports[i]); // deep copy
 		if (reports[i].status)
 			datum.title= '<a href="' + homedir + '/' + reports[i].result + '">' + reports[i].title + '</a>';
-		if (reports[i].status)
-			datum.status = 'OK';
-		else
-			datum.status = '<a href="' + url + '?' + BuildSearchString({log: i}) + '">Error</a>';
+		datum.status = '<a href="' + url + '?' + BuildSearchString({log: i}) + '">' + ((reports[i].status) ? 'OK' : 'Error') + '</a>';
 		data.push(datum);
 	}
 	$('#reports').bootstrapTable({
@@ -340,8 +330,16 @@ function build_log()
 {
 	var reports = filter_list();
 	var report = reports[search.log];
+	var build = builds['gramps' + report.gramps_version];
 	var html = '';
-	html += '<p>Report log for the report "' + report.title + '" (name: "' + report.name + '", id: <mark>' + report.id + '</mark>)</p>';
+	html += '<p>Report log for the report <strong><em>' + report.title + '</em></strong> (name: <strong><em>' + report.name + '</em></strong>, id: <strong><em><mark>' + report.id + '</mark></em></strong>)</p>';
+	html += '<ul>';
+	html += '<li>Gramps commit: <a href="https://github.com/' + build.user + '/gramps/commit/' + report.commit_gramps + '">' + report.commit_gramps + '</a></li>';
+	if (report.type == 'Addon')
+		html += '<li>Addons commit: <a href="https://github.com/' + build.user + '/addons/commit/' + report.commit_addons + '">' + report.commit_addons + '</a></li>';
+	html += '<li>Example reports commit: <a href="https://github.com/' + build.user + '/gramps-example-reports/commit/' + report.commit_examples + '">' + report.commit_examples + '</a></li>';
+	html += '<li>Travis build: <a href="https://travis-ci.org/' + build.user + '/gramps-example-reports/builds/' + report.travis_build_id + '"># ' + report.travis_build_number + '</a></li>';
+	html += '</ul>';
 	var txt = report.log
 	var txt = txt.replace(/&/g, '&amp;');
 	var txt = txt.replace(/>/g, '&gt;');
