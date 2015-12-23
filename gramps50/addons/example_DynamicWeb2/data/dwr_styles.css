@@ -6,6 +6,14 @@ This program is free software; you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
+/* Gramps - a GTK+/GNOME based genealogy program
+
+Copyright (C) 2014 Pierre Bélissent
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
 /*===================================================== Body */
 .dwr-fullscreen {
   width: auto;
@@ -173,7 +181,7 @@ li p {
   filter: alpha(opacity=50);
   border-radius: 4px;
   border-width: 3px;
-  border-color: #337ab7;
+  border-color: #788026;
   border-style: solid;
 }
 #dwr-img-div:hover .dwr-imgmap {
@@ -373,3 +381,208 @@ body.svg-save-text {
 #dwr-chart-opacity {
   text-align: right;
 }
+/*===================================================== Body */
+body {
+  background: url(Web_Mainz_Bkgd.png) #5b411a repeat;
+}
+body > div {
+  background: url(Web_Mainz_Mid.png) #cd9b52 repeat;
+}
+/*===================================================== Main divs */
+#body-page {
+  padding-top: 15px;
+}
+#dwr-header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 10px;
+  padding-top: 5em;
+  overflow-y: hidden;
+}
+#dwr-footer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px;
+  border-top: dashed 1px #aa7931;
+  background: url(Web_Mainz_MidLight.png) #cd9b52;
+  font-family: sans-serif;
+  font-size: 12px;
+  overflow-y: hidden;
+}
+#dwr-footer p {
+  margin: 0px;
+}
+@media screen and (max-width: 767px) {
+  #dwr-header,
+  #dwr-footer {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  #dwr-header,
+  #dwr-footer {
+    width: 750px;
+  }
+  #dwr-header {
+    background: url(Web_Mainz_Header_750.png) repeat-x top left;
+  }
+}
+@media screen and (min-width: 992px) {
+  #dwr-header,
+  #dwr-footer {
+    width: 970px;
+  }
+  #dwr-header {
+    background: url(Web_Mainz_Header_970.png) repeat-x top left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #dwr-header,
+  #dwr-footer {
+    width: 1170px;
+  }
+  #dwr-header {
+    background: url(Web_Mainz_Header_1170.png) repeat-x top left;
+  }
+}
+/*===================================================== Menu */
+.navbar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  border-radius: initial;
+  border: 0;
+  font-size: 18px;
+}
+.navbar-default {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+}
+.navbar-nav > li:hover {
+  background-color: #ffffff;
+}
+.navbar-nav > .active > a {
+  background-image: url(Web_Mainz_Mid.png);
+  font-weight: bold;
+  font-style: italic;
+  border-style: dashed;
+  border-width: 1px 1px 0px 1px;
+  border-color: #aa7931;
+}
+@media (min-width: 768px) {
+  .navbar {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar {
+    width: 1170px;
+  }
+}
+/*===================================================== Panels */
+.panel {
+  background: transparent;
+}
+.panel-default > .panel-heading {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+  border-bottom: 1px solid #aa7931;
+}
+.panel-default {
+  border-color: #aa7931;
+}
+/*===================================================== Tabs */
+.nav-tabs {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+  border-bottom: 1px solid #aa7931;
+}
+.nav-tabs > li > a:hover {
+  background-color: #ffffff;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: none;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-image: url(Web_Mainz_Mid.png);
+  font-weight: bold;
+  font-style: italic;
+  border-style: dashed;
+  border-color: #aa7931;
+  border-bottom: 1px solid transparent;
+}
+/*===================================================== Page contents */
+.page-header {
+  font-size: xx-large;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  border-bottom: double 4px #755322;
+  padding-bottom: 1ex;
+  margin: 0.5em 0px 0.5em 0px;
+}
+.dwr-attr-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.dwr-attr-value {
+  font-size: 14px;
+  font-weight: normal;
+}
+.dwr-attr-header {
+  color: #261b0b;
+  font-size: 12px;
+  font-style: italic;
+}
+.dwr-ref {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.dwr-ref-detailed {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.table-bordered {
+  border-color: #cd9b52;
+}
+.table-bordered th,
+.table-bordered td {
+  border-color: #cd9b52 !important;
+}
+.dwr-index {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+.thumbnail {
+  background: transparent;
+  border: 1px solid #aa7931;
+}
+.thumbnail:hover {
+  background-color: #ffffff;
+}
+.popover-title {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+  border-bottom: 1px solid #aa7931;
+}
+/*===================================================== Map */
+/*===================================================== Tree page */
+.svg-drawing {
+  background: url(Web_Mainz_MidLight.png) #cd9b52;
+}
+.svg-drawing-expand {
+  background: url(Web_Mainz_MidLight.png) #cd9b52;
+}
+/*===================================================== SVG graph */
