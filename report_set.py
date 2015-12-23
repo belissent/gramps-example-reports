@@ -15,8 +15,8 @@
 import os
 
 from gramps.version import VERSION
-from gramps.plugins.webreport.narrativeweb import _INCLUDE_LIVING_VALUE, CSS
-from gramps.gen.plug import PluginRegister
+from gramps.plugins.webreport.narrativeweb import _INCLUDE_LIVING_VALUE
+from gramps.gen.plug import PluginRegister, BasePluginManager
 from gramps.gen.dbstate import DbState
 from gramps.cli.grampscli import CLIManager
 from gramps.gen.proxy import LivingProxyDb
@@ -26,7 +26,6 @@ GRAMPS_REP_DIR = os.path.normpath(os.path.abspath(os.path.join(os.environ['GRAMP
 ADDONS_REP_DIR = os.path.normpath(os.path.abspath(os.path.join(os.environ['GRAMPS_REPORTS'], 'addons')))
 
 import report_set_DynamicWeb
-
 
 def build_report_set():
 
@@ -41,6 +40,8 @@ def build_report_set():
     climanager.do_reg_plugins(dbstate, uistate = None)
     gpr = PluginRegister.get_instance()
 
+    PLUGMAN = BasePluginManager.get_instance()
+    CSS = PLUGMAN.process_plugin_data('WEBSTUFF')
 
     ##################################################################
     # GRAMPS native plugins
@@ -281,7 +282,7 @@ def build_report_set():
         opts = {
             'name': report,
             'target': os.path.join(GRAMPS_REP_DIR, 'example_NAVWEB%i' % i),
-            # 'css':  CSS[css]['id'],
+            'css':  CSS[css]['id'],
             'living': _INCLUDE_LIVING_VALUE,
         }
         if (full): opts.update(full_options)
@@ -312,7 +313,7 @@ def build_report_set():
         opts = {
             'name': report,
             'target': os.path.join(GRAMPS_REP_DIR, 'example_WebCal%i' % i),
-            # 'css':  CSS[css]['id'],
+            'css':  CSS[css]['id'],
             'home_link': '../../example_NAVWEB%i/index.html' % i,
             'prefix': '../../example_NAVWEB%i/' % i,
         }

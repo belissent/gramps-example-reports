@@ -90,9 +90,8 @@ default_options = {
 }
 
 def merge_options(x, y = default_options):
-    '''Given two dicts, merge them into a new dict as a shallow copy.'''
-    z = x.copy()
-    z.update(y)
+    z = y.copy()
+    z.update(x)
     return z
 
 
