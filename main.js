@@ -267,6 +267,7 @@ function build_list()
 		else
 			datum.title_html = reports[i].title;
 		datum.status_html = '<a href="' + url + '?' + BuildSearchString({log: i}) + '">' + ((reports[i].status) ? 'OK' : 'Error') + '</a>';
+		datum.gramps_version_float = (parseFloat(datum.gramps_version) / 10.0).toFixed(1);
 		data.push(datum);
 	}
 	$('#reports').bootstrapTable({
@@ -306,7 +307,7 @@ function build_list()
 			align: 'center',
 			sortable: true
 		}, {
-			field: 'gramps_version',
+			field: 'gramps_version_float',
 			title: 'Gramps version',
 			filterControl: 'select',
 			align: 'center',
