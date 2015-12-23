@@ -19,9 +19,13 @@ from gramps.plugins.webreport.narrativeweb import _INCLUDE_LIVING_VALUE, CSS
 from gramps.gen.plug import PluginRegister
 from gramps.gen.dbstate import DbState
 from gramps.cli.grampscli import CLIManager
+from gramps.gen.proxy import LivingProxyDb
 
-GRAMPS_REP_DIR = os.path.realpath(os.path.join(os.environ['GRAMPS_REPORTS'], 'gramps'))
-ADDONS_REP_DIR = os.path.realpath(os.path.join(os.environ['GRAMPS_REPORTS'], 'addons'))
+GRAMPS_REP_DIR = os.path.normpath(os.path.abspath(os.path.join(os.environ['GRAMPS_REPORTS'], 'gramps')))
+ADDONS_REP_DIR = os.path.normpath(os.path.abspath(os.path.join(os.environ['GRAMPS_REPORTS'], 'addons')))
+
+import report_set_DynamicWeb
+
 
 def build_report_set():
 
@@ -219,9 +223,9 @@ def build_report_set():
 
 
     # Single run with all native reports (except web) in all formats
-    for (rep_list, formats, type_txt) in [
-        (TEXT_REP, TEXT_FMT, "Textual"),
-        (GRPH_REP, GRPH_FMT, "Graphical"),
+    for (rep_list, formats) in [
+        (TEXT_REP, TEXT_FMT),
+        (GRPH_REP, GRPH_FMT),
     ]:
         for rep_info in TEXT_REP:
             report = rep_info['report']
@@ -240,7 +244,7 @@ def build_report_set():
                 }
                 new_options.update(options)
                 reports.append({
-                    'title': '%s report "%s" in format "%s"' % (type_txt, plugin.name, fmt),
+                    'title': '"%s" in format "%s"' % (plugin.name, fmt),
                     'name': plugin.name,
                     'result': of,
                     'type': 'Native',
@@ -336,7 +340,7 @@ def build_report_set():
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'AncestorFill.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'AncestorFill',
             'options': {
@@ -428,7 +432,7 @@ def build_report_set():
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'DescendantBook.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'DescendantBook',
             'options': {
@@ -440,7 +444,7 @@ def build_report_set():
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'DetailedDescendantBook.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'DetailedDescendantBook',
             'options': {
@@ -455,7 +459,7 @@ def build_report_set():
     for fmt in GRPH_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'DescendantsLines.' + fmt)
         addons.append({
-            'title': 'Graphical report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'Descendants Lines',
             'options': {
@@ -471,7 +475,7 @@ def build_report_set():
     for fmt in ['html']:
         of = os.path.join(ADDONS_REP_DIR, 'database-differences-report.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'database-differences-report',
             'options': {
@@ -484,55 +488,7 @@ def build_report_set():
 
     ########## DynamicWeb
 
-    full_options = {
-        'archive': True,
-        'incpriv': True,
-        'inc_notes': True,
-        'inc_sources': True,
-        'inc_addresses': True,
-        'living': _INCLUDE_LIVING_VALUE,
-        'inc_repositories': True,
-        'inc_gallery': True,
-        'copy_media': True,
-        'print_notes_type': True,
-        'inc_places': True,
-        'placemappages': True,
-        'familymappages': True,
-        'mapservice': 'Google',
-        'tabbed_panels': False,
-        'encoding': 'UTF-8',
-        'inc_families': True,
-        'showbirth': True,
-        'showdeath': True,
-        'showmarriage': True,
-        'showpartner': True,
-        'showparents': True,
-        'showallsiblings': True,
-        'bkref_type': True,
-        'inc_gendex': True,
-        'inc_pageconf': True,
-        'headernote': '_header1',
-        'footernote': '_footer1',
-        'custom_note_0': '_custom1',
-        'pages_number': 4,
-    }
-
-    for (i, (template, full)) in enumerate([
-        [0, True],
-        [1, False],
-    ]):
-        opts = {
-            'target': os.path.join(ADDONS_REP_DIR, 'example_DynamicWeb%i' % i),
-            'template': template,
-        }
-        if (full): opts.update(full_options)
-        addons.append({
-            'title': '"%%s" report example %i' % i,
-            'result': os.path.join(ADDONS_REP_DIR, 'example_DynamicWeb%i' % i, 'index.html'),
-            'i': 'DynamicWeb',
-            'options': opts,
-            'archive_file': os.path.join(ADDONS_REP_DIR, 'example_DynamicWeb%i' % i),
-        })
+    addons.extend(report_set_DynamicWeb.addon_set())
 
 
     ########## FamilyTree
@@ -540,7 +496,7 @@ def build_report_set():
     for fmt in GRPH_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'FamilyTree.' + fmt)
         addons.append({
-            'title': 'Graphical report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'FamilyTree',
             'options': {
@@ -561,7 +517,7 @@ def build_report_set():
     for fmt in ['html']:
         of = os.path.join(ADDONS_REP_DIR, 'LastChangeReport.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'LastChangeReport',
             'options': {
@@ -577,7 +533,7 @@ def build_report_set():
     for fmt in ['html']:
         of = os.path.join(ADDONS_REP_DIR, 'LinesOfDescendency.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'LinesOfDescendency',
             'options': {
@@ -594,7 +550,7 @@ def build_report_set():
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'ListeEclair.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'ListeEclair',
             'options': {
@@ -609,7 +565,7 @@ def build_report_set():
     for fmt in GRPH_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'PedigreeChart.' + fmt)
         addons.append({
-            'title': 'Graphical report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'PedigreeChart',
             'options': {
@@ -626,7 +582,7 @@ def build_report_set():
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'PersonEverythingReport.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'PersonEverythingReport',
             'options': {
@@ -641,7 +597,7 @@ def build_report_set():
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'RepositoriesReportOptions.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'Repositories Report Options',
             'options': {
@@ -653,7 +609,7 @@ def build_report_set():
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'RepositoriesReport.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'Repositories Report',
             'options': {
@@ -668,7 +624,7 @@ def build_report_set():
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'TodoReport.' + fmt)
         addons.append({
-            'title': 'Textual report "%%s" in format "%s"' % fmt,
+            'title': '"%%s" in format "%s"' % fmt,
             'result': of,
             'i': 'TodoReport',
             'options': {
@@ -698,6 +654,7 @@ def build_report_set():
             'category': plugin.category,
             'version': plugin.version,
         })
+        del addon['i']
         reports.append(addon)
 
     return reports

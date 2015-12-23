@@ -44,11 +44,11 @@ $PYTHON_42 setup.py build
 cd $MY_PATH
 
 ## Copy addons
-mkdir -v -p databases/dbgramps42/gramps/gramps42/plugins
-if [ -z "$(ls -A databases/dbgramps42/gramps/gramps42/plugins)" ]
+mkdir -v -p $GRAMPS_PLUGINS
+if [ -z "$(ls -A $GRAMPS_PLUGINS)" ]
 then
-	for archive in $(ls sources/addons/gramps42/download/*.tgz); do
-		tar -xzf $archive -C databases/dbgramps42/gramps/gramps42/plugins
+	for archive in $(ls $GRAMPS_ADDONS_SOURCE/download/*.tgz); do
+		tar -xzf $archive -C $GRAMPS_PLUGINS
 	done
 fi
 
@@ -66,11 +66,11 @@ $PYTHON_50 setup.py build
 cd $MY_PATH
 
 ## Copy addons
-mkdir -v -p databases/dbgramps50/gramps/gramps50/plugins
-if [ -z "$(ls -A databases/dbgramps50/gramps/gramps50/plugins)" ]
+mkdir -v -p $GRAMPS_PLUGINS
+if [ -z "$(ls -A $GRAMPS_PLUGINS)" ]
 then
-	for archive in $(ls sources/addons/gramps50/download/*.tgz); do
-		tar -xzf $archive -C databases/dbgramps50/gramps/gramps50/plugins
+	for archive in $(ls $GRAMPS_ADDONS_SOURCE/download/*.tgz); do
+		tar -xzf $archive -C $GRAMPS_PLUGINS
 	done
 fi
 

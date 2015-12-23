@@ -263,13 +263,16 @@ function build_list()
 		var datum = {}
 		$.extend(datum, reports[i]); // deep copy
 		if (reports[i].status)
-			datum.title= '<a href="' + homedir + '/' + reports[i].result + '">' + reports[i].title + '</a>';
-		datum.status = '<a href="' + url + '?' + BuildSearchString({log: i}) + '">' + ((reports[i].status) ? 'OK' : 'Error') + '</a>';
+			datum.title_html = '<a href="' + homedir + '/' + reports[i].result + '">' + reports[i].title + '</a>';
+		else
+			datum.title_html = reports[i].title;
+		datum.status_html = '<a href="' + url + '?' + BuildSearchString({log: i}) + '">' + ((reports[i].status) ? 'OK' : 'Error') + '</a>';
 		data.push(datum);
 	}
 	$('#reports').bootstrapTable({
 		columns: [{
-			field: 'title',
+			field: 'title_html',
+			sortName: 'title',
 			title: 'Title',
 			filterControl: 'select',
 			sortable: true
@@ -309,15 +312,23 @@ function build_list()
 			align: 'center',
 			sortable: true
 		}, {
-			field: 'status',
+			field: 'status_html',
+			sortName: 'status',
 			title: 'Status',
+			filterControl: 'select',
+			align: 'center',
+			sortable: true
+		}, {
+			field: 'time',
+			title: 'Execution time',
 			filterControl: 'select',
 			align: 'center',
 			sortable: true
 		}],
 		data: data,
 		filterControl: false,
-		search: true
+		search: true,
+		showColumns: true
 	});
 }
 

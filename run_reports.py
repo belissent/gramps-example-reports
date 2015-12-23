@@ -135,8 +135,8 @@ def call(cmd):
     retcode = ULTIMATE_ANSWER
     t0 = time.time()
     process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    for i in range (5 * 60): # 5 minutes timeout
-        time.sleep(1.0)
+    for i in range (5 * 60 * 10): # 5 minutes timeout
+        time.sleep(0.1)
         if process.poll() is not None: break
     t1 = time.time()
     if process.poll() is None:
@@ -163,7 +163,7 @@ def call(cmd):
         log = re.sub(r'100%\r', r'100%\n', log)
         log = re.sub(r'\d\d%\r', '', log)
         retcode = process.returncode
-    return(retcode, log)
+    return(retcode, log, t1 - t0)
 
 
 ##################################################################
@@ -172,13 +172,31 @@ def call(cmd):
 
 # Note: the database is created only once
 # This allows to name the database, which is mandatory for some reports
-(r, out) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-C', 'example', '-i', EXAMPLE_XML])
+(r, out, dt) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-C', 'example', '-i', EXAMPLE_XML])
 if r != 0: sys.exit(ULTIMATE_ANSWER)
 
 
 ##################################################################
 # Generate reports
 ##################################################################
+
+def clean_report(respath):
+    # Clean a rport results
+    # Deletes:
+    #  - the result file
+    #  - the result file parent directory if it is used only for this report
+    respath = os.path.normpath(os.path.abspath(respath))
+    if os.path.exists(respath):
+        subprocess.check_output('rm -rf %s' % respath, shell = True)
+    resdir = os.path.dirname(respath)
+    if os.path.exists(resdir):
+        reports_with_same_parent_directory = [
+            r for r in reports if
+            os.path.commonprefix([resdir, os.path.dirname(os.path.normpath(os.path.abspath(r['result'])))]) == resdir
+        ]
+        if len(reports_with_same_parent_directory) == 1:
+            subprocess.check_output('rm -rf %s' % resdir, shell = True)
+
 
 if GRAMPS_TARGET_DIR not in vers_data: vers_data[GRAMPS_TARGET_DIR] = {}
 for report in reports:
@@ -193,16 +211,7 @@ for report in reports:
     else:
         vers_data[GRAMPS_TARGET_DIR][id] = report['version']
         # Clean previous report results
-        if os.path.exists(report['result']):
-            subprocess.check_output('rm -rf %s' % report['result'], shell = True)
-        resdir = os.path.realpath(os.path.dirname(report['result']))
-        if (os.path.exists(resdir) and
-            not os.path.samefile(resdir, GRAMPS_REP_DIR) and
-            not os.path.samefile(resdir, ADDONS_REP_DIR) and (
-            os.path.commonprefix([GRAMPS_REP_DIR, resdir]) == GRAMPS_REP_DIR or
-            os.path.commonprefix([ADDONS_REP_DIR, resdir]) == ADDONS_REP_DIR
-        )):
-            subprocess.check_output('rm -rf %s' % resdir, shell = True)
+        clean_report(report['result'])
         # Build parameters string
         params = ['-a', 'report', '-p',
             ','.join([
@@ -211,10 +220,12 @@ for report in reports:
             ])
         ]
         # Create result directory if needed
+        resdir = os.path.dirname(os.path.normpath(os.path.abspath(report['result'])))
         if not os.path.isdir(resdir): os.makedirs(resdir)
-        (r, out) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-O', 'example'] + params)
+        (r, out, dt) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-O', 'example'] + params)
         report['log'] = out
         report['status'] = (r == 0)
+        report['time'] = dt
 
 
 ##################################################################
@@ -310,11 +321,26 @@ def buildThumbnail(filename):
 
 old_list_data = []
 if GRAMPS_TARGET_DIR in list_data: old_list_data = list_data[GRAMPS_TARGET_DIR]
+
+# Clean the old reports that are not in the list anymore
+for old_repdata in old_list_data:
+    respath = os.path.normpath(os.path.abspath(os.path.join(SITE_DIR, old_repdata['result'])))
+    reports_with_same_respath = [
+        r for r in reports
+        if respath == os.path.normpath(os.path.abspath(r['result']))
+    ]
+    if len(reports_with_same_respath) == 0:
+        clean_report(respath)
+
+
 list_data[GRAMPS_TARGET_DIR] = []
 for report in reports:
+    result_path = os.path.relpath(report['result'], SITE_DIR)
+    # Get previous data if report is not rebuilt
     if not report['rebuilt']:
-        list_data[GRAMPS_TARGET_DIR].extend([r for r in old_list_data if r['title'] == report['title']])
+        list_data[GRAMPS_TARGET_DIR].extend([r for r in old_list_data if r['result'] == result_path])
         continue
+    # Manage multi-files reports (SVG format for example)
     buildMultiFilesReport(report)
     # check if reports is correctly generated
     status = report['status'] and os.path.exists(report['result'])
@@ -323,15 +349,16 @@ for report in reports:
         if sz == 0: status = False
     # Append report data to index
     list_data[GRAMPS_TARGET_DIR].append({
-        'result': os.path.relpath(report['result'], SITE_DIR),
-        'name': report['name'],
-        'id': report['options']['name'],
         'title': report['title'],
-        'version': report['version'],
-        'status': status,
-        'log': report['log'],
+        'name': report['name'],
+        'result': result_path,
         'type': report['type'],
         'category': standalone_categories[report['category']][1],
+        'version': report['version'],
+        'id': report['options']['name'],
+        'status': status,
+        'log': report['log'],
+        'time': '%.1f' % report['time'],
         'format': report['options']['off'] if 'off' in report['options'] else '',
         'commit_gramps': sha_gramps,
         'commit_addons': sha_addons,
