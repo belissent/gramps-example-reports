@@ -184,18 +184,21 @@ def clean_report(respath):
     # Clean a rport results
     # Deletes:
     #  - the result file
-    #  - the result file parent directory if it is used only for this report
+    #  - the result file parent and grand-parent directories if used only for this report
     respath = os.path.normpath(os.path.abspath(respath))
     if os.path.exists(respath):
         subprocess.check_output('rm -rf %s' % respath, shell = True)
-    resdir = os.path.dirname(respath)
-    if os.path.exists(resdir):
-        reports_with_same_parent_directory = [
-            r for r in reports if
-            os.path.commonprefix([resdir, os.path.dirname(os.path.normpath(os.path.abspath(r['result'])))]) == resdir
-        ]
-        if len(reports_with_same_parent_directory) == 1:
-            subprocess.check_output('rm -rf %s' % resdir, shell = True)
+    for resdir in (
+        os.path.dirname(respath),
+        os.path.dirname(os.path.dirname(respath)),
+    ):
+        if os.path.exists(resdir):
+            reports_with_same_parent_directory = [
+                r for r in reports if
+                os.path.commonprefix([resdir, os.path.dirname(os.path.normpath(os.path.abspath(r['result'])))]) == resdir
+            ]
+            if len(reports_with_same_parent_directory) == 1:
+                subprocess.check_output('rm -rf %s' % resdir, shell = True)
 
 
 if GRAMPS_TARGET_DIR not in vers_data: vers_data[GRAMPS_TARGET_DIR] = {}

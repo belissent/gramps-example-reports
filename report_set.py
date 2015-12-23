@@ -20,6 +20,7 @@ from gramps.gen.plug import PluginRegister
 from gramps.gen.dbstate import DbState
 from gramps.cli.grampscli import CLIManager
 from gramps.gen.proxy import LivingProxyDb
+from gramps.gen.lib.date import Today
 
 GRAMPS_REP_DIR = os.path.normpath(os.path.abspath(os.path.join(os.environ['GRAMPS_REPORTS'], 'gramps')))
 ADDONS_REP_DIR = os.path.normpath(os.path.abspath(os.path.join(os.environ['GRAMPS_REPORTS'], 'addons')))
@@ -315,11 +316,14 @@ def build_report_set():
             'home_link': '../../example_NAVWEB%i/index.html' % i,
             'prefix': '../../example_NAVWEB%i/' % i,
         }
-        if (full): opts.update(full_options)
+        page = 'January.html'
+        if (full):
+            opts.update(full_options)
+            page = 'fullyearlinked.html'
         reports.append({
             'title': '"%s" report example %i' % (plugin.name, i),
             'name': report,
-            'result': os.path.join(GRAMPS_REP_DIR, 'example_WebCal%i' % i, 'January.html'),
+            'result': os.path.join(GRAMPS_REP_DIR, 'example_WebCal%i' % i, str(Today().get_year()), page),
             'type': 'Native',
             'category': plugin.category,
             'version': VERSION,
