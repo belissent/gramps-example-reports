@@ -127,9 +127,9 @@ reports = build_report_set()
 ##################################################################
 
 def call(cmd):
-    """
+    '''
     :type cmd: list
-    """
+    '''
     log = ' '.join(cmd)
     print(log)
     retcode = ULTIMATE_ANSWER
@@ -235,13 +235,21 @@ for report in reports:
 # Generate HTML page for multi-files reports
 ##################################################################
 
-def buildMultiFilesReport(report):
-    (root, ext) = os.path.splitext(report['result'])
+def getMultiFilesReportResult(report):
+    respath = os.path.normpath(os.path.abspath(report['result']))
+    (root, ext) = os.path.splitext(respath)
     if (not os.path.exists(root + '-2' + ext)):
-        report['thumb'] = buildThumbnail(report['result'])
+        return respath
+    return respath + '.html'
+
+def buildMultiFilesReport(report):
+    respath = os.path.normpath(os.path.abspath(report['result']))
+    (root, ext) = os.path.splitext(respath)
+    if (not os.path.exists(root + '-2' + ext)):
+        # report['thumb'] = os.path.relpath(buildThumbnail(respath), SITE_DIR)
         return
     base = os.path.basename(root)
-    dir = os.path.dirname(report['result'])
+    dir = os.path.dirname(respath)
     to_root = os.path.relpath(SITE_DIR, dir)
     # Get list of report pages
     pages = []
@@ -250,15 +258,16 @@ def buildMultiFilesReport(report):
         mo = re.match(base + '(?:-([0-9]+))?$', p_base)
         if (p_ext == ext and mo):
             th = buildThumbnail(os.path.join(dir, fname))
+            th = os.path.relpath(th, dir)
             if mo.group(1): i = int(mo.group(1))
             else: i = 1
             pages.append({'name': fname, 'index': i, 'thumb': th})
     pages.sort(key = lambda x: x['index'])
     # Create HTML index for all the report pages
-    report['result'] = root + ext + '.html'
-    report['thumb'] = buildThumbnail(report['result'])
+    report['result'] = respath + '.html'
+    # report['thumb'] = os.path.relpath(buildThumbnail(respath), SITE_DIR)
     html = open(report['result'], 'w')
-    html.write("""
+    html.write('''
         <!DOCTYPE html>
         <html>
 
@@ -281,7 +290,7 @@ def buildMultiFilesReport(report):
         <body>
         <h1>%s</h1>
         <table>
-    """ % tuple([to_root] * 5 + [report['title']] * 2))
+    ''' % tuple([to_root] * 5 + [report['title']] * 2))
     sep = ''
     for page in pages:
         html.write(sep)
@@ -292,11 +301,11 @@ def buildMultiFilesReport(report):
         else:
             sep = '<br>'
         html.write('<a href="%s">%s</a></td>\n' % (page['name'], txt))
-    html.write("""
+    html.write('''
         </table>
         </body>
         </html>
-    """);
+    ''');
     html.close()
 
 
@@ -338,7 +347,7 @@ for old_repdata in old_list_data:
 
 list_data[GRAMPS_TARGET_DIR] = []
 for report in reports:
-    result_path = os.path.relpath(report['result'], SITE_DIR)
+    result_path = os.path.relpath(getMultiFilesReportResult(report), SITE_DIR)
     # Get previous data if report is not rebuilt
     if not report['rebuilt']:
         list_data[GRAMPS_TARGET_DIR].extend([r for r in old_list_data if r['result'] == result_path])
