@@ -328,7 +328,9 @@ function build_list()
 		data: data,
 		filterControl: false,
 		search: true,
-		showColumns: true
+		showColumns: true,
+		cookie: true,
+		cookieIdTable: 'gramps-example-reports-list'
 	});
 }
 
