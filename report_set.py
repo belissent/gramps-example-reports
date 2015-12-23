@@ -48,8 +48,8 @@ def build_report_set():
     ##################################################################
 
     # GRPH_FMT = ['odt', 'ps', 'pdf', 'svg']
-    # GRPH_FMT = ['pdf', 'svg'] # Cannot make PDF working on Travis
-    GRPH_FMT = ['svg']
+    GRPH_FMT = ['pdf', 'svg']
+    # GRPH_FMT = ['svg']
     GRPH_REP = [
         {
             'report': 'ancestor_chart',
@@ -137,8 +137,8 @@ def build_report_set():
     ]
 
     # TEXT_FMT = ['ps', 'pdf', 'html', 'odt', 'tex', 'rtf', 'txt']
-    # TEXT_FMT = ['html', 'pdf', 'txt'] # Cannot make PDF working on Travis
-    TEXT_FMT = ['html', 'txt']
+    TEXT_FMT = ['html', 'pdf', 'txt']
+    # TEXT_FMT = ['html', 'txt']
     TEXT_REP = [
         {
             'report': 'ancestor_report',
