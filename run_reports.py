@@ -303,7 +303,6 @@ def buildMultiFilesReport(report):
 
         <body>
         <h1>%s</h1>
-        <table>
     ''' % tuple([to_root] * 5 + [report['title']] * 2))
     sep = ''
     for page in pages:
@@ -314,9 +313,8 @@ def buildMultiFilesReport(report):
             sep = ' '
         else:
             sep = '<br>'
-        html.write('<a href="%s">%s</a></td>\n' % (page['name'], txt))
+        html.write('<a href="%s">%s</a>\n' % (page['name'], txt))
     html.write('''
-        </table>
         </body>
         </html>
     ''');
