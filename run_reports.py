@@ -19,8 +19,8 @@ from gramps.gen.plug.report import standalone_categories
 ##################################################################
 
 ULTIMATE_ANSWER = 42 # Arbitrary non-zero return code upon error
-if len(sys.argv) != 2: sys.exit(ULTIMATE_ANSWER)
-if sys.argv[1] not in ['40', '41', '42', '50']: sys.exit(ULTIMATE_ANSWER)
+if len(sys.argv) != 2: raise Exception('Gramps version should be given as argument')
+if sys.argv[1] not in ['40', '41', '42', '50']:  raise Exception('Gramps version "%s" should be in 2 digit format' % sys.argv[1])
 GRAMPS_TARGET_DIR = 'gramps' + sys.argv[1]
 
 # sys.argv is reset for Gramps CLI code
@@ -181,7 +181,7 @@ if r != 0: sys.exit(ULTIMATE_ANSWER)
 ##################################################################
 
 def clean_report(respath):
-    # Clean a rport results
+    # Clean a report results
     # Deletes:
     #  - the result file
     #  - the result file parent and grand-parent directories if used only for this report
@@ -199,6 +199,19 @@ def clean_report(respath):
             ]
             if len(reports_with_same_parent_directory) == 1:
                 subprocess.check_output('rm -rf %s' % resdir, shell = True)
+
+
+(r, out, dt) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-l'])
+if r != 0: sys.exit(ULTIMATE_ANSWER)
+mo = re.search('(.*) with name "example"')
+if mo:
+    dbpath = mo.group(1)
+else:
+    raise Exception('Database path not found')
+
+def release_lock():
+    lock = os.path.join(dbpath, 'lock')
+    if os.path.exists(lock): os.remove(lock)
 
 
 if GRAMPS_TARGET_DIR not in vers_data: vers_data[GRAMPS_TARGET_DIR] = {}
@@ -225,6 +238,7 @@ for report in reports:
         # Create result directory if needed
         resdir = os.path.dirname(os.path.normpath(os.path.abspath(report['result'])))
         if not os.path.isdir(resdir): os.makedirs(resdir)
+        release_lock()
         (r, out, dt) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-O', 'example'] + params)
         report['log'] = out
         report['status'] = (r == 0)

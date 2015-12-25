@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex # exit with nonzero exit code if anything fails
+set -ev # exit with nonzero exit code if anything fails
 
 source vars.sh
 
