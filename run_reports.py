@@ -203,7 +203,7 @@ def clean_report(respath):
 
 (r, out, dt) = call([sys.executable, os.path.join(TOP_DIR, 'Gramps.py'), '-q', '-y', '-l'])
 if r != 0: sys.exit(ULTIMATE_ANSWER)
-mo = re.search('(.*) with name "example"')
+mo = re.search('(.*) with name "example"', out)
 if mo:
     dbpath = mo.group(1)
 else:
