@@ -18,4 +18,4 @@ git commit -m "Deploy example reports to GitHub pages"
 # will be lost, since we are overwriting it.) We redirect any output to
 # /dev/null to hide any sensitive credential data that might otherwise be exposed.
 echo "Pushing to the repository: github.com/${EXAMPLES_REPO_SLUG}.git"
-git push --quiet "https://${GH_TOKEN}@github.com/${EXAMPLES_REPO_SLUG}.git" gh-pages:gh-pages > /dev/null 2>&1
+# git push --quiet "https://${GH_TOKEN}@github.com/${EXAMPLES_REPO_SLUG}.git" gh-pages:gh-pages > /dev/null 2>&1

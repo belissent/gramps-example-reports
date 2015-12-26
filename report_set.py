@@ -626,6 +626,8 @@ def build_report_set():
 
     ########## TodoReport
 
+    reports=[]
+    addons=[]
     for fmt in TEXT_FMT:
         of = os.path.join(ADDONS_REP_DIR, 'TodoReport.' + fmt)
         addons.append({
@@ -642,8 +644,6 @@ def build_report_set():
 
     ########## Check if addon exists in the addons listings
 
-    # reports=[]
-    # for addon in addons[-1:]:
     for addon in addons:
         plugin = gpr.get_plugin(addon['i'])
         if not plugin:
