@@ -35,13 +35,15 @@ export VARS_50="$VARS_50; export LANGUAGE=en_US"
 
 export ENV_50=$MY_PATH/env/gramps50/$ENV_PATH/activate
 export PYTHON_50="python$PYTHON3_SUFFIX"
-export PIP_50="pip$PYTHON3_SUFFIX"
+export PIP_50="pip"
+# export PIP_50="pip$PYTHON3_SUFFIX"
 export WORKON_50="eval $VARS_50; source $ENV_50"
 
 export VARS_42=${VARS_50//gramps50/gramps42}
 export ENV_42=$MY_PATH/env/gramps50/$ENV_PATH/activate
 export PYTHON_42="python$PYTHON3_SUFFIX"
-export PIP_42="pip$PYTHON3_SUFFIX"
+export PIP_42="pip"
+# export PIP_42="pip$PYTHON3_SUFFIX"
 export WORKON_42="eval $VARS_42; source $ENV_42"
 
 # ifneq (${wildcard }(ICU_INSTALL_DIR)),)
