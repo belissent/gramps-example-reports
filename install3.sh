@@ -15,7 +15,7 @@ virtualenv --system-site-packages --python=$ENV_PYTHON3_VERSION env/gramps50;
 $WORKON_50
 echo "Running python environment:"
 which python$PYTHON3_SUFFIX
-which pip$PYTHON3_SUFFIX
+# which pip$PYTHON3_SUFFIX
 $PIP_50 install Django\<1.8
 $PIP_50 install pyicu\<1.9
 $PIP_50 install cffi
